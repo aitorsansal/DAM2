@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 public class CustomizationController : MonoBehaviour
 {
@@ -14,8 +16,8 @@ public class CustomizationController : MonoBehaviour
     [BoxGroup("Prefabs")]
     [AssetsOnly][SerializeField] private GameObject buttonPrefab;
 
-    [SerializeField] 
-    private StringColorDictionary colorDict;
+    private List<Color> colors;
+    
 
     [SerializeField] private Texture2D text;
 
@@ -27,6 +29,7 @@ public class CustomizationController : MonoBehaviour
     
     private void Awake()
     {
+        colors = Resources.Load<ColorsList>("Colors").colors;
         LoadColors();
         LoadPremades();
         objRenderer = renderedObject.GetComponent<Renderer>();
@@ -35,21 +38,22 @@ public class CustomizationController : MonoBehaviour
 
     void LoadColors()
     {
-        foreach (var color in colorDict.Keys)
+        foreach (var color in colors.OrderBy(x => -x.r))
         {
             var obj = Instantiate(buttonPrefab, colorPanel);
-            obj.GetComponent<CustomizationButton>().SetCustomization(colorDict[color]);
-            obj.GetComponent<Button>().onClick.AddListener(delegate{ChangeMaterial(colorDict[color]);});
+            obj.GetComponent<CustomizationButton>().SetCustomization(color);
+            obj.GetComponent<Button>().onClick.AddListener(delegate{ChangeMaterial(color);});
         }
     }
 
     void LoadPremades()
     {
-        var loaded = Resources.LoadAll("Premade");
+        var loaded = Resources.LoadAll("SkinCombinations");
         var shader = Resources.Load<Shader>("BallMaterialShader");
         foreach (var toLoad in loaded)
         {
-            if (toLoad is not PremadeCombination combination) continue;
+            //if (toLoad is not PremadeCombination combination) continue;
+            var combination = toLoad as PremadeCombination;
             var material = new Material(shader);
             material.SetColor("_Color", combination.color);
             material.SetTexture("_MainTex", combination.texture);

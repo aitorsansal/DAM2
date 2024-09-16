@@ -7,12 +7,6 @@ using UnityEngine.UI;
 public class CustomizationButton : MonoBehaviour
 {
     [SerializeField] private Image image;
-    private CustomizationController controller;
-
-    private void Awake()
-    {
-        controller = FindObjectOfType<CustomizationController>();
-    }
 
     public void SetCustomization(Color col)
     {

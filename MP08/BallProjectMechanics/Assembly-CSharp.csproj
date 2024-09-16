@@ -46,11 +46,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CustomizationButton.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\TextureList.cs" />
     <Compile Include="Assets\Scripts\BallCustomizer.cs" />
     <Compile Include="Assets\Scripts\UnitySerializedDictionary.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\CombinationsList.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\PremadeCombination.cs" />
+    <Compile Include="Assets\Scripts\UnitySerializedHashSet.cs" />
     <Compile Include="Assets\Scripts\CustomizationController.cs" />
     <Compile Include="Assets\Scripts\CustomizationRotator.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\ColorsList.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

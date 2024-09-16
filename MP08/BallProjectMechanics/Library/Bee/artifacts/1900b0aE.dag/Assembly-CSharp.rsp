@@ -390,8 +390,12 @@
 "Assets/Scripts/CustomizationButton.cs"
 "Assets/Scripts/CustomizationController.cs"
 "Assets/Scripts/CustomizationRotator.cs"
+"Assets/Scripts/ScriptableObjects/ColorsList.cs"
+"Assets/Scripts/ScriptableObjects/CombinationsList.cs"
 "Assets/Scripts/ScriptableObjects/PremadeCombination.cs"
+"Assets/Scripts/ScriptableObjects/TextureList.cs"
 "Assets/Scripts/UnitySerializedDictionary.cs"
+"Assets/Scripts/UnitySerializedHashSet.cs"
 -langversion:9.0
 /deterministic
 /optimize+

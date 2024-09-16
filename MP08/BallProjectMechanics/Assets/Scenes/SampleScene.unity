@@ -862,7 +862,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 374874266}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99744165
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1891,7 +1891,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00011947013}
+  m_AnchoredPosition: {x: 0, y: 0.00034982615}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &741558130
@@ -1911,11 +1911,11 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 150, y: 150}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &814186784
@@ -2399,11 +2399,11 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 150, y: 150}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &965029762
@@ -3150,11 +3150,11 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 150, y: 150}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &1791469470
@@ -3336,11 +3336,11 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 150, y: 150}
-  m_Spacing: {x: 0, y: 0}
+  m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &1869428032
@@ -3691,31 +3691,6 @@ MonoBehaviour:
   hatsPanelGO: {fileID: 2060720583}
   buttonPrefab: {fileID: 1835444358045835522, guid: 9c956a0c408324840b141f4e76b0ff95,
     type: 3}
-  colorDict:
-    keyData:
-    - DarkBlue
-    - LightBlue
-    - Red
-    - Celeste
-    - Green
-    - Lima
-    - Yellow
-    - Orange
-    - Pink
-    - BlackPurple
-    - LightPurple
-    valueData:
-    - {r: 0, g: 0.1130226, b: 0.6132076, a: 1}
-    - {r: 0, g: 0.694149, b: 1, a: 1}
-    - {r: 1, g: 0, b: 0, a: 1}
-    - {r: 0, g: 0.97979045, b: 1, a: 1}
-    - {r: 0, g: 1, b: 0.1782589, a: 1}
-    - {r: 0.6428529, g: 1, b: 0.4009434, a: 1}
-    - {r: 1, g: 0.92386997, b: 0, a: 1}
-    - {r: 1, g: 0.53926516, b: 0, a: 1}
-    - {r: 1, g: 0.41037738, b: 0.7765484, a: 1}
-    - {r: 0.3877172, g: 0, b: 0.754717, a: 1}
-    - {r: 0.67199576, g: 0.24056602, b: 1, a: 1}
   text: {fileID: 2800000, guid: 62a1f96c2b6e61845aead0900e821628, type: 3}
   renderedObject: {fileID: 889649313}
 --- !u!1 &1917078279
