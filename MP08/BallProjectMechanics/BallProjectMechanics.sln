@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VHierarchy", "VHierarchy.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullscreenEditor", "FullscreenEditor.csproj", "{7fd72ac7-b193-e546-a4fa-5a6cd400bf7b}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{a9e8bd91-acf3-86f9-c28f-c363220feab7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{9d283c4a-4856-7ce0-57c4-f1699a594c24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{a9e8bd91-acf3-86f9-c28f-c363220feab7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beardy.BeardsGridLayoutGroup.Runtime", "Beardy.BeardsGridLayoutGroup.Runtime.csproj", "{c203b7c5-5194-e256-7e1d-f2142ccdc51d}"
 EndProject
@@ -26,10 +26,10 @@ Global
 		{5b8ba688-d3cc-a643-7a62-066f0b616126}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7fd72ac7-b193-e546-a4fa-5a6cd400bf7b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7fd72ac7-b193-e546-a4fa-5a6cd400bf7b}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{a9e8bd91-acf3-86f9-c28f-c363220feab7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{a9e8bd91-acf3-86f9-c28f-c363220feab7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9d283c4a-4856-7ce0-57c4-f1699a594c24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9d283c4a-4856-7ce0-57c4-f1699a594c24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{a9e8bd91-acf3-86f9-c28f-c363220feab7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{a9e8bd91-acf3-86f9-c28f-c363220feab7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{c203b7c5-5194-e256-7e1d-f2142ccdc51d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{c203b7c5-5194-e256-7e1d-f2142ccdc51d}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{a9c5b073-2f6e-8d45-a76b-0b0611f4e656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

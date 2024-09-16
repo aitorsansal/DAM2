@@ -5,6 +5,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class PremadeCombination : ScriptableObject
 {
-    public Color color;
+    public Color color = Color.red;
     public Texture2D texture;
 }

@@ -1,7 +1,7 @@
 import java.util.*
 
 fun main() {
-    EX10()
+    EX13()
 }
 
 fun EX1(){
@@ -177,4 +177,53 @@ fun EX10(){
        primer = aux
     }
     print("El MCD és $primer")
+}
+
+fun EX11(){
+    val sc = Scanner(System.`in`)
+    print("Dona'm la quantitat de nombres de la seqüència de Fibonacci vols. ")
+    var quantity = sc.nextInt()
+    var first = 1
+    var second = 1
+    for(i in 0..<quantity){
+        when (i) {
+            0 -> print(1)
+            1 -> print(1)
+            else -> {
+                val value = first + second
+                print(value)
+                first = second
+                second = value
+            }
+        }
+        print(" ")
+    }
+}
+
+fun EX12(){
+    val sc = Scanner(System.`in`)
+    print("Dona'm el radi amb el que voldràs que faci els càlculs: ")
+    val rad = sc.nextDouble()
+    sc.nextLine()
+    var resposta = ""
+    while(resposta != "longitud" && resposta != "area" && resposta != "volum"){
+        println("Diga'm qué vols que calculi amb el radi: \n La longitud (longitud) \n L'àrea (area) \n El volum (volum)")
+        resposta = sc.nextLine()
+    }
+    when(resposta){
+        "longitud" -> println("La longitud de la circumferència amb radi $rad és ${2*3.14f*rad}")
+        "area" -> println("L'àrea del cercle amb radi $rad és ${3.14f*rad*rad}")
+        "volum" -> println("El volum d'una esfera amb radi $rad és ${4/3*3.14f*rad*rad*rad}")
+    }
+
+}
+
+fun EX13(){
+    val sc = Scanner(System.`in`)
+    print("Entra una lletra minúscula perquè la transformi a majúscula: ")
+    val char = System.`in`.read()
+    if(char in 97..122)
+        println("La teva lletra en majúscula és ${(char - 32).toChar()}")
+    else
+        println("El caràcter entrat no era una lletra minúscula")
 }
