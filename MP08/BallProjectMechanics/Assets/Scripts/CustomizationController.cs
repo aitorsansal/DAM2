@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -28,8 +29,9 @@ public class CustomizationController : MonoBehaviour
 
 
     public Action<float> changeSlider;
-
-    [SerializeField] private Texture2D text;
+    [SerializeField] private ColorPicker colorPicker;
+    [SerializeField] private RectTransform colorPickerGO;
+    [Space]
     [SerializeField] private GameObject renderedObject;
     [SerializeField] private Slider tilingSlider;
     
@@ -43,11 +45,14 @@ public class CustomizationController : MonoBehaviour
         colors = Resources.Load<ColorsList>("Colors").colors;
         textures = Resources.Load<TextureList>("Textures").textures;
         premadeCombinations = Resources.Load<CombinationsList>("Combinations").combinations;
+        print(colorPickerGO.anchoredPosition);
         LoadColors();
         LoadPremades();
         LoadTextures();
         objRenderer = renderedObject.GetComponent<Renderer>();
         currentPanel = colorPanelGO;
+        colorPicker.onColorChanged += ChangeMaterial;
+        CloseColorWheel();
     }
 
     void LoadColors()
@@ -58,6 +63,13 @@ public class CustomizationController : MonoBehaviour
             obj.GetComponent<CustomizationButton>().SetCustomization(color);
             obj.GetComponent<Button>().onClick.AddListener(delegate{ChangeMaterial(color);});
         }
+
+        var wheelPicker = Instantiate(buttonPrefab, colorPanel);
+        wheelPicker.GetComponent<Button>().onClick.AddListener(delegate
+        {
+            var pos = wheelPicker.GetComponent<RectTransform>().anchoredPosition;
+            OpenColorWheel(pos);
+        });
     }
 
     void LoadPremades()
@@ -145,14 +157,23 @@ public class CustomizationController : MonoBehaviour
         renderedObject.GetComponent<MeshFilter>().mesh = newMesh.GetComponent<MeshFilter>().mesh;
         Destroy(newMesh);
     }
+
+    void OpenColorWheel(Vector3 pos)
+    {
+        colorPickerGO.anchoredPosition = pos;
+        colorPickerGO.DOAnchorPos(new Vector2(0, 0), .6f).SetEase(Ease.Linear);
+        colorPickerGO.DOScale(1, .6f).SetEase(Ease.Linear);
+
+    }
+
+    public void CloseColorWheel()
+    {
+        colorPickerGO.DOAnchorPos(new Vector2(0.00f, -445.00f), .6f).SetEase(Ease.Linear);
+        colorPickerGO.DOScale(0, .6f).SetEase(Ease.Linear);
+    }
     
     
     //TODO: things to add.
-    // - list of colors and generate buttons acording to the colors
-    // - button for custom color
-    // - load textures from resources and generate buttons acording to texutres
-    // - load scriptable objects from resources and generate buttons acording to textures
-    // -- generate a material for each scriptable object and assing to object so it is seen
     // - load 3d ojects from resources and generate buttons acording to hats
     
 }

@@ -1,0 +1,15 @@
+C:\Users\aitorsansal\DAM2\MP09\XifratPerColumnes\XifratPerColumnes\bin\Debug\net8.0\XifratPerColumnes.exe
+C:\Users\aitorsansal\DAM2\MP09\XifratPerColumnes\XifratPerColumnes\bin\Debug\net8.0\XifratPerColumnes.deps.json
+C:\Users\aitorsansal\DAM2\MP09\XifratPerColumnes\XifratPerColumnes\bin\Debug\net8.0\XifratPerColumnes.runtimeconfig.json
+C:\Users\aitorsansal\DAM2\MP09\XifratPerColumnes\XifratPerColumnes\bin\Debug\net8.0\XifratPerColumnes.dll
+C:\Users\aitorsansal\DAM2\MP09\XifratPerColumnes\XifratPerColumnes\bin\Debug\net8.0\XifratPerColumnes.pdb
+C:\Users\aitorsansal\DAM2\MP09\XifratPerColumnes\XifratPerColumnes\obj\Debug\net8.0\XifratPerColumnes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aitorsansal\DAM2\MP09\XifratPerColumnes\XifratPerColumnes\obj\Debug\net8.0\XifratPerColumnes.AssemblyInfoInputs.cache
+C:\Users\aitorsansal\DAM2\MP09\XifratPerColumnes\XifratPerColumnes\obj\Debug\net8.0\XifratPerColumnes.AssemblyInfo.cs
+C:\Users\aitorsansal\DAM2\MP09\XifratPerColumnes\XifratPerColumnes\obj\Debug\net8.0\XifratPerColumnes.csproj.CoreCompileInputs.cache
+C:\Users\aitorsansal\DAM2\MP09\XifratPerColumnes\XifratPerColumnes\obj\Debug\net8.0\XifratPerColumnes.sourcelink.json
+C:\Users\aitorsansal\DAM2\MP09\XifratPerColumnes\XifratPerColumnes\obj\Debug\net8.0\XifratPerColumnes.dll
+C:\Users\aitorsansal\DAM2\MP09\XifratPerColumnes\XifratPerColumnes\obj\Debug\net8.0\refint\XifratPerColumnes.dll
+C:\Users\aitorsansal\DAM2\MP09\XifratPerColumnes\XifratPerColumnes\obj\Debug\net8.0\XifratPerColumnes.pdb
+C:\Users\aitorsansal\DAM2\MP09\XifratPerColumnes\XifratPerColumnes\obj\Debug\net8.0\XifratPerColumnes.genruntimeconfig.cache
+C:\Users\aitorsansal\DAM2\MP09\XifratPerColumnes\XifratPerColumnes\obj\Debug\net8.0\ref\XifratPerColumnes.dll
