@@ -19,9 +19,19 @@ public class CustomizationButton : MonoBehaviour
                                             new Vector2(0.5f,0.5f));
     }
 
-    public void SetCustomization(Material mat)
+    public void SetCustomization(Material mat, bool directMaterial = false)
     {
-        SetCustomization(mat.mainTexture as Texture2D);
-        SetCustomization(mat.color);
+        if (directMaterial)
+            image.material = mat;
+        else
+        {
+            SetCustomization(mat.mainTexture as Texture2D);
+            SetCustomization(mat.color);
+        }
+    }
+
+    public void SetCustomization(Sprite sprite)
+    {
+        image.sprite = sprite;
     }
 }

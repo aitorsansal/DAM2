@@ -65,11 +65,8 @@ public class CustomizationController : MonoBehaviour
         }
 
         var wheelPicker = Instantiate(buttonPrefab, colorPanel);
-        wheelPicker.GetComponent<Button>().onClick.AddListener(delegate
-        {
-            var pos = wheelPicker.GetComponent<RectTransform>().anchoredPosition;
-            OpenColorWheel(pos);
-        });
+        wheelPicker.GetComponent<CustomizationButton>().SetCustomization(Resources.Load<Sprite>("RainbowTexture"));
+        wheelPicker.GetComponent<Button>().onClick.AddListener(OpenColorWheel);
     }
 
     void LoadPremades()
@@ -158,9 +155,8 @@ public class CustomizationController : MonoBehaviour
         Destroy(newMesh);
     }
 
-    void OpenColorWheel(Vector3 pos)
+    void OpenColorWheel()
     {
-        colorPickerGO.anchoredPosition = pos;
         colorPickerGO.DOAnchorPos(new Vector2(0, 0), .6f).SetEase(Ease.Linear);
         colorPickerGO.DOScale(1, .6f).SetEase(Ease.Linear);
 
