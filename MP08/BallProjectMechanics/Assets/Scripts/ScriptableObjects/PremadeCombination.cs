@@ -9,4 +9,5 @@ public class PremadeCombination : MonoBehaviour
 {
     public Color color = Color.red;
     public Texture2D texture;
+    public float tiling = 1f;
 }

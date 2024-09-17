@@ -4,24 +4,35 @@ using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 public class CustomizationController : MonoBehaviour
 {
+    private static readonly int Color1 = Shader.PropertyToID("_Color");
+    private static readonly int MainTex = Shader.PropertyToID("_MainTex");
+    private static readonly int Tiling = Shader.PropertyToID("_Tiling");
+
     [BoxGroup("Transforms")]
-    [SerializeField] private Transform colorPanel, texutrePanel, premadePanel, hatsPanel;
+    [SerializeField] private Transform colorPanel, texturePanel, premadePanel, hatsPanel;
+
     [BoxGroup("GameObjects")]
     [SerializeField] private GameObject colorPanelGO, texutrePanelGO, premadePanelGO, hatsPanelGO;
     [BoxGroup("Prefabs")]
     [AssetsOnly][SerializeField] private GameObject buttonPrefab;
 
     private List<Color> colors;
-    
+    private List<Texture2D> textures;
+    private List<PremadeCombination> premadeCombinations;
+
+
+    public Action<float> changeSlider;
 
     [SerializeField] private Texture2D text;
-
     [SerializeField] private GameObject renderedObject;
+    [SerializeField] private Slider tilingSlider;
+    
     private Renderer objRenderer;
     private GameObject currentPanel;
     
@@ -30,8 +41,11 @@ public class CustomizationController : MonoBehaviour
     private void Awake()
     {
         colors = Resources.Load<ColorsList>("Colors").colors;
+        textures = Resources.Load<TextureList>("Textures").textures;
+        premadeCombinations = Resources.Load<CombinationsList>("Combinations").combinations;
         LoadColors();
         LoadPremades();
+        LoadTextures();
         objRenderer = renderedObject.GetComponent<Renderer>();
         currentPanel = colorPanelGO;
     }
@@ -48,34 +62,48 @@ public class CustomizationController : MonoBehaviour
 
     void LoadPremades()
     {
-        var loaded = Resources.LoadAll("SkinCombinations");
         var shader = Resources.Load<Shader>("BallMaterialShader");
-        foreach (var toLoad in loaded)
+        
+        foreach (var combination in premadeCombinations)
         {
-            //if (toLoad is not PremadeCombination combination) continue;
-            var combination = toLoad as PremadeCombination;
             var material = new Material(shader);
-            material.SetColor("_Color", combination.color);
-            material.SetTexture("_MainTex", combination.texture);
+            material.SetColor(Color1, combination.color);
+            material.SetTexture(MainTex, combination.texture);
+            if(!Mathf.Approximately(combination.tiling, 1f)) material.SetFloat(Tiling, combination.tiling);
             var obj = Instantiate(buttonPrefab, premadePanel);
             obj.GetComponent<CustomizationButton>().SetCustomization(material);
             obj.GetComponent<Button>().onClick.AddListener(delegate{ChangeMaterial(material);});
         }
     }
 
-    public void ChangeMaterial(Color col)
+    void LoadTextures()
     {
-        objRenderer.material.SetColor("_Color", col);
+        foreach (var texture in textures.Where(x => x is not null))
+        {
+            var obj = Instantiate(buttonPrefab, texturePanel);
+            obj.GetComponent<CustomizationButton>().SetCustomization(texture);
+            obj.GetComponent<Button>().onClick.AddListener(delegate{ChangeMaterial(texture);});
+        }
     }
 
-    public void ChangeMaterial(Texture2D text)
+    public void ChangeMaterial(Color col)
     {
-        objRenderer.material.SetTexture("_MainTex", text);
+        objRenderer.material.SetColor(Color1, col);
+    }
+
+    public void ChangeMaterial(Texture2D texture)
+    {
+        objRenderer.material.SetTexture(MainTex, texture);
     }
 
     public void ChangeMaterial(Material mat)
     {
         objRenderer.material = mat;
+    }
+
+    public void ChangeTiling(Slider slider)
+    {
+        objRenderer.material.SetFloat(Tiling, slider.value);
     }
 
     public void ChangeCustomizationPanel(string panelName)
@@ -87,8 +115,9 @@ public class CustomizationController : MonoBehaviour
             case "colorPanel":
                 newActivePanel = colorPanelGO;
                 break;
-            case "texutrePanel":
+            case "texturePanel":
                 newActivePanel = texutrePanelGO;
+                tilingSlider.value = objRenderer.material.GetFloat(Tiling);
                 break;
             case "premadePanel":
                 newActivePanel = premadePanelGO;
@@ -102,6 +131,21 @@ public class CustomizationController : MonoBehaviour
         newActivePanel.SetActive(true);
         currentPanel = newActivePanel;
     }
+    
+    public void ChangeRenderObject(string obj)
+    {
+        GameObject newMesh = obj switch
+        {
+            "sphere" => GameObject.CreatePrimitive(PrimitiveType.Sphere),
+            "cube" => GameObject.CreatePrimitive(PrimitiveType.Cube),
+            "capsule" => GameObject.CreatePrimitive(PrimitiveType.Capsule),
+            _ => throw new NotImplementedException()
+        };
+        
+        renderedObject.GetComponent<MeshFilter>().mesh = newMesh.GetComponent<MeshFilter>().mesh;
+        Destroy(newMesh);
+    }
+    
     
     //TODO: things to add.
     // - list of colors and generate buttons acording to the colors
