@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("XifratPerColumnes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+12cb890f0582183227a75b77cded779efae84ae3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7776028537465724695270b8b1cc78d3445fb414")]
 [assembly: System.Reflection.AssemblyProductAttribute("XifratPerColumnes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("XifratPerColumnes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
