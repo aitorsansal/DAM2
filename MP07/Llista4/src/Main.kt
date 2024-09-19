@@ -3,8 +3,7 @@ import java.util.Scanner
 
 fun main() {
     var llibres = llegeix("Llibres.csv")
-    val llibre = ompleLlibre()
-    println(llibre)
+    println(llibres)
 }
 
 
@@ -175,24 +174,104 @@ fun altaLlibre(book: Book) {
 
 }
 
-fun eliminaLlibre(id: String, list: MutableList<Book>) {
-    
-}
-
-fun eliminaPosicio(pos: Int) {
-
-}
-
-fun llistaPaisos() {
-
-}
-
-fun llistaPais(pais: String) {
+fun eliminaLlibre(id: String, list: MutableList<Book>) : String {
+    val bookToRemove =  list.find { it.idBNE == id }
+    if(bookToRemove != null) {
+        list.remove(bookToRemove)
+        return "El llibre amb nom ${bookToRemove.titulo} s'ha eliminat de la llista."
+    }
+    else
+        return "No hi havía cap llibre amb la id entrada."
 
 }
 
-fun llistaIdiomes() {
+fun eliminaPosicio(pos: Int, list: MutableList<Book>) : String {
+    if(pos < list.size && pos > 0) {
+        val book = list.removeAt(pos)
+        return "S'ha eliminat el llibre amb títol ${book.titulo} de la llista."
+    }
+    else{
+        return "La posició entrada no existeix en la llistra de llibres."
+    }
+}
 
+fun llistaPaisos(list: MutableList<Book>) : String {
+    val countries = list.map { it.pais }.distinct()
+    return "Els països disponibles en els llibres són els següents: \n" + countries.joinToString(", ")
+}
+
+val countryNamesToAbbreviations = mapOf(
+    "SPAIN" to "sp",
+    "PERU" to "pe",
+    "ITALY" to "it",
+    "BELGIUM" to "be",
+    "PORTUGAL" to "po",
+    "NIGER" to "ne",
+    "ESWATINI" to "sz",
+    "ANTIGUA AND BARBUDA" to "ag",
+    "MEXICO" to "mx",
+    "FRANCE" to "fr",
+    "GUINEA-BISSAU" to "gw",
+    "CUBA" to "cu",
+    "PHILIPPINES" to "ph",
+    "CHILE" to "cl",
+    "PITCAIRN ISLANDS" to "pn",
+    "UNITED STATES" to "us",
+    "COCOS (KEELING) ISLANDS" to "cc",
+    "URUGUAY" to "uy",
+    "SAINT BARTHÉLEMY" to "bl",
+    "GUATEMALA" to "gt",
+    "PUERTO RICO" to "pr",
+    "COOK ISLANDS" to "ck",
+    "ICELAND" to "is",
+    "POLAND" to "pl",
+    "GEORGIA" to "ge",
+    "MAURITANIA" to "mr",
+    "AUSTRALIA" to "au",
+    "RUSSIA" to "ru",
+    "IRELAND" to "ie",
+    "DENMARK" to "dk",
+    "ARGENTINA" to "ar",
+    "UNITED ARAB EMIRATES" to "ae",
+    "DOMINICAN REPUBLIC" to "dr",
+    "VENEZUELA" to "ve",
+    "HUNGARY" to "hu",
+    "GREECE" to "gr",
+    "LAOS" to "la",
+    "NORTH KOREA" to "nk",
+    "COSTA RICA" to "cr",
+    "EGYPT" to "eg",
+    "ECUADOR" to "ec",
+    "MONACO" to "mc",
+    "HAITI" to "ht",
+    "BOLIVIA" to "bo",
+    "NAMIBIA" to "na",
+    "SLOVENIA" to "si",
+    "HONG KONG" to "hk",
+    "MYANMAR" to "mm",
+    "ANGOLA" to "ao",
+    "BURKINA FASO" to "bf",
+    "NORWAY" to "no",
+    "LATVIA" to "lv",
+    "FINLAND" to "fi",
+    "PARAGUAY" to "py",
+    "SOUTH AFRICA" to "za",
+    "CHINA" to "cn",
+    "JAPAN" to "jp",
+    "SOUTH KOREA" to "kr",
+    "INDIA" to "in",
+    "SAUDI ARABIA" to "sa"
+)
+
+fun llistaPais(pais: String, list: MutableList<Book>) : String{
+    val abv = countryNamesToAbbreviations[pais] ?: return "No hi ha cap llibre amb aquest país"
+    val correctBooks = list.filter{it.pais == abv}
+    return "Els llibres del país $pais són: \n " + correctBooks.joinToString(separator = "\n\n")
+}
+
+fun llistaIdiomes(list: MutableList<Book>) : String {
+    val idiomes = list.map { it.idioma }.distinct()
+    return "Els països disponibles en els llibres són els següents: \n" + idiomes.joinToString(", ")
 }
 
 fun llistaIdioma(idioma: String) {
