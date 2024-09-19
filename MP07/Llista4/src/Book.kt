@@ -1,8 +1,8 @@
 ﻿class Book(var idBNE : String = "",
-           var autores: List<String> = listOf(),
-           var entidades: List<String> = listOf(),
+           var autores: MutableList<String> = mutableListOf(),
+           var entidades: MutableList<String> = mutableListOf(),
            var titulo: String = "",
-           var descripcion: List<String> = listOf(),
+           var descripcion: MutableList<String> = mutableListOf(),
            var genero: String = "",
            var depositoLegal: String = "",
            var pais: String = "",
@@ -27,6 +27,7 @@
         sb.append("Título: $titulo\n")
         sb.append("Descripción y notas: ")
         descripcion.forEach({ sb.append("$it //") })
+        sb.append("\n")
         sb.append("Género: $genero\n")
         sb.append("Depósito Legal: $depositoLegal\n")
         sb.append("País: $pais\n")
