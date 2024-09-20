@@ -15,7 +15,7 @@
            var sitioDePublicacion: String = "") {
 
 
-    val abbreviationToCountryNames = mapOf(
+    val countryAbbreviationToCountryNames = mapOf(
         "sp" to "España",
         "pe" to "Perú",
         "it" to "Italia",
@@ -173,7 +173,7 @@
         sb.append("\n")
         sb.append("Género: $genero\n")
         sb.append("Depósito Legal: $depositoLegal\n")
-        sb.append("País: $pais (${if(abbreviationToCountryNames.containsKey(pais)) abbreviationToCountryNames[pais] else "-"})\n")
+        sb.append("País: $pais (${if(countryAbbreviationToCountryNames.containsKey(pais)) countryAbbreviationToCountryNames[pais] else "-"})\n")
         sb.append("Idioma: $idioma (${if(languageAbbreviationsToNames.containsKey(idioma)) languageAbbreviationsToNames[pais] else "-"})\n")
         sb.append("Versión Digital: $versionDigital\n")
         sb.append("Texto_OCR: $textoOCR\n")

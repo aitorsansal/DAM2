@@ -1,15 +1,118 @@
 import java.io.File
 import java.util.Scanner
 
+var list : MutableList<Book> = mutableListOf()
+
 fun main() {
-    var llibres = llegeix("Llibres.csv")
-    println(llibres)
+    list = llegeix("Llibres.csv")
+    startMenu()
 }
 
+fun startMenu(){
+    val sc = Scanner(System.`in`)
+    var read: String
+    do {
+        startMenuPrint()
+        read = sc.nextLine().uppercase()
+        when(read)
+        {
+            "1" -> {
+                println("Introdueix el nom (sense terminació) del nou fitxer on vols guardar la llista de llibres: ")
+                val fileName = sc.nextLine().trim() + ".csv"
+                desa(fileName)
+                println("S'ha generat un nou fitxer a ${System.getProperty("user.dir")}")
+            } //save books
+            "2" -> {
+                println()
+                val newBook = ompleLlibre()
+                newBookSavingMenuFun(sc, altaLlibre(newBook), newBook)
+            } //fill book
+            "3" -> {
+                println()
+            } //remove by idBNE
+            "4" -> {
+                println()
+            } //remove by position
+            "5" -> {
+                println()
+            } //show countries
+            "6" -> {
+                println()
+            } //show books by country
+            "7" -> {
+                println()
+            } //show idioms
+            "8" -> {
+                println()
+            } //show books by idiom
+            "9" -> {
+                println()
+            } //show book by idBNE
+            "10" -> {
+                println()
+            } //show book by position
+            "11" -> {
+                println()
+            } //show books between range
+            "", "TANCAR" -> println("Tancant procés. Que vagi bé!")
+            else -> println("La opció entrada no és correcte")
+        }
+    } while(read.isNotEmpty() && read != "TANCAR")
+}
+fun startMenuPrint(){
+    println("-------------------------------------------------------")
+    println("Sel·lecciona quina funció vols fer: (introdueix el número de la funció)")
+    println("1. Desar la llista en un nou fitxer")
+    println("2. Omple un llibre")
+    println("3. Eliminar un llibre per idBNE")
+    println("4. Eliminar un llibre per posició")
+    println("5. Llistar els països dels llibres")
+    println("6. Llistar els llibres d'un país")
+    println("7. Llistar els idiomes dels llibres")
+    println("8. Llistar els llibres en un idioma")
+    println("9. Mostrar l'informació d'un llibre per idBNE")
+    println("10. Mostrar l'informació d'un llibre per posició")
+    println("11. Mostrar l'informació dels llibres dins un rang")
+    println("Per a sortir d'aquest menú, deixa la línia en blanc o escriu \"tancar\"")
+    println("-------------------------------------------------------")
+}
+
+fun newBookSavingMenuFun(sc : Scanner, result: Pair<Boolean, Int>, newBook: Book){
+    if(result.first) {
+        var read : String
+        println("Un llibre amb el mateix idBNE ja existeix. Sel·lecciona què fer a continuació: ")
+        do {
+            println("1. Substituir el llibre existent")
+            println("2. Entrar un nou idBNE per el llibre creat")
+            println("3. Cancelar operació. (Es perdrán les dades del nou llibre entrat)")
+            read = sc.nextLine().uppercase()
+        } while (read != "1" && read != "2" && read != "3")
+        when (read) {
+            "1" -> {
+                list[result.second] = newBook
+                println("El llibre s'ha substituït correctament")
+            }
+
+            "2" -> {
+                println("Escriu el nou idBNE per el llibre creat: ")
+                newBook.idBNE = sc.nextLine()
+                newBookSavingMenuFun(sc, altaLlibre(newBook), newBook)
+            }
+
+            "3" -> {
+                println("L'operació s'ha cancelat i les dades entrades s'han perdut.")
+            }
+        }
+    }
+    else{
+        println("S'ha afegit el nou llibre a la llista. ")
+        list.add(newBook)
+    }
+}
 
 fun separa(line: String): MutableList<String> {
-    var a = line.split("//")
-    var b = a.toMutableList()
+    val a = line.split("//")
+    val b = a.toMutableList()
     b.removeLast()
 
     return if (line != "") b else mutableListOf()
@@ -41,8 +144,8 @@ fun llegeix(name: String): MutableList<Book> {
     return books
 }
 
-fun desa(list: List<Book>, newFileName: String) {
-    var file = File(newFileName)
+fun desa(newFileName: String) {
+    val file = File(newFileName)
     file.writeText("idBNE;Autor Personas;Autor Entidades;Título;Descripción y notas;Género/Forma;Depósito Legal;País de publicación;Lengua de publicación;version_digital;texto_OCR;Tema;ISBN;Editorial;Lugar de publicación\n")
     list.forEach { book -> file.appendText(book.csvConverter() + "\n") }
 }
@@ -170,11 +273,17 @@ fun printNewBookMenu() {
     println("Escriu \"Tancar\" per a acabar d'editar el llibre.")
 }
 
-fun altaLlibre(book: Book) {
-
+fun altaLlibre(book: Book) : Pair<Boolean, Int> {
+    if(list.any{ it.idBNE == book.idBNE}) {
+        val indexOfBook = list.indexOf(list.first { it.idBNE == book.idBNE })
+        list[indexOfBook] = book
+        return Pair(true, indexOfBook)
+    } else {
+        return Pair(false, -1)
+    }
 }
 
-fun eliminaLlibre(id: String, list: MutableList<Book>) : String {
+fun eliminaLlibre(id: String) : String {
     val bookToRemove =  list.find { it.idBNE == id }
     if(bookToRemove != null) {
         list.remove(bookToRemove)
@@ -185,7 +294,7 @@ fun eliminaLlibre(id: String, list: MutableList<Book>) : String {
 
 }
 
-fun eliminaPosicio(pos: Int, list: MutableList<Book>) : String {
+fun eliminaPosicio(pos: Int) : String {
     if(pos < list.size && pos > 0) {
         val book = list.removeAt(pos)
         return "S'ha eliminat el llibre amb títol ${book.titulo} de la llista."
@@ -195,97 +304,145 @@ fun eliminaPosicio(pos: Int, list: MutableList<Book>) : String {
     }
 }
 
-fun llistaPaisos(list: MutableList<Book>) : String {
+fun llistaPaisos() : String {
     val countries = list.map { it.pais }.distinct()
     return "Els països disponibles en els llibres són els següents: \n" + countries.joinToString(", ")
 }
 
-val countryNamesToAbbreviations = mapOf(
-    "SPAIN" to "sp",
-    "PERU" to "pe",
-    "ITALY" to "it",
-    "BELGIUM" to "be",
-    "PORTUGAL" to "po",
-    "NIGER" to "ne",
-    "ESWATINI" to "sz",
-    "ANTIGUA AND BARBUDA" to "ag",
-    "MEXICO" to "mx",
-    "FRANCE" to "fr",
-    "GUINEA-BISSAU" to "gw",
+val countryNamesToAbbreviation = mapOf(
+    "SPAIN" to "sp", "ESPAÑA" to "sp", "ESPANYA" to "sp",
+    "PERU" to "pe", "PERÚ" to "pe",
+    "ITALY" to "it", "ITALIA" to "it", "ITÀLIA" to "it",
+    "BELGIUM" to "be", "BÉLGICA" to "be", "BÈLGICA" to "be",
+    "PORTUGAL" to "po", "PORTUGAL" to "po",
+    "NIGER" to "ne", "NÍGER" to "ne",
+    "ESWATINI" to "sz", "ESWATINI" to "sz",
+    "ANTIGUA AND BARBUDA" to "ag", "ANTIGUA Y BARBUDA" to "ag", "ANTIGUA I BARBUDA" to "ag",
+    "MEXICO" to "mx", "MÉXICO" to "mx", "MÈXIC" to "mx",
+    "FRANCE" to "fr", "FRANCIA" to "fr", "FRANÇA" to "fr",
+    "GUINEA-BISSAU" to "gw", "GUINEA-BISÁU" to "gw", "GUINEA-BISSAU" to "gw",
     "CUBA" to "cu",
-    "PHILIPPINES" to "ph",
+    "PHILIPPINES" to "ph", "FILIPINAS" to "ph", "FILIPINES" to "ph",
     "CHILE" to "cl",
-    "PITCAIRN ISLANDS" to "pn",
-    "UNITED STATES" to "us",
-    "COCOS (KEELING) ISLANDS" to "cc",
+    "PITCAIRN ISLANDS" to "pn", "ISLAS PITCAIRN" to "pn", "ILLES PITCAIRN" to "pn",
+    "UNITED STATES" to "us", "ESTADOS UNIDOS" to "us", "ESTATS UNITS" to "us",
+    "COCOS ISLANDS" to "cc", "ISLAS COCOS" to "cc", "ILLES COCOS" to "cc",
     "URUGUAY" to "uy",
-    "SAINT BARTHÉLEMY" to "bl",
+    "SAINT BARTHELEMY" to "bl", "SAN BARTOLOMÉ" to "bl", "SANT BARTOMEU" to "bl",
     "GUATEMALA" to "gt",
-    "PUERTO RICO" to "pr",
-    "COOK ISLANDS" to "ck",
-    "ICELAND" to "is",
-    "POLAND" to "pl",
-    "GEORGIA" to "ge",
-    "MAURITANIA" to "mr",
+    "PUERTO RICO" to "pr", "PUERTO RICO" to "pr",
+    "COOK ISLANDS" to "ck", "ISLAS COOK" to "ck", "ILLES COOK" to "ck",
+    "ICELAND" to "is", "ISLANDIA" to "is", "ISLÀNDIA" to "is",
+    "POLAND" to "pl", "POLONIA" to "pl", "POLÒNIA" to "pl",
+    "GEORGIA" to "ge", "GEORGIA" to "ge",
+    "MAURITANIA" to "mr", "MAURITANIA" to "mr",
     "AUSTRALIA" to "au",
-    "RUSSIA" to "ru",
-    "IRELAND" to "ie",
-    "DENMARK" to "dk",
+    "RUSSIA" to "ru", "RUSIA" to "ru", "RÚSSIA" to "ru",
+    "IRELAND" to "ie", "IRLANDA" to "ie", "IRLANDA" to "ie",
+    "DENMARK" to "dk", "DINAMARCA" to "dk", "DINAMARCA" to "dk",
     "ARGENTINA" to "ar",
-    "UNITED ARAB EMIRATES" to "ae",
-    "DOMINICAN REPUBLIC" to "dr",
+    "UNITED ARAB EMIRATES" to "ae", "EMIRATOS ÁRABES UNIDOS" to "ae", "EMIRATS ÀRABS UNITS" to "ae",
+    "DOMINICAN REPUBLIC" to "dr", "REPÚBLICA DOMINICANA" to "dr", "REPÚBLICA DOMINICANA" to "dr",
     "VENEZUELA" to "ve",
-    "HUNGARY" to "hu",
-    "GREECE" to "gr",
+    "HUNGARY" to "hu", "HUNGRÍA" to "hu", "HONGRIA" to "hu",
+    "GREECE" to "gr", "GRECIA" to "gr", "GRÈCIA" to "gr",
     "LAOS" to "la",
-    "NORTH KOREA" to "nk",
+    "NORTH KOREA" to "nk", "COREA DEL NORTE" to "nk", "COREA DEL NORD" to "nk",
     "COSTA RICA" to "cr",
-    "EGYPT" to "eg",
+    "EGYPT" to "eg", "EGIPTO" to "eg", "EGIPTE" to "eg",
     "ECUADOR" to "ec",
-    "MONACO" to "mc",
-    "HAITI" to "ht",
+    "MONACO" to "mc", "MÓNACO" to "mc", "MÒNACO" to "mc",
+    "HAITI" to "ht", "HAITÍ" to "ht",
     "BOLIVIA" to "bo",
     "NAMIBIA" to "na",
-    "SLOVENIA" to "si",
+    "SLOVENIA" to "si", "ESLOVENIA" to "si", "ESLOVÈNIA" to "si",
     "HONG KONG" to "hk",
-    "MYANMAR" to "mm",
+    "MYANMAR" to "mm", "BIRMANIA" to "mm",
     "ANGOLA" to "ao",
     "BURKINA FASO" to "bf",
-    "NORWAY" to "no",
-    "LATVIA" to "lv",
-    "FINLAND" to "fi",
+    "NORWAY" to "no", "NORUEGA" to "no", "NORUEGA" to "no",
+    "LATVIA" to "lv", "LETONIA" to "lv", "LETÒNIA" to "lv",
+    "FINLAND" to "fi", "FINLANDIA" to "fi", "FINLÀNDIA" to "fi",
     "PARAGUAY" to "py",
-    "SOUTH AFRICA" to "za",
-    "CHINA" to "cn",
-    "JAPAN" to "jp",
-    "SOUTH KOREA" to "kr",
-    "INDIA" to "in",
-    "SAUDI ARABIA" to "sa"
+    "SOUTH AFRICA" to "za", "SUDÁFRICA" to "za", "SUD-ÀFRICA" to "za",
+    "CHINA" to "cn", "CHINA" to "cn", "XINA" to "cn",
+    "JAPAN" to "jp", "JAPÓN" to "jp", "JAPÓ" to "jp",
+    "SOUTH KOREA" to "kr", "COREA DEL SUR" to "kr", "COREA DEL SUD" to "kr",
+    "INDIA" to "in", "INDIA" to "in", "ÍNDIA" to "in",
+    "SAUDI ARABIA" to "sa", "ARABIA SAUDITA" to "sa", "ARÀBIA SAUDITA" to "sa"
 )
 
-fun llistaPais(pais: String, list: MutableList<Book>) : String{
-    val abv = countryNamesToAbbreviations[pais] ?: return "No hi ha cap llibre amb aquest país"
+fun llistaPais(pais: String) : String{
+    val abv = countryNamesToAbbreviation[pais] ?: return "No hi ha cap registre amb aquest país."
     val correctBooks = list.filter{it.pais == abv}
-    return "Els llibres del país $pais són: \n " + correctBooks.joinToString(separator = "\n\n")
+    return  if(correctBooks.isNotEmpty())"Els llibres del país ${pais.lowercase()} són: \n " + correctBooks.joinToString(separator = "\n\n")
+            else "No hi ha cap llibre amb el país seleccionat."
 }
 
-fun llistaIdiomes(list: MutableList<Book>) : String {
+fun llistaIdiomes() : String {
     val idiomes = list.map { it.idioma }.distinct()
     return "Els països disponibles en els llibres són els següents: \n" + idiomes.joinToString(", ")
 }
 
-fun llistaIdioma(idioma: String) {
+val languageNamesToAbbreviations = mapOf(
+    // Spanish, Catalan, and English translations for each abbreviation
+    "ESPAÑOL" to "spa", "CASTELLANO" to "spa", "SPANISH" to "spa", "CATALÀ" to "spa", "CASTELLÀ" to "spa",
+    "ITALIANO" to "ita", "ITALIÀ" to "ita", "ITALIAN" to "ita",
+    "CATALÁN" to "cat", "CATALÀ" to "cat", "CATALAN" to "cat",
+    "LATÍN" to "lat", "LLATÍ" to "lat", "LATIN" to "lat",
+    "FRANCÉS" to "fre", "FRANCÈS" to "fre", "FRENCH" to "fre",
+    "ALEMÁN" to "ger", "ALEMANY" to "ger", "GERMAN" to "ger",
+    "INGLÉS" to "eng", "ANGLÈS" to "eng", "ENGLISH" to "eng",
+    "HEBREO" to "heb", "HEBREU" to "heb", "HEBREW" to "heb",
+    "GRIEGO" to "grc", "GREC" to "grc", "GREEK" to "grc",
+    "NEERLANDÉS" to "dut", "NEERLANDÈS" to "dut", "DUTCH" to "dut",
+    "PORTUGUÉS" to "por", "PORTUGUÈS" to "por", "PORTUGUESE" to "por",
+    "TAGALO" to "tgl", "TAGALOG" to "tgl",
+    "ASTURIANO" to "ast", "ASTURIÀ" to "ast", "ASTURIAN" to "ast",
+    "GALLEGO" to "glg", "GALLEC" to "glg", "GALICIAN" to "glg",
+    "CHINO" to "chi", "XINÈS" to "chi", "CHINESE" to "chi",
+    "JAPONÉS" to "jpn", "JAPONÈS" to "jpn", "JAPANESE" to "jpn",
+    "RUSO" to "rus", "RUS" to "rus", "RUSSIAN" to "rus",
+    "POLACO" to "pol", "POLONÈS" to "pol", "POLISH" to "pol",
+    "RUMANO" to "rom", "RUMANÈS" to "rom", "ROMANIAN" to "rom",
+    "FINLANDÉS" to "fin", "FINLANDÈS" to "fin", "FINNISH" to "fin",
+    "NORUEGO" to "nor", "NORUEC" to "nor", "NORWEGIAN" to "nor",
+    "SUECO" to "swe", "SUEC" to "swe", "SWEDISH" to "swe",
+    "GRIEGO MODERNO" to "grr", "GREC MODERN" to "grr", "GREEK MODERN" to "grr",
+    "ÁRABE" to "ara", "ÀRAB" to "ara", "ARABIC" to "ara",
+    "HÚNGARO" to "hun", "HONGARÈS" to "hun", "HUNGARIAN" to "hun",
+    "DESCONOCIDO" to "unk", "DESCONEGUT" to "unk", "UNKNOWN" to "unk"
+)
 
+fun llistaIdioma(idioma: String) : String {
+    val abv = countryNamesToAbbreviation[idioma] ?: return "No hi ha cap registre amb aquest idioma."
+    val foundBooks = list.filter{it.pais == abv}
+    return  if(foundBooks.isNotEmpty())"Els llibres escrits en ${idioma.lowercase()} són: \n " + foundBooks.joinToString(separator = "\n\n")
+    else "No hi ha cap llibre amb l'idioma seleccionat."
 }
 
-fun llistaLlibre(id: Int) {
-
+fun llistaLlibre(id: String) : String {
+    val foundBook = list.first {it.idBNE == id }
+    return if(foundBook != null) foundBook.toString() else "No hi ha cap llibre amb l'idBNE $id"
 }
 
-fun llistaPos(pos: Int) {
-
+fun llistaPos(pos: Int) : String {
+    if(pos < list.size && pos > 0) {
+        val book = list[pos]
+        return book.toString()
+    }
+    else{
+        return "La posició entrada no existeix en la llistra de llibres."
+    }
 }
 
-fun llistaRang(inici: Int, final: Int) {
-
+fun llistaRang(inici: Int, final: Int) : String { //TODO: when entering the position, rest one so it's in range
+    if(inici < list.size && inici > 0 && inici < final) {
+        val finalRang = if(final < list.size) final else list.size
+        val books = list.subList(inici, finalRang)
+        return "S'han torbat els següents llibres: \n" + books.joinToString(separator = "\n\n")
+    }
+    else{
+        return "El rang entrat no és correcte."
+    }
 }
