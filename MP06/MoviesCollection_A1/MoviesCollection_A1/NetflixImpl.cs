@@ -7,18 +7,17 @@ public class NetflixImpl : IDAO
 {
     public int SelectByGenre(string genre, string outputFile)
     {
-        const string regexSpliting = @"(?:[^,""]+|""[^""]*"")+";
         int counter = 0;
         using (StreamReader sr = new StreamReader(Program.FILE_NAME))
         {
             sr.ReadLine();
-            using (StreamWriter sw = new StreamWriter(outputFile))
+            using (StreamWriter sw = new StreamWriter(outputFile, append: true))
             {
                 string line = sr.ReadLine();
                 while (line != null)
                 {
-                    string[] film = Regex.Matches(line, regexSpliting).Select(m => m.Value).ToArray();
-                    if (film[7].Contains(genre))
+                    string?[] film = Regex.Split(line, IDAO.regexSpliting).Select(s => string.IsNullOrEmpty(s) ? null : s).ToArray();
+                    if (film[7]!.Contains(genre))
                     {
                         StringBuilder sb = new();
                         sb.Append(film[0] + ";");
@@ -26,6 +25,7 @@ public class NetflixImpl : IDAO
                         sb.Append(film[2] + ";");
                         sb.Append(film[7] + ";");
                         counter++;
+                        sw.Write(sb.ToString());
                     }
 
                     line = sr.ReadLine();
@@ -33,5 +33,41 @@ public class NetflixImpl : IDAO
             }
         }
         return counter;
+    }
+
+    public string SelectByIndex(int index)
+    {
+        bool found = false;
+        string line;
+        using (StreamReader sr = new StreamReader(Program.FILE_NAME))
+        {
+            sr.ReadLine(); //skip first line
+            line = sr.ReadLine();
+            while (line != null && !found)
+            {
+                if (Convert.ToInt32(line.Split(",")[0]) == index)
+                    found = true;
+                else
+                    line = sr.ReadLine();
+            }
+        }
+
+        //search for the id
+        //if found, load the parameters into labels in the form
+        //if not found, throw an error or a message
+        return found ? line : null;
+    }
+
+    public string SelectByID(int id)
+    {
+        //search for the id
+        //if found, load the parameters into labels in the form
+        //if not found, throw an error or a message
+        throw new NotImplementedException();
+    }
+
+    public RawTitle[] ReadTitles(int index, int length)
+    {
+        throw new NotImplementedException();
     }
 }

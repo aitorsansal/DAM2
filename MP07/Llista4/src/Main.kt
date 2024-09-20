@@ -28,31 +28,77 @@ fun startMenu(){
                 newBookSavingMenuFun(sc, altaLlibre(newBook), newBook)
             } //fill book
             "3" -> {
-                println()
+                println("Escriu el idBNE del llibre que vulguis borrar: ")
+                val idToRemove = sc.nextLine()
+                println(eliminaLlibre(idToRemove))
             } //remove by idBNE
             "4" -> {
-                println()
+                var working = false
+                var pos : Int = 0
+                while(!working)
+                {
+                    println("Escriu la posició del llibre que vulguis borrar (1-${list.size}: ")
+                    try {
+                        pos = sc.nextLine().toInt()
+                        working = true
+                    } catch (e: Exception) {working = false}
+                }
+                println(eliminaPosicio(pos-1))
             } //remove by position
             "5" -> {
-                println()
+                println(llistaPaisos())
             } //show countries
             "6" -> {
-                println()
+                println("Diga'm el país per el qual vols buscar els llibres: (nom o sigles)")
+                println(llistaPais(sc.nextLine().uppercase()))
             } //show books by country
             "7" -> {
-                println()
+                println(llistaIdiomes())
             } //show idioms
             "8" -> {
-                println()
+                println("Diga'm l'idioma per el qual vols buscar els llibres: (nom o sigles)")
+                println(llistaIdioma(sc.nextLine().uppercase()))
             } //show books by idiom
             "9" -> {
-                println()
+                println("Escriu el idBNE del llibre que vulguis veure: ")
+                var idToRemove = sc.nextLine()
+                println(llistaLlibre(idToRemove))
             } //show book by idBNE
             "10" -> {
-                println()
+                var working = false
+                var pos = 0
+                while(!working)
+                {
+                    println("Escriu la posició del llibre que vulguis veure (1-${list.size}): ")
+                    try {
+                        pos = sc.nextLine().toInt()
+                        working = true
+                    } catch (e: Exception) {working = false}
+                }
+                println(llistaPos(pos-1))
             } //show book by position
             "11" -> {
-                println()
+                var working = false
+                var pos1 = 0
+                var pos2 = 0
+                while(!working)
+                {
+                    println("Escriu la primera posició dels llibres que vulguis veure(1-${list.size}): ")
+                    try {
+                        pos1 = sc.nextLine().toInt()
+                        working = pos1 >= 1 && pos1 < list.size
+                    } catch (e: Exception) {working = false}
+                }
+                working = false
+                while(!working)
+                {
+                    println("Escriu la segona posició dels llibres que vulguis veure(${pos1+1}-${list.size}): ")
+                    try {
+                        pos2 = sc.nextLine().toInt()
+                        working = true
+                    } catch (e: Exception) {working = false}
+                }
+                println(llistaRang(pos1-1, pos2))
             } //show books between range
             "", "TANCAR" -> println("Tancant procés. Que vagi bé!")
             else -> println("La opció entrada no és correcte")
@@ -295,7 +341,7 @@ fun eliminaLlibre(id: String) : String {
 }
 
 fun eliminaPosicio(pos: Int) : String {
-    if(pos < list.size && pos > 0) {
+    if(pos < list.size && pos >= 0) {
         val book = list.removeAt(pos)
         return "S'ha eliminat el llibre amb títol ${book.titulo} de la llista."
     }
@@ -373,8 +419,13 @@ val countryNamesToAbbreviation = mapOf(
 )
 
 fun llistaPais(pais: String) : String{
-    val abv = countryNamesToAbbreviation[pais] ?: return "No hi ha cap registre amb aquest país."
-    val correctBooks = list.filter{it.pais == abv}
+    var correctBooks : List<Book>
+    if(!countryNamesToAbbreviation.containsValue(pais)){
+        val abv = countryNamesToAbbreviation[pais] ?: return "No hi ha cap registre amb aquest país."
+        correctBooks = list.filter{it.pais == abv}
+    }
+    else
+        correctBooks = list.filter{it.pais == pais}
     return  if(correctBooks.isNotEmpty())"Els llibres del país ${pais.lowercase()} són: \n " + correctBooks.joinToString(separator = "\n\n")
             else "No hi ha cap llibre amb el país seleccionat."
 }
@@ -386,7 +437,7 @@ fun llistaIdiomes() : String {
 
 val languageNamesToAbbreviations = mapOf(
     // Spanish, Catalan, and English translations for each abbreviation
-    "ESPAÑOL" to "spa", "CASTELLANO" to "spa", "SPANISH" to "spa", "CATALÀ" to "spa", "CASTELLÀ" to "spa",
+    "ESPAÑOL" to "spa", "CASTELLANO" to "spa", "SPANISH" to "spa", "CASTELLÀ" to "spa",
     "ITALIANO" to "ita", "ITALIÀ" to "ita", "ITALIAN" to "ita",
     "CATALÁN" to "cat", "CATALÀ" to "cat", "CATALAN" to "cat",
     "LATÍN" to "lat", "LLATÍ" to "lat", "LATIN" to "lat",
@@ -415,11 +466,12 @@ val languageNamesToAbbreviations = mapOf(
 )
 
 fun llistaIdioma(idioma: String) : String {
-    val abv = countryNamesToAbbreviation[idioma] ?: return "No hi ha cap registre amb aquest idioma."
-    val foundBooks = list.filter{it.pais == abv}
+    val abv = languageNamesToAbbreviations[idioma] ?: return "No hi ha cap registre amb aquest idioma."
+    val foundBooks = list.filter{it.idioma == abv}
     return  if(foundBooks.isNotEmpty())"Els llibres escrits en ${idioma.lowercase()} són: \n " + foundBooks.joinToString(separator = "\n\n")
     else "No hi ha cap llibre amb l'idioma seleccionat."
 }
+
 
 fun llistaLlibre(id: String) : String {
     val foundBook = list.first {it.idBNE == id }
@@ -427,7 +479,7 @@ fun llistaLlibre(id: String) : String {
 }
 
 fun llistaPos(pos: Int) : String {
-    if(pos < list.size && pos > 0) {
+    if(pos < list.size && pos >= 0) {
         val book = list[pos]
         return book.toString()
     }
@@ -437,7 +489,7 @@ fun llistaPos(pos: Int) : String {
 }
 
 fun llistaRang(inici: Int, final: Int) : String { //TODO: when entering the position, rest one so it's in range
-    if(inici < list.size && inici > 0 && inici < final) {
+    if(inici < list.size && inici >= 0 && inici < final) {
         val finalRang = if(final < list.size) final else list.size
         val books = list.subList(inici, finalRang)
         return "S'han torbat els següents llibres: \n" + books.joinToString(separator = "\n\n")
