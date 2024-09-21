@@ -1,0 +1,99 @@
+﻿<Window x:Class="A1_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:A1_WPF"
+        xmlns:global="clr-namespace:"
+        mc:Ignorable="d"
+        Title="A1 " Height="720" Width="1024">
+    <Window.DataContext>
+        <local:Exercise1ViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate x:Key="Exercise3Template" DataType="{x:Type local:Exercise1ViewModel}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".25*"/>
+                    <RowDefinition Height=".5*"/>
+                    <RowDefinition Height=".5*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <TextBox Grid.Row="1" Text="Generate a file with the Raw Titles of the genre selected:"/>
+                <Button Grid.Row="2" Command="{Binding SubmitCommand}" 
+                        HorizontalAlignment="Center"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="Exercise2Template" DataType="{x:Type local:Exercise2ViewModel}">
+            <TextBlock Text="This is Exercise 2"/>
+            <!-- Add layout for Exercise2 -->
+        </DataTemplate>
+    </Window.Resources>
+    <Grid Background="LightGray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+            <Rectangle Grid.Row="0" Grid.Column="0" Fill="DarkGray"/>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+            <RadioButton Grid.Row="1" Content="Exercise1" GroupName="ExerciseSelector" FontSize="30" VerticalContentAlignment="Center" Checked="RadioButton_Checked" Tag="1" IsChecked="True"/>
+            <RadioButton Grid.Row="2" Content="Exercise2" GroupName="ExerciseSelector" FontSize="30" VerticalContentAlignment="Center" Checked="RadioButton_Checked" Tag="2"/>
+            <RadioButton Grid.Row="3" Content="Exercise3" GroupName="ExerciseSelector" FontSize="30" VerticalContentAlignment="Center" Checked="RadioButton_Checked" Tag="3"/>
+            <RadioButton Grid.Row="4" Content="Exercise4" GroupName="ExerciseSelector" FontSize="30" VerticalContentAlignment="Center" Checked="RadioButton_Checked" Tag="4"/>
+            <RadioButton Grid.Row="5" Content="Exercise5" GroupName="ExerciseSelector" FontSize="30" VerticalContentAlignment="Center" Checked="RadioButton_Checked" Tag="5"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".25*"/>
+                    <RowDefinition Height=".5*"/>
+                    <RowDefinition Height=".25*"/>
+                    <RowDefinition Height=".5*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Grid.ColumnSpan="3" 
+                       Grid.Row="0" 
+                       Content="Exercise 1" 
+                       FontSize="15"
+                       HorizontalAlignment="Center"
+                       FontWeight="Black"/>
+                <Label Grid.ColumnSpan="3" Grid.Column="0" 
+                       Grid.Row="1" 
+                       Content="Generate a file with the Raw Titles of the genre selected:" 
+                       FontSize="20"
+                       HorizontalAlignment="Center"/>
+                <Label Grid.Column="0" Grid.Row="2" 
+                       Content="Write the genre to filter the Raw Titles by:"></Label>
+                <TextBox Grid.Column="0" Grid.Row="3" 
+                         Margin="0,5,0,5"
+                         Name = "tbGenreInput"/>
+                <Label Grid.Row="4" Grid.Column="1" 
+                       Content="{Binding InputText, UpdateSourceTrigger=PropertyChanged}"
+                       d:DataContext="{d:DesignInstance local:Exercise1ViewModel}"/>
+                <Button Grid.Column="0" Grid.Row="4" 
+                        Command="{Binding SubmitCommand}" 
+                        CommandParameter="{Binding Text, ElementName=tbGenreInput}" 
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Center"
+                        Content="Submit"
+                        FontSize="20"
+                        Padding="5"
+                        d:DataContext="{d:DesignInstance local:Exercise1ViewModel}" />
+
+            </Grid>
+            <!-- <ContentControl Grid.Column="1" Content="{Binding CurrentView}"/> -->
+    </Grid>
+</Window>
