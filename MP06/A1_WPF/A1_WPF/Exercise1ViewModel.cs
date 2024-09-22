@@ -1,32 +1,59 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using MoviesCollection_A1;
 
 namespace A1_WPF;
 
-public class Exercise1ViewModel
+public class Exercise1ViewModel : INotifyPropertyChanged
 {
     public ICommand SubmitCommand { get; }
+    public string LblText => "Write the name of the output file\n(no termination = .txt)";
     
-    private string inputText;
-
-    public string InputText
+    private string genreTextInput;
+    public string GenreTextInput
     {
-        get => inputText;
+        get => genreTextInput;
         set
         {
-            inputText = value;
+            genreTextInput = value;
             OnPropertyChanged();
         }
     }
-    
+
+    private string fileTextInput;
+    public string FileTextInput
+    {
+        get => fileTextInput;
+        set
+        {
+            fileTextInput = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string outputText;
+    public string OutputText
+    {
+        get => outputText;
+        set
+        {
+            outputText = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private readonly IDAO iDao;
+
     public Exercise1ViewModel()
     {
-        SubmitCommand = new RelayCommand<string?>(OnButtonClick);
+        SubmitCommand = new RelayCommand(OnButtonClick);
+        iDao = new NetflixImpl();
     }
-    private void OnButtonClick(string? inputText)
+    private void OnButtonClick(object obj)
     {
-        InputText = $"I've recived a text: {inputText ?? ""}";
+        int returned = iDao.SelectByGenre(GenreTextInput, FileTextInput);
+        OutputText = $"Found {returned} Raw Files with the genre {GenreTextInput}";
     }
     
     public event PropertyChangedEventHandler? PropertyChanged;

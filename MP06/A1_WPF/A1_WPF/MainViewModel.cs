@@ -1,22 +1,22 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 using A1_WPF;
 
 public class MainViewModel : INotifyPropertyChanged
 {
     private object _currentView;
-
-    public MainViewModel()
-    {
-        CurrentView = new Exercise1ViewModel();
-    }
-
     public object CurrentView
     {
         get => _currentView;
         set { _currentView = value; OnPropertyChanged(); }
     }
 
+    public MainViewModel()
+    {
+        CurrentView = new Exercise1ViewModel();
+    }
+    
     public void SwitchView(int exerciseNumber)
     {
         switch (exerciseNumber)

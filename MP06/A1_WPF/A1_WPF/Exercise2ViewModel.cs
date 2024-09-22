@@ -1,6 +1,14 @@
-﻿namespace A1_WPF;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
-public class Exercise2ViewModel
+namespace A1_WPF;
+
+public class Exercise2ViewModel : INotifyPropertyChanged
 {
-    
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
 }
