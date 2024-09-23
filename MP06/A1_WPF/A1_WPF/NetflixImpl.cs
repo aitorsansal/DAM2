@@ -6,9 +6,12 @@ namespace MoviesCollection_A1;
 
 public class NetflixImpl : IDAO
 {
-    public int SelectByGenre(string genre, string outputFile)
+    public (bool, int, string) SelectByGenre(string genre, string outputFile)
     {
         int counter = 0;
+        genre = genre.Trim();
+        if (!Regex.IsMatch(outputFile, @"\.[a-zA-Z]+$"))
+            outputFile += ".txt";
         using (StreamReader sr = new StreamReader("raw_titles.csv"))
         {
             sr.ReadLine();
@@ -18,22 +21,28 @@ public class NetflixImpl : IDAO
                 while (line != null)
                 {
                     string?[] film = Regex.Split(line, IDAO.regexSpliting).Select(s => string.IsNullOrEmpty(s) ? null : s).ToArray();
-                    if (film[7]!.Contains(genre))
+                    if (film[7] is not null)
                     {
-                        StringBuilder sb = new();
-                        sb.Append(film[0] + ";");
-                        sb.Append(film[1] + ";");
-                        sb.Append(film[2] + ";");
-                        sb.Append(film[7] + ";");
-                        counter++;
-                        sw.Write(sb.ToString());
+                        var genres = Regex.Matches(film[7]!, @"'([^']*)'")
+                            .Select(m => m.Groups[1].Value.Trim())
+                            .ToArray();
+                        if (genres.Contains(genre))
+                        {
+                            StringBuilder sb = new();
+                            sb.Append(film[0] + ";");
+                            sb.Append(film[1] + ";");
+                            sb.Append(film[2] + ";");
+                            sb.Append(film[7] + ";");
+                            counter++;
+                            sw.WriteLine(sb.ToString());
+                        }
                     }
 
                     line = sr.ReadLine();
                 }
             }
         }
-        return counter;
+        return (counter > 0,counter, outputFile);
     }
 
     public string SelectByIndex(int index)

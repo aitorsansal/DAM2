@@ -14,14 +14,74 @@
         <DataTemplate x:Key="Exercise3Template" DataType="{x:Type local:Exercise1ViewModel}">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height=".25*"/>
-                    <RowDefinition Height=".5*"/>
-                    <RowDefinition Height=".5*"/>
-                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height=".25*"/> <!--0-->
+                    <RowDefinition Height=".5*"/> <!--1-->
+                    <RowDefinition Height=".25*"/> <!--2-->
+                    <RowDefinition Height=".4*"/> <!--3-->
+                    <RowDefinition Height=".4*"/> <!--4-->
+                    <RowDefinition Height=".4*"/> <!--5-->
+                    <RowDefinition Height="*"/> <!--6-->
+                    <RowDefinition Height=".4*"/> <!--7-->
+                    <RowDefinition Height=".4*"/> <!--8-->
+                    <RowDefinition Height=".4*"/> <!--9-->
+                    <RowDefinition Height="*"/> <!--10-->
                 </Grid.RowDefinitions>
-                <TextBox Grid.Row="1" Text="Generate a file with the Raw Titles of the genre selected:"/>
-                <Button Grid.Row="2" Command="{Binding SubmitCommand}" 
-                        HorizontalAlignment="Center"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" 
+                       Content="Exercise 1" 
+                       FontSize="15"
+                       HorizontalAlignment="Center"
+                       FontWeight="Black"/>
+                <Label Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" 
+                       Content="Generate a file with the Raw Titles of the genre selected:" 
+                       FontSize="20"
+                       HorizontalAlignment="Center"/>
+                <Label Grid.Column="1" Grid.Row="2" 
+                       Content="Write the genre to filter the Raw Titles by:"
+                       HorizontalContentAlignment="Center"/>
+                <TextBox Grid.Column="1" Grid.Row="3" 
+                         Margin="0,5,0,5"
+                         Name = "tbGenreInput"
+                         VerticalContentAlignment="Center"
+                         Text="{Binding GenreTextInput}"/>
+                <Label Grid.Column="1" Grid.Row="4" 
+                       HorizontalContentAlignment="Center">
+                    <Label.Content>
+                        <AccessText TextWrapping="Wrap" Text="{Binding LblText}"
+                                    TextAlignment="Center"/>
+                    </Label.Content>
+                </Label>
+                <TextBox Grid.Column="1" Grid.Row="5" 
+                         Margin="0,5,0,5"
+                         VerticalContentAlignment="Center"
+                         Text="{Binding FileTextInput}"
+                         />
+                <Label Grid.Column="1" Grid.Row="7" 
+                       HorizontalAlignment="Center"
+                       HorizontalContentAlignment="Center"
+                       Content="{Binding OutputText}"/>
+                <Button Grid.Column="1" Grid.Row="8" 
+                        Command="{Binding SubmitCommand}" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Content="Submit"
+                        FontSize="20"
+                        Padding="5"
+                        d:DataContext="{d:DesignInstance local:Exercise1ViewModel}" />
+                <Button Grid.Column="1" Grid.Row="9"
+                        Command="{Binding OpenFileCommand}"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Content="Open File"
+                        FontSize="20"
+                        Padding="5"
+                        IsEnabled="{Binding OpenFile}"
+                        />
+
             </Grid>
         </DataTemplate>
         <DataTemplate x:Key="Exercise2Template" DataType="{x:Type local:Exercise2ViewModel}">
@@ -59,9 +119,11 @@
                     <RowDefinition Height=".4*"/> <!--3-->
                     <RowDefinition Height=".4*"/> <!--4-->
                     <RowDefinition Height=".4*"/> <!--5-->
-                    <RowDefinition Height=".4*"/> <!--6-->
+                    <RowDefinition Height="*"/> <!--6-->
                     <RowDefinition Height=".4*"/> <!--7-->
-                    <RowDefinition Height="1.3*"/> <!--8-->
+                    <RowDefinition Height=".4*"/> <!--8-->
+                    <RowDefinition Height=".4*"/> <!--9-->
+                    <RowDefinition Height="*"/> <!--10-->
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
@@ -69,45 +131,14 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" 
-                       Content="Exercise 1" 
+                       Content="Exercise 2" 
                        FontSize="15"
                        HorizontalAlignment="Center"
                        FontWeight="Black"/>
                 <Label Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" 
-                       Content="Generate a file with the Raw Titles of the genre selected:" 
+                       Content="Show a Raw File information by it's index:" 
                        FontSize="20"
                        HorizontalAlignment="Center"/>
-                <Label Grid.Column="1" Grid.Row="2" 
-                       Content="Write the genre to filter the Raw Titles by:"
-                       HorizontalContentAlignment="Center"/>
-                <TextBox Grid.Column="1" Grid.Row="3" 
-                         Margin="0,5,0,5"
-                         Name = "tbGenreInput"
-                         VerticalContentAlignment="Center"
-                         Text="{Binding GenreTextInput}"/>
-                <Label Grid.Column="1" Grid.Row="4" 
-                       HorizontalContentAlignment="Center">
-                    <Label.Content>
-                        <AccessText TextWrapping="Wrap" Text="{Binding LblText}"
-                                    TextAlignment="Center"/>
-                    </Label.Content>
-                </Label>
-                <TextBox Grid.Column="1" Grid.Row="5" 
-                         Margin="0,5,0,5"
-                         VerticalContentAlignment="Center"
-                         Text="{Binding FileTextInput}"
-                         />
-                <Label Grid.Row="7" Grid.Column="1"
-                       Content="{Binding OutputText}"/>
-                <Button Grid.Column="1" Grid.Row="8" 
-                        Command="{Binding SubmitCommand}" 
-                        HorizontalAlignment="Center" 
-                        VerticalAlignment="Center"
-                        Content="Submit"
-                        FontSize="20"
-                        Padding="5"
-                        d:DataContext="{d:DesignInstance local:Exercise1ViewModel}" />
-
             </Grid>
             <!-- <ContentControl Grid.Column="1" Content="{Binding CurrentView}"/> -->
     </Grid>

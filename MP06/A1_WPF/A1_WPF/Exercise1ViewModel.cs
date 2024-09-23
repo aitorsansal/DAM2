@@ -1,5 +1,8 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Windows;
 using System.Windows.Input;
 using MoviesCollection_A1;
 
@@ -8,6 +11,7 @@ namespace A1_WPF;
 public class Exercise1ViewModel : INotifyPropertyChanged
 {
     public ICommand SubmitCommand { get; }
+    public ICommand OpenFileCommand { get; }
     public string LblText => "Write the name of the output file\n(no termination = .txt)";
     
     private string genreTextInput;
@@ -43,17 +47,51 @@ public class Exercise1ViewModel : INotifyPropertyChanged
         }
     }
 
+    private bool openFile;
+    public bool OpenFile
+    {
+        get => openFile;
+        set
+        {
+            openFile = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string fileName;
+
     private readonly IDAO iDao;
 
     public Exercise1ViewModel()
     {
-        SubmitCommand = new RelayCommand(OnButtonClick);
+        SubmitCommand = new RelayCommand(OnSubmitClick);
+        OpenFileCommand = new RelayCommand(OnOpenFileClick);
         iDao = new NetflixImpl();
     }
-    private void OnButtonClick(object obj)
+    private void OnSubmitClick(object obj)
     {
-        int returned = iDao.SelectByGenre(GenreTextInput, FileTextInput);
-        OutputText = $"Found {returned} Raw Files with the genre {GenreTextInput}";
+        var returned = iDao.SelectByGenre(GenreTextInput, FileTextInput);
+        OutputText = $"{(returned.Item1 ? $"Found {returned.Item2} Raw Files with the genre {GenreTextInput}.\nA new file was generated" : 
+            $"No Raw Files were found with {GenreTextInput}.\nNo file was generated.")}";
+        OpenFile = returned.Item1;
+        fileName = returned.Item3;
+    }
+
+    private void OnOpenFileClick(object obj)
+    {
+        try
+        {
+            // Use Process.Start to open the file in the default explorer
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = fileName,
+                UseShellExecute = true // This is necessary to open with the default application
+            });
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"An error occurred: {ex.Message}");
+        }
     }
     
     public event PropertyChangedEventHandler? PropertyChanged;

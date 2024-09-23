@@ -5,7 +5,7 @@ namespace MoviesCollection_A1;
 public interface IDAO
 {
     const string regexSpliting = @",(?=(?:[^""]*""[^""]*"")*[^""]*$)";
-    public int SelectByGenre(String genre, String outputFile);
+    public (bool,int, string) SelectByGenre(String genre, String outputFile);
 
     public string SelectByIndex(int index);
     public string SelectByID(int id);
