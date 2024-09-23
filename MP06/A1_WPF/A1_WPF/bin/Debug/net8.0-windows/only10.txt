@@ -1,0 +1,10 @@
+5;Monty Python's Flying Circus;SHOW;1969;4.0;8,8;72895
+6;Dirty Harry;MOVIE;1971;;7,7;153463
+7;My Fair Lady;MOVIE;1964;;7,8;94121
+8;The Blue Lagoon;MOVIE;1980;;5,8;69053
+9;Bonnie and Clyde;MOVIE;1967;;7,7;111189
+10;The Professionals;MOVIE;1966;;7,3;16168
+11;The Guns of Navarone;MOVIE;1961;;7,5;50150
+12;Lupin the Third: The Castle of Cagliostro;MOVIE;1979;;7,6;30277
+13;Richard Pryor: Live in Concert;MOVIE;1979;;8,1;5141
+14;The Long Riders;MOVIE;1980;;6,9;11329

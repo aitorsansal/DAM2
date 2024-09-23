@@ -1,21 +1,20 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace MoviesCollection_A1;
 
 public interface IDAO
 {
     const string regexSpliting = @",(?=(?:[^""]*""[^""]*"")*[^""]*$)";
-    public (bool,int, string) SelectByGenre(String genre, String outputFile);
+    public int SelectByGenre(String genre, String outputFile);
 
-    public string SelectByIndex(int index);
-    public string SelectByID(int id);
+    public string? SelectByIndex(int index);
+    public string? SelectByID(string id);
 
     public RawTitle[] ReadTitles(int index, int length);
-
-    public static int PreMerge(RawTitle[] titles, string outFileName)
-    {
-        return 0;
-    }
+    public int PreMerge(RawTitle[] titles, string outFileName);
+    public int Merge(string file1, string file2, string outFileName);
+    public List<string> TitlesInRange(string file1, double minScore, double maxScore);
 
     public static RawTitle ConvertToRawTitle(string line)
     {
@@ -26,8 +25,8 @@ public interface IDAO
                                         type: film[3] ?? "",
                                         releaseYear: Convert.ToInt32(film[4] ?? "0"),
                                         seasons: film[9] ?? "",
-                                        imdbScore: Convert.ToDouble(film[11] ?? "0"),
-                                        imdbVotes: Convert.ToDouble(film[12] ?? "0"));
+                                        imdbScore: double.Parse(film[11] ?? "0", CultureInfo.InvariantCulture),
+                                        imdbVotes: double.Parse(film[12] ?? "0", CultureInfo.InvariantCulture));
 
         return title;
     }

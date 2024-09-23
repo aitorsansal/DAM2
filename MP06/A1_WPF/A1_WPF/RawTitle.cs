@@ -27,4 +27,9 @@ public class RawTitle(
         if (ReferenceEquals(this, other)) return 0;
         return other is null ? 1 : -Imdb_Score.CompareTo(other.Imdb_Score);
     }
+
+    public override string ToString()
+    {
+        return $"{Index};{Title};{Type};{ReleaseYear};{Seasons};{Imdb_Score};{Imdb_Votes}";
+    }
 }

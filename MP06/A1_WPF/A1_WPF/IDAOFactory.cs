@@ -1,6 +1,6 @@
 ﻿namespace MoviesCollection_A1;
 
-public class IDAONetflix
+public class IDAOFactory
 {
     public static IDAO CreateNetflixDao()
     {

@@ -7,18 +7,15 @@
         xmlns:global="clr-namespace:"
         mc:Ignorable="d"
         Title="A1 " Height="720" Width="1024">
-    <Window.DataContext>
-        <local:Exercise1ViewModel />
-    </Window.DataContext>
-    <Window.Resources>
-        <DataTemplate x:Key="Exercise3Template" DataType="{x:Type local:Exercise1ViewModel}">
-            <Grid>
+    <TabControl>
+        <TabItem Header="Exercise1">
+           <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height=".25*"/> <!--0-->
                     <RowDefinition Height=".5*"/> <!--1-->
                     <RowDefinition Height=".25*"/> <!--2-->
                     <RowDefinition Height=".4*"/> <!--3-->
-                    <RowDefinition Height=".4*"/> <!--4-->
+                    <RowDefinition Height=".3*"/> <!--4-->
                     <RowDefinition Height=".4*"/> <!--5-->
                     <RowDefinition Height="*"/> <!--6-->
                     <RowDefinition Height=".4*"/> <!--7-->
@@ -45,101 +42,313 @@
                        HorizontalContentAlignment="Center"/>
                 <TextBox Grid.Column="1" Grid.Row="3" 
                          Margin="0,5,0,5"
-                         Name = "tbGenreInput"
-                         VerticalContentAlignment="Center"
-                         Text="{Binding GenreTextInput}"/>
-                <Label Grid.Column="1" Grid.Row="4" 
-                       HorizontalContentAlignment="Center">
-                    <Label.Content>
-                        <AccessText TextWrapping="Wrap" Text="{Binding LblText}"
-                                    TextAlignment="Center"/>
-                    </Label.Content>
-                </Label>
+                         Name = "TbGenreInput"
+                         VerticalContentAlignment="Center"/>
+                <TextBlock Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" TextAlignment="Center">
+                    Write the name of the output file
+                    <LineBreak/>
+                    (no termination = .txt)
+                </TextBlock>
                 <TextBox Grid.Column="1" Grid.Row="5" 
                          Margin="0,5,0,5"
                          VerticalContentAlignment="Center"
-                         Text="{Binding FileTextInput}"
-                         />
+                         Name="TbEx1FileNameInput"/>
                 <Label Grid.Column="1" Grid.Row="7" 
                        HorizontalAlignment="Center"
                        HorizontalContentAlignment="Center"
-                       Content="{Binding OutputText}"/>
+                       Name="LblFileGeneratedInfo"/>
                 <Button Grid.Column="1" Grid.Row="8" 
-                        Command="{Binding SubmitCommand}" 
+                        Click="OnSubmitClick"
                         HorizontalAlignment="Center" 
                         VerticalAlignment="Center"
                         Content="Submit"
                         FontSize="20"
-                        Padding="5"
-                        d:DataContext="{d:DesignInstance local:Exercise1ViewModel}" />
-                <Button Grid.Column="1" Grid.Row="9"
-                        Command="{Binding OpenFileCommand}"
+                        Padding="5"/>
+                <Button Grid.Column="1" Grid.Row="9" 
+                        Click="OnEx1OpenFileClick"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Content="Open File"
                         FontSize="20"
                         Padding="5"
-                        IsEnabled="{Binding OpenFile}"
-                        />
+                        IsEnabled="False"
+                        Name="BtnOpenFile"/>
 
-            </Grid>
-        </DataTemplate>
-        <DataTemplate x:Key="Exercise2Template" DataType="{x:Type local:Exercise2ViewModel}">
-            <TextBlock Text="This is Exercise 2"/>
-            <!-- Add layout for Exercise2 -->
-        </DataTemplate>
-    </Window.Resources>
-    <Grid Background="LightGray">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="5*"/>
-                </Grid.ColumnDefinitions>
-            <Rectangle Grid.Row="0" Grid.Column="0" Fill="DarkGray"/>
-            <Grid Grid.Column="0">
+            </Grid> 
+        </TabItem>
+        <TabItem Header="Exercise2">
+              <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="3*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="3*"/>
-                </Grid.RowDefinitions>
-            <RadioButton Grid.Row="1" Content="Exercise1" GroupName="ExerciseSelector" FontSize="30" VerticalContentAlignment="Center" Checked="RadioButton_Checked" Tag="1" IsChecked="True"/>
-            <RadioButton Grid.Row="2" Content="Exercise2" GroupName="ExerciseSelector" FontSize="30" VerticalContentAlignment="Center" Checked="RadioButton_Checked" Tag="2"/>
-            <RadioButton Grid.Row="3" Content="Exercise3" GroupName="ExerciseSelector" FontSize="30" VerticalContentAlignment="Center" Checked="RadioButton_Checked" Tag="3"/>
-            <RadioButton Grid.Row="4" Content="Exercise4" GroupName="ExerciseSelector" FontSize="30" VerticalContentAlignment="Center" Checked="RadioButton_Checked" Tag="4"/>
-            <RadioButton Grid.Row="5" Content="Exercise5" GroupName="ExerciseSelector" FontSize="30" VerticalContentAlignment="Center" Checked="RadioButton_Checked" Tag="5"/>
-            </Grid>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height=".25*"/> <!--0-->
+                    <RowDefinition Height=".3*"/> <!--0-->
                     <RowDefinition Height=".5*"/> <!--1-->
-                    <RowDefinition Height=".25*"/> <!--2-->
-                    <RowDefinition Height=".4*"/> <!--3-->
-                    <RowDefinition Height=".4*"/> <!--4-->
-                    <RowDefinition Height=".4*"/> <!--5-->
-                    <RowDefinition Height="*"/> <!--6-->
-                    <RowDefinition Height=".4*"/> <!--7-->
-                    <RowDefinition Height=".4*"/> <!--8-->
-                    <RowDefinition Height=".4*"/> <!--9-->
-                    <RowDefinition Height="*"/> <!--10-->
+                    <RowDefinition Height="6*"/> <!--2-->
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width=".3*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width=".3*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" 
+                <Label Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" 
                        Content="Exercise 2" 
                        FontSize="15"
                        HorizontalAlignment="Center"
                        FontWeight="Black"/>
-                <Label Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" 
+                <Label Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="1" 
                        Content="Show a Raw File information by it's index:" 
                        FontSize="20"
                        HorizontalAlignment="Center"/>
+                
+                <Grid Grid.Row="2" Grid.Column="1" Margin="15,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/> <!--0-->
+                        <RowDefinition Height=".3*"/> <!--1-->
+                        <RowDefinition Height=".3*"/> <!--2-->
+                        <RowDefinition Height=".5*"/> <!--3-->
+                        <RowDefinition Height=".3*"/> <!--4-->
+                        <RowDefinition Height=".3*"/> <!--5-->
+                        <RowDefinition/> <!--6-->
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="1" HorizontalAlignment="Center">
+                        <Label.Content>
+                            <AccessText TextWrapping="Wrap" Text="Insert the index that you want to get the index from:"
+                                        TextAlignment="Center"/>
+                        </Label.Content>
+                    </Label>
+                    <TextBox Grid.Row="2" VerticalContentAlignment="Center" 
+                             PreviewTextInput="OnIndexPreviewKeyDown"
+                             Name="TbIndexInput">
+                    </TextBox>
+                    <Button Grid.Row="4" Content="Search Raw Title" 
+                            Click="OnIndexSearchClicked"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Padding="15"/>
+                            
+
+                </Grid>
+                
+                <Grid Grid.Row="2" Grid.Column="3" Margin="5,0,5,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/> <!--0-->
+                        <ColumnDefinition Width=".5*"/> <!--1-->
+                        <ColumnDefinition/> <!--2-->
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/> <!--0-->
+                        <RowDefinition/> <!--1-->
+                        <RowDefinition/> <!--2-->
+                        <RowDefinition/> <!--3-->
+                        <RowDefinition/> <!--4-->
+                        <RowDefinition/> <!--5-->
+                        <RowDefinition/> <!--6-->
+                        <RowDefinition/> <!--7-->
+                        <RowDefinition/> <!--8-->
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Text="ID:"/>
+                    <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" Text="TITLE:"/>
+                    <TextBlock Grid.Column="0" Grid.Row="3"
+                           VerticalAlignment="Center" Text="TYPE:"/>
+                    <TextBlock Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" Text="RELEASE YEAR:"/>
+                    <TextBlock Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" Text="SEASONS:"/>
+                    <TextBlock Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" Text="IMDB SCORE:"/>
+                    <TextBlock Grid.Column="0" Grid.Row="7" VerticalAlignment="Center" Text="IMDB VOTES:"/>
+                    <TextBlock Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" TextWrapping="Wrap"
+                            TextAlignment="Center" Name="TxtBlId_IndexSearch"/>
+                    <TextBlock Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" TextWrapping="Wrap"
+                            TextAlignment="Center" Name="TxtBlTitle_IndexSearch"/>
+                    <TextBlock Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" TextWrapping="Wrap"
+                            TextAlignment="Center" Name="TxtBlType_IndexSearch"/>
+                    <TextBlock Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" TextWrapping="Wrap"
+                            TextAlignment="Center" Name="TxtBlReleaseYear_IndexSearch"/>
+                    <TextBlock Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" TextWrapping="Wrap"
+                            TextAlignment="Center" Name="TxtBlSeasons_IndexSearch"/>
+                    <TextBlock Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" TextWrapping="Wrap"
+                            TextAlignment="Center" Name="TxtBlImdbScore_IndexSearch"/>
+                    <TextBlock Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" TextWrapping="Wrap"
+                            TextAlignment="Center" Name="TxtBlImdbVotes_IndexSearch"/>
+                </Grid>
             </Grid>
-            <!-- <ContentControl Grid.Column="1" Content="{Binding CurrentView}"/> -->
-    </Grid>
+        </TabItem>
+        <TabItem Header="Exercise3">
+              <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".3*"/> <!--0-->
+                    <RowDefinition Height=".5*"/> <!--1-->
+                    <RowDefinition Height="6*"/> <!--2-->
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".3*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width=".3*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0" 
+                       Content="Exercise 3" 
+                       FontSize="15"
+                       HorizontalAlignment="Center"
+                       FontWeight="Black"/>
+                <Label Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="1" 
+                       Content="Show a Raw File information by it's id:" 
+                       FontSize="20"
+                       HorizontalAlignment="Center"/>
+                
+                <Grid Grid.Row="2" Grid.Column="1" Margin="15,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/> <!--0-->
+                        <RowDefinition Height=".3*"/> <!--1-->
+                        <RowDefinition Height=".3*"/> <!--2-->
+                        <RowDefinition Height=".5*"/> <!--3-->
+                        <RowDefinition Height=".3*"/> <!--4-->
+                        <RowDefinition Height=".3*"/> <!--5-->
+                        <RowDefinition/> <!--6-->
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="1" HorizontalAlignment="Center">
+                        <Label.Content>
+                            <AccessText TextWrapping="Wrap" Text="Insert the id that you want to get the index from:"
+                                        TextAlignment="Center"/>
+                        </Label.Content>
+                    </Label>
+                    <TextBox Grid.Row="2" VerticalContentAlignment="Center" Name="TbIdInput">
+                    </TextBox>
+                    <Button Grid.Row="4" Content="Search Raw Title" 
+                            Click="OnIdSearchClicked"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Padding="15"/>
+                            
+
+                </Grid>
+                
+                <Grid Grid.Row="2" Grid.Column="3" Margin="5,0,5,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/> <!--0-->
+                        <ColumnDefinition Width=".5*"/> <!--1-->
+                        <ColumnDefinition/> <!--2-->
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/> <!--0-->
+                        <RowDefinition/> <!--1-->
+                        <RowDefinition/> <!--2-->
+                        <RowDefinition/> <!--3-->
+                        <RowDefinition/> <!--4-->
+                        <RowDefinition/> <!--5-->
+                        <RowDefinition/> <!--6-->
+                        <RowDefinition/> <!--7-->
+                        <RowDefinition/> <!--8-->
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" Text="ID:"/>
+                    <TextBlock Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" Text="TITLE:"/>
+                    <TextBlock Grid.Column="0" Grid.Row="3"
+                           VerticalAlignment="Center" Text="TYPE:"/>
+                    <TextBlock Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" Text="RELEASE YEAR:"/>
+                    <TextBlock Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" Text="SEASONS:"/>
+                    <TextBlock Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" Text="IMDB SCORE:"/>
+                    <TextBlock Grid.Column="0" Grid.Row="7" VerticalAlignment="Center" Text="IMDB VOTES:"/>
+                    <TextBlock Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" TextWrapping="Wrap"
+                            TextAlignment="Center" Name="TxtBlId_IdSearch"/>
+                    <TextBlock Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" TextWrapping="Wrap"
+                            TextAlignment="Center" Name="TxtBlTitle_IdSearch"/>
+                    <TextBlock Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" TextWrapping="Wrap"
+                            TextAlignment="Center" Name="TxtBlType_IdSearch"/>
+                    <TextBlock Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" TextWrapping="Wrap"
+                            TextAlignment="Center" Name="TxtBlReleaseYear_IdSearch"/>
+                    <TextBlock Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" TextWrapping="Wrap"
+                            TextAlignment="Center" Name="TxtBlSeasons_IdSearch"/>
+                    <TextBlock Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" TextWrapping="Wrap"
+                            TextAlignment="Center" Name="TxtBlImdbScore_IdSearch"/>
+                    <TextBlock Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" TextWrapping="Wrap"
+                            TextAlignment="Center" Name="TxtBlImdbVotes_IdSearch"/>
+                </Grid>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Exercise4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/> <!--0-->
+                    <ColumnDefinition Width=".5*"/> <!--1-->
+                    <ColumnDefinition Width="3*"/> <!--2-->
+                    <ColumnDefinition Width=".6*"/> <!--3-->
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".3*"/> <!--0-->
+                    <RowDefinition Height=".5*"/> <!--1-->
+                    <RowDefinition Height="6*"/> <!--2-->
+                    <RowDefinition Height=".3*"/> <!--3-->
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" 
+                       Content="Exercise 3" 
+                       FontSize="15"
+                       HorizontalAlignment="Center"
+                       FontWeight="Black"/>
+                <Label Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="1" 
+                       Content="Generate a list of the desired size:" 
+                       FontSize="20"
+                       HorizontalAlignment="Center"/>
+                <Button Grid.Row="1" Grid.Column="3" 
+                        Padding="12"
+                        Content="Resolve Ex4"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Click="OnEx4ResolveButtonClicked"/>
+                <Grid Grid.Column="0" Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".3*"/> <!--0-->
+                        <RowDefinition Height=".6*"/> <!--1-->
+                        <RowDefinition Height=".6*"/> <!--2-->
+                        <RowDefinition Height=".6*"/> <!--3-->
+                        <RowDefinition Height=".6*"/> <!--4-->
+                        <RowDefinition Height=".6*"/> <!--5-->
+                        <RowDefinition Height=".3*"/> <!--6-->
+                        <RowDefinition Height=".6*"/> <!--7-->
+                        <RowDefinition Height=".6*"/> <!--8-->
+                        <RowDefinition Height=".6*"/> <!--9-->
+                        <RowDefinition Height=".6*"/> <!--10-->
+                        <RowDefinition Height="1.2*"/> <!--11-->
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="1" TextWrapping="Wrap">
+                        Write the start position to generte the file:
+                    </TextBlock>
+                    <TextBox Grid.Row="2" VerticalContentAlignment="Center" Name="TbStartPos" PreviewTextInput="OnIndexPreviewKeyDown"/>
+                    <TextBlock Grid.Row="3" TextWrapping="Wrap">
+                        Write the quantity of entries to generate:
+                    </TextBlock>
+                    <TextBox Grid.Row="4" VerticalContentAlignment="Center" Name="TbQuantity" PreviewTextInput="OnIndexPreviewKeyDown"/>
+                    <Button Grid.Row="5" Content="Generate List" Margin="5" Click="OnGenerateListClick"/>
+                    <TextBlock Grid.Row="7" TextWrapping="Wrap">
+                        Write the name of the output file:
+                    </TextBlock>
+                    <TextBox Grid.Row="8" 
+                             VerticalContentAlignment="Center" 
+                             Name="TbEx4FileNameInput"
+                             IsEnabled="False"/>
+                    <Button Grid.Row="9" 
+                            Content="Generate file" 
+                            Margin="5" 
+                            IsEnabled="False" 
+                            Name="BtnGenerateReadedTitlesFile"
+                            Click="OnGenerateRawTitlesFileClick"/>
+                    <Button Grid.Row="10" 
+                            Content="OpenFile" 
+                            Margin="5" 
+                            IsEnabled="False" 
+                            Name="BtnOpenReadTitlesFile"
+                            Click="OnEx4OpenFileClick"/>
+                </Grid>
+
+                <DataGrid Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,15,0" Name="LsBxItems"/>
+                <TextBlock Grid.Row="3" Grid.Column="3" 
+                           HorizontalAlignment="Right" 
+                           VerticalAlignment="Center" 
+                           Name="TxtBlShowFound" 
+                           Text="0"
+                           Padding="0,0,15,0"/>
+            </Grid>
+        </TabItem>
+    </TabControl>
 </Window>
