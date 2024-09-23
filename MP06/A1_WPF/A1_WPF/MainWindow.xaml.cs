@@ -215,10 +215,10 @@ public partial class MainWindow : Window
     {
         iDao.PreMerge(iDao.ReadTitles(0, 3000), "FIRSTHALF.CSV");
         iDao.PreMerge(iDao.ReadTitles(3000, 3000), "SECONDHALF.CSV");
-        // iDao.Merge("FIRSTHALF.CSV","SECONDHALF.CSV", "MERGED.CSV");
+        iDao.Merge("FIRSTHALF.CSV","SECONDHALF.CSV", "MERGED.CSV");
         MessageBoxResult result = MessageBox.Show(
-            "The file MERGED.csv has been created.",
-            "Do you want to open it?", 
+            "The file MERGED.csv has been created.\nDo you want to open it?",
+            "Merged.csv created", 
             MessageBoxButton.YesNo,
             MessageBoxImage.Question);
 
@@ -239,5 +239,21 @@ public partial class MainWindow : Window
         }
     }
     
+    #endregion
+
+    #region Exercise5
+
+    public void OnLoadBetweenRageClick(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            if()
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+    }
+
     #endregion
 }

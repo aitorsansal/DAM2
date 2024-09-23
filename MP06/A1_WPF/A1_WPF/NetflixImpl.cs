@@ -15,6 +15,10 @@ public class NetflixImpl : IDAO
             outputFile += ".txt";
         if(File.Exists(outputFile))
             File.Delete(outputFile);
+        if (genre[0] == '\'')
+            genre = genre.Remove(0, 1);
+        if (genre[^1] == '\'')
+            genre = genre.Remove(genre.Length - 1, 1);
         try
         {
             using (StreamReader sr = new StreamReader("raw_titles.csv"))
@@ -146,15 +150,63 @@ public class NetflixImpl : IDAO
 
     public int Merge(string file1, string file2, string outFileName)
     {
-        throw new NotImplementedException();
+        if(File.Exists(outFileName))
+            File.Delete(outFileName);
+        int counter = 0;
+        using (StreamReader sr1 = new(file1))
+        {
+            using (StreamReader sr2 = new(file2))
+            {
+                using (StreamWriter sw = new(outFileName))
+                {
+                    string? line1 = sr1.ReadLine();
+                    string? line2 = sr2.ReadLine();
+
+                    while (line1 != null && line2 != null) 
+                    {
+                        if (Convert.ToDouble(line1.Split(";")[5]) > Convert.ToDouble(line2.Split(";")[5]))
+                        {
+                            sw.WriteLine(line1);
+                            line1 = sr1.ReadLine();
+                        }
+                        else if (Convert.ToDouble(line1.Split(";")[5]) < Convert.ToDouble(line2.Split(";")[5]))
+                        {
+                            sw.WriteLine(line2);
+                            line2 = sr2.ReadLine();
+                        }
+                        else
+                        {
+                            sw.WriteLine(line2);
+                            sw.WriteLine(line1);
+                            line1 = sr1.ReadLine();
+                            line2 = sr2.ReadLine();
+                        }
+
+                        counter++;
+                    }
+
+                    while (line1 != null)
+                    {
+                        sw.WriteLine(line1);
+                        line1 = sr1.ReadLine();
+                        counter++;
+                    }
+
+                    while (line2 != null)
+                    {
+                        sw.WriteLine(line2);
+                        line2 = sr2.ReadLine();
+                        counter++;
+                    }
+                    
+                }
+            }
+        }
+
+        return counter;
     }
 
     public List<string> TitlesInRange(string file1, double minScore, double maxScore)
-    {
-        throw new NotImplementedException();
-    }
-
-    public List<string> MergeTitles(string file1, string file2, string outFileName)
     {
         throw new NotImplementedException();
     }

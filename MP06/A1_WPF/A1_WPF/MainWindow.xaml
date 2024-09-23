@@ -7,8 +7,16 @@
         xmlns:global="clr-namespace:"
         mc:Ignorable="d"
         Title="A1 " Height="720" Width="1024">
-    <TabControl>
-        <TabItem Header="Exercise1">
+    <Window.Resources>
+        <Style TargetType="TabItem">
+            <Setter Property="Background" Value="DarkGray"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="7.5"/>
+        </Style>
+    </Window.Resources>
+    <TabControl Background="LightGray">
+        <TabItem Header="Exercise 1">
            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height=".25*"/> <!--0-->
@@ -76,7 +84,7 @@
 
             </Grid> 
         </TabItem>
-        <TabItem Header="Exercise2">
+        <TabItem Header="Exercise 2">
               <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height=".3*"/> <!--0-->
@@ -172,7 +180,7 @@
                 </Grid>
             </Grid>
         </TabItem>
-        <TabItem Header="Exercise3">
+        <TabItem Header="Exercise 3">
               <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height=".3*"/> <!--0-->
@@ -266,7 +274,7 @@
                 </Grid>
             </Grid>
         </TabItem>
-        <TabItem Header="Exercise4">
+        <TabItem Header="Exercise 4">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/> <!--0-->
@@ -348,6 +356,59 @@
                            Name="TxtBlShowFound" 
                            Text="0"
                            Padding="0,0,15,0"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Exercise 5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/> <!--0-->
+                    <ColumnDefinition Width="1.5*"/> <!--1-->
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".3*"/> <!--0-->
+                    <RowDefinition Height=".5*"/> <!--1-->
+                    <RowDefinition Height="6*"/> <!--2-->
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" 
+                       Content="Exercise 5" 
+                       FontSize="15"
+                       HorizontalAlignment="Center"
+                       FontWeight="Black"/>
+                <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" 
+                       Content="Get Raw Titles between scores:" 
+                       FontSize="20"
+                       HorizontalAlignment="Center"/>
+                
+                <Grid Grid.Row="2" Grid.Column="0" Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/> <!--0-->
+                        <RowDefinition Height=".5*"/> <!--1-->
+                        <RowDefinition Height=".5*"/> <!--2-->
+                        <RowDefinition Height=".4*"/> <!--3-->
+                        <RowDefinition Height=".5*"/> <!--4-->
+                        <RowDefinition Height=".5*"/> <!--5-->
+                        <RowDefinition Height=".4*"/> <!--6-->
+                        <RowDefinition Height=".5*"/> <!--7-->
+                        <RowDefinition Height=".5*"/> <!--8-->
+                        <RowDefinition Height=".4*"/> <!--9-->
+                        <RowDefinition/> <!--10-->
+                        <RowDefinition/> <!--11-->
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" TextWrapping="Wrap">
+                        Write the file name (file extension needed):
+                    </TextBlock>
+                    <TextBox Grid.Row="2" VerticalContentAlignment="Center" Text="MERGED.CSV" Name="tbRangeLoadFileInput"/>
+                    <TextBlock Grid.Row="4">
+                        Write the ending score value:
+                    </TextBlock>
+                    <TextBox Grid.Row="5"/>
+                    <TextBlock Grid.Row="7">
+                        Write the ending score value:
+                    </TextBlock>
+                    <TextBox Grid.Row="8"/>
+                    <Button Grid.Row="10" Content="Generate file between scores" Margin="15"/>
+                </Grid>
+                <ListBox Grid.Row="2" Grid.Column="1" Margin="10"/>
             </Grid>
         </TabItem>
     </TabControl>

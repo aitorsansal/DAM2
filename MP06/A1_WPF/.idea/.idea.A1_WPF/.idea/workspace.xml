@@ -8,24 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d570437-39ce-4291-8c19-d5bc1c7c8b83" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.A1_WPF/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.A1_WPF/.idea/csv-editor.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.A1_WPF/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.A1_WPF/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.A1_WPF/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.A1_WPF/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A1_WPF/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/A1_WPF/App.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A1_WPF/Exercise1ViewModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/A1_WPF/Exercise2ViewModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/A1_WPF/IDAO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/A1_WPF/IDAO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A1_WPF/IDAONetflix.cs" beforeDir="false" afterPath="$PROJECT_DIR$/A1_WPF/IDAOFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A1_WPF/MainViewModel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.A1_WPF/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.A1_WPF/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A1_WPF/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/A1_WPF/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A1_WPF/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/A1_WPF/MainWindow.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A1_WPF/NetflixImpl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/A1_WPF/NetflixImpl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A1_WPF/RawTitle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/A1_WPF/RawTitle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A1_WPF/RelayCommand.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/A1_WPF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/A1_WPF.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/A1_WPF.exe" beforeDir="false" afterPath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/A1_WPF.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/abcd.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/only10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/test2.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +30,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "aitorsansal"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/aitorsansal/DAM2.git",
+    "accountId": "b3a54daa-f55e-4d59-8c7f-d5a65b4fbc08"
+  }
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/261ea83c988816e3d8fe76b15b7ac6c10af64b8f9e739854f83c137c8ba9/SafeFileHandle.Windows.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -94,6 +98,7 @@
       <updated>1727095953773</updated>
       <workItem from="1727095956023" duration="35000" />
       <workItem from="1727096003564" duration="20615000" />
+      <workItem from="1727121742101" duration="7277000" />
     </task>
     <servers />
   </component>
