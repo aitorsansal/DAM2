@@ -40,6 +40,15 @@ public partial class MainWindow : Window
     
     private void OnSubmitClick(object sender, RoutedEventArgs e)
     {
+        if (string.IsNullOrEmpty(TbGenreInput.Text))
+        {
+            MessageBox.Show("Genre is required.",
+                "Warning",
+                MessageBoxButton.OK,
+                MessageBoxImage.Asterisk);
+            return;
+        }
+
         var returned = iDao.SelectByGenre(TbGenreInput.Text, TbEx1FileNameInput.Text);
         bool worked = returned > 0;
         LblFileGeneratedInfo.Content = $"{(worked ? $"Found {returned} Raw Files with the genre {TbGenreInput.Text}.\nA new file was generated" : 
@@ -72,6 +81,14 @@ public partial class MainWindow : Window
 
     private void OnIndexSearchClicked(object sender, RoutedEventArgs e)
     {
+        if (string.IsNullOrEmpty(TbIndexInput.Text))
+        {
+            MessageBox.Show("Index is required.",
+                "Warning",
+                MessageBoxButton.OK,
+                MessageBoxImage.Asterisk);
+            return;
+        }
         try
         {
             int index = Convert.ToInt32(TbIndexInput.Text);
@@ -114,6 +131,14 @@ public partial class MainWindow : Window
 
     private void OnIdSearchClicked(object sender, RoutedEventArgs e)
     {
+        if (string.IsNullOrEmpty(TbIdInput.Text))
+        {
+            MessageBox.Show("Id is required.",
+                "Warning",
+                MessageBoxButton.OK,
+                MessageBoxImage.Asterisk);
+            return;
+        }
         try
         {
             string? result = iDao.SelectByID(TbIdInput.Text);
@@ -234,7 +259,10 @@ public partial class MainWindow : Window
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}");
+                MessageBox.Show(ex.Message,
+                    "Error ocurred",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
             }
         }
     }
@@ -243,11 +271,25 @@ public partial class MainWindow : Window
 
     #region Exercise5
 
-    public void OnLoadBetweenRageClick(object sender, RoutedEventArgs e)
+    private List<string> ValuesInRange { get; set; }
+    
+    private void OnLoadBetweenRageClick(object sender, RoutedEventArgs e)
     {
         try
         {
-            if()
+            ValuesInRange = iDao.TitlesInRange(TbRangeLoadFileInput.Text,
+                Convert.ToDouble(TbStartingScoreValue.Text), Convert.ToDouble(TbEndingScoreValue.Text));
+            foreach (var rawTitle in ValuesInRange) //Add values to the listBox but changing the IMDB Score to make it easier to see.
+            {
+                var listBoxItem = new ListBoxItem();
+                var textBlock = new TextBlock();
+                var sp = rawTitle.Split(";");
+                textBlock.Inlines.Add(new Run($"{sp[0]};{sp[1]};{sp[2]};{sp[3]};{sp[4]};"));
+                textBlock.Inlines.Add(new Run($"{sp[5]}") {Foreground = Brushes.Red});
+                textBlock.Inlines.Add(new Run($";{sp[6]}"));
+                listBoxItem.Content = textBlock;
+                LstBxLoadValuesInRange.Items.Add(listBoxItem);
+            }
         }
         catch (Exception ex)
         {

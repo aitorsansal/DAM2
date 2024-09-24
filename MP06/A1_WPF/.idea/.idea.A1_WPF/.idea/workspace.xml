@@ -12,12 +12,8 @@
       <change beforePath="$PROJECT_DIR$/A1_WPF/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/A1_WPF/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A1_WPF/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/A1_WPF/MainWindow.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A1_WPF/NetflixImpl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/A1_WPF/NetflixImpl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A1_WPF/RelayCommand.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/A1_WPF.dll" beforeDir="false" afterPath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/A1_WPF.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/A1_WPF.exe" beforeDir="false" afterPath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/A1_WPF.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/only10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/A1_WPF/bin/Debug/net8.0-windows/test2.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,18 +26,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "aitorsansal"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;aitorsansal&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/aitorsansal/DAM2.git",
-    "accountId": "b3a54daa-f55e-4d59-8c7f-d5a65b4fbc08"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/aitorsansal/DAM2.git&quot;,
+    &quot;accountId&quot;: &quot;b3a54daa-f55e-4d59-8c7f-d5a65b4fbc08&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/261ea83c988816e3d8fe76b15b7ac6c10af64b8f9e739854f83c137c8ba9/SafeFileHandle.Windows.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -55,7 +51,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.A1_WPF.executor": "Run",
+    ".NET Project.A1_WPF.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -99,6 +95,8 @@
       <workItem from="1727095956023" duration="35000" />
       <workItem from="1727096003564" duration="20615000" />
       <workItem from="1727121742101" duration="7277000" />
+      <workItem from="1727186887802" duration="194000" />
+      <workItem from="1727192855701" duration="7391000" />
     </task>
     <servers />
   </component>
@@ -109,5 +107,24 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/A1_WPF/NetflixImpl.cs</url>
+          <line>216</line>
+          <properties documentPath="C:\Users\aitorsansal\DAM2\MP06\A1_WPF\A1_WPF\NetflixImpl.cs" containingFunctionPresentation="Method 'TitlesInRange'">
+            <startOffsets>
+              <option value="7008" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7085" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

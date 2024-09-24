@@ -14,6 +14,58 @@
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Padding" Value="7.5"/>
         </Style>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="5"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Trigger for when the button is disabled -->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="#FFCECBCB"/> <!-- Background color for disabled state -->
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/> <!-- Border color for disabled state -->
+                                <Setter Property="Foreground" Value="Gray"/> <!-- Optional: Change text color for disabled state -->
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="Beige"/> <!-- Background color when mouse is over -->
+                                <Setter TargetName="Border" Property="BorderBrush" Value="Chocolate"/> <!-- Border color when mouse is over -->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="#FFBDBCBC"/> <!-- Default Background #FFBDBCBC-->
+            <Setter Property="BorderBrush" Value="Black"/> <!-- Default Border Brush -->
+            <Setter Property="Foreground" Value="black"/> <!-- Default Text Color -->
+            <Setter Property="Padding" Value="5"/> <!-- Default Padding -->
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5"> <!-- Set the desired corner radius here -->
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="MinHeight" Value="30"/> <!-- Optional: Minimum height for better UX -->
+            <Setter Property="FontSize" Value="14"/> <!-- Optional: Font size for text input -->
+        </Style>
     </Window.Resources>
     <TabControl Background="LightGray">
         <TabItem Header="Exercise 1">
@@ -120,7 +172,7 @@
                     </Grid.RowDefinitions>
                     <Label Grid.Row="1" HorizontalAlignment="Center">
                         <Label.Content>
-                            <AccessText TextWrapping="Wrap" Text="Insert the index that you want to get the index from:"
+                            <AccessText TextWrapping="Wrap" Text="Insert the index from the Raw Title you want to see the information:"
                                         TextAlignment="Center"/>
                         </Label.Content>
                     </Label>
@@ -216,7 +268,7 @@
                     </Grid.RowDefinitions>
                     <Label Grid.Row="1" HorizontalAlignment="Center">
                         <Label.Content>
-                            <AccessText TextWrapping="Wrap" Text="Insert the id that you want to get the index from:"
+                            <AccessText TextWrapping="Wrap" Text="Insert the id from the Raw Title you want to see the information:"
                                         TextAlignment="Center"/>
                         </Label.Content>
                     </Label>
@@ -303,7 +355,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Click="OnEx4ResolveButtonClicked"/>
-                <Grid Grid.Column="0" Grid.Row="2">
+                <Grid Grid.Column="0" Grid.Row="2" Margin="5,0,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height=".3*"/> <!--0-->
                         <RowDefinition Height=".6*"/> <!--1-->
@@ -397,18 +449,18 @@
                     <TextBlock Grid.Row="1" TextWrapping="Wrap">
                         Write the file name (file extension needed):
                     </TextBlock>
-                    <TextBox Grid.Row="2" VerticalContentAlignment="Center" Text="MERGED.CSV" Name="tbRangeLoadFileInput"/>
+                    <TextBox Grid.Row="2" VerticalContentAlignment="Center" Text="MERGED.CSV" Name="TbRangeLoadFileInput"/>
                     <TextBlock Grid.Row="4">
-                        Write the ending score value:
+                        Write the starting score value:
                     </TextBlock>
-                    <TextBox Grid.Row="5"/>
+                    <TextBox Grid.Row="5" VerticalContentAlignment="Center" Name="TbStartingScoreValue"/>
                     <TextBlock Grid.Row="7">
                         Write the ending score value:
                     </TextBlock>
-                    <TextBox Grid.Row="8"/>
-                    <Button Grid.Row="10" Content="Generate file between scores" Margin="15"/>
+                    <TextBox Grid.Row="8" VerticalContentAlignment="Center" Name="TbEndingScoreValue"/>
+                    <Button Grid.Row="10" Content="Generate file between scores" Margin="15" Click="OnLoadBetweenRageClick"/>
                 </Grid>
-                <ListBox Grid.Row="2" Grid.Column="1" Margin="10"/>
+                <ListBox Grid.Row="2" Grid.Column="1" Margin="10" Name="LstBxLoadValuesInRange"/>
             </Grid>
         </TabItem>
     </TabControl>

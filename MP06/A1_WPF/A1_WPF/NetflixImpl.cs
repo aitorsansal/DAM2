@@ -208,6 +208,22 @@ public class NetflixImpl : IDAO
 
     public List<string> TitlesInRange(string file1, double minScore, double maxScore)
     {
-        throw new NotImplementedException();
+        if(!File.Exists(file1)) throw new Exception($"File {file1} doesn't exist.");
+        List<string> titles = new();
+        using (StreamReader sr = new(file1))
+        {
+            sr.ReadLine();
+            string? line = sr.ReadLine();
+            bool cont = line != null && Convert.ToDouble(line.Split(";")[5]) >= minScore;
+            while (cont)
+            {
+                if(Convert.ToDouble(line.Split(";")[5]) <= maxScore)
+                    titles.Add(line);
+                line = sr.ReadLine();
+                cont = line != null && Convert.ToDouble(line.Split(";")[5]) >= minScore;
+            }
+        }
+
+        return titles;
     }
 }
