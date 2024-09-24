@@ -11,7 +11,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Image Grid.Row="0" Source="Images/Microsoft_WPF.png" Stretch="Uniform"/>
+        <Image Grid.Row="0" Stretch="Uniform"/>
         <ScrollViewer Grid.Row="1">
                 <TextBlock FontSize="24" 
                            TextWrapping="Wrap"

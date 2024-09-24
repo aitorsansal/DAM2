@@ -20,4 +20,29 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
     }
+
+    private void BtnOpenCalculadoraOnClick(object sender, RoutedEventArgs e)
+    {
+        WndCalculadora wndCalculadora = new();
+        wndCalculadora.ShowDialog();
+    }
+
+    private void BtnOpenImageOnClick(object sender, RoutedEventArgs e)
+    {
+        WndImatge wndImatge = new WndImatge();
+        wndImatge.ShowDialog();
+    }
+
+    private void BtnOpenFormulariOnClick(object sender, RoutedEventArgs e)
+    {
+        WndFormulari wndFormulari = new WndFormulari();
+        wndFormulari.ShowDialog();
+    }
+
+    private void BtnOpenTriaColorOnClick(object sender, RoutedEventArgs e)
+    {
+        WndTriaDeColors wndTriaDeColors = new();
+        wndTriaDeColors.ShowDialog();
+    }
+    
 }
