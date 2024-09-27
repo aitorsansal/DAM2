@@ -1,20 +1,41 @@
-﻿<Window x:Class="DissenyDeLayouts.WndEx6"
+﻿<Window x:Class="DissenyDeLayouts.WndEx7"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:DissenyDeLayouts"
         mc:Ignorable="d"
-        Title="Ex6" Height="600" Width="450" Background="Gray">
-    <DockPanel>
-        <TextBlock DockPanel.Dock="Top" 
-                   Background="Black" 
-                   Text="Sisè exercici" 
-                   Foreground="White"
-                   FontSize="20"
-                   TextAlignment="Center"
-                   Margin="5"/>
-        <ScrollViewer Margin="5,10,5,5">
+        Title="Ex7" Height="600" Width="450" Background="Gray">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="DodgerBlue"/>
+        </Style>
+    </Window.Resources>
+    <ScrollViewer>
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Top" 
+                       Background="Black" 
+                       Text="Barra de navegació" 
+                       Foreground="White"
+                       FontSize="20"
+                       TextAlignment="Center"
+                       Margin="5"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" DockPanel.Dock="Top">
+                <StackPanel Orientation="Horizontal">
+                    <!-- Add some content that exceeds the width of the ScrollViewer -->
+                    <Button Content="Inici" Margin="5" />
+                    <Button Content="Article 1" Margin="5" />
+                    <Button Content="Article 2" Margin="5" />
+                    <Button Content="Article 3" Margin="5" />
+                    <Button Content="Article 4" Margin="5" />
+                    <Button Content="Article 5" Margin="5" />
+                    <Button Content="Article 6" Margin="5" />
+                    <Button Content="Article 7" Margin="5" />
+                    <Button Content="Article 8" Margin="5" />
+                    <Button Content="Article 9" Margin="5" />
+                    <Button Content="Article 10" Margin="5" />
+                </StackPanel>
+            </ScrollViewer>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -84,6 +105,7 @@
                 </StackPanel>
             </Grid>
 
-        </ScrollViewer>
-    </DockPanel>
+        
+        </DockPanel>
+    </ScrollViewer>
 </Window>

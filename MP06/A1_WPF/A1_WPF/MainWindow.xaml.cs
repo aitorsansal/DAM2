@@ -277,6 +277,10 @@ public partial class MainWindow : Window
     {
         try
         {
+            if(string.IsNullOrEmpty(TbStartingScoreValue.Text))
+                throw new Exception("A start score is needed.");
+            if(string.IsNullOrEmpty(TbEndingScoreValue.Text))
+                throw new Exception("An ending score is needed.");
             ValuesInRange = iDao.TitlesInRange(TbRangeLoadFileInput.Text,
                 Convert.ToDouble(TbStartingScoreValue.Text), Convert.ToDouble(TbEndingScoreValue.Text));
             foreach (var rawTitle in ValuesInRange) //Add values to the listBox but changing the IMDB Score to make it easier to see.

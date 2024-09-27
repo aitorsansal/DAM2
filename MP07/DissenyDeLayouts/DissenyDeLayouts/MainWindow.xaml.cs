@@ -44,5 +44,15 @@ public partial class MainWindow : Window
         WndTriaDeColors wndTriaDeColors = new();
         wndTriaDeColors.ShowDialog();
     }
+    private void BtnOpenColumnesArticlesrOnClick(object sender, RoutedEventArgs e)
+    {
+        WndEx6 wndEx6 = new();
+        wndEx6.ShowDialog();
+    }
+    private void BtnOpenEx7OnClick(object sender, RoutedEventArgs e)
+    {
+        WndEx7 wndEx7 = new();
+        wndEx7.ShowDialog();
+    }
     
 }

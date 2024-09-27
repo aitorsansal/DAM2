@@ -8,14 +8,14 @@
         Title="Tria de colors" Height="600" Width="450" Background="Gray">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.2*"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         
         <Grid Grid.Row="0" Margin="10">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height=".4*"/>
@@ -45,6 +45,7 @@
                     Margin="25,5,15,5" 
                     Content="Esborra" 
                     FontSize="20"
+                    Width="100"
                     Background="Salmon"
                     Foreground="White"/>
         </Grid>
@@ -64,7 +65,7 @@
                 <TextBlock Text="-" Foreground="White" FontSize="10"/>
                 <TextBlock Text="Esborra" Foreground="White" FontSize="10"/>
             </StackPanel>
-            <ScrollViewer Grid.Row="1">
+            <ScrollViewer Grid.Row="1" Margin="10">
                 <StackPanel >
                     <Button Content="Rosa" Background="LightPink" FontSize="20" Margin="0,1,0,0"/>
                     <Button Content="Gris" Background="Gray" FontSize="20" Margin="0,1,0,0"/>

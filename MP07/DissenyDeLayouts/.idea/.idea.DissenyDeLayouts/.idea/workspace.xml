@@ -8,20 +8,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8ad7c4-626a-4c20-9f76-95c6e6cd261f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DissenyDeLayouts/Images/Microsoft_WPF.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DissenyDeLayouts/WndEx6.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DissenyDeLayouts/WndEx6.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DissenyDeLayouts/WndFormulari.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DissenyDeLayouts/WndFormulari.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DissenyDeLayouts/WndTriaDeColors.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DissenyDeLayouts/WndTriaDeColors.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DissenyDeLayouts/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DissenyDeLayouts/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DissenyDeLayouts/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DissenyDeLayouts/WndEx7.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DissenyDeLayouts/WndEx7.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/.idea/.idea.DissenyDeLayouts/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/.idea/.idea.DissenyDeLayouts/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/.idea/.idea.DissenyDeLayouts/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/.idea/.idea.DissenyDeLayouts/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/App.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/App.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/MainWindow.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/MainWindow.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/WndCalculadora.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/WndCalculadora.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/WndImatge.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/WndImatge.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DissenyDeLayouts/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DissenyDeLayouts/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DissenyDeLayouts/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/DissenyDeLayouts/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DissenyDeLayouts/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DissenyDeLayouts/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissenyDeLayouts/WndImatge.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/DissenyDeLayouts/WndImatge.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissenyDeLayouts/WndEx6.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/DissenyDeLayouts/WndEx6.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissenyDeLayouts/WndTriaDeColors.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/DissenyDeLayouts/WndTriaDeColors.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissenyDeLayouts/bin/Debug/net8.0-windows/DissenyDeLayouts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DissenyDeLayouts/bin/Debug/net8.0-windows/DissenyDeLayouts.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DissenyDeLayouts/bin/Debug/net8.0-windows/DissenyDeLayouts.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DissenyDeLayouts/bin/Debug/net8.0-windows/DissenyDeLayouts.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +71,7 @@
     ".NET Project.DissenyDeLayouts.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -100,6 +110,9 @@
       <updated>1727207877455</updated>
       <workItem from="1727207878116" duration="19000" />
       <workItem from="1727207910194" duration="8136000" />
+      <workItem from="1727281136738" duration="2295000" />
+      <workItem from="1727283917208" duration="665000" />
+      <workItem from="1727284626851" duration="596000" />
     </task>
     <servers />
   </component>
