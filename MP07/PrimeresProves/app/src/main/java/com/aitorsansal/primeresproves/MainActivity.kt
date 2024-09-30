@@ -1,16 +1,14 @@
 package com.aitorsansal.primeresproves
 
-import android.annotation.SuppressLint
 import android.content.res.Configuration
 import android.os.Bundle
-import android.widget.ToggleButton
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -25,12 +23,12 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
-import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -48,21 +46,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PrimeresProvesTheme {
-                Greeting("hola")
+                StartWindow()
             }
         }
     }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier,
-        style = MaterialTheme.typography.displayMedium,
-        color = MaterialTheme.colorScheme.primary
-    )
-    Button({}) { }
 }
 
 @Preview(showBackground = true, showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
@@ -199,7 +186,7 @@ fun Formulari(){
 @Preview(showBackground = true, showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun TriaDeColors(){
-    Column(){
+    Column{
         Row(modifier = Modifier.height(140.dp).fillMaxHeight()){
             Column(modifier = Modifier.weight(3.5F).fillMaxWidth()){
                 TextField(value="Paraula max 20 lletres", onValueChange = {}, label = {Text("Paraula")},
@@ -325,9 +312,225 @@ fun TriaDeColors(){
 @Preview(showBackground = true, showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun Ex6(){
-    Column(){
+    Column(modifier = Modifier.background(MaterialTheme.colorScheme.primaryContainer).padding(bottom = 50.dp)){
         Text("Sisè exercici", color = Color.White, fontSize = 16.sp, textAlign = TextAlign.Center,
             modifier = Modifier.fillMaxWidth().padding(5.dp)
             .background(color = Color.Black).padding(5.dp))
+        Row(modifier = Modifier.verticalScroll(rememberScrollState()).fillMaxSize().padding(20.dp)){
+            Column(modifier = Modifier.fillMaxWidth().weight(1F).padding(horizontal = 3.dp), horizontalAlignment = Alignment.CenterHorizontally){
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 1", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas \"Letraset\", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.\n",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 2", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 3", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.\n Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.\n Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 4", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas \"Letraset\", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.\n",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+            }
+            Column(modifier = Modifier.fillMaxWidth().weight(1F).padding(horizontal = 3.dp), horizontalAlignment = Alignment.CenterHorizontally){
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 5", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 6", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 7", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 8", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+            }
+        }
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun Ex7(){
+    Column(modifier = Modifier
+        .background(MaterialTheme.colorScheme.primaryContainer)
+        .padding(bottom = 50.dp)
+        .verticalScroll(rememberScrollState())){
+        Row(modifier = Modifier.horizontalScroll(rememberScrollState())){
+            Button({}, shape = RoundedCornerShape(5.dp)){
+                Text("Button 1", modifier = Modifier.padding(3.dp))
+            }
+            Button({}, shape = RoundedCornerShape(5.dp)){
+                Text("Button 2", modifier = Modifier.padding(3.dp))
+            }
+            Button({}, shape = RoundedCornerShape(5.dp)){
+                Text("Button 3", modifier = Modifier.padding(3.dp))
+            }
+            Button({}, shape = RoundedCornerShape(5.dp)){
+                Text("Button 4", modifier = Modifier.padding(3.dp))
+            }
+            Button({}, shape = RoundedCornerShape(5.dp)){
+                Text("Button 5", modifier = Modifier.padding(3.dp))
+            }
+            Button({}, shape = RoundedCornerShape(5.dp)){
+                Text("Button 6", modifier = Modifier.padding(3.dp))
+            }
+            Button({}, shape = RoundedCornerShape(5.dp)){
+                Text("Button 7", modifier = Modifier.padding(3.dp))
+            }
+            Button({}, shape = RoundedCornerShape(5.dp)){
+                Text("Button 8", modifier = Modifier.padding(3.dp))
+            }
+            Button({}, shape = RoundedCornerShape(5.dp)){
+                Text("Button 9", modifier = Modifier.padding(3.dp))
+            }
+            Button({}, shape = RoundedCornerShape(5.dp)){
+                Text("Button 10", modifier = Modifier.padding(3.dp))
+            }
+            Button({}, shape = RoundedCornerShape(5.dp)){
+                Text("Button 11", modifier = Modifier.padding(3.dp))
+            }
+            Button({}, shape = RoundedCornerShape(5.dp)){
+                Text("Button 12", modifier = Modifier.padding(3.dp))
+            }
+            Button({}, shape = RoundedCornerShape(5.dp)){
+                Text("Button 13", modifier = Modifier.padding(3.dp))
+            }
+            Button({}, shape = RoundedCornerShape(5.dp)){
+                Text("Button 14", modifier = Modifier.padding(3.dp))
+            }
+            Button({}, shape = RoundedCornerShape(5.dp)){
+                Text("Button 15", modifier = Modifier.padding(3.dp))
+            }
+        }
+        Text("Sisè exercici", color = Color.White, fontSize = 16.sp, textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth().padding(5.dp)
+                .background(color = Color.Black).padding(5.dp))
+        Row(modifier = Modifier.fillMaxSize().padding(20.dp)){
+            Column(modifier = Modifier.fillMaxWidth().weight(1F).padding(horizontal = 3.dp), horizontalAlignment = Alignment.CenterHorizontally){
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 1", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas \"Letraset\", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.\n",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 2", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 3", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.\n Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.\n Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 4", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas \"Letraset\", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.\n",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+            }
+            Column(modifier = Modifier.fillMaxWidth().weight(1F).padding(horizontal = 3.dp), horizontalAlignment = Alignment.CenterHorizontally){
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 5", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 6", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 7", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+                Column(modifier = Modifier.fillMaxWidth()){
+                    Text("Article 8", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("---------------", textAlign = TextAlign.Center, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                    Text("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.",
+                        textAlign = TextAlign.Left, color = Color.Black,
+                        modifier = Modifier.fillMaxWidth())
+                }
+            }
+        }
     }
 }

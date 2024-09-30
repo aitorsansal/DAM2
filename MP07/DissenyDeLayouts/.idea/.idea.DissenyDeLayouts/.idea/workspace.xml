@@ -8,10 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8ad7c4-626a-4c20-9f76-95c6e6cd261f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../PrimeresProves/app/src/main/res/drawable/microsoft_wpf.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../MP06/A1_WPF/.idea/.idea.A1_WPF/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MP06/A1_WPF/.idea/.idea.A1_WPF/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DissenyDeLayouts/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DissenyDeLayouts/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PrimeresProves/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PrimeresProves/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PrimeresProves/app/src/main/java/com/aitorsansal/primeresproves/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../PrimeresProves/app/src/main/java/com/aitorsansal/primeresproves/MainActivity.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,6 +93,8 @@
       <workItem from="1727283917208" duration="665000" />
       <workItem from="1727284626851" duration="596000" />
       <workItem from="1727702004411" duration="2591000" />
+      <workItem from="1727719127935" duration="48000" />
+      <workItem from="1727719191842" duration="453000" />
     </task>
     <servers />
   </component>
