@@ -8,29 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8ad7c4-626a-4c20-9f76-95c6e6cd261f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DissenyDeLayouts/WndEx7.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DissenyDeLayouts/WndEx7.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/.idea/.idea.DissenyDeLayouts/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/.idea/.idea.DissenyDeLayouts/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/.idea/.idea.DissenyDeLayouts/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/.idea/.idea.DissenyDeLayouts/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/App.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/App.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/MainWindow.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/MainWindow.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/WndCalculadora.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/WndCalculadora.xaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/WndImatge.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DissenyDeLayout/DissenyDeLayouts/WndImatge.xaml.cs" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PrimeresProves/app/src/main/res/drawable/microsoft_wpf.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MP06/A1_WPF/.idea/.idea.A1_WPF/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MP06/A1_WPF/.idea/.idea.A1_WPF/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DissenyDeLayouts/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DissenyDeLayouts/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissenyDeLayouts/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/DissenyDeLayouts/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissenyDeLayouts/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DissenyDeLayouts/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissenyDeLayouts/WndEx6.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/DissenyDeLayouts/WndEx6.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissenyDeLayouts/WndTriaDeColors.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/DissenyDeLayouts/WndTriaDeColors.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissenyDeLayouts/bin/Debug/net8.0-windows/DissenyDeLayouts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DissenyDeLayouts/bin/Debug/net8.0-windows/DissenyDeLayouts.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DissenyDeLayouts/bin/Debug/net8.0-windows/DissenyDeLayouts.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DissenyDeLayouts/bin/Debug/net8.0-windows/DissenyDeLayouts.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeresProves/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PrimeresProves/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeresProves/app/src/main/java/com/aitorsansal/primeresproves/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../PrimeresProves/app/src/main/java/com/aitorsansal/primeresproves/MainActivity.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,20 +48,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.DissenyDeLayouts.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.DissenyDeLayouts.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="DissenyDeLayouts" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -113,6 +95,7 @@
       <workItem from="1727281136738" duration="2295000" />
       <workItem from="1727283917208" duration="665000" />
       <workItem from="1727284626851" duration="596000" />
+      <workItem from="1727702004411" duration="2591000" />
     </task>
     <servers />
   </component>

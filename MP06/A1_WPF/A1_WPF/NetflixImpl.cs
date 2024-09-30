@@ -64,15 +64,19 @@ public class NetflixImpl : IDAO
     public string? SelectByIndex(int index)
     {
         bool found = false;
+        bool over = false;
         string? line;
         using (StreamReader sr = new StreamReader("raw_titles.csv"))
         {
             sr.ReadLine(); //skip first line
             line = sr.ReadLine();
-            while (line != null && !found)
+            while (line != null && !found && !over)
             {
-                if (Convert.ToInt32(line.Split(",")[0]) == index)
+                int indx = Convert.ToInt32(line.Split(",")[0]);
+                if (indx == index)
                     found = true;
+                else if (indx > index)
+                    over = true;
                 else
                     line = sr.ReadLine();
             }

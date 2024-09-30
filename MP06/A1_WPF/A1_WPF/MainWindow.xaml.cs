@@ -27,6 +27,11 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         iDao = new NetflixImpl();
+        int nThriller = iDao.SelectByGenre("thriller", "X.txt");
+        string targetExercici2Null = iDao.SelectByIndex(212433);
+        string targetExercici2NoNull = iDao.SelectByIndex(10);
+        string targetExercici3Null = iDao.SelectByID("tm204541dd");
+        string targetExercici3NoNull = iDao.SelectByID("tm204541");
     }
     private void OnIndexPreviewKeyDown(object? sender, TextCompositionEventArgs e)
     {
