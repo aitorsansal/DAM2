@@ -7,10 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f8ad7c4-626a-4c20-9f76-95c6e6cd261f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DissenyDeLayouts/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DissenyDeLayouts/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PrimeresProves/app/src/main/java/com/aitorsansal/primeresproves/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../PrimeresProves/app/src/main/java/com/aitorsansal/primeresproves/MainActivity.kt" afterDir="false" />
-    </list>
+    <list default="true" id="0f8ad7c4-626a-4c20-9f76-95c6e6cd261f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,7 +91,7 @@
       <workItem from="1727284626851" duration="596000" />
       <workItem from="1727702004411" duration="2591000" />
       <workItem from="1727719127935" duration="48000" />
-      <workItem from="1727719191842" duration="453000" />
+      <workItem from="1727719191842" duration="1092000" />
     </task>
     <servers />
   </component>
