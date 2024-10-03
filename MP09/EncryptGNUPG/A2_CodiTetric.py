@@ -7,42 +7,41 @@ import os
 gpg = gnupg.GPG()
 # Funció per encriptar dades
 def encrypt_data(data, output_file):
-
-    encrypted_data = gpg.encrypt(data, recipients="aitorsansal@gmail.com", passphrase=os.environ.get('PassWord', 'NotSet'))
-    
-    with open(output_file, 'a') as f:
-        f.write(str(encrypted_data))
-        f.write("--..--__--..--\n")
-
+    # TO-DO: Afegir la lògica d'encriptació aquí
+    ret = gpg.encrypt(data,recipients="aitorsansal@gmail.com",passphrase="safePassPhrase")
+    if(os.path.exists("users.txt")):
+        with open(output_file,'a') as file:
+            file.write(str(ret)+"////")
+    else:
+        with open(output_file,'w') as file:
+            file.write(str(ret)+"////")
+           
 # Funció per desencriptar dades
 def decrypt_data(input_file):
-    with open(input_file, 'r') as f:
-        encrypted_data = f.read()
-
-    encList = encrypted_data.split("--..--__--..--")
-    encList.pop()
-    decData = []
-    for v in encList:
-        decData.append((str)(gpg.decrypt(v, passphrase=os.environ.get('PassWord', 'NotSet'))))
+    lst = []
+    if(os.path.exists("users.txt")):
+        with open(input_file,'r') as file:
+            splited = file.read().split("////") 
+            for s in splited:
+                lst.append(str(gpg.decrypt(s)).strip())                              
+    else: 
+        print("l'arxiu no existeix")
     
-    return decData
+    return lst
+    
 
 # Verificar usuari
 def verify_user(username, password):
-    if not os.path.exists("users.txt"):
-        return False
-    decrypted_data = decrypt_data("users.txt")
-    v = f"{username};{password}"
-    return decrypted_data.__contains__(v)
+    list = []
+    list = decrypt_data("users.txt")
+    if list.__contains__(f"{username};{password}"):
+        return True
+    return False
 
 # Guardar usuari
 def save_user(username, password):
-    if(verify_user(username, password)):
-        messagebox.showinfo("Error", "El compte registrat ja existeix")
-    else:
-        user_data = f"{username};{password}"
-        encrypt_data(user_data, "users.txt")
-        messagebox.showinfo("Èxit", "Registre completat! Pots fer login ara.")
+    # TO-DO: Afegir la lògica per guardar l'usuari aquí
+    encrypt_data(f"{username};{password}","users.txt")
 
 # Funció per carregar imatges
 def load_image():
