@@ -5,10 +5,8 @@ from PIL import Image, ImageTk
 import os
 
 gpg = gnupg.GPG()
-# Funció per encriptar dades
 def encrypt_data(data, output_file):
-    # TO-DO: Afegir la lògica d'encriptació aquí
-    ret = gpg.encrypt(data,recipients="aitorsansal@gmail.com",passphrase="safePassPhrase")
+    ret = gpg.encrypt(data, symmetric = True, recipients=None, passphrase=os.environ.get('PassWord'))
     if(os.path.exists("users.txt")):
         with open(output_file,'a') as file:
             file.write(str(ret)+"////")
@@ -16,14 +14,13 @@ def encrypt_data(data, output_file):
         with open(output_file,'w') as file:
             file.write(str(ret)+"////")
            
-# Funció per desencriptar dades
 def decrypt_data(input_file):
     lst = []
     if(os.path.exists("users.txt")):
         with open(input_file,'r') as file:
             splited = file.read().split("////") 
             for s in splited:
-                lst.append(str(gpg.decrypt(s)).strip())                              
+                lst.append(str(gpg.decrypt(s, passphrase=os.environ.get('PassWord'))).strip())                              
     else: 
         print("l'arxiu no existeix")
     
@@ -40,8 +37,8 @@ def verify_user(username, password):
 
 # Guardar usuari
 def save_user(username, password):
-    # TO-DO: Afegir la lògica per guardar l'usuari aquí
     encrypt_data(f"{username};{password}","users.txt")
+
 
 # Funció per carregar imatges
 def load_image():
@@ -81,6 +78,7 @@ def register():
     password = password_entry.get()
     
     save_user(username, password)
+    messagebox.showinfo("SignedIn", "S'ha creat la teva conta correctament. Ja pots iniciar sessió")
 
 # Mostrar missatge de benvinguda i botó de carregar imatge
 def show_welcome_message():

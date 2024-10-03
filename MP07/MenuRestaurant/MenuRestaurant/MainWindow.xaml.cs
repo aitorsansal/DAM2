@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Globalization;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -54,4 +55,35 @@ public partial class MainWindow : Window
     {
         if (CbCopa.IsChecked != true) CbPuro.IsChecked = false;
     }
-}
+
+    private void SendButtonOnClicked(object sender, RoutedEventArgs e)
+    {
+        WndFactura fact = new WndFactura();
+        foreach (var child in SpPrimerPlat.Children)
+        {
+            if (child is not RadioButton { IsChecked: true } btn) continue;
+            fact.PrimerPlat = (btn.Content.ToString(), Convert.ToDouble(btn.Tag, CultureInfo.InvariantCulture));
+            break;
+        }
+        foreach (var child in SpSegonPlat.Children)
+        {
+            if (child is not RadioButton { IsChecked: true } btn) continue;
+            fact.SegonPlat = (btn.Content.ToString(), Convert.ToDouble(btn.Tag, CultureInfo.InvariantCulture));
+            break;
+        }
+        foreach (var child in SpPostres.Children)
+        {
+            if (child is not RadioButton { IsChecked: true } btn) continue;
+            fact.Postres = (btn.Content.ToString(), Convert.ToDouble(btn.Tag, CultureInfo.InvariantCulture));
+            break;
+        }
+        foreach (var child in SpExtres.Children)
+        {
+            if(child is CheckBox { IsChecked: true } checkBox)
+            {
+                fact.Extres.Add((checkBox.Content.ToString(), Convert.ToDouble(checkBox.Tag, CultureInfo.InvariantCulture)));
+            }
+        }
+        fact.ShowDialog();
+    }
+} 
