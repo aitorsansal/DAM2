@@ -183,7 +183,9 @@ fun Formulari(){
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(showBackground = true, showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES,
+    device = "spec:parent=pixel_5,orientation=landscape"
+)
 @Composable
 fun TriaDeColors(){
     Column{
@@ -309,7 +311,9 @@ fun TriaDeColors(){
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(showBackground = true, showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES,
+    device = "spec:parent=pixel_5,orientation=landscape"
+)
 @Composable
 fun Ex6(){
     Column(modifier = Modifier.background(MaterialTheme.colorScheme.primaryContainer).padding(bottom = 50.dp)){
@@ -397,7 +401,9 @@ fun Ex6(){
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(showBackground = true, showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES,
+    device = "spec:parent=pixel_5,orientation=landscape"
+)
 @Composable
 fun Ex7(){
     Column(modifier = Modifier
