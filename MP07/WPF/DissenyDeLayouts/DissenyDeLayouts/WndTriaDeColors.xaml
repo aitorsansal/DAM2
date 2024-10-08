@@ -1,0 +1,87 @@
+﻿<Window x:Class="DissenyDeLayouts.WndTriaDeColors"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:DissenyDeLayouts"
+        mc:Ignorable="d"
+        Title="Tria de colors" Height="600" Width="450" Background="Gray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".4*"/>
+                <RowDefinition/>
+                <RowDefinition Height=".4*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Paraula"/>
+            <TextBox Grid.Row="1" Grid.Column="0" Margin="5" Name="TxtBxParaula"
+                     GotFocus="TxtBxParaulaGotFocus"
+                     LostFocus="TxtBxParaulaLostFocus"
+                     Text="Paraula max 20 lletres"
+                     Foreground="LightGray"
+                     FontSize="20"
+                     VerticalContentAlignment="Center"
+                     Padding="5,0,0,0"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Traducció"/>
+            <TextBox Grid.Row="3" Grid.Column="0" Margin="5" Name="TxtBxTraduccio"
+                     GotFocus="TxtBxTraduccioGotFocus"
+                     LostFocus="TxtBxTraduccioLostFocus"
+                     Text="Paraula max 20 lletres"
+                     Foreground="LightGray"
+                     FontSize="20"
+                     VerticalContentAlignment="Center"
+                     Padding="5,0,0,0"/>
+            <Button Grid.RowSpan="4" Grid.Column="1" Grid.Row="0" 
+                    Margin="25,5,15,5" 
+                    Content="Esborra" 
+                    FontSize="20"
+                    Width="100"
+                    Background="Salmon"
+                    Foreground="White"/>
+        </Grid>
+        <Grid Grid.Row="1" Margin="10" Background="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" 
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Margin="5">
+                <TextBlock Text="Afegeix" Foreground="White" FontSize="10"/>
+                <TextBlock Text="-" Foreground="White" FontSize="10"/>
+                <TextBlock Text="Edita" Foreground="White" FontSize="10"/>
+                <TextBlock Text="-" Foreground="White" FontSize="10"/>
+                <TextBlock Text="Esborra" Foreground="White" FontSize="10"/>
+            </StackPanel>
+            <ScrollViewer Grid.Row="1" Margin="10">
+                <StackPanel >
+                    <Button Content="Rosa" Background="LightPink" FontSize="20" Margin="0,1,0,0"/>
+                    <Button Content="Gris" Background="Gray" FontSize="20" Margin="0,1,0,0"/>
+                    <Button Content="Blanc" Background="White" FontSize="20" Margin="0,1,0,0"/>
+                    <Button Content="Verd" Background="LightGreen" FontSize="20" Margin="0,1,0,0"/>
+                    <Button Content="Blau Clar" Background="LightBlue" FontSize="20" Margin="0,1,0,0"/>
+                    <Button Content="Groc" Background="Yellow" FontSize="20" Margin="0,1,0,0"/>
+                    <Button Content="Vermell" Background="Red" FontSize="20" Margin="0,1,0,0"/>
+                    <Button Content="Lila" Background="Purple" FontSize="20" Margin="0,1,0,0"/>
+                    <Button Content="Lavanda" Background="Lavender" FontSize="20" Margin="0,1,0,0"/>
+                    <Button Content="Prèsec" Background="PeachPuff" FontSize="20" Margin="0,1,0,0"/>
+                    <Button Content="Blau Fosc" Background="DarkBlue" FontSize="20" Margin="0,1,0,0"/>
+                    <Button Content="Fucsia" Background="Fuchsia" FontSize="20" Margin="0,1,0,0"/>
+                    <Button Content="Turquesa" Background="Turquoise" FontSize="20" Margin="0,1,0,0"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>

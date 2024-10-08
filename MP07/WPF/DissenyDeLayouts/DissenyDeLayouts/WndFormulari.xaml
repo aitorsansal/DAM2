@@ -1,0 +1,69 @@
+﻿<Window x:Class="DissenyDeLayouts.WndFormulari"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:DissenyDeLayouts"
+        xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+        mc:Ignorable="d"
+        Title="Formulari" Height="600" Width="450" Background="Gray">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="20"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="10"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="Gray"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        
+        <TextBox Grid.Row="0" Name="TxtBxName"
+                 GotFocus="TxtBxNameGotFocus"
+                 LostFocus="TxtBxNameLostFocus"
+                 Text="Nom(*)"/>
+        <TextBox Grid.Row="1" Name="TxtBxSurname"
+                 GotFocus="TxtBxSurnameGotFocus"
+                 LostFocus="TxtBxSurnameLostFocus"
+                 Text="Cognoms(*)"/>
+        <TextBox Grid.Row="2" Name="TxtBxMail"
+                 GotFocus="TxtBxMailGotFocus"
+                 LostFocus="TxtBxMailLostFocus"
+                 Text="Correu(*)"/>
+        <TextBox Grid.Row="3" Name="TxtBxMessage"
+                 GotFocus="TxtBxMessageGotFocus"
+                 LostFocus="TxtBxMessageLostFocus"
+                 Text="Missatge(*)"/>
+        <CheckBox Grid.Row="4" VerticalAlignment="Center" VerticalContentAlignment="Center">
+            <Viewbox>
+                <TextBlock Text="Subscriu-me per correu"/>
+            </Viewbox>
+        </CheckBox>
+        <TextBox Grid.Row="5" Name="TxtBxWeb"
+                 GotFocus="TxtBxWebGotFocus"
+                 LostFocus="TxtBxWebLostFocus"
+                 Text="Web del servidor"/>
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Column="0" Content="Confirma" FontSize="25"/>
+            <Button Grid.Column="1" Content="Anul·la" FontSize="25"/>
+            
+        </Grid>
+        
+    </Grid>
+</Window>

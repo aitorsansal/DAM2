@@ -5,6 +5,7 @@ from PIL import Image, ImageTk
 import os
 
 gpg = gnupg.GPG()
+file_path = ""
 def encrypt_data(data, output_file):
     ret = gpg.encrypt(data, symmetric = True, recipients=None, passphrase=os.environ.get('PassWord'))
     if(os.path.exists("users.txt")):
@@ -39,6 +40,69 @@ def verify_user(username, password):
 def save_user(username, password):
     encrypt_data(f"{username};{password}","users.txt")
 
+
+def hide_message():
+    # Open file dialog to select an image
+    file_path = filedialog.askopenfilename(title="Select an Image File")
+    
+    if not file_path:
+        print("No file selected")
+        return
+    
+    # Load the image
+    try:
+        img = Image.open(file_path)
+        img = img.convert("RGB")  # Ensure the image is in RGB mode
+    except Exception as e:
+        print(f"Error opening image: {e}")
+        return
+    
+    # Get the message to hide
+    message = "This is a hidden message!"
+    message += chr(0)  # Null character to indicate the end of the message
+    binary_message = ''.join(format(ord(char), '08b') for char in message)  # Convert message to binary
+    
+    # Calculate the required bits and available pixels
+    required_bits = len(binary_message) * 3  # 3 bits per character
+    width, height = img.size
+    available_pixels = width * height  # Total number of pixels
+
+    # Check if the message can fit in the image
+    if required_bits > available_pixels * 3:  # Each pixel can store 3 bits
+        print("Error: The message is too large to fit in this image.")
+        return
+    
+    # Modify the pixels to hide the message
+    message_index = 0
+    pixel_count = 0
+    for y in range(height):
+        for x in range(width):
+            if message_index < len(binary_message):
+                r, g, b = img.getpixel((x, y))
+                
+                # Store three bits (one for each RGB component)
+                for color in range(3):  # Loop over R, G, B
+                    if message_index < len(binary_message):
+                        bit_value = int(binary_message[message_index])  # Get the next bit
+                        if color == 0:  # Red channel
+                            r = (r & ~1) | bit_value  # Modify the LSB of R
+                        elif color == 1:  # Green channel
+                            g = (g & ~1) | bit_value  # Modify the LSB of G
+                        elif color == 2:  # Blue channel
+                            b = (b & ~1) | bit_value  # Modify the LSB of B
+                        message_index += 1
+                
+                # Update the pixel with the new value
+                img.putpixel((x, y), (r, g, b))
+                pixel_count += 1
+            
+            if message_index >= len(binary_message):
+                break  # Exit if the message is fully hidden
+    
+    # Save the modified image
+    modified_image_path = 'hidden_message_image.png'
+    img.save(modified_image_path)
+    print(f"Message hidden in image and saved as {modified_image_path}")
 
 # Funció per carregar imatges
 def load_image():
@@ -129,7 +193,7 @@ panel = tk.Label(app)
 
 # Text area i botó "Amagar missatge" (ocult)
 text_area = tk.Text(app, height=4, width=40)
-hide_message_button = tk.Button(app, text="Amagar missatge")
+hide_message_button = tk.Button(app, text="Amagar missatge", command=hide_message)
 
 os.environ['PassWord'] = "totallySavePassPhrase"
 
