@@ -157,7 +157,7 @@ fun Calculadora(
                         operation = "/"
                         firstNumber = RemoveLastPoint(firstNumber)
                         val pair = CanToInt(firstNumber)
-                        topText += if(pair.first)
+                        topText = if(pair.first)
                             pair.second + operation
                         else
                             firstNumber + operation
@@ -299,7 +299,7 @@ fun Calculadora(
                         operation = "*"
                         firstNumber = RemoveLastPoint(firstNumber)
                         val pair = CanToInt(firstNumber)
-                        topText += if(pair.first)
+                        topText = if(pair.first)
                             pair.second + operation
                         else
                             firstNumber + operation
@@ -441,7 +441,7 @@ fun Calculadora(
                         operation = "-"
                         firstNumber = RemoveLastPoint(firstNumber)
                         val pair = CanToInt(firstNumber)
-                        topText += if(pair.first)
+                        topText = if(pair.first)
                             pair.second + operation
                         else
                             firstNumber + operation
@@ -584,7 +584,7 @@ fun Calculadora(
                         operation = "+"
                         firstNumber = RemoveLastPoint(firstNumber)
                         val pair = CanToInt(firstNumber)
-                        topText += if(pair.first)
+                        topText = if(pair.first)
                             pair.second + operation
                         else
                             firstNumber + operation
