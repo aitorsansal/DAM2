@@ -5,7 +5,6 @@ from PIL import Image, ImageTk
 import os
 
 gpg = gnupg.GPG()
-file_path = ""
 def encrypt_data(data, output_file):
     ret = gpg.encrypt(data, symmetric = True, recipients=None, passphrase=os.environ.get('PassWord'))
     if(os.path.exists("users.txt")):
@@ -42,67 +41,125 @@ def save_user(username, password):
 
 
 def hide_message():
-    # Open file dialog to select an image
-    file_path = filedialog.askopenfilename(title="Select an Image File")
-    
-    if not file_path:
+    selectedPath = load_image.file_path
+    if not selectedPath:
         print("No file selected")
         return
     
-    # Load the image
+    
     try:
-        img = Image.open(file_path)
-        img = img.convert("RGB")  # Ensure the image is in RGB mode
+        img = Image.open(selectedPath)
+        img = img.convert("RGB")
     except Exception as e:
         print(f"Error opening image: {e}")
         return
     
-    # Get the message to hide
-    message = "This is a hidden message!"
-    message += chr(0)  # Null character to indicate the end of the message
-    binary_message = ''.join(format(ord(char), '08b') for char in message)  # Convert message to binary
     
-    # Calculate the required bits and available pixels
-    required_bits = len(binary_message) * 3  # 3 bits per character
+    message = text_area.get("1.0", tk.END).strip()
+    message += f"-/-/-by {current_user}" + chr(0)
+    binary_message = ''.join(format(ord(char), '08b') for char in message)
+    
+    
+    required_bits = len(binary_message) * 3 
     width, height = img.size
-    available_pixels = width * height  # Total number of pixels
+    available_pixels = width * height
 
-    # Check if the message can fit in the image
-    if required_bits > available_pixels * 3:  # Each pixel can store 3 bits
-        print("Error: The message is too large to fit in this image.")
+    
+    if required_bits > available_pixels * 3:
+        messagebox("Error: The message is too large to fit in this image.")
         return
     
     # Modify the pixels to hide the message
     message_index = 0
     pixel_count = 0
-    for y in range(height):
-        for x in range(width):
+    for x in range(width):
+        for y in range(height):
             if message_index < len(binary_message):
                 r, g, b = img.getpixel((x, y))
                 
-                # Store three bits (one for each RGB component)
-                for color in range(3):  # Loop over R, G, B
+
+                for color in range(3):
                     if message_index < len(binary_message):
-                        bit_value = int(binary_message[message_index])  # Get the next bit
-                        if color == 0:  # Red channel
-                            r = (r & ~1) | bit_value  # Modify the LSB of R
-                        elif color == 1:  # Green channel
-                            g = (g & ~1) | bit_value  # Modify the LSB of G
-                        elif color == 2:  # Blue channel
-                            b = (b & ~1) | bit_value  # Modify the LSB of B
+                        bit_value = int(binary_message[message_index])
+                        if color == 0:
+                            r = (r // 2 * 2) + bit_value
+                        elif color == 1:
+                            g = (g // 2 * 2) + bit_value
+                        elif color == 2:
+                            b = (b // 2 * 2) + bit_value
                         message_index += 1
                 
-                # Update the pixel with the new value
+
                 img.putpixel((x, y), (r, g, b))
                 pixel_count += 1
             
             if message_index >= len(binary_message):
-                break  # Exit if the message is fully hidden
+                break
     
     # Save the modified image
     modified_image_path = 'hidden_message_image.png'
     img.save(modified_image_path)
-    print(f"Message hidden in image and saved as {modified_image_path}")
+
+def getMessageFromImage():
+    # Open a file dialog to select an image
+    file_path = filedialog.askopenfilename(title="Select an Image")
+    
+    if file_path:
+        try:
+            hidden_message = reveal_message(file_path)
+            spt = hidden_message.split("-/-/-")
+            if(len(spt) > 2):
+                for i in range(0, len(spt)-1):
+                    hidden_message += spt[i] + "-/-/-"
+                hidden_message += "\n"+spt[len(spt)-1]
+            else:
+                hidden_message = spt[0] + "\n" + spt[1]
+            if hidden_message:
+                messagebox.showinfo("Hidden Message", hidden_message)
+            else:
+                messagebox.showwarning("No Message Found", "No hidden message was found in the image.")
+        except Exception as e:
+            print(e)
+
+
+def reveal_message(file_path):
+    img = Image.open(file_path)
+    width,height = img.size
+    binary_message = ''
+    for x in range(width):
+        for y in range(height):
+            r,g,b = img.getpixel((x, y))
+            for i in range(0,3):
+                if i == 0:
+                    binary_message += str(r & 1)    
+                elif i == 1:
+                    binary_message += str(g & 1)    
+                elif i == 2:
+                    binary_message += str(b & 1)                          
+
+
+                if len(binary_message) >= 8 and len(binary_message) % 8 == 0:
+                    last_byte = binary_message[-8:]  # Last 8 bits
+                    if chr(int(last_byte, 2)) == chr(0):
+                        return convertToString(binary_message[:-8])
+                    
+    return convertToString(binary_message)
+
+def convertToString(binaryString):
+    chars = []
+    for i in range(0, len(binaryString), 8):
+        byte = binaryString[i:i + 8]
+        if len(byte) < 8:
+            continue  # Skip incomplete bytes
+        try:
+            char = chr(int(byte, 2))
+            if char == chr(0):  # Check for the terminator
+                break
+            chars.append(char)
+        except ValueError:
+            continue  # Skip invalid bytes
+
+    return ''.join(chars)
 
 # Funció per carregar imatges
 def load_image():
@@ -117,6 +174,7 @@ def load_image():
             panel.pack(pady=10)
             text_area.pack(pady=10)
             hide_message_button.pack(pady=5)
+            load_image.file_path = file_path
 
         except Exception as e:
             messagebox.showerror("Error", f"No s'ha pogut carregar la imatge: {str(e)}")
@@ -149,7 +207,8 @@ def show_welcome_message():
     login_frame.pack_forget()  # Amaga el formulari de login
     welcome_label.config(text=f"Hola, {current_user}!")
     welcome_label.pack(pady=10)
-    load_image_button.pack(pady=20)
+    reveal_message_button.pack(pady=10)
+    load_image_button.pack(pady=10)
 
 # Configura la finestra principal
 app = tk.Tk()
@@ -187,6 +246,9 @@ welcome_label = tk.Label(app, text="", font=("Arial", 14))
 
 # Botó per carregar imatges (ocult)
 load_image_button = tk.Button(app, text="Carregar Imatge", command=load_image)
+
+#Botó per revelar el missatge (ocult)
+reveal_message_button = tk.Button(app, text="Revelar Missatge", command=getMessageFromImage)
 
 # Panell per mostrar la imatge (ocult)
 panel = tk.Label(app)
