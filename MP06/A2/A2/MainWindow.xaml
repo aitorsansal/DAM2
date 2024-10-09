@@ -71,12 +71,12 @@
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="Amount of Used:"/>
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="Total of News:"/>
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="Total of Used:"/>
-                <TextBox Grid.Row="0" Grid.Column="1" IsEnabled="False" Name="TbYear"/>
-                <TextBox Grid.Row="1" Grid.Column="1" IsEnabled="False" Name="TbMonth"/>
-                <TextBox Grid.Row="2" Grid.Column="1" IsEnabled="False" Name="TbAmNew"/>
-                <TextBox Grid.Row="3" Grid.Column="1" IsEnabled="False" Name="TbAmUsed"/>
-                <TextBox Grid.Row="4" Grid.Column="1" IsEnabled="False" Name="TbTotNew"/>
-                <TextBox Grid.Row="5" Grid.Column="1" IsEnabled="False" Name="TbTotUsed"/>
+                <TextBox Grid.Row="0" Grid.Column="1" IsEnabled="False" Name="TbYear" Text="{Binding YearTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" IsEnabled="False" Name="TbMonth" Text="{Binding MonthTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" IsEnabled="False" Name="TbAmNew" Text="{Binding AmountOfNewsTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                <TextBox Grid.Row="3" Grid.Column="1" IsEnabled="False" Name="TbAmUsed" Text="{Binding AmountOfUsedTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                <TextBox Grid.Row="4" Grid.Column="1" IsEnabled="False" Name="TbTotNew" Text="{Binding TotalNewsTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                <TextBox Grid.Row="5" Grid.Column="1" IsEnabled="False" Name="TbTotUsed" Text="{Binding TotalUsedTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
             </Grid>
         </Grid>
         

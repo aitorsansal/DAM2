@@ -2,11 +2,11 @@
 
 public class Statistics
 {
-    private int Year { get; set; }
-    Months Month { get; set; }
-    int AmountNews { get; set; }
-    int AmountUsed { get; set; }
-    long TotalNews { get; set; }
-    long TotalUsed { get; set; }
+    public int Year { get; set; }
+    public Months Month { get; set; }
+    public long AmountNews { get; set; }
+    public long AmountUsed { get; set; }
+    public long TotalNews { get; set; }
+    public long TotalUsed { get; set; }
 
 }
