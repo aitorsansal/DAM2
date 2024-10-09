@@ -49,7 +49,7 @@ fun ComboBox(
     colorFonsSelecionat: Color = MaterialTheme.colorScheme.onPrimaryContainer
 ){
     var selected by remember { mutableStateOf(opcioSeleccionada) }
-    var opened by remember {mutableStateOf(false)}
+    var isOpened by remember {mutableStateOf(false)}
     Column(modifier = modifier
         .padding(2.dp)
         .border(width = gruixMarc,
@@ -62,7 +62,7 @@ fun ComboBox(
             Text(text = dades[selected], style = estilText, color = colorTextSeleccionat,
                 modifier = Modifier.background(color = colorFonsSelecionat).padding(3.dp) )
             Spacer(modifier = Modifier.width(5.dp))
-            IconButton({opened = !opened}, modifier = Modifier
+            IconButton({isOpened = !isOpened}, modifier = Modifier
                 .clip(shape = RoundedCornerShape(90.dp))
                 .background(color = colorFonsSelecionat)
                 .size(35.dp)
@@ -70,7 +70,7 @@ fun ComboBox(
                 Icon(imageVector = Icons.Filled.ArrowDropDown, contentDescription = null)
             }
         }
-        if(opened)
+        if(isOpened)
         {
             Column()
             {
@@ -97,7 +97,7 @@ fun ComboBox(
                             .clickable {
                                 selected=index
                                 onCanviSeleccio(selected)
-                                opened = false;
+                                isOpened = false;
                             }
                     )
                 }
