@@ -6,30 +6,76 @@
         xmlns:local="clr-namespace:A2_XML"
         mc:Ignorable="d"
         Title="wndUpdateStatistics" Height="450" Width="400">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                Padding="15,5"
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5"> <!-- Set CornerRadius here -->
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width=".6*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height=".4*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height=".6*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Year:" VerticalAlignment="Center" Margin="15,0"/>
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Month:" VerticalAlignment="Center" Margin="15,0"/>
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Amount of News:" VerticalAlignment="Center" Margin="15,0"/>
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Amount of Used:" VerticalAlignment="Center" Margin="15,0"/>
-        <TextBlock Grid.Row="4" Grid.Column="0" Text="Total of News:" VerticalAlignment="Center" Margin="15,0"/>
-        <TextBlock Grid.Row="5" Grid.Column="0" Text="Total of Used:" VerticalAlignment="Center" Margin="15,0"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Name="TbYear" Text="{Binding YearTextBox, RelativeSource={RelativeSource AncestorType=Window}}" Margin="15,5"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Name="TbMonth" Text="{Binding MonthTextBox, RelativeSource={RelativeSource AncestorType=Window}}" Margin="15,5"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Name="TbAmNew" Text="{Binding AmountOfNewsTextBox, RelativeSource={RelativeSource AncestorType=Window}}" Margin="15,5"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Name="TbAmUsed" Text="{Binding AmountOfUsedTextBox, RelativeSource={RelativeSource AncestorType=Window}}" Margin="15,5"/>
-        <TextBox Grid.Row="4" Grid.Column="1" Name="TbTotNew" Text="{Binding TotalNewsTextBox, RelativeSource={RelativeSource AncestorType=Window}}" Margin="15,5"/>
-        <TextBox Grid.Row="5" Grid.Column="1" Name="TbTotUsed" Text="{Binding TotalUsedTextBox, RelativeSource={RelativeSource AncestorType=Window}}" Margin="15,5"/>
+        <TextBlock Grid.Row="0" Text="{Binding  TopTitle, RelativeSource={RelativeSource AncestorType=Window}}"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".6*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Year:" VerticalAlignment="Center" Margin="15,0"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Month:" VerticalAlignment="Center" Margin="15,0"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Amount of News:" VerticalAlignment="Center" Margin="15,0"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Amount of Used:" VerticalAlignment="Center" Margin="15,0"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Total of News:" VerticalAlignment="Center" Margin="15,0"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Total of Used:" VerticalAlignment="Center" Margin="15,0"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Name="TbYear" Text="{Binding YearTextBox, RelativeSource={RelativeSource AncestorType=Window}}" 
+                                                    VerticalContentAlignment="Center" Margin="15,5" IsEnabled="False"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Name="TbMonth" Text="{Binding MonthTextBox, RelativeSource={RelativeSource AncestorType=Window}}" 
+                                                    VerticalContentAlignment="Center" Margin="15,5" IsEnabled="False"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Name="TbAmNew" Text="{Binding AmountOfNewsTextBox, RelativeSource={RelativeSource AncestorType=Window}}" 
+                                                    VerticalContentAlignment="Center" Margin="15,5"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Name="TbAmUsed" Text="{Binding AmountOfUsedTextBox, RelativeSource={RelativeSource AncestorType=Window}}" 
+                                                    VerticalContentAlignment="Center" Margin="15,5"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Name="TbTotNew" Text="{Binding TotalNewsTextBox, RelativeSource={RelativeSource AncestorType=Window}}" 
+                                                    VerticalContentAlignment="Center" Margin="15,5"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Name="TbTotUsed" Text="{Binding TotalUsedTextBox, RelativeSource={RelativeSource AncestorType=Window}}" 
+                                                    VerticalContentAlignment="Center" Margin="15,5"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Confirm" 
+            HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20,8"
+            Click="Confirm_OnClick"/>
+            <Button Grid.Column="1" Content="Cancel" 
+            HorizontalAlignment="Center" VerticalAlignment="Center" Padding="20,8"
+            Click="Cancel_OnClick"/>
+        </Grid>
     </Grid>
+
 </Window>

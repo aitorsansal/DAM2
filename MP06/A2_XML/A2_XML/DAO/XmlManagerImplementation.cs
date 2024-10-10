@@ -14,16 +14,13 @@ public class XmlManagerImplementation : IXMLManager
 {
     const string FILE = "CarsSoldInMaryland.xml";
     
-    public List<int> GetDistinctYears()
-    {
-        return GetYears().Distinct().ToList();
-    }
 
-    private List<int> GetYears()
+    public List<int> GetDistinctYears()
     {
         XDocument doc = XDocument.Load(FILE);
         List<int> years = doc.Descendants("year")
             .Select(year => int.Parse(year.Value))
+            .Distinct()
             .ToList();
         return years;
     }
@@ -51,15 +48,6 @@ public class XmlManagerImplementation : IXMLManager
             .Where(d => d.Element("year")?.Value == year.ToString())
             .Where(d => long.TryParse(d.Element("total_sales_used")?.Value, out _))
             .Sum(d => long.Parse(d.Element("total_sales_used")!.Value));
-        
-        Statistics testStatistics = new Statistics() {Year = year, Month = Months.All.ToString()};
-        foreach (var month in GetSalesMonthByMonth(year))
-        {
-            testStatistics.AmountNews += month.AmountNews;
-            testStatistics.AmountUsed += month.AmountUsed;
-            testStatistics.TotalNews += month.TotalNews;
-            testStatistics.TotalUsed += month.TotalUsed;
-        }
         
         return statistics;
     }
@@ -167,6 +155,25 @@ public class XmlManagerImplementation : IXMLManager
 
     public bool UpdateStatistics(Statistics oneStatistics)
     {
-        throw new NotImplementedException();
+        var doc = XDocument.Load(FILE);
+        var selectedNode = doc
+            .Descendants("row")
+            .Where(d => d.Element("year")?.Value == oneStatistics.Year.ToString())
+            .FirstOrDefault(d => d.Element("month")?.Value == oneStatistics.Month);
+        if (selectedNode is null) return false;
+        
+        try
+        {
+            selectedNode.Descendants("new").FirstOrDefault()!.SetValue(oneStatistics.AmountNews.ToString());
+            selectedNode.Descendants("used").FirstOrDefault()!.SetValue(oneStatistics.AmountUsed.ToString());
+            selectedNode.Descendants("total_sales_new").FirstOrDefault()!.SetValue(oneStatistics.TotalNews.ToString());
+            selectedNode.Descendants("total_sales_used").FirstOrDefault()!.SetValue(oneStatistics.TotalUsed.ToString());
+            doc.Save(FILE);
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
     }
 }

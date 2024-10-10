@@ -11,11 +11,28 @@
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
             <Setter Property="Padding" Value="5"/>
             <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Margin" Value="5"/>
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="15"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                Padding="15,5"
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5"> <!-- Set CornerRadius here -->
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Window.Resources>
     <Grid Margin="10">
@@ -24,22 +41,28 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height=".1*"/>
             <RowDefinition Height=".6*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height=".1*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Grid.Column="0">
+        <Grid Grid.Row="1" Grid.Column="0">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height=".4*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height=".4*"/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <ComboBox Grid.Row="0" Width="300" Height="60" 
+            <TextBlock Grid.Row="0" Text="Select the desired year" Margin="20,0"/>
+            <ComboBox Grid.Row="1" Width="300" Height="60" 
                       HorizontalAlignment="Center" 
                       VerticalAlignment="Center"
                       VerticalContentAlignment="Center"
                       ItemsSource="{Binding PossibleYears}"
                       SelectedItem="{Binding SelectedYear, Mode=TwoWay}"
                       Name="YearComboBox"/>
-            <ComboBox Grid.Row="1" Width="300" Height="60" 
+            <TextBlock Grid.Row="2" Text="Select the desired month" Margin="20,0"/>
+            <ComboBox Grid.Row="3" Width="300" Height="60" 
                       HorizontalAlignment="Center" 
                       VerticalAlignment="Center"
                       VerticalContentAlignment="Center"
@@ -47,7 +70,7 @@
                       SelectedItem="{Binding SelectedMonth, Mode=TwoWay}"
                       Name="MonthComboBox"/>
         </Grid>
-        <Grid Grid.Row="0" Grid.Column="1">
+        <Grid Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -61,36 +84,48 @@
             <Button Grid.Row="0" Grid.Column="1" Content="Get by year" Margin="15" Click="GetSalesByYear_OnClicked"/>
             <Button Grid.Row="1" Grid.Column="0" Content="Get month by month" Margin="15" ToolTip="Loads the information of each month from a year in the datagrid" Click="GetSalesMonthByMonth_OnClicked"/>
             <Button Grid.Row="1" Grid.Column="1" Content="Get by year and month" Margin="15" Click="GetSalesByMonthAndYear_OnClicked"/>
-            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Update Statistics" Margin="65,15,65,15"/>
+            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Update Statistics" Margin="65,15,65,15" Click="UpdateStatistics_OnClick"/>
         </Grid>
-        <Grid Grid.Row="1" Grid.Column="0" Margin="0,0,5,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+        <Grid Grid.Row="2" Grid.Column="0" Margin="0,0,5,0">
+            <!-- <Grid.ColumnDefinitions> -->
+            <!--     <ColumnDefinition Width=".6*"/> -->
+            <!--     <ColumnDefinition/> -->
+            <!-- </Grid.ColumnDefinitions> -->
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height="1.5*"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Year:"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="Month:"/>
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Amount of News:"/>
-            <TextBlock Grid.Row="3" Grid.Column="0" Text="Amount of Used:"/>
-            <TextBlock Grid.Row="4" Grid.Column="0" Text="Total of News:"/>
-            <TextBlock Grid.Row="5" Grid.Column="0" Text="Total of Used:"/>
-            <TextBox Grid.Row="0" Grid.Column="1" IsEnabled="False" Name="TbYear" Text="{Binding YearTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
-            <TextBox Grid.Row="1" Grid.Column="1" IsEnabled="False" Name="TbMonth" Text="{Binding MonthTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
-            <TextBox Grid.Row="2" Grid.Column="1" IsEnabled="False" Name="TbAmNew" Text="{Binding AmountOfNewsTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
-            <TextBox Grid.Row="3" Grid.Column="1" IsEnabled="False" Name="TbAmUsed" Text="{Binding AmountOfUsedTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
-            <TextBox Grid.Row="4" Grid.Column="1" IsEnabled="False" Name="TbTotNew" Text="{Binding TotalNewsTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
-            <TextBox Grid.Row="5" Grid.Column="1" IsEnabled="False" Name="TbTotUsed" Text="{Binding TotalUsedTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
+            <TextBlock Grid.Row="0" Text="Year:" Margin="20,0" Padding="3"/>
+            <TextBlock Grid.Row="2" Text="Month:" Margin="20,0" Padding="3"/>
+            <TextBlock Grid.Row="4" Text="Amount of News:" Margin="20,0" Padding="3"/>
+            <TextBlock Grid.Row="6" Text="Amount of Used:" Margin="20,0" Padding="3"/>
+            <TextBlock Grid.Row="8" Text="Total of News:" Margin="20,0" Padding="3"/>
+            <TextBlock Grid.Row="10" Text="Total of Used:" Margin="20,0" Padding="3"/>
+            <TextBox Grid.Row="1" IsEnabled="False" Name="TbYear" Margin="15,5"
+                                Text="{Binding YearTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
+            <TextBox Grid.Row="3" IsEnabled="False" Name="TbMonth" Margin="15,5"
+                                Text="{Binding MonthTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
+            <TextBox Grid.Row="5" IsEnabled="False" Name="TbAmNew" Margin="15,5"
+                                Text="{Binding AmountOfNewsTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
+            <TextBox Grid.Row="7" IsEnabled="False" Name="TbAmUsed" Margin="15,5"
+                                Text="{Binding AmountOfUsedTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
+            <TextBox Grid.Row="9" IsEnabled="False" Name="TbTotNew" Margin="15,5"
+                                Text="{Binding TotalNewsTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
+            <TextBox Grid.Row="11" IsEnabled="False" Name="TbTotUsed" Margin="15,5"
+                                Text="{Binding TotalUsedTextBox, RelativeSource={RelativeSource AncestorType=Window}}"/>
         </Grid>
-        <DataGrid Grid.Row="1" Grid.Column="1" Margin="0,0,5,0"  
-                  ItemsSource="{Binding StatisticsList}"/>
+        <DataGrid Grid.Row="2" Grid.Column="1" Margin="65,0,65,0"  
+                  ItemsSource="{Binding StatisticsList}" IsReadOnly="True"/>
         
         
 

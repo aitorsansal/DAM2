@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using A2_XML;
 
 namespace A2;
 
@@ -130,7 +131,7 @@ public partial class MainWindow : INotifyPropertyChanged
         if (month == "ALL")
             throw new Exception("Can't select all months");
         Statistics monthStatistics = IxmlManager.GetSalesByMonth(month);
-        YearTextBox = monthStatistics.Year.ToString();
+        YearTextBox = "ALL";
         MonthTextBox = monthStatistics.Month.ToString();
         AmountOfNewsTextBox = monthStatistics.AmountNews.ToString();
         AmountOfUsedTextBox = monthStatistics.AmountUsed.ToString();
@@ -141,7 +142,7 @@ public partial class MainWindow : INotifyPropertyChanged
     private void GetSalesByYear_OnClicked(object sender, RoutedEventArgs e)
     {
         var yearStatistics = IxmlManager.GetSalesByYear(Convert.ToInt32(YearComboBox.SelectedValue));
-        YearTextBox = "ALL";
+        YearTextBox = yearStatistics.Year.ToString();
         MonthTextBox = yearStatistics.Month;
         AmountOfNewsTextBox = yearStatistics.AmountNews.ToString();
         AmountOfUsedTextBox = yearStatistics.AmountUsed.ToString();
@@ -152,7 +153,6 @@ public partial class MainWindow : INotifyPropertyChanged
     private void GetSalesMonthByMonth_OnClicked(object sender, RoutedEventArgs e)
     {
         StatisticsList = IxmlManager.GetSalesMonthByMonth(Convert.ToInt32(YearComboBox.SelectedValue));
-
     }
 
     private void GetSalesByMonthAndYear_OnClicked(object sender, RoutedEventArgs e)
@@ -160,13 +160,24 @@ public partial class MainWindow : INotifyPropertyChanged
         string month = ConvertMonth((Months)MonthComboBox.SelectedValue);
         if (month == "ALL")
             throw new Exception("Can't select all months");
-        var yearStatistics = IxmlManager.GetSalesByYearAndMonth(Convert.ToInt32(YearComboBox.SelectedValue), month);
-        YearTextBox = "ALL";
-        MonthTextBox = yearStatistics.Month;
-        AmountOfNewsTextBox = yearStatistics.AmountNews.ToString();
-        AmountOfUsedTextBox = yearStatistics.AmountUsed.ToString();
-        TotalNewsTextBox = yearStatistics.TotalNews.ToString();
-        TotalUsedTextBox = yearStatistics.TotalUsed.ToString();
+        var selecteStatistics = IxmlManager.GetSalesByYearAndMonth(Convert.ToInt32(YearComboBox.SelectedValue), month);
+        YearTextBox = selecteStatistics.Year.ToString();
+        MonthTextBox = selecteStatistics.Month;
+        AmountOfNewsTextBox = selecteStatistics.AmountNews.ToString();
+        AmountOfUsedTextBox = selecteStatistics.AmountUsed.ToString();
+        TotalNewsTextBox = selecteStatistics.TotalNews.ToString();
+        TotalUsedTextBox = selecteStatistics.TotalUsed.ToString();
+    }
+    
+    private void UpdateStatistics_OnClick(object sender, RoutedEventArgs e)
+    {
+        string month = ConvertMonth((Months)MonthComboBox.SelectedValue);
+        if (month == "ALL")
+            throw new Exception("Can't select all months");
+        var selectedStatistic = IxmlManager.GetSalesByYearAndMonth(Convert.ToInt32(YearComboBox.SelectedValue), month);
+        wndUpdateStatistics editWnd = new wndUpdateStatistics(IxmlManager, selectedStatistic);
+        editWnd.ShowDialog();
+        
     }
 
     private string ConvertMonth(Months toCheckMonth)
@@ -189,5 +200,6 @@ public partial class MainWindow : INotifyPropertyChanged
             _ => throw new ArgumentOutOfRangeException()
         };
     }
+
 
 }

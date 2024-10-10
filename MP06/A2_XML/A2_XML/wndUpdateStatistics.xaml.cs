@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using A2;
 
 namespace A2_XML;
 
@@ -60,9 +61,45 @@ public partial class wndUpdateStatistics : Window
         set { SetValue(TotalUsedTextBoxProperty, value); }
     }
 
+    public static readonly DependencyProperty TopTitleProperty = DependencyProperty.Register(
+        nameof(TopTitle), typeof(string), typeof(wndUpdateStatistics), new PropertyMetadata(default(string)));
+    public string TopTitle
+    {
+        get { return (string)GetValue(TopTitleProperty); }
+        set { SetValue(TopTitleProperty, value); }
+    }   
+    
     #endregion
-    public wndUpdateStatistics()
+    
+    IXMLManager xmlManager;
+    private Statistics statistics;
+    public wndUpdateStatistics(IXMLManager xmlManager, Statistics statistics)
     {
         InitializeComponent();
+        this.xmlManager = xmlManager;
+        this.statistics = statistics;
+        Title = $"{statistics.Year}/{statistics.Month}";
+        YearTextBox = statistics.Year.ToString();
+        MonthTextBox = statistics.Month;
+        AmountOfNewsTextBox = statistics.AmountNews.ToString();
+        AmountOfUsedTextBox = statistics.AmountUsed.ToString();
+        TotalNewsTextBox = statistics.TotalNews.ToString();
+        TotalUsedTextBox = statistics.TotalUsed.ToString();
+        TopTitle = $"Update values from {this.statistics.Month}/{this.statistics.Year}";
+    }
+
+    private void Confirm_OnClick(object sender, RoutedEventArgs e)
+    {
+        statistics.AmountNews = long.Parse(AmountOfNewsTextBox);
+        statistics.AmountUsed = long.Parse(AmountOfUsedTextBox);
+        statistics.TotalNews = long.Parse(TotalNewsTextBox);
+        statistics.TotalUsed = long.Parse(TotalUsedTextBox);
+        var b = xmlManager.UpdateStatistics(statistics);
+        MessageBox.Show(b.ToString());
+    }
+
+    private void Cancel_OnClick(object sender, RoutedEventArgs e)
+    {
+        this.Close();
     }
 }
