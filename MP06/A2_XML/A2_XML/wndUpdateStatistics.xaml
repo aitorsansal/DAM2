@@ -1,0 +1,35 @@
+﻿<Window x:Class="A2_XML.wndUpdateStatistics"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:A2_XML"
+        mc:Ignorable="d"
+        Title="wndUpdateStatistics" Height="450" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".6*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Year:" VerticalAlignment="Center" Margin="15,0"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Month:" VerticalAlignment="Center" Margin="15,0"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Amount of News:" VerticalAlignment="Center" Margin="15,0"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Amount of Used:" VerticalAlignment="Center" Margin="15,0"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Total of News:" VerticalAlignment="Center" Margin="15,0"/>
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Total of Used:" VerticalAlignment="Center" Margin="15,0"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Name="TbYear" Text="{Binding YearTextBox, RelativeSource={RelativeSource AncestorType=Window}}" Margin="15,5"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="TbMonth" Text="{Binding MonthTextBox, RelativeSource={RelativeSource AncestorType=Window}}" Margin="15,5"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="TbAmNew" Text="{Binding AmountOfNewsTextBox, RelativeSource={RelativeSource AncestorType=Window}}" Margin="15,5"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Name="TbAmUsed" Text="{Binding AmountOfUsedTextBox, RelativeSource={RelativeSource AncestorType=Window}}" Margin="15,5"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Name="TbTotNew" Text="{Binding TotalNewsTextBox, RelativeSource={RelativeSource AncestorType=Window}}" Margin="15,5"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Name="TbTotUsed" Text="{Binding TotalUsedTextBox, RelativeSource={RelativeSource AncestorType=Window}}" Margin="15,5"/>
+    </Grid>
+</Window>

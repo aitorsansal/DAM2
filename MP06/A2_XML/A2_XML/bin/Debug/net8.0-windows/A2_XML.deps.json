@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "A2/1.0.0": {
+      "A2_XML/1.0.0": {
         "runtime": {
-          "A2.dll": {}
+          "A2_XML.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "A2/1.0.0": {
+    "A2_XML/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
