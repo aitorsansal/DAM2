@@ -32,20 +32,18 @@ public class XmlManagerImplementation : IXMLManager
         statistics.Year = year;
         statistics.Month = Months.All.ToString();
         XDocument doc = XDocument.Load(FILE);
-        statistics.AmountNews = doc.Descendants("row")
-            .Where(d => d.Element("year")?.Value == year.ToString())
+        var possibleElements = doc.Descendants("row")
+            .Where(d => d.Element("year")?.Value == year.ToString()).ToArray();
+        statistics.AmountNews = possibleElements
             .Where(d => long.TryParse(d.Element("new")?.Value, out _))
             .Sum(d => long.Parse(d.Element("new")!.Value));
-        statistics.AmountUsed = doc.Descendants("row")
-            .Where(d => d.Element("year")?.Value == year.ToString())
+        statistics.AmountUsed = possibleElements
             .Where(d => long.TryParse(d.Element("used")?.Value, out _))
             .Sum(d => long.Parse(d.Element("used")!.Value));
-        statistics.TotalNews = doc.Descendants("row")
-            .Where(d => d.Element("year")?.Value == year.ToString())
+        statistics.TotalNews = possibleElements
             .Where(d => long.TryParse(d.Element("total_sales_new")?.Value, out _))
             .Sum(d => long.Parse(d.Element("total_sales_new")!.Value));
-        statistics.TotalUsed = doc.Descendants("row")
-            .Where(d => d.Element("year")?.Value == year.ToString())
+        statistics.TotalUsed = possibleElements
             .Where(d => long.TryParse(d.Element("total_sales_used")?.Value, out _))
             .Sum(d => long.Parse(d.Element("total_sales_used")!.Value));
         
@@ -58,20 +56,18 @@ public class XmlManagerImplementation : IXMLManager
         statistics.Month = month;
         statistics.Year = 0;
         XDocument doc = XDocument.Load(FILE);
-        statistics.AmountNews = doc.Descendants("row")
-            .Where(d => d.Element("month")?.Value == month)
+        var possibleElements = doc.Descendants("row")
+            .Where(d => d.Element("month")?.Value == month).ToArray();
+        statistics.AmountNews = possibleElements
             .Where(d => long.TryParse(d.Element("new")?.Value, out _))
             .Sum(d => long.Parse(d.Element("new")!.Value));
-        statistics.AmountUsed = doc.Descendants("row")
-            .Where(d => d.Element("month")?.Value == month)
+        statistics.AmountUsed = possibleElements
             .Where(d => long.TryParse(d.Element("used")?.Value, out _))
             .Sum(d => long.Parse(d.Element("used")!.Value));
-        statistics.TotalNews = doc.Descendants("row")
-            .Where(d => d.Element("month")?.Value == month)
+        statistics.TotalNews = possibleElements
             .Where(d => long.TryParse(d.Element("total_sales_new")?.Value, out _))
             .Sum(d => long.Parse(d.Element("total_sales_new")!.Value));
-        statistics.TotalUsed = doc.Descendants("row")
-            .Where(d => d.Element("month")?.Value == month)
+        statistics.TotalUsed = possibleElements
             .Where(d => long.TryParse(d.Element("total_sales_used")?.Value, out _))
             .Sum(d => long.Parse(d.Element("total_sales_used")!.Value));
 
@@ -84,31 +80,29 @@ public class XmlManagerImplementation : IXMLManager
         List<string> months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
         XDocument doc = XDocument.Load(FILE);
+        var elementsOfYear = doc.Descendants("row")
+            .Where(d => d.Element("year")?.Value == year.ToString()).ToArray();
 
         return months.Select(month => new Statistics()
             {
                 Year = year,
                 Month = month,
-                AmountNews = doc.Descendants("row")
-                    .Where(d => d.Element("year")?.Value == year.ToString())
+                AmountNews = elementsOfYear
                     .Where(d => d.Element("month")?.Value == month)
                     .Where(d => long.TryParse(d.Element("new")?.Value, out _))
                     .Select(d => long.Parse(d.Element("new")!.Value))
                     .FirstOrDefault(),
-                AmountUsed = doc.Descendants("row")
-                    .Where(d => d.Element("year")?.Value == year.ToString())
+                AmountUsed = elementsOfYear
                     .Where(d => d.Element("month")?.Value == month)
                     .Where(d => long.TryParse(d.Element("used")?.Value, out _))
                     .Select(d => long.Parse(d.Element("used")!.Value))
                     .FirstOrDefault(),
-                TotalNews = doc.Descendants("row")
-                    .Where(d => d.Element("year")?.Value == year.ToString())
+                TotalNews = elementsOfYear
                     .Where(d => d.Element("month")?.Value == month)
                     .Where(d => long.TryParse(d.Element("total_sales_new")?.Value, out _))
                     .Select(d => long.Parse(d.Element("total_sales_new")!.Value))
                     .FirstOrDefault(),
-                TotalUsed = doc.Descendants("row")
-                    .Where(d => d.Element("year")?.Value == year.ToString())
+                TotalUsed = elementsOfYear
                     .Where(d => d.Element("month")?.Value == month)
                     .Where(d => long.TryParse(d.Element("total_sales_used")?.Value, out _))
                     .Select(d => long.Parse(d.Element("total_sales_used")!.Value))
@@ -122,13 +116,14 @@ public class XmlManagerImplementation : IXMLManager
     public Statistics GetSalesByYearAndMonth(int year, string month)
     {
         var doc = XDocument.Load(FILE);
+        var selectedElement = doc
+            .Descendants("row")
+            .Where(d => d.Element("year")?.Value == year.ToString()).FirstOrDefault(d => d.Element("month")?.Value == month);
         return new Statistics()
         {
             Year = year,
             Month = month,
-            AmountNews = doc.Descendants("row")
-                .Where(d => d.Element("year")?.Value == year.ToString())
-                .Where(d => d.Element("month")?.Value == month)
+            AmountNews = long.TryParse(d.E
                 .Where(d => long.TryParse(d.Element("new")?.Value, out _))
                 .Select(d => long.Parse(d.Element("new")!.Value))
                 .FirstOrDefault(),
