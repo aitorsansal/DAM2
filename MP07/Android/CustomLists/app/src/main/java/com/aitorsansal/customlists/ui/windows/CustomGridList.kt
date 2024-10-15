@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
@@ -20,13 +21,15 @@ import com.aitorsansal.customlists.model.Monster
 
 @Preview(showSystemUi = true)
 @Composable
-fun CustomGridList(data : List<Monster> = fakeRepository.obtainData(),
-                             onClickElement : (Int) -> Unit = {}){
+fun CustomGridList(data : List<Monster> = fakeRepository.monsterData,
+                             onClickElement : (Int) -> Unit = {}, 
+                   gridState:LazyGridState){
     LazyVerticalGrid (modifier = Modifier
         .fillMaxSize()
         .background(color = Color.DarkGray)
         .padding(16.dp)
         .padding(vertical = 25.dp),
+        state = gridState,
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
         columns = GridCells.Adaptive(minSize = 125.dp)

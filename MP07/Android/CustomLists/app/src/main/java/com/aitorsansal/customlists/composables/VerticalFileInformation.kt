@@ -37,8 +37,8 @@ fun VerticalFileInformation(id:Int,
                             colorLetter:Color = MaterialTheme.colorScheme.onPrimary,
                             onClickElement : (Int) -> Unit = {}
 ){
-    if(id < fakeRepository.obtainData().size) {
-        val monster: Monster = fakeRepository.obtainData()[id] //todo change this shit
+    if(id < fakeRepository.monsterData.size) {
+        val monster: Monster = fakeRepository.monsterData[id] //todo change this shit
         Card {
             Column(modifier = modifier.fillMaxHeight().background(color = background)
                 .clickable { onClickElement(id) }) {

@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Card
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.dp
 
@@ -24,21 +25,26 @@ fun ProgressBar(
     modifier : Modifier = Modifier,
     showNumbers: Boolean = false,
     backColor : Color = Color(10,91,16,255),
-    frontColor : Color = Color(151,251,158,255)
+    frontColor : Color = Color(151,251,158,255),
+    textColor: Color = Color.White
 ){
     Row(modifier = modifier.fillMaxWidth().padding(5.dp)){
         val fill = current.toFloat()/ending.toFloat()
-        Box(modifier = Modifier.fillMaxSize().background(color = backColor).weight(2F)){
-            Box(modifier = Modifier.fillMaxWidth(fraction = fill)
-                .fillMaxHeight().background(color = frontColor)) {
+        Card(modifier = Modifier.fillMaxSize().weight(2F)) {
+            Box(modifier = Modifier.background(color = backColor)){
+                Box(modifier = Modifier.fillMaxWidth(fraction = fill)
+                    .fillMaxHeight().background(color = frontColor)) {
+                }
             }
+
         }
         if(showNumbers)
         {
             Spacer(modifier = Modifier.width(5.dp))
             Text(text = "$current/$ending",
                 modifier = Modifier.fillMaxWidth()
-                    .weight(.8f).align(Alignment.CenterVertically))
+                    .weight(.6f).align(Alignment.CenterVertically),
+                color = textColor)
         }
     }
 }

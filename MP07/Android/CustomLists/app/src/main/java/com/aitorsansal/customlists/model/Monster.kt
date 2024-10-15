@@ -8,7 +8,8 @@ class Monster(
     val strength : Int,
     val speed : Int,
     val quantityCaptured : Int,
-    val totalToCapture : Int
+    val totalToCapture : Int,
+    val drops : MutableList<String> //split with ";" first part is the name. second part is the image
 ){
     public var completedCatchingChallenge = quantityCaptured >= totalToCapture
 }
