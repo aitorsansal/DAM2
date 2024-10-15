@@ -52,6 +52,8 @@ public class XmlManagerImplementation : IXMLManager
 
     public Statistics GetSalesByMonth(string month)
     {
+        if (month == "ALL")
+            throw new Exception("Can't select all months");
         Statistics statistics = new Statistics();
         statistics.Month = month;
         statistics.Year = 0;
@@ -76,7 +78,8 @@ public class XmlManagerImplementation : IXMLManager
     
     public List<Statistics> GetSalesMonthByMonth(int year)
     {
-        if(!GetDistinctYears().Contains(year)) throw new ArgumentException("Year is not in the possible year");
+        if(!GetDistinctYears().Contains(year)) 
+            throw new ArgumentException("Year is not in the possible year");
         List<string> months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
         XDocument doc = XDocument.Load(FILE);
@@ -115,6 +118,10 @@ public class XmlManagerImplementation : IXMLManager
 
     public Statistics GetSalesByYearAndMonth(int year, string month)
     {
+        if(!GetDistinctYears().Contains(year))
+            throw new ArgumentException("Year is not in the possible year");
+        if (month == "ALL")
+            throw new Exception("Can't select all months");
         var doc = XDocument.Load(FILE);
         var selectedElement = doc
             .Descendants("row")
@@ -123,28 +130,16 @@ public class XmlManagerImplementation : IXMLManager
         {
             Year = year,
             Month = month,
-            AmountNews = long.TryParse(d.E
-                .Where(d => long.TryParse(d.Element("new")?.Value, out _))
-                .Select(d => long.Parse(d.Element("new")!.Value))
-                .FirstOrDefault(),
-            AmountUsed = doc.Descendants("row")
-                .Where(d => d.Element("year")?.Value == year.ToString())
-                .Where(d => d.Element("month")?.Value == month)
-                .Where(d => long.TryParse(d.Element("used")?.Value, out _))
-                .Select(d => long.Parse(d.Element("used")!.Value))
-                .FirstOrDefault(),
-            TotalNews = doc.Descendants("row")
-                .Where(d => d.Element("year")?.Value == year.ToString())
-                .Where(d => d.Element("month")?.Value == month)
-                .Where(d => long.TryParse(d.Element("total_sales_new")?.Value, out _))
-                .Select(d => long.Parse(d.Element("total_sales_new")!.Value))
-                .FirstOrDefault(),
-            TotalUsed = doc.Descendants("row")
-                .Where(d => d.Element("year")?.Value == year.ToString())
-                .Where(d => d.Element("month")?.Value == month)
-                .Where(d => long.TryParse(d.Element("total_sales_used")?.Value, out _))
-                .Select(d => long.Parse(d.Element("total_sales_used")!.Value))
-                .FirstOrDefault()
+            AmountNews = long.TryParse(selectedElement?.Element("new")?.Value, out long amountNews) ? amountNews : 0,
+            AmountUsed = long.TryParse(selectedElement?.Element("used")?.Value, out long amountUsed) ? amountUsed : 0,
+            TotalNews = long.TryParse(selectedElement?.Element("total_sales_new")?.Value, out long totalNews) ? totalNews : 0,
+            TotalUsed = long.TryParse(selectedElement?.Element("total_sales_used")?.Value, out long totalUsed) ? totalUsed : 0,
+            // TotalUsed = doc.Descendants("row")
+            //     .Where(d => d.Element("year")?.Value == year.ToString())
+            //     .Where(d => d.Element("month")?.Value == month)
+            //     .Where(d => long.TryParse(d.Element("total_sales_used")?.Value, out _))
+            //     .Select(d => long.Parse(d.Element("total_sales_used")!.Value))
+            //     .FirstOrDefault()
         };
     }
 

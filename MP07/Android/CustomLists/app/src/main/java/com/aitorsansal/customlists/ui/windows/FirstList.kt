@@ -33,7 +33,7 @@ import com.aitorsansal.customlists.model.Monster
 
 @Preview
 @Composable
-fun FirstList(data : List<Monster> = fakeRepository.obtainData(),
+fun FirstList(data : List<Monster> = fakeRepository.monsterData,
               onClickWarrior : (Int) -> Unit = {}){
     LazyColumn (modifier = Modifier
         .padding(16.dp)

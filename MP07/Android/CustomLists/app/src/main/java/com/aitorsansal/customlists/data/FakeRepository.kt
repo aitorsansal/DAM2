@@ -6,15 +6,22 @@ import kotlin.random.Random
 object fakeRepository{
 
 
+    public var monsterData : List<Monster> = listOf()
+                private set
 
-    public fun obtainData()  = (0..<monsterNames.size).toList().map{GenerateMonster(it) }.toList()
+
+    public fun obtainData() : List<Monster>  {
+        if(monsterData.isEmpty())
+            monsterData = (0..<monsterNames.size).toList().map{GenerateMonster(it) }.toList()
+        return monsterData
+    }
 
     fun GenerateMonster(pos: Int) : Monster
     {
         return Monster(
             id = pos + 1,
             name = monsterNames[pos],
-            image = "https://loremflickr.com/500/500/monster-hunter?lock=${pos}",
+            image = imagesLinks[pos],
             hp = Random.nextInt(1,5),
             strength = Random.nextInt(1,5),
             speed = Random.nextInt(1,5),
@@ -26,113 +33,248 @@ object fakeRepository{
 
     val monsterNames = mutableListOf(
         "Great Jagras",
-        "Jagras",
         "Pukei-Pukei",
         "Kulu-Ya-Ku",
         "Tobi-Kadachi",
         "Barroth",
         "Radobaan",
+        "Jyuratodus",
         "Anjanath",
-        "Nergigante",
+        "Fulgur Anjanath",
         "Odogaron",
-        "Deviljho",
-        "Kushala Daora",
-        "Teostra",
-        "Xeno'jiiva",
-        "Vaal Hazak",
-        "Raging Brachydios",
-        "Zorah Magdaros",
-        "Elder Dragons",
-        "Behemoth",
-        "Barioth",
-        "Frostfang Barioth",
-        "Zinogre",
-        "Shara Ishvalda",
-        "Khezu",
-        "Lavasioth",
-        "Nami Durbros",
-        "Plesioth",
-        "Kirin",
-        "Gajalaka",
-        "Mizutsune",
-        "Kushala Daora",
-        "Teostra",
-        "Brachydios",
-        "Alatreon",
-        "Kirin",
-        "Xeno'jiiva",
-        "Akantor",
-        "Lao Shan Lung",
-        "Seregios",
-        "Zinogre",
-        "Safi'jiiva",
-        "Nergigante",
-        "Lunastra",
-        "Diablos",
-        "Black Diablos",
-        "Bazelgeuse",
-        "Anjanath",
-        "Kulu-Ya-Ku",
-        "Great Jagras",
-        "Jagras",
-        "Pukei-Pukei",
-        "Tobi-Kadachi",
+        "Ebony Odogaron",
         "Rathalos",
+        "Azure Rathalos",
+        "Silver Rathalos",
         "Rathian",
         "Pink Rathian",
-        "Gore Magala",
-        "Shagaru Magala",
-        "Kushala Daora",
-        "Teostra",
-        "Raging Brachydios",
-        "Vaal Hazak",
-        "Mizutsune",
+        "Gold Rathian",
+        "Diablos",
+        "Black Diablos",
         "Legiana",
-        "Paolumu",
-        "Tzitzi-Ya-Ku",
-        "Malfestio",
-        "Gammoth",
-        "Glavenus",
-        "Khezu",
-        "Najarala",
-        "Akantor",
-        "Seregios",
-        "Safi'jiiva",
-        "Zorah Magdaros",
-        "Behemoth",
-        "Frostfang Barioth",
+        "Shrieking Legiana",
         "Barioth",
-        "Tigrex",
-        "Nargacuga",
-        "Astalos",
-        "Mizutsune",
-        "Chameleos",
+        "Frostfang Barioth",
+        "Bazelgeuse",
+        "Seething Bazelgeuse",
+        "Deviljho",
+        "Savage Deviljho",
+        "Nergigante",
+        "Ruiner Nergigante",
+        "Vaal Hazak",
+        "Blackveil Vaal Hazak",
         "Brachydios",
-        "Tzitzi-Ya-Ku",
+        "Raging Brachydios",
         "Zinogre",
+        "Stygian Zinogre",
+        "Paolumu",
+        "Nightshade Paolumu",
+        "Leshen",
+        "Ancient Leshen",
+        "Rajang",
+        "Furious Rajang",
+        "Yian Garuga",
+        "Scarred Yian Garuga",
+        "Tigrex",
+        "Brute Tigrex",
+        "Nargacuga",
         "Kushala Daora",
         "Teostra",
         "Xeno'jiiva",
-        "Alatreon",
-        "Vaal Hazak",
-        "Raging Brachydios",
-        "Safi'jiiva",
-        "Kirin",
-        "Rajang",
-        "Shara Ishvalda",
-        "Gore Magala",
-        "Gajalaka",
         "Zorah Magdaros",
-        "Nergigante",
-        "Raging Brachydios",
-        "Diablos",
-        "Black Diablos",
+        "Behemoth",
+        "Shara Ishvalda",
+        "Lavasioth",
+        "Namielle",
+        "Kirin",
+        "Tzitzi-Ya-Ku",
+        "Dodogama",
+        "Beotodus",
+        "Kulve Taroth",
+        "Safi'jiiva",
+        "Velkhana",
+        "Banbaro",
+        "Alatreon",
+        "Fatalis",
+        "Aknosom", //mhrise
+        "Almudron",
+        "Magma Almudron",
+        "Arzuros",
+        "Apex Arzuros",
+        "Astalos",
+        "Basarios",
+        "Bishaten",
+        "Blood Orange Bishaten",
+        "Chameleos",
+        "Risen Chameleos",
+        "Daimyo Hermitaur",
+        "Shogun Ceanataur",
+        "Espinas",
+        "Flaming Espinas",
+        "Goss Harag",
+        "Gaismagorm",
+        "Garangolm",
         "Gore Magala",
-        "Frostfang Barioth",
-        "Barroth",
-        "Lunastra",
-        "Dodo-Gama",
-        "Beotodus"
+        "Chaotic Gore Magala",
+        "Shagu Magala",
+        "Risen Shagu Magala",
+        "Great Baggi",
+        "Great Izuchi",
+        "Great Wroggi",
+        "Khezu",
+        "Lagombi",
+        "Lunagaron",
+        "Magnamalo",
+        "Scorned Magnamalo",
+        "Mizutsune",
+        "Violet Mitsuzune",
+        "Apex Mizutsune",
+        "Rakna-Kadaki",
+        "Pyre Rakna-Kadaki",
+        "Royal Ludroth",
+        "Volvidon",
+        "Somnacanth",
+        "Aurora Somnacanth",
+        "Seregios",
+        "Tetranadon",
+        "Wind Serpent Ibushi",
+        "Thunder Serpent Narwa",
+        "Narwa the Allmother",
+        "Amatsu",
+        "Crimson Glow Valstrax",
+        "Malzeno",
+        "Primordial Malzeno",
+        "Risen Teostra",
+        "Risen Kushala Daora",
+        "Apex Rathalos",
+        "Apex Rathian",
+        "Apex Zinogre",
+        "Apex Diablos",
     )
 
+
+
+
+    val imagesLinks = mutableListOf(
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em101_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em102_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em107_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em109_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em044_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em114_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em108_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em100_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em100_01_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em113_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em113_01_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em002_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em002_01_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em002_02_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em001_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em001_01_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em001_02_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em007_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em007_01_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em111_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em111_05_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em042_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em042_05_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em118_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em118_05_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em043_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em043_05_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em103_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em103_05_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em115_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em115_05_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em063_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em063_05_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em057_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em057_01_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em110_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em110_01_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em127_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em127_01_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em023_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em023_05_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em018_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em018_05_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em032_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em032_01_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em037_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em024_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em027_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em105_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em106_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em121_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em126_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em036_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em125_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em011_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em120_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em116_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em122_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em104_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em124_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em123_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em050_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em013_ID.png",
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em091_00.png", //aknosom
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em095_00.png", //almudron
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em095_01.png",//magma almudron
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em060_00.png", //arzuros
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em060_07.png", //apex arzuros
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em081_00.png", //Astalos
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em004_00.png", //basarios
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em090_00.png", //bishaten
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em090_01.png",//Blood Orange Bishaten
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em025_00.png", //Chameleos
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em025_08.png", //risen chameleos
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em019_00.png", //Daimyo Hermitaur
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em020_00.png",//Shogun Ceanataur
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em136_00.png", //Espinas
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em136_01.png",//Flaming espinas
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em097_00.png", //Goss Harag
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em135_00.png", //Gaismagorm
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em134_00.png", //Garangolm
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em071_00.png", //gore magala
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em071_05.png", //chaotic gore magala
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em072_00.png", //shagu magala
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em072_08.png", //risen shagu magala
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em054_00.png",//Great Baggi
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em098_00.png",//Great Izuchi
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em059_00.png", //great wroggi
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em003_00.png", //khezu
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em061_00.png", //Lagombi
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em133_00.png", //Lunagaron
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em089_00.png", //magnamalo
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em089_05.png",//Scorned Magnamalo
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em082_00.png", //mitsuzune
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em082_02.png", //Violet mitsuzune
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em082_07.png", //apex mizutsune
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em094_00.png",//Rakna-kadaki
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em094_01.png",//pyre rakna-kadaki
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em047_00.png",//Royal Ludroth
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em062_00.png", //Volvidon
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em093_00.png",//Somnacanth
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em093_01.png", //Variant somnacanth
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em077_00.png", //seregios
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em092_00.png",//Tetranadon
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em096_00.png",//Wind Serpent Ibushi
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em099_00.png",//Thunder Serpent Narwa
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em099_05.png",//Narwa the Allmother
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em058_00.png", //Amatsu
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em086_05.png", //valtrax
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em132_00.png",//malzeno
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em132_05.png", //primordial malzeno
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em027_08.png", //risen teostra
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em024_08.png", //risen kushala daora
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em002_07.png", //apex rathalos
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em001_07.png", //apex rathian
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em057_07.png", //apex zinogre
+        "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em007_07.png", //apex diablos
+
+
+    )
 }

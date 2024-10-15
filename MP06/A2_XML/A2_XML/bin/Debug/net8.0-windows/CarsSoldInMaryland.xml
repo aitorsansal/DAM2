@@ -676,7 +676,7 @@
     <row _id="row-6q9i_5c2y_zs4k" _uuid="00000000-0000-0000-D962-CBF06978657A" _position="0" _address="https://opendata.maryland.gov/resource/un65-7ipd/row-6q9i_5c2y_zs4k">
       <year>2009</year>
       <month>JAN</month>
-      <new>17963</new>
+      <new>500</new>
       <used>41254</used>
       <total_sales_new>504208132</total_sales_new>
       <total_sales_used>320520578</total_sales_used>
@@ -1927,7 +1927,7 @@
       <new>19160</new>
       <used>40497</used>
       <total_sales_new>847214025</total_sales_new>
-      <total_sales_used>1</total_sales_used>
+      <total_sales_used>694097721</total_sales_used>
     </row>
     <row _id="row-adi5~gx4u_5nxq" _uuid="00000000-0000-0000-7D48-15F3FBFE9BB7" _position="0" _address="https://opendata.maryland.gov/resource/un65-7ipd/row-adi5~gx4u_5nxq">
       <year>2022</year>
