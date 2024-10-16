@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:A3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Reader/Writer" Height="450" Width="800">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <ListBox Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"></ListBox>
     </Grid>
 </Window>

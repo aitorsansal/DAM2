@@ -7,16 +7,18 @@ public class MidSquareAccess: IDisposable, IDAO
 
     public bool Empty { get; set; }
     public int MaxLengthOfName { get; set; }
-    public int LengthOfName { get; set; }
+    public int LengthOfName
+    {
+        get { return Nom.Length;}
+        set { }
+    }
     public int MaxLenghtOfName => posicionsValidades.Count - NIF.Length;
-    public string NIF { get; set; }
-    public string Nom { get; set; }
+    public string NIF { get; set; } = string.Empty;
+    public string Nom { get; set; } = string.Empty;
     private const int POS_NOM = 10000;
     private FileStream fs = null;
     private BinaryReader br = null;
     private BinaryWriter bw = null;
-    private string name;
-    private string nif;
     private List<int> posicionsValidades = [];
     
     
@@ -26,7 +28,14 @@ public class MidSquareAccess: IDisposable, IDAO
         string fileName = seed + ".bin";
         if (overWrite || !File.Exists(fileName))
         {
-            
+            fs = new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite, FileShare.Read);
+            bw = new BinaryWriter(fs);
+            br = new BinaryReader(fs);
+        }
+        else
+        {
+            fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read);
+            br = new BinaryReader(fs);
         }
     }
 
@@ -63,22 +72,45 @@ public class MidSquareAccess: IDisposable, IDAO
     
     public void WriteData(string name, string nif)
     {
-        throw new NotImplementedException();
+        string nameNif = Nom + NIF;
+        for (int i = 0; i < nameNif.Length; i++)
+        {
+            fs.Seek(posicionsValidades[i], SeekOrigin.Begin);
+            bw.Write(nameNif[i]);
+        }
     }
 
     public string ReadNIF()
     {
-        throw new NotImplementedException();
+        if (LengthOfName is 0) LengthOfName = ReadLengthOfName();
+        string recreatedNif = string.Empty;
+        for (int i = 0; i < 9; i++)
+        {
+            fs.Seek(posicionsValidades[LengthOfName+i], SeekOrigin.Begin);
+            recreatedNif += br.ReadChar();
+        }
+
+        return recreatedNif;
     }
 
     public string ReadName()
     {
-        throw new NotImplementedException();
+        if(LengthOfName is 0) LengthOfName = ReadLengthOfName();
+        string recreatedName = string.Empty;
+        for (int i = 0; i < LengthOfName; i++)
+        {
+            fs.Seek(posicionsValidades[i], SeekOrigin.Begin);
+            recreatedName += br.ReadChar();
+        }
+
+        return recreatedName;
     }
     
     public void Dispose()
     {
-        // TODO release managed resources here
+        fs.Dispose();
+        bw.Dispose();
+        br.Dispose();
     }
 
 

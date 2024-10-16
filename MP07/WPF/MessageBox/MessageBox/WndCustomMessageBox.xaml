@@ -1,0 +1,19 @@
+﻿<Window x:Class="MessageBox.WndCustomMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:MessageBox"
+        mc:Ignorable="d"
+        Loaded="WndCustomMessageBox_OnLoaded"
+        SizeToContent="Height"
+        Title="WndCustomMessageBox" Height="450" Width="250">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" TextWrapping="Wrap" Name="txtInformation" MinWidth="250" MaxWidth="250" Margin="10"/>
+        <StackPanel Grid.Row="1" Name="stkPnlButtons"/>
+    </Grid>
+</Window>
