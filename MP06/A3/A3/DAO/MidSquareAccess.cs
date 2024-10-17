@@ -2,7 +2,7 @@
 
 namespace A3.DAO;
 
-public class MidSquareAccess: IDisposable, IDAO
+public class MidSquareAccess: IDAO
 {
 
     public bool Empty { get; set; }
@@ -26,6 +26,7 @@ public class MidSquareAccess: IDisposable, IDAO
     public MidSquareAccess(string seed, bool overWrite)
     {
         string fileName = seed + ".bin";
+        posicionsValidades = SequenciaDePosicions(seed);
         if (overWrite || !File.Exists(fileName))
         {
             fs = new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite, FileShare.Read);
@@ -47,27 +48,31 @@ public class MidSquareAccess: IDisposable, IDAO
 
     private List<int> SequenciaDePosicions(string seed)
     {
-        posicionsValidades.Add(int.Parse(seed));
+        List<int> pos =
+        [
+            int.Parse(seed)
+        ];
         string current = "";
         int value = int.Parse(seed);
         for (int i = 0; i < POS_NOM; i++)
         {
             value *= value;
+            current = value.ToString();
             while (current.Length != 8)
             {
                 current = "0" + current;
             }
-            current = value.ToString().Substring(2, 4);
+            current = current.Substring(2, 4);
             value = int.Parse(current);
-            posicionsValidades.Add(value);
+            pos.Add(value);
         }
 
-        return posicionsValidades;
+        return pos.Distinct().ToList();
     }
 
-    private bool IsFeasible(string name, string nif)
+    public bool IsFeasible(string name, string nif)
     {
-        return posicionsValidades.Count > LengthOfName;
+        return posicionsValidades.Count > name.Length+nif.Length;
     }
     
     public void WriteData(string name, string nif)
@@ -82,6 +87,7 @@ public class MidSquareAccess: IDisposable, IDAO
 
     public string ReadNIF()
     {
+        
         if (LengthOfName is 0) LengthOfName = ReadLengthOfName();
         string recreatedNif = string.Empty;
         for (int i = 0; i < 9; i++)

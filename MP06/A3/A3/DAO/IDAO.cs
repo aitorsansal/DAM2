@@ -2,9 +2,10 @@
 
 namespace A3.DAO;
 
-public interface IDAO
+public interface IDAO : IDisposable
 {
-    void WriteData(string name, string nif);
+    public void WriteData(string name, string nif);
+    public bool IsFeasible(string name, string nif);
     string ReadNIF();
     string ReadName();
     bool Empty {  get; }
