@@ -13,8 +13,8 @@ fun CustomCheck(checked: Boolean, color : Color = Color.Red, modifier : Modifier
 {
     if(checked)
     {
-        Icon(imageVector = Icons.Filled.Check, contentDescription = null, tint = color, modifier = modifier)
+        Icon(imageVector = Icons.Default.Check, contentDescription = null, tint = color, modifier = modifier)
     }
     else
-        Icon(imageVector = Icons.Filled.Close, contentDescription = null, tint = color, modifier = modifier)
+        Icon(imageVector = Icons.Default.Close, contentDescription = null, tint = color, modifier = modifier)
 }
