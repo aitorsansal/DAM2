@@ -13,7 +13,6 @@ using A2;
 public class XmlManagerImplementation : IXMLManager
 {
     const string FILE = "CarsSoldInMaryland.xml";
-    
 
     public List<int> GetDistinctYears()
     {

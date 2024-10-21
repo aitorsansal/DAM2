@@ -51,6 +51,16 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="SavedFileTextBlock" TargetType="TextBlock">
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Foreground" Value="Transparent"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="True">
+                    <Setter Property="Foreground" Value="DarkBlue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -81,14 +91,14 @@
             <TextBlock Grid.Row="2" Grid.Column="1" Text="Name" VerticalAlignment="Center"/>
             <TextBox Grid.Row="0" Grid.Column="2" Name="TbWritingSeed" 
                         VerticalContentAlignment="Center" VerticalAlignment="Center" Padding="0,5,0,5" Background="#66340F79"/>
-            <TextBox Grid.Row="1" Grid.Column="2" Name="TbWritingNif" 
+            <TextBox Grid.Row="1" Grid.Column="2" Name="TbWritingNif" TextChanged="TbNifAndTbName_OnTextChanged"
                         VerticalContentAlignment="Center" VerticalAlignment="Center" Padding="0,5,0,5" Background="#66340F79"/>
-            <TextBox Grid.Row="2" Grid.Column="2" Name="TbWritingName" 
+            <TextBox Grid.Row="2" Grid.Column="2" Name="TbWritingName" TextChanged="TbNifAndTbName_OnTextChanged"
                         VerticalContentAlignment="Center" VerticalAlignment="Center" Padding="0,5,0,5" Background="#66340F79"/>
 
             <Button Grid.Row="0" Grid.Column="3" Content="Fix Seed" Style="{StaticResource RoundedButton}" Click="BtnWritingFixSeed_OnClick"/>
             <Button Grid.Row="1" Grid.Column="3" Content="Test" Name="btnTest" IsEnabled="False" Style="{StaticResource RoundedButton}" Click="BtnTest_OnClick"/>
-            <Button Grid.Row="2" Grid.Column="3" Content="Write" Name="btnWrite" IsEnabled="False" Style="{StaticResource RoundedButton}"/>
+            <Button Grid.Row="2" Grid.Column="3" Content="Write" Name="btnWrite" IsEnabled="False" Style="{StaticResource RoundedButton}" Click="BtnWrite_OnClick"/>
         </Grid>
         <Grid Grid.Row="0" Grid.Column="0">
             <Grid.RowDefinitions>
@@ -103,8 +113,10 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Row="1" Grid.Column="1" Text="╚Wrong seed inserted╝" Name="txtWrongWrtitngSeed" IsEnabled="False" Style="{StaticResource InformationTextBlock}"/>
-            <TextBlock Grid.Row="2" Grid.Column="1" Text="╚Wrong NIF inserted╝" Name="txtWrongNif" IsEnabled="False" Style="{StaticResource InformationTextBlock}" VerticalAlignment="Center" Padding="0,0,0,8"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="╚Wrong NIF inserted╝" Name="txtWrongNif" IsEnabled="False" Style="{StaticResource InformationTextBlock}" VerticalAlignment="Center" Padding="0,0,0,8" />
             <TextBlock Grid.Row="3" Grid.Column="1" Text="╚The name is too long╝" Name="txtWrongName" IsEnabled="False" Style="{StaticResource InformationTextBlock}" VerticalAlignment="Bottom" Padding="0,0,0,10"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="File has been wrotten an saved." Padding="5,0,0,0" Name="txtSavedFile"
+                       VerticalAlignment="Bottom" IsEnabled="False" Style="{StaticResource SavedFileTextBlock}"/>
         </Grid>
 
         <Border Grid.Row="1" Grid.Column="0" Height="1" Background="Black" HorizontalAlignment="Stretch" Margin="10"></Border>
@@ -126,14 +138,30 @@
             <TextBlock Grid.Row="0" Grid.Column="1" Text="Seed" VerticalAlignment="Center"/>
             <TextBlock Grid.Row="1" Grid.Column="1" Text="NIF" VerticalAlignment="Center"/>
             <TextBlock Grid.Row="2" Grid.Column="1" Text="Name" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="0" Grid.Column="2" VerticalContentAlignment="Center" VerticalAlignment="Center" Padding="0,5,0,5" Background="#66340F79"/>
-            <TextBox Grid.Row="1" Grid.Column="2" VerticalContentAlignment="Center" VerticalAlignment="Center" Padding="0,5,0,5" Background="#66340F79" IsEnabled="False"/>
-            <TextBox Grid.Row="2" Grid.Column="2" VerticalContentAlignment="Center" VerticalAlignment="Center" Padding="0,5,0,5" Background="#66340F79" IsEnabled="False"/>
+            <TextBox Grid.Row="0" Grid.Column="2" VerticalContentAlignment="Center" VerticalAlignment="Center" Padding="0,5,0,5" Background="#66340F79" Name="tbReadingSeed" TextChanged="TbWritingSeed_OnTextChanged"/>
+            <TextBox Grid.Row="1" Grid.Column="2" VerticalContentAlignment="Center" VerticalAlignment="Center" Padding="0,5,0,5" Background="#66340F79" Name="tbReadingName" IsEnabled="False"/>
+            <TextBox Grid.Row="2" Grid.Column="2" VerticalContentAlignment="Center" VerticalAlignment="Center" Padding="0,5,0,5" Background="#66340F79" Name="tbReadingNIF" IsEnabled="False"/>
 
-            <Button Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Content="Fix Seed" Style="{StaticResource RoundedButton}"/>
-            <Button Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Name="btnRead" Content="Read" Style="{StaticResource RoundedButton}" IsEnabled="False"/>
+            <Button Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Content="Fix Seed" Style="{StaticResource RoundedButton}" Click="BtnReadingFixSeed_OnClick"/>
+            <Button Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Name="btnRead" Content="Read" Style="{StaticResource RoundedButton}" IsEnabled="False" Click="BtnRead_OnClick"/>
         </Grid>
         <ListBox Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" Margin="20"
-                 ItemsSource="{Binding BinFiles, RelativeSource={RelativeSource AncestorType=Window}}" Background="#7F92D299"/>
+                 ItemsSource="{Binding BinFiles, RelativeSource={RelativeSource AncestorType=Window}}" Background="#7F92D299"
+                 MouseDoubleClick="LbFiles_OnDoubleClick" Name="lbFiles"/>
+        
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="╚Wrong seed inserted╝" Name="txtWrongReadingSeed" IsEnabled="False" Style="{StaticResource InformationTextBlock}"/>
+        </Grid>
     </Grid>
 </Window>

@@ -7,11 +7,8 @@ public class MidSquareAccess: IDAO
 
     public bool Empty { get; set; }
     public int MaxLengthOfName { get; set; }
-    public int LengthOfName
-    {
-        get { return Nom.Length;}
-        set { }
-    }
+    public int LengthOfName { get; private set; }
+
     public int MaxLenghtOfName => posicionsValidades.Count - NIF.Length;
     public string NIF { get; set; } = string.Empty;
     public string Nom { get; set; } = string.Empty;
@@ -27,7 +24,7 @@ public class MidSquareAccess: IDAO
     {
         string fileName = seed + ".bin";
         posicionsValidades = SequenciaDePosicions(seed);
-        if (overWrite || !File.Exists(fileName))
+        if (overWrite)
         {
             fs = new FileStream(fileName, FileMode.Create, FileAccess.ReadWrite, FileShare.Read);
             bw = new BinaryWriter(fs);
@@ -77,7 +74,9 @@ public class MidSquareAccess: IDAO
     
     public void WriteData(string name, string nif)
     {
-        string nameNif = Nom + NIF;
+        fs.Seek(POS_NOM, SeekOrigin.Begin);
+        bw.Write(name.Length);
+        string nameNif = name + nif;
         for (int i = 0; i < nameNif.Length; i++)
         {
             fs.Seek(posicionsValidades[i], SeekOrigin.Begin);
@@ -87,7 +86,6 @@ public class MidSquareAccess: IDAO
 
     public string ReadNIF()
     {
-        
         if (LengthOfName is 0) LengthOfName = ReadLengthOfName();
         string recreatedNif = string.Empty;
         for (int i = 0; i < 9; i++)
@@ -101,7 +99,8 @@ public class MidSquareAccess: IDAO
 
     public string ReadName()
     {
-        if(LengthOfName is 0) LengthOfName = ReadLengthOfName();
+        if(LengthOfName is 0) 
+            LengthOfName = ReadLengthOfName();
         string recreatedName = string.Empty;
         for (int i = 0; i < LengthOfName; i++)
         {
@@ -114,9 +113,9 @@ public class MidSquareAccess: IDAO
     
     public void Dispose()
     {
-        fs.Dispose();
-        bw.Dispose();
-        br.Dispose();
+        if(fs is not null) fs.Dispose();
+        if(bw is not null) bw.Dispose();
+        if(br is not null) br.Dispose();
     }
 
 

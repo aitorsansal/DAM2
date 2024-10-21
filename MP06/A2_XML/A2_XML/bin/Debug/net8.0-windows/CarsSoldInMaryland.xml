@@ -684,10 +684,10 @@
     <row _id="row-v6sx-eevi~iq69" _uuid="00000000-0000-0000-6583-859F5D9627C6" _position="0" _address="https://opendata.maryland.gov/resource/un65-7ipd/row-v6sx-eevi~iq69">
       <year>2009</year>
       <month>FEB</month>
-      <new>14779</new>
-      <used>48308</used>
-      <total_sales_new>418843100</total_sales_new>
-      <total_sales_used>332054088</total_sales_used>
+      <new>1</new>
+      <used>2</used>
+      <total_sales_new>3</total_sales_new>
+      <total_sales_used>4</total_sales_used>
     </row>
     <row _id="row-bdnt-b2j9_xyqz" _uuid="00000000-0000-0000-5E7C-E30D9916F295" _position="0" _address="https://opendata.maryland.gov/resource/un65-7ipd/row-bdnt-b2j9_xyqz">
       <year>2009</year>
