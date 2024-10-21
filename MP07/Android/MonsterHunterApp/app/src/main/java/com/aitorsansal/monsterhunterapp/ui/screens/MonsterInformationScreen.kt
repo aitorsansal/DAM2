@@ -44,12 +44,12 @@ import com.aitorsansal.monsterhunterapp.R
 import com.aitorsansal.monsterhunterapp.ui.composables.CustomCheck
 
 @Composable
-fun MonsterInformation(
-    id: Int,
+fun MonsterInformationScreen(
+    id: String,
     modifier: Modifier = Modifier,
     onClickElement : () -> Unit = {}
 ){
-    val monster = fakeRepository.monsterData[id]
+    val monster = fakeRepository.monsterData[id.toInt()]
     Card(modifier = modifier.fillMaxSize()) {
         Box(modifier = Modifier.fillMaxSize().background(color = Color.DarkGray).padding(top = 30.dp)){
 
@@ -163,5 +163,5 @@ fun MonsterInformation(
 @Composable
 fun PreviewMonsterInformation() {
     fakeRepository.obtainData()
-    MonsterInformation(1)
+    MonsterInformationScreen("2")
 }

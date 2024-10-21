@@ -22,7 +22,7 @@ import com.aitorsansal.monsterhunterapp.model.Monster
 
 @Composable
 fun CustomGridList(data : List<Monster>,
-                   onClickElement : (Int) -> Unit = {},
+                   onClickElement : (String) -> Unit = {},
                    gridState:LazyGridState){
     LazyVerticalGrid (modifier = Modifier
         .fillMaxSize()
@@ -36,7 +36,8 @@ fun CustomGridList(data : List<Monster>,
     ) {
         items(data)
         {
-            VerticalFileInformation(it.id-1, onClickElement = onClickElement, modifier = Modifier.height(250.dp))
+            var id : Int = it.id-1
+            VerticalFileInformation(id, onClickElement = { onClickElement((id).toString())}, modifier = Modifier.height(250.dp))
         }
     }
 }
