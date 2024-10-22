@@ -7,10 +7,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -21,15 +17,12 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.aitorsansal.monsterhunterapp.data.fakeRepository
 import com.aitorsansal.monsterhunterapp.navigation.MainScreen
 import com.aitorsansal.monsterhunterapp.navigation.NavigationGraph
-import com.aitorsansal.monsterhunterapp.ui.screens.CustomGridList
-import com.aitorsansal.monsterhunterapp.ui.screens.MonsterInformationScreen
 import com.aitorsansal.monsterhunterapp.ui.theme.MonsterHunterAppTheme
 import androidx.navigation.NavDestination.Companion.hasRoute
 

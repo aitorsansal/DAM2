@@ -12,7 +12,7 @@ object fakeRepository{
 
     public fun obtainData()  {
         if(monsterData.isEmpty())
-            monsterData = (0..<monsterNames.size).toList().map{GenerateMonster(it) }.toList()
+            monsterData = (0 until monsterNames.size).toList().map{GenerateMonster(it) }.toList()
     }
 
     fun GenerateMonster(pos: Int) : Monster

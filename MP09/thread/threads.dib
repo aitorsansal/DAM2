@@ -1,0 +1,333 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"}]}}
+
+#!markdown
+
+# Introducció a la programació amb Threads en C#
+
+#!markdown
+
+## Què és un thread?
+
+Un **thread** (o fil d'execució) és la unitat bàsica d'execució dins d'un programa. Cada aplicació té almenys un thread principal que s'inicia quan el programa es llança. No obstant això, és possible crear diversos threads per executar diferents parts del codi en paral·lel, millorant l'eficiència i el rendiment del programa, especialment per tasques que es poden dividir en parts més petites.
+
+---
+
+#!markdown
+
+## Per què utilitzar threads?
+
+Alguns **avantatges** d'utilitzar threads són:
+
+- **Execució simultània**: Permeten realitzar diverses tasques simultàniament.
+- **Millora de rendiment**: Milloren l'eficiència en aplicacions que gestionen tasques independents.
+- **Múltiples nuclis**: Ajuda a aprofitar millor els processadors amb múltiples nuclis, ja que cada thread es pot executar en un nucli diferent.
+
+---
+
+#!markdown
+
+## Crear un thread en C#
+
+Per crear un thread en C#, primer hem d'importar el namespace necessari i després crear el thread, passant-li la funció que ha de executar.
+
+### Pas 1: Importar el namespace necessari
+
+#!markdown
+
+_En aquest cas, i per poder executar el codi aquí, no podem tenir una funció main, però el funcionament és exactament igual._
+
+#!csharp
+
+using System.Threading;
+
+#!markdown
+
+## Pas 2: Crear i iniciar un thread
+
+Per crear un thread, utilitzem la classe Thread. Després, el llancem amb Start() per començar la seva execució.
+
+#!csharp
+
+Thread thread = new Thread(NomFuncio);
+thread.Start();  // Inicia el thread
+
+void NomFuncio()
+{
+    Console.WriteLine("Aquest codi està executant-se en un altre thread.");
+}
+
+#!markdown
+
+Hi ha diverses maneres d'iniciar i crear un thread
+
+#!markdown
+
+Amb una funció per paràmetre.
+
+#!csharp
+
+using System;
+using System.Threading;
+
+
+Thread thread = new Thread(PrintMessage);
+thread.Start();
+
+
+static void PrintMessage()
+{
+Console.WriteLine("Hola des del thread!");
+}
+
+#!markdown
+
+Amb una Expressió lambda.
+
+#!csharp
+
+using System;
+using System.Threading;
+
+
+Thread thread = new Thread(() => 
+{
+    Console.WriteLine("Hola des d'una expressió lambda!");
+});
+
+thread.Start();
+
+#!markdown
+
+Amb una funciò amb paràmetres.
+
+#!csharp
+
+using System;
+using System.Threading;
+
+
+Thread thread = new Thread(PrintMessageWithParameter);
+thread.Start("Hola amb un paràmetre!");
+
+
+static void PrintMessageWithParameter(object message)
+{
+Console.WriteLine(message);
+}
+
+#!markdown
+
+## Detalls importants per a la gestió de threads
+Quan es treballa amb diversos threads, és important gestionar la sincronització per evitar conflictes, especialment quan comparteixen recursos.
+
+#!markdown
+
+### Ús de ``Thread.Join()``
+El mètode ``Join()`` es fa servir per esperar que un thread acabi la seva execució abans de continuar amb el codi principal. Exemple:
+
+#!csharp
+
+Thread thread = new Thread(NomFuncio);
+thread.Start();
+thread.Join();  // Esperem que el thread acabi
+Console.WriteLine("Aquest codi només s'executa després que el thread acabi.");
+
+void NomFuncio()
+{
+    Console.WriteLine("Aquest codi està executant-se en un altre thread.");
+    
+}
+
+#!markdown
+
+### Sincronització amb ``lock``
+Si diversos threads accedeixen a la mateixa variable o recurs, cal assegurar-se que només un fil pugui accedir-hi a la vegada. Això es pot fer amb la instrucció lock.
+
+#!csharp
+
+using System;
+using System.Threading;
+
+// Comptador i objecte de bloqueig per a sincronitzar els fils
+int counter = 0;
+object lockObject = new object();
+
+// Creem un array de fils
+Thread[] threads = new Thread[5];
+
+// Funció que cada fil executarà
+void IncrementCounter()
+{
+    for (int i = 0; i < 1000; i++)
+    {
+        lock (lockObject) // Assegurem que només un fil incrementa el comptador alhora
+        {
+            counter++;
+        }
+    }
+}
+
+// Iniciar els fils
+for (int i = 0; i < 5; i++)
+{
+    threads[i] = new Thread(IncrementCounter);
+    threads[i].Start();
+}
+
+// Esperar que tots els fils acabin
+foreach (var thread in threads)
+{
+    thread.Join(); // Ens assegurem que tots els fils acabin abans de continuar
+}
+
+// Mostrar el valor final del comptador
+Console.WriteLine("Valor final del comptador: " + counter);
+
+#!markdown
+
+Amb aquests conceptes i exemples ja tenim una idea clara i molt bàsica de què és un thread i les seves utilitats, ara farem 3 exercicis.
+
+#!markdown
+
+# Exercici 1 (4p)
+
+Teniu aquest codi que fa 2 multiplicacions de [matrius](https://ca.wikipedia.org/wiki/Matriu_(matem%C3%A0tiques)). Ens demana les dimensions de la matriu i simplement les multiplica, donant-nos el temps que ha tardat a fer-ho. No mostra el resultat, ja que les matrius que farem servir són de dimensions grans i no es veurien correctament.
+
+#!markdown
+
+Si voleu entendre més com funciona la multiplicació aquí teniu una petita explicació del mètode que fa servir el codi:
+
+L'element $c_{ij}$ de la matriu producte s'obté multiplicant cada element de la fila $i$ de la matriu A per cada element de la columna $j$ de la matriu B i sumant-los.
+
+![alt text](image.png)
+
+#!markdown
+
+Heu d'agafar el codi i afegir les següents parts:
+
+- Un cop generades les matrius amb nombres aleatoris, ha de demanar amb quants threads volem fer la multiplicació, 1,2,3 o fins al màxim que el nostre ordinador té disponible.
+- Farem la multiplicació amb els threads escollits.
+- Ens dirà el temps que ha tardat a fer aquest càlcul.
+- Ens tornarà a demanar els threads que volem fer servir, escriure "0" equival a tancar el programa.
+- Bucle fins a entrar un 0.
+
+#!markdown
+
+Per saber quants threads simultanis podem tenir podem fer servir:
+
+#!csharp
+
+// Nombre de threads lògics disponibles
+int threadsLogics = Environment.ProcessorCount;
+Console.WriteLine($"El processador pot gestionar {threadsLogics} threads simultanis.");
+
+#!markdown
+
+Tot i que els sistemes operatius moderns, poden suportar molts threads al mateix temps, encara que sobrepassi el "límit", és bona pràctica evitar-ho.
+
+Si tens 4 nuclis i crees 40 threads, cada nucli gestionarà diversos threads alhora, canviant entre ells ràpidament. Això pot fer que els threads triguen més temps a acabar, i tenint un impacte negatiu en el rendiment.
+
+#!markdown
+
+## Codi Exercici 1
+
+#!markdown
+
+_No fa falta que intenteu executar el codi aquí dins, aquest no funcionarà, creeu un projecte al Visual Studio allà si funcionarà_
+
+#!csharp
+
+using System;
+using System.Diagnostics;
+
+class Program
+{
+    static int[,] resultMatrix;
+    static int[,] matrixA;
+    static int[,] matrixB;
+
+    static void Main(string[] args)
+    {
+        // Demanar la mida de les matrius una vegada al principi
+        Console.WriteLine("Quina mida de matrius vols (n x n)? Introdueix el valor de n: ");
+        int n = int.Parse(Console.ReadLine());
+
+        // Crear dues matrius aleatòries de mida n x n una sola vegada
+        matrixA = GenerateRandomMatrix(n, n);
+        matrixB = GenerateRandomMatrix(n, n);
+        resultMatrix = new int[n, n]; // Matriu de resultats buida
+
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+
+        // Multiplicar les matrius sense fils
+        MultiplyMatrices(matrixA, matrixB);
+
+        stopwatch.Stop();
+        double elapsedMilliseconds = stopwatch.ElapsedTicks * 1000.0 / Stopwatch.Frequency; // Converteix a mil·lisegons
+
+        Console.WriteLine($"Temps de multiplicació de matrius: {elapsedMilliseconds} ms");
+    }
+
+    // Funció per generar una matriu aleatòria de m x n
+    static int[,] GenerateRandomMatrix(int rows, int cols)
+    {
+        Random random = new Random();
+        int[,] matrix = new int[rows, cols];
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                matrix[i, j] = random.Next(1, 100); // Valors aleatoris entre 1 i 9
+            }
+        }
+
+        return matrix;
+    }
+
+    // Funció per multiplicar les matrius sense utilitzar fils
+    static void MultiplyMatrices(int[,] matrixA, int[,] matrixB)
+    {
+        int rowsA = matrixA.GetLength(0);
+        int colsA = matrixA.GetLength(1);
+        int colsB = matrixB.GetLength(1);
+
+        for (int i = 0; i < rowsA; i++)
+        {
+            for (int j = 0; j < colsB; j++)
+            {
+                int sum = 0;
+                for (int k = 0; k < colsA; k++)
+                {
+                    sum += matrixA[i, k] * matrixB[k, j];
+                }
+                resultMatrix[i, j] = sum;
+            }
+        }
+    }
+}
+
+#!markdown
+
+# Exercici 2 (2p)
+
+Afegiu un sistema per visualitzar els resultats de les matrius.
+
+Per considerar aquesta part correcta cada número ha d'estar a una fila, em refereixo, això és una matriu ben mostrada:
+
+![alt text](image-1.png) 
+
+Mentre que aquesta no:
+
+![alt text](image-3.png)
+
+#!markdown
+
+# Exercici 3 (4p)
+
+Aquest és més creatiu, heu de pensar i programar una situació on fer servir threads ens pugui generar un benefici, com un càlcul de grans magnituds, un algorisme d'ordenació, tractament d'imatges, etc.
+
+També heu de permetre que l'usuari triï quants threads vol fer servir i mostrar el temps, com en l'exercici 1.
