@@ -6,26 +6,28 @@ import kotlin.random.Random
 object fakeRepository{
 
 
-    public var monsterData : List<Monster> = listOf()
+    public var MHWorldData : List<Monster> = listOf()
+        private set
+
+    public var MHRiseData : List<Monster> = listOf()
+                private set
+
+    public var MH4UData : List<Monster> = listOf()
                 private set
 
 
     public fun obtainData()  {
-        if(monsterData.isEmpty())
-            monsterData = (0 until monsterNames.size).toList().map{GenerateMonster(it) }.toList()
+        if(MHRiseData.isEmpty())
+            MHRiseData = (0 until monsterNames.size).toList().map{GenerateMonster(it) }.toList()
     }
 
     fun GenerateMonster(pos: Int) : Monster
     {
         val nOfDrops = Random.nextInt(1,10)
         val dropsList : MutableList<String> = mutableListOf()
-        val doneNumbers : MutableList<Int> = mutableListOf()
         for (i in 1..nOfDrops)
         {
-            var ind = Random.nextInt(0, drops.size)
-            while (doneNumbers.contains(ind))
-                ind = Random.nextInt(0,drops.size)
-            dropsList.add(drops[ind])
+            dropsList.add(getRandomDrop(dropsList)?.first ?: "")
         }
         return Monster(
             id = pos + 1,
@@ -40,35 +42,52 @@ object fakeRepository{
         )
     }
 
-    val drops = mutableListOf(
-        "Dragonite Ore;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/22_2.png",
-        "Dragonvein Crystal;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/22_1.png",
-        "Monster Bone;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/42_4.png",
-        "Monster Bone+;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/42_7.png",
-        "Elder Dragon Bone;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/42_5.png",
-        "Monster Claw;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/45_10.png",
-        "Monster Hardclaw;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/45_11.png",
-        "Monster Essence;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/5_3.png",
-        "Monster Fluid;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/5_6.png",
-        "Sinister Cloth;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/58_10.png",
-        "Paralysis Sac;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/13_9.png",
-        "Sleep Sac;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/13_3.png",
-        "Toxin Sac;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/13_5.png",
-        "Flame Sac;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/13_1.png",
-        "Cryo Sac;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/13_0.png",
-        "Aqua Sac;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/13_6.png",
-        "Monster Plate;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/61_14.png",
-        "Monster Gem;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/9_14.png",
-        "Monster Mantle;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/47_14.png",
-        "Monster Wing;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/3_4.png",
-        "Monster Carapace;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/46_7.png",
-        "Monster Husk;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/46_14.png",
-        "Monster Cortex;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/46_26.png",
-        "Monster Scale;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/43_4.png",
-        "Monster Shard;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/43_1.png",
-        "Monster Plume;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/41_25.png",
-        "Monster Beak;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/60_24.png",
-        "Monster Tail;https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/52_7.png",
+    fun getRandomDrop(usedItems : MutableList<String>): Pair<String, String>? {
+        // Get a list of unused items
+        val unusedItems = drops.filterKeys { it !in usedItems }
+
+        // Return null if all items are used
+        if (unusedItems.isEmpty()) {
+            return null
+        }
+
+        // Select a random entry from the unused items
+        val randomEntry = unusedItems.entries.random()
+
+        // Return the random entry (ID and link)
+        return randomEntry.toPair()
+    }
+
+
+    val drops : Map<String,String> = mapOf<String,String>(
+        "Dragonite Ore" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/22_2.png",
+        "Dragonvein Crystal" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/22_1.png",
+        "Monster Bone" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/42_4.png",
+        "Monster Bone+" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/42_7.png",
+        "Elder Dragon Bone" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/42_5.png",
+        "Monster Claw" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/45_10.png",
+        "Monster Hardclaw" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/45_11.png",
+        "Monster Essence" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/5_3.png",
+        "Monster Fluid" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/5_6.png",
+        "Sinister Cloth" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/58_10.png",
+        "Paralysis Sac" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/13_9.png",
+        "Sleep Sac" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/13_3.png",
+        "Toxin Sac" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/13_5.png",
+        "Flame Sac" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/13_1.png",
+        "Cryo Sac" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/13_0.png",
+        "Aqua Sac" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/13_6.png",
+        "Monster Plate" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/61_14.png",
+        "Monster Gem" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/9_14.png",
+        "Monster Mantle" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/47_14.png",
+        "Monster Wing" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/3_4.png",
+        "Monster Carapace" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/46_7.png",
+        "Monster Husk" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/46_14.png",
+        "Monster Cortex" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/46_26.png",
+        "Monster Scale" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/43_4.png",
+        "Monster Shard" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/43_1.png",
+        "Monster Plume" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/41_25.png",
+        "Monster Beak" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/60_24.png",
+        "Monster Tail" to "https://cdn.kiranico.net/file/kiranico/mhworld-web/images/itm/icon/52_7.png",
     )
 
 

@@ -37,5 +37,5 @@ fun HorizontalComposableList(data : List<Monster>,
 @Composable
 fun PreviewHorizontalComposableList(){
     fakeRepository.obtainData()
-    HorizontalComposableList(fakeRepository.monsterData)
+    HorizontalComposableList(fakeRepository.MHRiseData)
 }

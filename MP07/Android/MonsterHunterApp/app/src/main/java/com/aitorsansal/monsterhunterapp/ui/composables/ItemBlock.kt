@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.aitorsansal.monsterhunterapp.R
+import com.aitorsansal.monsterhunterapp.data.fakeRepository.drops
 
 @Composable
 fun ItemBlock(
@@ -29,7 +30,6 @@ fun ItemBlock(
     modifier: Modifier = Modifier
 ){
     var showTooltip by remember { mutableStateOf(false) }
-    val splited = item.split(";")
     Card() {
         Box(
             modifier = modifier.fillMaxSize().background(color = Color(31,31,31,255))
@@ -39,7 +39,7 @@ fun ItemBlock(
                 AsyncImage(
                     model = ImageRequest
                         .Builder(LocalContext.current)
-                        .data(splited[1])
+                        .data(drops[item])
                         .build(), contentDescription = null,
                     modifier = Modifier.fillMaxSize(),
                     placeholder = painterResource(R.drawable.ic_launcher_foreground),
@@ -56,7 +56,7 @@ fun ItemBlock(
                         .align(Alignment.TopCenter)
                         .fillMaxSize()
                 ) {
-                    Text(text = splited[0], color = Color.White)
+                    Text(text = item, color = Color.White)
                 }
             }
         }

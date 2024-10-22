@@ -94,5 +94,5 @@ fun FirstList(data : List<Monster>,
 @Composable
 fun PreviewFirstList(){
     fakeRepository.obtainData()
-    FirstList(fakeRepository.monsterData)
+    FirstList(fakeRepository.MHRiseData)
 }

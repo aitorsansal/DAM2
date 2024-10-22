@@ -23,7 +23,7 @@ fun NavigationGraph(navController : NavHostController, paddingValues : PaddingVa
         modifier = Modifier.padding(paddingValues)
     ){
         composable<MainScreen>{
-            CustomGridList( data = fakeRepository.monsterData, gridState = scrollState, onClickElement ={navController.navigate(MonsterInformation(it))})
+            CustomGridList( data = fakeRepository.MHRiseData, gridState = scrollState, onClickElement ={navController.navigate(MonsterInformation(it))})
         }
 
         composable<MonsterInformation>{ backStackEntry ->

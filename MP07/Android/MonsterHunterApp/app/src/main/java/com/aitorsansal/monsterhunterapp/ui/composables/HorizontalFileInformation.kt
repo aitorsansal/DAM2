@@ -35,9 +35,9 @@ fun HorizontalFileInformation(
     background:Color = MaterialTheme.colorScheme.primary,
     colorLetter:Color = MaterialTheme.colorScheme.onPrimary,
             onClickElement : (Int) -> Unit = {}){
-    if(id < fakeRepository.monsterData.size)
+    if(id < fakeRepository.MHRiseData.size)
     {
-        val monster : Monster = fakeRepository.monsterData[id] //todo change this shit
+        val monster : Monster = fakeRepository.MHRiseData[id] //todo change this shit
         Card {
             Row(modifier = modifier.fillMaxWidth().background(color = background)
                 .clickable { onClickElement(id) }) {

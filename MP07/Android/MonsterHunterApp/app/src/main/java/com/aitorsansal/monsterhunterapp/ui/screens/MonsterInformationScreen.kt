@@ -10,17 +10,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material3.Card
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -49,16 +44,9 @@ fun MonsterInformationScreen(
     modifier: Modifier = Modifier,
     onClickElement : () -> Unit = {}
 ){
-    val monster = fakeRepository.monsterData[id.toInt()]
+    val monster = fakeRepository.MHRiseData[id.toInt()]
     Card(modifier = modifier.fillMaxSize()) {
         Box(modifier = Modifier.fillMaxSize().background(color = Color.DarkGray).padding(top = 30.dp)){
-
-            IconButton({onClickElement()},
-                modifier = Modifier.align(Alignment.TopStart).size(50.dp)) {
-                Icon(imageVector = Icons.AutoMirrored.Filled.KeyboardArrowLeft,
-                    contentDescription = null, tint = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.size(50.dp))
-            }
             Column(modifier = Modifier.fillMaxSize()) {
                 AsyncImage(
                     model = ImageRequest

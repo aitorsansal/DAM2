@@ -46,5 +46,5 @@ fun CustomGridList(data : List<Monster>,
 @Composable
 fun PreviewCustomList(){
     fakeRepository.obtainData()
-    CustomGridList(gridState = rememberLazyGridState(), data = fakeRepository.monsterData)
+    CustomGridList(gridState = rememberLazyGridState(), data = fakeRepository.MHRiseData)
 }
