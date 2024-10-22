@@ -48,16 +48,16 @@ fun MonsterInformationScreen(
     Card(modifier = modifier.fillMaxSize()) {
         Box(modifier = Modifier.fillMaxSize().background(color = Color.DarkGray).padding(top = 30.dp)){
             Column(modifier = Modifier.fillMaxSize()) {
-                AsyncImage(
-                    model = ImageRequest
-                        .Builder(LocalContext.current)
-                        .data(monster.image)
-                        .size(150)
-                        .build(), contentDescription = null,
-                    modifier = Modifier.align(Alignment.CenterHorizontally).width(150.dp).height(150.dp),
-                    placeholder = painterResource(R.drawable.ic_launcher_foreground),
-                    contentScale = ContentScale.Crop
-                )
+//                AsyncImage(
+//                    model = ImageRequest
+//                        .Builder(LocalContext.current)
+//                        .data(monster.image)
+//                        .size(150)
+//                        .build(), contentDescription = null,
+//                    modifier = Modifier.align(Alignment.CenterHorizontally).width(150.dp).height(150.dp),
+//                    placeholder = painterResource(R.drawable.ic_launcher_foreground),
+//                    contentScale = ContentScale.Crop
+//                )
                 HorizontalDivider(thickness = 5.dp, color = Color.White)
                 Text(text = monster.name, modifier = Modifier.fillMaxWidth(),
                     color = Color.White,
@@ -70,35 +70,6 @@ fun MonsterInformationScreen(
                     style = MaterialTheme.typography.titleMedium)
                 HorizontalDivider(thickness = 2.dp, color = Color.White)
                 Spacer(modifier = Modifier.height(15.dp))
-                Column(modifier = Modifier.fillMaxWidth()){ //Stats zone
-                    Row(modifier = Modifier.fillMaxWidth()){
-                        Text(text = "Health:", color = Color.White,
-                            modifier = Modifier
-                                .width(90.dp)
-                                .align(Alignment.CenterVertically)
-                                .padding(horizontal = 5.dp)
-                        )
-                        StarsProgressBar(monster.hp)
-                    }
-                    Row(modifier = Modifier.fillMaxWidth()){
-                        Text(text = "Strength:", color = Color.White,
-                            modifier = Modifier
-                                .width(90.dp)
-                                .align(Alignment.CenterVertically)
-                                .padding(horizontal = 5.dp)
-                        )
-                        StarsProgressBar(monster.speed)
-                    }
-                    Row(modifier = Modifier.fillMaxWidth()){
-                        Text(text = "Speed:", color = Color.White,
-                            modifier = Modifier
-                                .width(90.dp)
-                                .align(Alignment.CenterVertically)
-                                .padding(horizontal = 5.dp)
-                        )
-                        StarsProgressBar(monster.strength)
-                    }
-                }
                 Spacer(modifier = Modifier.height(15.dp))
                 HorizontalDivider(thickness = 2.dp, color = Color.White)
                 Text(text = "Catch Challenge", textAlign = TextAlign.Center,
@@ -106,18 +77,10 @@ fun MonsterInformationScreen(
                     style = MaterialTheme.typography.titleMedium)
                 HorizontalDivider(thickness = 2.dp, color = Color.White)
                 Spacer(modifier = Modifier.height(15.dp))
-                ProgressBar(
-                    monster.quantityCaptured, monster.totalToCapture,
-                    modifier = Modifier.height(50.dp).padding(start = 8.dp),
-                    showNumbers = true
-                )
                 Row(modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center) {
                     Text(text = "Completed challenge:", color = Color.White,
                         fontSize = 10.sp,
-                        modifier = Modifier.align(Alignment.CenterVertically))
-                    CustomCheck(checked = monster.completedCatchingChallenge,
-                        color = Color.White,
                         modifier = Modifier.align(Alignment.CenterVertically))
                 }
                 Spacer(modifier = Modifier.height(15.dp))
@@ -126,18 +89,18 @@ fun MonsterInformationScreen(
                     color = Color.White, modifier = Modifier.fillMaxWidth(),
                     style = MaterialTheme.typography.titleMedium)
                 HorizontalDivider(thickness = 2.dp, color = Color.White)
-                LazyVerticalGrid (modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
-                    horizontalArrangement = Arrangement.Absolute.Center,
-                    verticalArrangement = Arrangement.Center,
-                    columns = GridCells.Adaptive(minSize = 60.dp)) {
-                    items(monster.drops){
-                        Box(modifier = Modifier.padding(8.dp).align(Alignment.CenterHorizontally)){
-                            ItemBlock(it)
-                        }
-                    }
-                }
+//                LazyVerticalGrid (modifier = Modifier
+//                    .fillMaxWidth()
+//                    .padding(16.dp),
+//                    horizontalArrangement = Arrangement.Absolute.Center,
+//                    verticalArrangement = Arrangement.Center,
+//                    columns = GridCells.Adaptive(minSize = 60.dp)) {
+//                    items(monster.drops){
+//                        Box(modifier = Modifier.padding(8.dp).align(Alignment.CenterHorizontally)){
+//                            ItemBlock(it)
+//                        }
+//                    }
+//                }
 
             }
 
@@ -150,6 +113,6 @@ fun MonsterInformationScreen(
 @Preview(showSystemUi = true)
 @Composable
 fun PreviewMonsterInformation() {
-    fakeRepository.obtainData()
+//    fakeRepository.obtainData()
     MonsterInformationScreen("2")
 }

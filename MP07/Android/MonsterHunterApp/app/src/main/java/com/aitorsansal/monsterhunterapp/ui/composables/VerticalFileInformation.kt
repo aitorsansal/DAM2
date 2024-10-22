@@ -28,14 +28,13 @@ import com.aitorsansal.monsterhunterapp.model.Monster
 import com.aitorsansal.monsterhunterapp.R
 
 @Composable
-fun VerticalFileInformation(id:Int,
+fun VerticalFileInformation(id:String?,
                             modifier : Modifier = Modifier,
                             background:Color = MaterialTheme.colorScheme.primary,
                             colorLetter:Color = MaterialTheme.colorScheme.onPrimary,
-                            onClickElement : (Int) -> Unit = {}
+                            onClickElement : (String?) -> Unit = {}
 ){
-    if(id < fakeRepository.MHRiseData.size) {
-        val monster: Monster = fakeRepository.MHRiseData[id] //todo change this shit
+        val monster: Monster? = fakeRepository.MHRiseData.firstOrNull{it.id == id} //todo change this shit
         Card {
             Column(modifier = modifier.fillMaxHeight().background(color = background)
                 .clickable { onClickElement(id) }) {
@@ -44,32 +43,28 @@ fun VerticalFileInformation(id:Int,
                     Text(text = "Completed challenge:", color = colorLetter,
                         fontSize = 10.sp,
                         modifier = Modifier.align(Alignment.CenterVertically))
-                    CustomCheck(checked = monster.completedCatchingChallenge,
-                        color = colorLetter,
-                        modifier = Modifier.align(Alignment.CenterVertically))
                 }
-                AsyncImage(
-                    model = ImageRequest
-                        .Builder(LocalContext.current)
-                        .data(monster.image)
-                        .size(250)
-                        .build(), contentDescription = null,
-                    modifier = Modifier.align(Alignment.CenterHorizontally).weight(2F),
-                    placeholder = painterResource(R.drawable.ic_launcher_foreground),
-                    contentScale = ContentScale.Crop
-                )
-                Text(text = monster.name,
+//                AsyncImage(
+//                    model = ImageRequest
+//                        .Builder(LocalContext.current)
+//                        .data(monster.image)
+//                        .size(250)
+//                        .build(), contentDescription = null,
+//                    modifier = Modifier.align(Alignment.CenterHorizontally).weight(2F),
+//                    placeholder = painterResource(R.drawable.ic_launcher_foreground),
+//                    contentScale = ContentScale.Crop
+//                )
+                Text(text = monster?.name ?: "no monster",
                     modifier = Modifier.fillMaxSize().weight(.6F),
                     textAlign = TextAlign.Center,
                     color = colorLetter)
             }
         }
-    }
 }
 
 
 @Preview(heightDp = 250, widthDp = 150)
 @Composable
 fun PreviewVerticalFileInformation(){
-    VerticalFileInformation(108)
+    VerticalFileInformation("MHWorld-1")
 }

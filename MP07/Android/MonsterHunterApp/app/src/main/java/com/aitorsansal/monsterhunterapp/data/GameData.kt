@@ -1,5 +1,6 @@
 package com.aitorsansal.monsterhunterapp.data
 
+
 object GameData {
     val games: Map<String, String> = mapOf(
         "MH4U" to "Monster Hunter 4 Ultimate",

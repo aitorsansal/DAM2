@@ -59,6 +59,7 @@ dependencies {
 
     //Mateiral3
     implementation(libs.androidx.compose.material3.material3)
+    implementation (libs.gson)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -36,7 +36,7 @@ fun CustomGridList(data : List<Monster>,
     ) {
         items(data)
         {
-            var id : Int = it.id-1
+            var id : String? = it.id
             VerticalFileInformation(id, onClickElement = { onClickElement((id).toString())}, modifier = Modifier.height(250.dp))
         }
     }
@@ -45,6 +45,6 @@ fun CustomGridList(data : List<Monster>,
 @Preview
 @Composable
 fun PreviewCustomList(){
-    fakeRepository.obtainData()
+//    fakeRepository.obtainData()
     CustomGridList(gridState = rememberLazyGridState(), data = fakeRepository.MHRiseData)
 }

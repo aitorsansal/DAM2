@@ -30,77 +30,34 @@ import com.aitorsansal.monsterhunterapp.R
 
 @Composable
 fun HorizontalFileInformation(
-    id:Int,
+    monsterId: String?,
     modifier : Modifier = Modifier,
     background:Color = MaterialTheme.colorScheme.primary,
     colorLetter:Color = MaterialTheme.colorScheme.onPrimary,
-            onClickElement : (Int) -> Unit = {}){
-    if(id < fakeRepository.MHRiseData.size)
-    {
-        val monster : Monster = fakeRepository.MHRiseData[id] //todo change this shit
+    onClickElement : (String?) -> Unit = {}){
+        val monster : Monster? = fakeRepository.MHRiseData.firstOrNull {it.id == monsterId} //todo change this shit
         Card {
             Row(modifier = modifier.fillMaxWidth().background(color = background)
-                .clickable { onClickElement(id) }) {
-                AsyncImage(
-                    model = ImageRequest
-                        .Builder(LocalContext.current)
-                        .data(monster.image)
-                        .size(250)
-                        .build(), contentDescription = null,
-                    modifier = Modifier.align(Alignment.CenterVertically),
-                    placeholder = painterResource(R.drawable.ic_launcher_foreground),
-                    contentScale = ContentScale.Crop
-                )
+                .clickable { onClickElement(monsterId) }) {
+                Text(text = monster?.name ?: "no monster")
+//                AsyncImage(
+//                    model = ImageRequest
+//                        .Builder(LocalContext.current)
+//                        .data(monster.image)
+//                        .size(250)
+//                        .build(), contentDescription = null,
+//                    modifier = Modifier.align(Alignment.CenterVertically),
+//                    placeholder = painterResource(R.drawable.ic_launcher_foreground),
+//                    contentScale = ContentScale.Crop
+//                )
                 Spacer(modifier = Modifier.width(10.dp))
-                Column (modifier = Modifier.align(Alignment.CenterVertically)) {
-                    Text(text = monster.name, color = colorLetter,
-                        textAlign = TextAlign.Center,
-                        style = MaterialTheme.typography.titleMedium,
-                        modifier = Modifier.fillMaxWidth())
-                    Spacer(modifier = Modifier.height(16.dp))
-                    if(monster.completedCatchingChallenge) {
-                        Text(text = "Mission complete!", color = Color.Green)
-                        Spacer(modifier = Modifier.height(5.dp))
-                        ProgressBar(
-                            monster.quantityCaptured, monster.totalToCapture,
-                            modifier = Modifier.height(40.dp),
-                            showNumbers = true
-                        )
-                    }
-                    else if(monster.quantityCaptured.toFloat()/monster.totalToCapture.toFloat() >=0.75)
-                    {
-                        Text(text = "Mission in progress", color = Color.Yellow)
-                        Spacer(modifier = Modifier.height(5.dp))
-                        ProgressBar(
-                            monster.quantityCaptured, monster.totalToCapture,
-                            modifier = Modifier.height(50.dp),
-                            showNumbers = true,
-                            frontColor = Color(215, 229, 48, 255),
-                            backColor = Color(123, 132, 12, 255),
-                            textColor = colorLetter
-                        )
-                    }
-                    else{
-                        Text(text = "Mission in progress", color = Color.Red)
-                        Spacer(modifier = Modifier.height(5.dp))
-                        ProgressBar(
-                            monster.quantityCaptured, monster.totalToCapture,
-                            modifier = Modifier.height(50.dp),
-                            showNumbers = true,
-                            frontColor = Color(223, 32, 32, 255),
-                            backColor = Color(111, 9, 9, 255)
-                        )
-                    }
                     Spacer(modifier = Modifier.height(5.dp))
-                }
             }
         }
-    }
-
 }
 
 @Preview()
 @Composable
 fun HorizontalFileInformationPreview(){
-    HorizontalFileInformation(1)
+    HorizontalFileInformation("MHWorld-1")
 }

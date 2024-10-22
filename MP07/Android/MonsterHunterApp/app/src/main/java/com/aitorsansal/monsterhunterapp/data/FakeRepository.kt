@@ -1,6 +1,14 @@
 package com.aitorsansal.monsterhunterapp.data
 
+import android.content.Context
 import com.aitorsansal.monsterhunterapp.model.Monster
+import com.aitorsansal.monsterhunterapp.model.MonsterList
+import com.google.gson.Gson
+import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.decodeFromStream
+import java.io.BufferedReader
+import java.io.InputStreamReader
 import kotlin.random.Random
 
 object fakeRepository{
@@ -16,31 +24,51 @@ object fakeRepository{
                 private set
 
 
-    public fun obtainData()  {
-        if(MHRiseData.isEmpty())
-            MHRiseData = (0 until monsterNames.size).toList().map{GenerateMonster(it) }.toList()
+    @OptIn(ExperimentalSerializationApi::class)
+    public fun obtainData(context: Context)  {
+
+
+        try {
+            val gson = Gson()
+            val inputStream = context.assets.open("MHWorldMonsters.json")
+            val reader = BufferedReader(InputStreamReader(inputStream))
+
+            val monsters = gson.fromJson(reader, MonsterList::class.java).monsters
+
+            if(MHRiseData.isEmpty())
+                MHRiseData = monsters
+            inputStream.close()
+        }
+        catch (e : Exception){
+            print(e.message)
+        }
+
+
+//        val monsterList = Json.decodeFromStream<MonsterList>(inputStream)
+
+
     }
 
-    fun GenerateMonster(pos: Int) : Monster
-    {
-        val nOfDrops = Random.nextInt(1,10)
-        val dropsList : MutableList<String> = mutableListOf()
-        for (i in 1..nOfDrops)
-        {
-            dropsList.add(getRandomDrop(dropsList)?.first ?: "")
-        }
-        return Monster(
-            id = pos + 1,
-            name = monsterNames[pos],
-            image = imagesLinks[pos],
-            hp = Random.nextInt(1,10),
-            strength = Random.nextInt(1,10),
-            speed = Random.nextInt(1,10),
-            quantityCaptured = Random.nextInt(0,1000),
-            totalToCapture = Random.nextInt(100,1000),
-            drops = dropsList
-        )
-    }
+//    fun GenerateMonster(pos: Int) : Monster
+//    {
+//        val nOfDrops = Random.nextInt(1,10)
+//        val dropsList : MutableList<String> = mutableListOf()
+//        for (i in 1..nOfDrops)
+//        {
+//            dropsList.add(getRandomDrop(dropsList)?.first ?: "")
+//        }
+//        return Monster(
+//            id = pos + 1,
+//            name = monsterNames[pos],
+//            image = imagesLinks[pos],
+//            hp = Random.nextInt(1,10),
+//            strength = Random.nextInt(1,10),
+//            speed = Random.nextInt(1,10),
+//            quantityCaptured = Random.nextInt(0,1000),
+//            totalToCapture = Random.nextInt(100,1000),
+//            drops = dropsList
+//        )
+//    }
 
     fun getRandomDrop(usedItems : MutableList<String>): Pair<String, String>? {
         // Get a list of unused items

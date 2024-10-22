@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 val currentRoute by navController.currentBackStackEntryAsState()
                 val destination = currentRoute?.destination
-                fakeRepository.obtainData()
+                fakeRepository.obtainData(this)
                 val gridState = rememberLazyGridState()
 
                 // State for the Drawer
