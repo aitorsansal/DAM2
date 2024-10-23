@@ -18,7 +18,8 @@
         "Paralysis" : "3",
         "Nitro" : "3",
         "Stun" : "3"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em101_ID.png"
     },
     {
       "id" : "MHWorld-2",
@@ -38,7 +39,8 @@
         "Paralysis" : "2",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em107_ID.png"
     },
     {
       "id" : "MHWorld-3",
@@ -58,7 +60,8 @@
         "Paralysis" : "3",
         "Nitro" : "3",
         "Stun" : "1"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em044_ID.png"
     },
     {
       "id" : "MHWorld-4",
@@ -78,7 +81,8 @@
         "Paralysis" : "2",
         "Nitro" : "1",
         "Stun" : "3"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em108_ID.png"
     },
     {
       "id" : "MHWorld-5",
@@ -98,7 +102,8 @@
         "Paralysis" : "2",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em037_ID.png"
     },
     {
       "id" : "MHWorld-6",
@@ -118,7 +123,8 @@
         "Paralysis" : "2",
         "Nitro" : "3",
         "Stun" : "3"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em123_ID.png"
     },
     {
       "id" : "MHWorld-7",
@@ -138,7 +144,8 @@
         "Paralysis" : "2",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em120_ID.png"
     },
     {
       "id" : "MHWorld-8",
@@ -158,7 +165,8 @@
         "Paralysis" : "2",
         "Nitro" : "3",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em114_ID.png"
     },
     {
       "id" : "MHWorld-9",
@@ -178,7 +186,8 @@
         "Paralysis" : "2",
         "Nitro" : "1",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em116_ID.png"
     },
     {
       "id" : "MHWorld-10",
@@ -198,7 +207,8 @@
         "Paralysis" : "2",
         "Nitro" : "3",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em122_ID.png"
     },
     {
       "id" : "MHWorld-11",
@@ -218,7 +228,8 @@
         "Paralysis" : "2",
         "Nitro" : "1",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em036_ID.png"
     },
     {
       "id" : "MHWorld-12",
@@ -238,7 +249,8 @@
         "Paralysis" : "1",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em112_ID.png"
     },
     {
       "id" : "MHWorld-13",
@@ -258,7 +270,8 @@
         "Paralysis" : "2",
         "Nitro" : "2",
         "Stun" : "3"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em045_ID.png"
     },
     {
       "id" : "MHWorld-14",
@@ -278,7 +291,8 @@
         "Paralysis" : "2",
         "Nitro" : "1",
         "Stun" : "3"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em001_ID.png"
     },
     {
       "id" : "MHWorld-15",
@@ -298,7 +312,8 @@
         "Paralysis" : "2",
         "Nitro" : "1",
         "Stun" : "3"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em001_01_ID.png"
     },
     {
       "id" : "MHWorld-16",
@@ -318,7 +333,8 @@
         "Paralysis" : "2",
         "Nitro" : "1",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em001_02_ID.png"
     },
     {
       "id" : "MHWorld-17",
@@ -338,7 +354,8 @@
         "Paralysis" : "3",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em102_ID.png"
     },
     {
       "id" : "MHWorld-18",
@@ -358,7 +375,8 @@
         "Paralysis" : "2",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image": "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em102_01_ID.png"
     },
     {
       "id" : "MHWorld-19",
@@ -378,7 +396,8 @@
         "Paralysis" : "2",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em109_ID.png"
     },
     {
       "id" : "MHWorld-20",
@@ -398,7 +417,8 @@
         "Paralysis" : "1",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image": "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em109_01_ID.png"
     },
     {
       "id" : "MHWorld-21",
@@ -418,7 +438,8 @@
         "Paralysis" : "2",
         "Nitro" : "1",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em100_ID.png"
     },
     {
       "id" : "MHWorld-22",
@@ -438,7 +459,8 @@
         "Paralysis" : "2",
         "Nitro" : "1",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em100_01_ID.png"
     },
     {
       "id" : "MHWorld-23",
@@ -458,7 +480,8 @@
         "Paralysis" : "2",
         "Nitro" : "3",
         "Stun" : "3"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em110_ID.png"
     },
     {
       "id" : "MHWorld-24",
@@ -478,7 +501,8 @@
         "Paralysis" : "2",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em110_01_ID.png"
     },
     {
       "id" : "MHWorld-25",
@@ -498,7 +522,8 @@
         "Paralysis" : "2",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em111_ID.png"
     },
     {
       "id" : "MHWorld-26",
@@ -518,7 +543,8 @@
         "Paralysis" : "2",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em111_05_ID.png"
     },
     {
       "id" : "MHWorld-27",
@@ -538,7 +564,8 @@
         "Paralysis" : "3",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em113_ID.png"
     },
     {
       "id" : "MHWorld-28",
@@ -558,7 +585,8 @@
         "Paralysis" : "3",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em113_01_ID.png"
     },
     {
       "id" : "MHWorld-29",
@@ -578,7 +606,8 @@
         "Paralysis" : "3",
         "Nitro" : "2",
         "Stun" : "1"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em007_ID.png"
     },
     {
       "id" : "MHWorld-30",
@@ -598,7 +627,8 @@
         "Paralysis" : "3",
         "Nitro" : "2",
         "Stun" : "1"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em007_01_ID.png"
     },
     {
       "id" : "MHWorld-31",
@@ -618,11 +648,12 @@
         "Paralysis" : "2",
         "Nitro" : "1",
         "Stun" : "1"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em118_ID.png"
     },
     {
       "id" : "MHWorld-32",
-      "name": "Bazelgeuse 2",
+      "name": "Seething Bazelgeuse",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -638,270 +669,11 @@
         "Paralysis" : "2",
         "Nitro" : "1",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em118_05_ID.png"
     },
     {
       "id" : "MHWorld-33",
-      "name": "Deviljho",
-      "minSize": 998.69,
-      "maxSize": 1364.88,
-      "weakness": {
-        "Fire" :  "2",
-        "Water" : "2",
-        "Thunder" : "3",
-        "Ice" : "1",
-        "Draco" : "3"
-      },
-      "weaknessToAlteredStates": {
-        "Poison" : "2",
-        "Sleep" : "2",
-        "Paralysis" : "2",
-        "Nitro" : "2",
-        "Stun" : "2"
-      }
-    },
-    {
-      "id" : "MHWorld-34",
-      "name": "Savage Deviljho",
-      "minSize": 998.69,
-      "maxSize": 1364.88,
-      "weakness": {
-        "Fire" :  "2",
-        "Water" : "2",
-        "Thunder" : "3",
-        "Ice" : "1",
-        "Draco" : "3"
-      },
-      "weaknessToAlteredStates": {
-        "Poison" : "3",
-        "Sleep" : "3",
-        "Paralysis" : "3",
-        "Nitro" : "2",
-        "Stun" : "2"
-      }
-    },
-    {
-      "id" : "MHWorld-35",
-      "name": "Nergigante",
-      "minSize": 998.69,
-      "maxSize": 1364.88,
-      "weakness": {
-        "Fire" :  "1",
-        "Water" : "1",
-        "Thunder" : "3",
-        "Ice" : "1",
-        "Draco" : "2"
-      },
-      "weaknessToAlteredStates": {
-        "Poison" : "2",
-        "Sleep" : "2",
-        "Paralysis" : "2",
-        "Nitro" : "2",
-        "Stun" : "2"
-      }
-    },
-    {
-      "id" : "MHWorld-36",
-      "name": "Rathalos",
-      "minSize": 998.69,
-      "maxSize": 1364.88,
-      "weakness": {
-        "Fire" :  "0",
-        "Water" : "1",
-        "Thunder" : "2",
-        "Ice" : "1",
-        "Draco" : "3"
-      },
-      "weaknessToAlteredStates": {
-        "Poison" : "1",
-        "Sleep" : "2",
-        "Paralysis" : "2",
-        "Nitro" : "1",
-        "Stun" : "2"
-      }
-    },
-    {
-      "id" : "MHWorld-37",
-      "name": "Blue Rathalos",
-      "minSize": 998.69,
-      "maxSize": 1364.88,
-      "weakness": {
-        "Fire" :  "0",
-        "Water" : "1",
-        "Thunder" : "1",
-        "Ice" : "2",
-        "Draco" : "3"
-      },
-      "weaknessToAlteredStates": {
-        "Poison" : "1",
-        "Sleep" : "2",
-        "Paralysis" : "2",
-        "Nitro" : "1",
-        "Stun" : "2"
-      }
-    },
-    {
-      "id" : "MHWorld-38",
-      "name": "Silver Rathalos",
-      "minSize": 998.69,
-      "maxSize": 1364.88,
-      "weakness": {
-        "Fire" :  "0",
-        "Water" : "2",
-        "Thunder" : "2",
-        "Ice" : "1",
-        "Draco" : "0"
-      },
-      "weaknessToAlteredStates": {
-        "Poison" : "1",
-        "Sleep" : "2",
-        "Paralysis" : "2",
-        "Nitro" : "1",
-        "Stun" : "2"
-      }
-    },
-    {
-      "id" : "MHWorld-39",
-      "name": "Kirin",
-      "minSize": 998.69,
-      "maxSize": 1364.88,
-      "weakness": {
-        "Fire" :  "3",
-        "Water" : "2",
-        "Thunder" : "0",
-        "Ice" : "2",
-        "Draco" : "1"
-      },
-      "weaknessToAlteredStates": {
-        "Poison" : "1",
-        "Sleep" : "2",
-        "Paralysis" : "0",
-        "Nitro" : "2",
-        "Stun" : "1"
-      }
-    },
-    {
-      "id" : "MHWorld-40",
-      "name": "Zorah Magdaros",
-      "minSize": 998.69,
-      "maxSize": 1364.88,
-      "weakness": {
-        "Fire" :  "0",
-        "Water" : "3",
-        "Thunder" : "1",
-        "Ice" : "2",
-        "Draco" : "3"
-      },
-      "weaknessToAlteredStates": {
-        "Poison" : "0",
-        "Sleep" : "0",
-        "Paralysis" : "0",
-        "Nitro" : "0",
-        "Stun" : "0"
-      }
-    },
-    {
-      "id" : "MHWorld-41",
-      "name": "Teostra",
-      "minSize": 998.69,
-      "maxSize": 1364.88,
-      "weakness": {
-        "Fire" :  "0",
-        "Water" : "3",
-        "Thunder" : "1",
-        "Ice" : "3",
-        "Draco" : "1"
-      },
-      "weaknessToAlteredStates": {
-        "Poison" : "2",
-        "Sleep" : "1",
-        "Paralysis" : "1",
-        "Nitro" : "1",
-        "Stun" : "2"
-      }
-    },
-    {
-      "id" : "MHWorld-42",
-      "name": "Kushala Daora",
-      "minSize": 998.69,
-      "maxSize": 1364.88,
-      "weakness": {
-        "Fire" :  "2",
-        "Water" : "1",
-        "Thunder" : "3",
-        "Ice" : "0",
-        "Draco" : "2"
-      },
-      "weaknessToAlteredStates": {
-        "Poison" : "3",
-        "Sleep" : "1",
-        "Paralysis" : "1",
-        "Nitro" : "3",
-        "Stun" : "2"
-      }
-    },
-    {
-      "id" : "MHWorld-43",
-      "name": "Vaal Hazak",
-      "minSize": 998.69,
-      "maxSize": 1364.88,
-      "weakness": {
-        "Fire" :  "3",
-        "Water" : "0",
-        "Thunder" : "1",
-        "Ice" : "2",
-        "Draco" : "3"
-      },
-      "weaknessToAlteredStates": {
-        "Poison" : "1",
-        "Sleep" : "1",
-        "Paralysis" : "1",
-        "Nitro" : "2",
-        "Stun" : "2"
-      }
-    },
-    {
-      "id" : "MHWorld-44",
-      "name": "Vaal Hazak 2",
-      "minSize": 998.69,
-      "maxSize": 1364.88,
-      "weakness": {
-        "Fire" :  "2",
-        "Water" : "0",
-        "Thunder" : "1",
-        "Ice" : "1",
-        "Draco" : "2"
-      },
-      "weaknessToAlteredStates": {
-        "Poison" : "1",
-        "Sleep" : "1",
-        "Paralysis" : "1",
-        "Nitro" : "2",
-        "Stun" : "1"
-      }
-    },
-    {
-      "id" : "MHWorld-45",
-      "name": "Xeno'jiiva",
-      "minSize": 998.69,
-      "maxSize": 1364.88,
-      "weakness": {
-        "Fire" :  "2",
-        "Water" : "2",
-        "Thunder" : "2",
-        "Ice" : "2",
-        "Draco" : "2"
-      },
-      "weaknessToAlteredStates": {
-        "Poison" : "3",
-        "Sleep" : "0",
-        "Paralysis" : "1",
-        "Nitro" : "2",
-        "Stun" : "1"
-      }
-    },
-    {
-      "id" : "MHWorld-46",
       "name": "Barioth",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -918,10 +690,32 @@
         "Paralysis" : "2",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em042_ID.png"
     },
     {
-      "id" : "MHWorld-47",
+      "id" : "MHWorld-34",
+      "name": "FrostFang Barioth",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Nitro" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em042_05_ID.png"
+    },
+    {
+      "id" : "MHWorld-35",
       "name": "Glavenus",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -938,11 +732,12 @@
         "Paralysis" : "2",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image": "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em080_ID.png"
     },
     {
-      "id" : "MHWorld-48",
-      "name": "Glavenus 2",
+      "id" : "MHWorld-36",
+      "name": "Acidic Glavenus",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -958,10 +753,11 @@
         "Paralysis" : "2",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image": "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em080_01_ID.png"
     },
     {
-      "id" : "MHWorld-49",
+      "id" : "MHWorld-37",
       "name": "Tigrex",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -978,10 +774,74 @@
         "Paralysis" : "2",
         "Nitro" : "2",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em032_ID.png"
     },
     {
-      "id" : "MHWorld-50",
+      "id" : "MHWorld-38",
+      "name": "Brute Tigrex",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Nitro" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em032_01_ID.png"
+    },
+    {
+      "id" : "MHWorld-39",
+      "name": "Deviljho",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "2",
+        "Thunder" : "3",
+        "Ice" : "1",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Nitro" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em043_ID.png"
+    },
+    {
+      "id" : "MHWorld-40",
+      "name": "Savage Deviljho",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "2",
+        "Thunder" : "3",
+        "Ice" : "1",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "3",
+        "Paralysis" : "3",
+        "Nitro" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em043_05_ID.png"
+    },
+    {
+      "id" : "MHWorld-41",
       "name": "Brachydios",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -998,50 +858,158 @@
         "Paralysis" : "2",
         "Nitro" : "1",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em063_ID.png"
     },
     {
-      "id" : "MHWorld-51",
-      "name": "Velkhana",
+      "id" : "MHWorld-42",
+      "name": "Raging Brachydios",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
-        "Fire" :  "3",
-        "Water" : "1",
-        "Thunder" : "2",
-        "Ice" : "0",
-        "Draco" : "2"
+        "Fire" :  "0",
+        "Water" : "2",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "1"
       },
       "weaknessToAlteredStates": {
         "Poison" : "2",
-        "Sleep" : "1",
-        "Paralysis" : "1",
-        "Nitro" : "3",
-        "Stun" : "1"
-      }
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Nitro" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em063_05_ID.png"
     },
     {
-      "id" : "MHWorld-52",
-      "name": "Namielle",
+      "id" : "MHWorld-43",
+      "name": "Zinogre",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
-        "Fire" :  "3",
-        "Water" : "0",
+        "Fire" :  "1",
+        "Water" : "1",
+        "Thunder" : "0",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "1",
+        "Nitro" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em057_ID.png"
+    },
+    {
+      "id" : "MHWorld-44",
+      "name": "Stygian Zinogre",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "2",
+        "Thunder" : "3",
+        "Ice" : "2",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Nitro" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em057_01_ID.png"
+    },
+    {
+      "id" : "MHWorld-45",
+      "name": "Rajang",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "0",
+        "Ice" : "3",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Nitro" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em023_ID.png"
+    },
+    {
+      "id" : "MHWorld-46",
+      "name": "Furious Rajang",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "0",
+        "Ice" : "2",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Nitro" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em023_05_ID.png"
+    },
+    {
+      "id" : "MHWorld-47",
+      "name": "Yian Garuga",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
         "Thunder" : "0",
         "Ice" : "1",
         "Draco" : "2"
       },
       "weaknessToAlteredStates": {
-        "Poison" : "3",
+        "Poison" : "1",
         "Sleep" : "1",
-        "Paralysis" : "1",
+        "Paralysis" : "2",
         "Nitro" : "3",
         "Stun" : "2"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em018_ID.png"
     },
     {
-      "id" : "MHWorld-53",
+      "id" : "MHWorld-47",
+      "name": "Scarret Yian Garuga",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "0",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "2",
+        "Nitro" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em018_05_ID.png"
+    },
+    {
+      "id" : "MHWorld-49",
       "name": "Leshen",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -1058,7 +1026,449 @@
         "Paralysis" : "2",
         "Nitro" : "2",
         "Stun" : "1"
-      }
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em127_ID.png"
+    },
+    {
+      "id" : "MHWorld-50",
+      "name": "Ancient Leshen",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "0",
+        "Thunder" : "1",
+        "Ice" : "1",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "0",
+        "Paralysis" : "2",
+        "Nitro" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em127_01_ID.png"
+    },
+    {
+      "id" : "MHWorld-51",
+      "name": "Nergigante",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "1",
+        "Thunder" : "3",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Nitro" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em103_ID.png"
+    },
+    {
+      "id" : "MHWorld-52",
+      "name": "Ruiner Nergigante",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Nitro" : "3",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em103_05_ID.png"
+    },
+    {
+      "id" : "MHWorld-53",
+      "name": "Vaal Hazak",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "0",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Nitro" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em115_ID.png"
+    },
+    {
+      "id" : "MHWorld-54",
+      "name": "Blackveil Vaal Hazak",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "1",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Nitro" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em115_05_ID.png"
+    },
+    {
+      "id" : "MHWorld-55",
+      "name": "Rathalos",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Nitro" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em002_ID.png"
+    },
+    {
+      "id" : "MHWorld-56",
+      "name": "Blue Rathalos",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Nitro" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em002_01_ID.png"
+    },
+    {
+      "id" : "MHWorld-57",
+      "name": "Silver Rathalos",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Nitro" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em002_02_ID.png"
+    },
+    {
+      "id" : "MHWorld-58",
+      "name": "Kirin",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "2",
+        "Thunder" : "0",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "0",
+        "Nitro" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em011_ID.png"
+    },
+    {
+      "id" : "MHWorld-59",
+      "name": "Zorah Magdaros",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "0",
+        "Sleep" : "0",
+        "Paralysis" : "0",
+        "Nitro" : "0",
+        "Stun" : "0"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em106_ID.png"
+    },
+    {
+      "id" : "MHWorld-60",
+      "name": "Teostra",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "1",
+        "Ice" : "3",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Nitro" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em027_ID.png"
+    },
+    {
+      "id" : "MHWorld-61",
+      "name": "Kushala Daora",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "1",
+        "Thunder" : "3",
+        "Ice" : "0",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Nitro" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em024_ID.png"
+    },
+    {
+      "id" : "MHWorld-62",
+      "name": "Xeno'jiiva",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "2",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "0",
+        "Paralysis" : "1",
+        "Nitro" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em105_ID.png"
+    },
+    {
+      "id" : "MHWorld-63",
+      "name": "Velkhana",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "0",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Nitro" : "3",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em124_ID.png"
+    },
+    {
+      "id" : "MHWorld-64",
+      "name": "Namielle",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "0",
+        "Thunder" : "0",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Nitro" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em125_ID.png"
+    },
+    {
+      "id" : "MHWorld-65",
+      "name": "Behemoth",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "2",
+        "Thunder" : "1",
+        "Ice" : "3",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Nitro" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em121_ID.png"
+    },
+    {
+      "id" : "MHWorld-66",
+      "name": "Shara Ishvalda",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "0",
+        "Ice" : "3",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "0",
+        "Paralysis" : "1",
+        "Nitro" : "3",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em126_ID.png"
+    },
+    {
+      "id" : "MHWorld-67",
+      "name": "Kulve Taroth",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Nitro" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
+    },
+    {
+      "id" : "MHWorld-68",
+      "name": "Safi'jiva",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "3",
+        "Thunder" : "3",
+        "Ice" : "3",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "1",
+        "Paralysis" : "2",
+        "Nitro" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em104_ID.png"
+    },
+    {
+      "id" : "MHWorld-69",
+      "name": "Alatreon",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "1",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Nitro" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em050_ID.png"
+    },
+    {
+      "id" : "MHWorld-70",
+      "name": "Fatalis",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "1",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Nitro" : "1",
+        "Stun" : "0"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em013_ID.png"
     }
   ]
 }

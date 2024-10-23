@@ -7,7 +7,7 @@ class Monster(
     val maxSize: Double,
     val weakness : Map<String,Int>,
     val weaknessToAlteredStates : Map<String,Int>,
-    val image : String
+    val image : String = ""
 )
 
 
