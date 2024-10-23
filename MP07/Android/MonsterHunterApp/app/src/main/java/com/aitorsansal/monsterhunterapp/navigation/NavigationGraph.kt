@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import com.aitorsansal.monsterhunterapp.data.fakeRepository
+import com.aitorsansal.monsterhunterapp.model.Monster
 import com.aitorsansal.monsterhunterapp.ui.screens.CustomGridList
 import com.aitorsansal.monsterhunterapp.ui.screens.MonsterInformationScreen
 
@@ -23,7 +24,7 @@ fun NavigationGraph(navController : NavHostController, paddingValues : PaddingVa
         modifier = Modifier.padding(paddingValues)
     ){
         composable<MainScreen>{
-            CustomGridList( data = fakeRepository.MHRiseData, gridState = scrollState, onClickElement ={navController.navigate(MonsterInformation(it))})
+            CustomGridList(gridState = scrollState, onClickElement ={navController.navigate(MonsterInformation(it))})
         }
 
         composable<MonsterInformation>{ backStackEntry ->

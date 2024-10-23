@@ -14,20 +14,23 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.aitorsansal.monsterhunterapp.data.fakeRepository
-import com.aitorsansal.monsterhunterapp.navigation.MainScreen
 import com.aitorsansal.monsterhunterapp.navigation.NavigationGraph
 import com.aitorsansal.monsterhunterapp.ui.theme.MonsterHunterAppTheme
-import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavHostController
 import com.aitorsansal.monsterhunterapp.data.GameData
+import com.aitorsansal.monsterhunterapp.model.Monster
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
+
+val MonsterViewModelProvider = compositionLocalOf<MonsterViewModel>{error("No viewmodel passed")}
+
 class MainActivity : ComponentActivity() {
+
     @SuppressLint("RestrictedApi")
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,12 +44,18 @@ class MainActivity : ComponentActivity() {
                 fakeRepository.obtainData(this)
                 val gridState = rememberLazyGridState()
 
+                //viewModel
+                val viewModel : MonsterViewModel = viewModel()
                 // State for the Drawer
                 val drawerState = rememberDrawerState(DrawerValue.Closed)
 
                 // Coroutine scope for drawer operations
                 val coroutineScope = rememberCoroutineScope()
+
+                //GameDetection
                 var selectedGame by remember{mutableStateOf(GameData.games["MHWorld"])}
+                var rememberMonsterData by remember {mutableStateOf(fakeRepository.MHWorldData)}
+                viewModel.setMonsters(rememberMonsterData)
 
                 // ModalDrawer
                 ModalNavigationDrawer(
@@ -55,10 +64,18 @@ class MainActivity : ComponentActivity() {
                         // Drawer content
                         Sidebar(drawerState = drawerState, coroutineScope = coroutineScope, onGameSelected = {
                             game -> selectedGame = GameData.games[game]
+                            rememberMonsterData = fakeRepository.GetMonsterList(game)
+                            viewModel.setMonsters(rememberMonsterData)
                         })
                     }
                 ) {
-                    App(drawerState = drawerState, coroutineScope = coroutineScope, navController = navController, gridState = gridState, gameSelected = selectedGame)
+                    CompositionLocalProvider(MonsterViewModelProvider provides viewModel) {
+                        App(drawerState = drawerState,
+                            coroutineScope = coroutineScope,
+                            navController = navController,
+                            gridState = gridState,
+                            gameSelected = selectedGame)
+                    }
                 }
             }
         }
@@ -86,7 +103,10 @@ class MainActivity : ComponentActivity() {
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
-    fun App(drawerState: DrawerState, coroutineScope: CoroutineScope, navController : NavHostController,gridState : LazyGridState,gameSelected : String? = "Monster Hunter World")
+    fun App(drawerState: DrawerState, coroutineScope: CoroutineScope,
+            navController : NavHostController,
+            gridState : LazyGridState,
+            gameSelected : String? = "Monster Hunter World")
     {
         Scaffold(
             modifier = Modifier.fillMaxSize(),
@@ -95,7 +115,6 @@ class MainActivity : ComponentActivity() {
                     title = { Text(text = gameSelected ?: "No game selected") },
                     navigationIcon = {
                         IconButton(onClick = {
-                            // Open or close the drawer based on the current state
                                 toggleDrawer(drawerState = drawerState, coroutineScope = coroutineScope)
                         }) {
                             Icon(

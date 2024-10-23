@@ -1,8 +1,8 @@
 {
   "monsters": [
     {
-      "id" :"MHWorld-1",
-      "name": "Great Jagras",
+      "id" :"MHRise-1",
+      "name": "greatJagras",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -21,7 +21,7 @@
       }
     },
     {
-      "id" : "MHWorld-2",
+      "id" : "MHRise-2",
       "name": "Kulu-YaKu",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -41,7 +41,7 @@
       }
     },
     {
-      "id" : "MHWorld-3",
+      "id" : "MHRise-3",
       "name": "Barroth",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -61,7 +61,7 @@
       }
     },
     {
-      "id" : "MHWorld-4",
+      "id" : "MHRise-4",
       "name": "Jyuratodus",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -81,7 +81,7 @@
       }
     },
     {
-      "id" : "MHWorld-5",
+      "id" : "MHRise-5",
       "name": "Nargacuga",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -101,7 +101,7 @@
       }
     },
     {
-      "id" : "MHWorld-6",
+      "id" : "MHRise-6",
       "name": "Banbaro",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -121,7 +121,7 @@
       }
     },
     {
-      "id" : "MHWorld-7",
+      "id" : "MHRise-7",
       "name": "Tzitzi-Ya-Ku",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -141,7 +141,7 @@
       }
     },
     {
-      "id" : "MHWorld-8",
+      "id" : "MHRise-8",
       "name": "Radobaan",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -161,7 +161,7 @@
       }
     },
     {
-      "id" : "MHWorld-9",
+      "id" : "MHRise-9",
       "name": "Dodogama",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -181,7 +181,7 @@
       }
     },
     {
-      "id" : "MHWorld-10",
+      "id" : "MHRise-10",
       "name": "Beotodus",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -201,7 +201,7 @@
       }
     },
     {
-      "id" : "MHWorld-11",
+      "id" : "MHRise-11",
       "name": "Lavasioth",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -221,7 +221,7 @@
       }
     },
     {
-      "id" : "MHWorld-12",
+      "id" : "MHRise-12",
       "name": "Great Girros",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -241,7 +241,7 @@
       }
     },
     {
-      "id" : "MHWorld-13",
+      "id" : "MHRise-13",
       "name": "Uragaan",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -261,7 +261,7 @@
       }
     },
     {
-      "id" : "MHWorld-14",
+      "id" : "MHRise-14",
       "name": "Rathian",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -281,7 +281,7 @@
       }
     },
     {
-      "id" : "MHWorld-15",
+      "id" : "MHRise-15",
       "name": "Pink Rathian",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -301,7 +301,7 @@
       }
     },
     {
-      "id" : "MHWorld-16",
+      "id" : "MHRise-16",
       "name": "Gold Rathian",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -321,7 +321,7 @@
       }
     },
     {
-      "id" : "MHWorld-17",
+      "id" : "MHRise-17",
       "name": "Pukei-Pukei",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -341,7 +341,7 @@
       }
     },
     {
-      "id" : "MHWorld-18",
+      "id" : "MHRise-18",
       "name": "Coral Pukei-Pukei",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -361,7 +361,7 @@
       }
     },
     {
-      "id" : "MHWorld-19",
+      "id" : "MHRise-19",
       "name": "Tobi-Kadachi",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -381,7 +381,7 @@
       }
     },
     {
-      "id" : "MHWorld-20",
+      "id" : "MHRise-20",
       "name": "Viper Tobi-Kadachi",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -401,7 +401,7 @@
       }
     },
     {
-      "id" : "MHWorld-21",
+      "id" : "MHRise-21",
       "name": "Anjanath",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -421,7 +421,7 @@
       }
     },
     {
-      "id" : "MHWorld-22",
+      "id" : "MHRise-22",
       "name": "Fulgur Anjanath",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -441,7 +441,7 @@
       }
     },
     {
-      "id" : "MHWorld-23",
+      "id" : "MHRise-23",
       "name": "Paolumu",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -461,7 +461,7 @@
       }
     },
     {
-      "id" : "MHWorld-24",
+      "id" : "MHRise-24",
       "name": "Nightshade Paolumu",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -481,7 +481,7 @@
       }
     },
     {
-      "id" : "MHWorld-25",
+      "id" : "MHRise-25",
       "name": "Legiana",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -501,7 +501,7 @@
       }
     },
     {
-      "id" : "MHWorld-26",
+      "id" : "MHRise-26",
       "name": "Shrieking Legiana",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -521,7 +521,7 @@
       }
     },
     {
-      "id" : "MHWorld-27",
+      "id" : "MHRise-27",
       "name": "Odogaron",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -541,7 +541,7 @@
       }
     },
     {
-      "id" : "MHWorld-28",
+      "id" : "MHRise-28",
       "name": "Ebony Odogaron",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -561,7 +561,7 @@
       }
     },
     {
-      "id" : "MHWorld-29",
+      "id" : "MHRise-29",
       "name": "Diablos",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -581,7 +581,7 @@
       }
     },
     {
-      "id" : "MHWorld-30",
+      "id" : "MHRise-30",
       "name": "Black Diablos",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -601,7 +601,7 @@
       }
     },
     {
-      "id" : "MHWorld-31",
+      "id" : "MHRise-31",
       "name": "Bazelgeuse",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -621,7 +621,7 @@
       }
     },
     {
-      "id" : "MHWorld-32",
+      "id" : "MHRise-32",
       "name": "Bazelgeuse 2",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -641,7 +641,7 @@
       }
     },
     {
-      "id" : "MHWorld-33",
+      "id" : "MHRise-33",
       "name": "Deviljho",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -661,7 +661,7 @@
       }
     },
     {
-      "id" : "MHWorld-34",
+      "id" : "MHRise-34",
       "name": "Savage Deviljho",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -681,7 +681,7 @@
       }
     },
     {
-      "id" : "MHWorld-35",
+      "id" : "MHRise-35",
       "name": "Nergigante",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -701,7 +701,7 @@
       }
     },
     {
-      "id" : "MHWorld-36",
+      "id" : "MHRise-36",
       "name": "Rathalos",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -721,7 +721,7 @@
       }
     },
     {
-      "id" : "MHWorld-37",
+      "id" : "MHRise-37",
       "name": "Blue Rathalos",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -741,7 +741,7 @@
       }
     },
     {
-      "id" : "MHWorld-38",
+      "id" : "MHRise-38",
       "name": "Silver Rathalos",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -761,7 +761,7 @@
       }
     },
     {
-      "id" : "MHWorld-39",
+      "id" : "MHRise-39",
       "name": "Kirin",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -781,7 +781,7 @@
       }
     },
     {
-      "id" : "MHWorld-40",
+      "id" : "MHRise-40",
       "name": "Zorah Magdaros",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -801,7 +801,7 @@
       }
     },
     {
-      "id" : "MHWorld-41",
+      "id" : "MHRise-41",
       "name": "Teostra",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -821,7 +821,7 @@
       }
     },
     {
-      "id" : "MHWorld-42",
+      "id" : "MHRise-42",
       "name": "Kushala Daora",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -841,7 +841,7 @@
       }
     },
     {
-      "id" : "MHWorld-43",
+      "id" : "MHRise-43",
       "name": "Vaal Hazak",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -861,7 +861,7 @@
       }
     },
     {
-      "id" : "MHWorld-44",
+      "id" : "MHRise-44",
       "name": "Vaal Hazak 2",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -881,7 +881,7 @@
       }
     },
     {
-      "id" : "MHWorld-45",
+      "id" : "MHRise-45",
       "name": "Xeno'jiiva",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -901,7 +901,7 @@
       }
     },
     {
-      "id" : "MHWorld-46",
+      "id" : "MHRise-46",
       "name": "Barioth",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -921,7 +921,7 @@
       }
     },
     {
-      "id" : "MHWorld-47",
+      "id" : "MHRise-47",
       "name": "Glavenus",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -941,7 +941,7 @@
       }
     },
     {
-      "id" : "MHWorld-48",
+      "id" : "MHRise-48",
       "name": "Glavenus 2",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -961,7 +961,7 @@
       }
     },
     {
-      "id" : "MHWorld-49",
+      "id" : "MHRise-49",
       "name": "Tigrex",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -981,7 +981,7 @@
       }
     },
     {
-      "id" : "MHWorld-50",
+      "id" : "MHRise-50",
       "name": "Brachydios",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -1001,7 +1001,7 @@
       }
     },
     {
-      "id" : "MHWorld-51",
+      "id" : "MHRise-51",
       "name": "Velkhana",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -1021,7 +1021,7 @@
       }
     },
     {
-      "id" : "MHWorld-52",
+      "id" : "MHRise-52",
       "name": "Namielle",
       "minSize": 998.69,
       "maxSize": 1364.88,
@@ -1041,7 +1041,7 @@
       }
     },
     {
-      "id" : "MHWorld-53",
+      "id" : "MHRise-53",
       "name": "Leshen",
       "minSize": 998.69,
       "maxSize": 1364.88,

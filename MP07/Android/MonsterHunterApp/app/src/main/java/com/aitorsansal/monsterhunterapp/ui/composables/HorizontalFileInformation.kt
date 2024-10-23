@@ -21,6 +21,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.aitorsansal.monsterhunterapp.data.fakeRepository
@@ -35,7 +36,8 @@ fun HorizontalFileInformation(
     background:Color = MaterialTheme.colorScheme.primary,
     colorLetter:Color = MaterialTheme.colorScheme.onPrimary,
     onClickElement : (String?) -> Unit = {}){
-        val monster : Monster? = fakeRepository.MHRiseData.firstOrNull {it.id == monsterId} //todo change this shit
+    val viewModel : MonsterViewModel = viewModel()
+        val monster : Monster? = viewModel.MonsterData.value?.firstOrNull {it.id == monsterId} //todo change this shit
         Card {
             Row(modifier = modifier.fillMaxWidth().background(color = background)
                 .clickable { onClickElement(monsterId) }) {
@@ -59,5 +61,5 @@ fun HorizontalFileInformation(
 @Preview()
 @Composable
 fun HorizontalFileInformationPreview(){
-    HorizontalFileInformation("MHWorld-1")
+//    HorizontalFileInformation("MHWorld-1", )
 }

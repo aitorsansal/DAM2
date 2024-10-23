@@ -8,6 +8,7 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromStream
 import java.io.BufferedReader
+import java.io.InputStream
 import java.io.InputStreamReader
 import kotlin.random.Random
 
@@ -26,28 +27,46 @@ object fakeRepository{
 
     @OptIn(ExperimentalSerializationApi::class)
     public fun obtainData(context: Context)  {
+        try {
+            var inputStream = context.assets.open("MHWorldMonsters.json")
+            MHWorldData = loadJson(inputStream)
+            inputStream = context.assets.open("MHRiseMonsters.json")
+            MHRiseData = loadJson(inputStream)
+            inputStream = context.assets.open("MH4UMonsters.json")
+            MH4UData = loadJson(inputStream)
+        }
+        catch (e : Exception){
 
+        }
 
+    }
+
+    fun loadJson(jsonFileStream: InputStream) : List<Monster>{
+        var monsters : List<Monster> = listOf()
         try {
             val gson = Gson()
-            val inputStream = context.assets.open("MHWorldMonsters.json")
-            val reader = BufferedReader(InputStreamReader(inputStream))
+            val reader = BufferedReader(InputStreamReader(jsonFileStream))
 
-            val monsters = gson.fromJson(reader, MonsterList::class.java).monsters
+            monsters = gson.fromJson(reader, MonsterList::class.java).monsters
 
-            if(MHRiseData.isEmpty())
-                MHRiseData = monsters
-            inputStream.close()
+            jsonFileStream.close()
         }
         catch (e : Exception){
             print(e.message)
         }
-
-
-//        val monsterList = Json.decodeFromStream<MonsterList>(inputStream)
-
-
+        return monsters
     }
+
+    fun GetMonsterList(id:String) : List<Monster>
+    {
+        return when (id) {
+            "MHWorld" -> MHWorldData
+            "MH4U" -> MH4UData
+            "MHRise" -> MHRiseData
+            else -> listOf<Monster>()
+        }
+    }
+
 
 //    fun GenerateMonster(pos: Int) : Monster
 //    {
