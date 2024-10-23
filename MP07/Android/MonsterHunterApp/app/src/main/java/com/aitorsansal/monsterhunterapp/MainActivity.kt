@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
@@ -13,6 +15,10 @@ import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -111,19 +117,33 @@ class MainActivity : ComponentActivity() {
         Scaffold(
             modifier = Modifier.fillMaxSize(),
             topBar = {
-                TopAppBar(
-                    title = { Text(text = gameSelected ?: "No game selected") },
-                    navigationIcon = {
-                        IconButton(onClick = {
+                Box(modifier = Modifier.fillMaxWidth().height(60.dp)){
+                    Image(
+                        painter = painterResource(R.drawable.pergamin_background),
+                        contentDescription = null,
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                    TopAppBar(
+                        title = { Text(text = gameSelected ?: "No game selected") },
+                        navigationIcon = {
+                            IconButton(onClick = {
                                 toggleDrawer(drawerState = drawerState, coroutineScope = coroutineScope)
-                        }) {
-                            Icon(
-                                imageVector = Icons.Filled.Menu,
-                                contentDescription = "Open/Close Drawer"
-                            )
-                        }
-                    }
-                )
+                            }) {
+                                Icon(
+                                    imageVector = Icons.Filled.Menu,
+                                    contentDescription = "Open/Close Drawer"
+                                )
+                            }
+                        },
+                        colors = TopAppBarDefaults.topAppBarColors(
+                            containerColor = Color.Black.copy(alpha = .0f),
+                            titleContentColor = Color.White,
+                            actionIconContentColor = Color.White
+                        )
+                    )
+                }
+
             }
         ) { paddingValues ->
             NavigationGraph(navController, paddingValues = paddingValues, scrollState = gridState)

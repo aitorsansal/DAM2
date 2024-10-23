@@ -1,11 +1,15 @@
 package com.aitorsansal.monsterhunterapp.ui.screens
 
 import android.content.Context
+import android.content.res.Resources
+import android.util.DisplayMetrics
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -15,6 +19,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -23,6 +30,7 @@ import com.aitorsansal.monsterhunterapp.MonsterViewModelProvider
 import com.aitorsansal.monsterhunterapp.ui.composables.VerticalFileInformation
 import com.aitorsansal.monsterhunterapp.data.fakeRepository
 import com.aitorsansal.monsterhunterapp.model.Monster
+import com.aitorsansal.monsterhunterapp.R
 
 
 @Composable
@@ -31,9 +39,12 @@ fun CustomGridList(onClickElement : (String) -> Unit = {},
                    viewModel : MonsterViewModel = androidx.lifecycle.viewmodel.compose.viewModel()){
     val vm = MonsterViewModelProvider.current
     val monsterData = vm.MonsterData.collectAsState().value
+    Image(painter = painterResource(R.drawable.pergamin_background),
+        contentDescription = null,
+        contentScale = ContentScale.FillBounds,
+        modifier = Modifier.fillMaxSize())
     LazyVerticalGrid (modifier = Modifier
         .fillMaxSize()
-        .background(color = Color.DarkGray)
         .padding(16.dp)
         .padding(vertical = 25.dp),
         state = gridState,
@@ -44,15 +55,8 @@ fun CustomGridList(onClickElement : (String) -> Unit = {},
         items(monsterData)
         {
             var id : String? = it.id
-            VerticalFileInformation(id, onClickElement = { onClickElement((id).toString())}, modifier = Modifier.height(250.dp))
+            VerticalFileInformation(id, onClickElement = { onClickElement((id).toString())}, modifier = Modifier.size(250.dp))
         }
     }
 
-}
-
-@Preview
-@Composable
-fun PreviewCustomList(){
-//    fakeRepository.obtainData()
-    CustomGridList(gridState = rememberLazyGridState())
 }
