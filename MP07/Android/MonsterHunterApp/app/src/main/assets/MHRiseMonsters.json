@@ -16,7 +16,7 @@
         "Poison" : "3",
         "Sleep" : "3",
         "Paralysis" : "3",
-        "Nitro" : "3",
+        "Blast" : "3",
         "Stun" : "3"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em101_ID.png"
@@ -37,7 +37,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em107_ID.png"
@@ -58,7 +58,7 @@
         "Poison" : "3",
         "Sleep" : "2",
         "Paralysis" : "3",
-        "Nitro" : "3",
+        "Blast" : "3",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em044_ID.png"
@@ -79,7 +79,7 @@
         "Poison" : "2",
         "Sleep" : "1",
         "Paralysis" : "2",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "3"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em108_ID.png"
@@ -100,7 +100,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em037_ID.png"
@@ -121,7 +121,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "3",
+        "Blast" : "3",
         "Stun" : "3"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em123_ID.png"
@@ -142,7 +142,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em120_ID.png"
@@ -163,7 +163,7 @@
         "Poison" : "2",
         "Sleep" : "1",
         "Paralysis" : "2",
-        "Nitro" : "3",
+        "Blast" : "3",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em114_ID.png"
@@ -184,7 +184,7 @@
         "Poison" : "3",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em116_ID.png"
@@ -205,7 +205,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "3",
+        "Blast" : "3",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em122_ID.png"
@@ -226,7 +226,7 @@
         "Poison" : "3",
         "Sleep" : "1",
         "Paralysis" : "2",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em036_ID.png"
@@ -247,7 +247,7 @@
         "Poison" : "2",
         "Sleep" : "3",
         "Paralysis" : "1",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em112_ID.png"
@@ -268,7 +268,7 @@
         "Poison" : "3",
         "Sleep" : "1",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "3"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em045_ID.png"
@@ -289,7 +289,7 @@
         "Poison" : "1",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "3"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em001_ID.png"
@@ -310,7 +310,7 @@
         "Poison" : "1",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "3"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em001_01_ID.png"
@@ -331,7 +331,7 @@
         "Poison" : "1",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em001_02_ID.png"
@@ -352,7 +352,7 @@
         "Poison" : "1",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em002_ID.png"
@@ -373,7 +373,7 @@
         "Poison" : "1",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em002_01_ID.png"
@@ -394,7 +394,7 @@
         "Poison" : "1",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em002_02_ID.png"
@@ -415,7 +415,7 @@
         "Poison" : "1",
         "Sleep" : "3",
         "Paralysis" : "3",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em102_ID.png"
@@ -436,7 +436,7 @@
         "Poison" : "3",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image": "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em102_01_ID.png"
@@ -457,7 +457,7 @@
         "Poison" : "3",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em109_ID.png"
@@ -478,7 +478,7 @@
         "Poison" : "1",
         "Sleep" : "2",
         "Paralysis" : "1",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image": "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em109_01_ID.png"
@@ -499,7 +499,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em100_ID.png"
@@ -520,7 +520,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em100_01_ID.png"
@@ -541,7 +541,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "3",
+        "Blast" : "3",
         "Stun" : "3"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em110_ID.png"
@@ -562,7 +562,7 @@
         "Poison" : "2",
         "Sleep" : "1",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em110_01_ID.png"
@@ -583,7 +583,7 @@
         "Poison" : "3",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em111_ID.png"
@@ -604,7 +604,7 @@
         "Poison" : "3",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em111_05_ID.png"
@@ -625,7 +625,7 @@
         "Poison" : "1",
         "Sleep" : "2",
         "Paralysis" : "3",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em113_ID.png"
@@ -646,7 +646,7 @@
         "Poison" : "3",
         "Sleep" : "2",
         "Paralysis" : "3",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em113_01_ID.png"
@@ -667,7 +667,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "3",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em007_ID.png"
@@ -688,7 +688,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "3",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em007_01_ID.png"
@@ -709,7 +709,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em118_ID.png"
@@ -730,7 +730,7 @@
         "Poison" : "2",
         "Sleep" : "3",
         "Paralysis" : "2",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em118_05_ID.png"
@@ -751,7 +751,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em042_ID.png"
@@ -772,7 +772,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em042_05_ID.png"
@@ -793,7 +793,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image": "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em080_ID.png"
@@ -814,7 +814,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image": "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em080_01_ID.png"
@@ -835,7 +835,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em032_ID.png"
@@ -856,7 +856,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em032_01_ID.png"
@@ -877,7 +877,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em043_ID.png"
@@ -898,7 +898,7 @@
         "Poison" : "3",
         "Sleep" : "3",
         "Paralysis" : "3",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em043_05_ID.png"
@@ -919,7 +919,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em063_ID.png"
@@ -940,7 +940,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em063_05_ID.png"
@@ -961,7 +961,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "1",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em057_ID.png"
@@ -982,7 +982,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "3",
+        "Blast" : "3",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em057_01_ID.png"
@@ -1003,7 +1003,7 @@
         "Poison" : "1",
         "Sleep" : "1",
         "Paralysis" : "1",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em023_ID.png"
@@ -1024,7 +1024,7 @@
         "Poison" : "1",
         "Sleep" : "1",
         "Paralysis" : "1",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em023_05_ID.png"
@@ -1045,7 +1045,7 @@
         "Poison" : "1",
         "Sleep" : "1",
         "Paralysis" : "2",
-        "Nitro" : "3",
+        "Blast" : "3",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em018_ID.png"
@@ -1066,7 +1066,7 @@
         "Poison" : "1",
         "Sleep" : "1",
         "Paralysis" : "2",
-        "Nitro" : "3",
+        "Blast" : "3",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em018_05_ID.png"
@@ -1087,7 +1087,7 @@
         "Poison" : "3",
         "Sleep" : "0",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em127_ID.png"
@@ -1108,7 +1108,7 @@
         "Poison" : "3",
         "Sleep" : "0",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em127_01_ID.png"
@@ -1129,7 +1129,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em103_ID.png"
@@ -1150,7 +1150,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "3",
+        "Blast" : "3",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em103_05_ID.png"
@@ -1171,7 +1171,7 @@
         "Poison" : "1",
         "Sleep" : "1",
         "Paralysis" : "1",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em115_ID.png"
@@ -1192,7 +1192,7 @@
         "Poison" : "1",
         "Sleep" : "1",
         "Paralysis" : "1",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em115_05_ID.png"
@@ -1213,7 +1213,7 @@
         "Poison" : "1",
         "Sleep" : "2",
         "Paralysis" : "0",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em011_ID.png"
@@ -1234,7 +1234,7 @@
         "Poison" : "0",
         "Sleep" : "0",
         "Paralysis" : "0",
-        "Nitro" : "0",
+        "Blast" : "0",
         "Stun" : "0"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em106_ID.png"
@@ -1255,7 +1255,7 @@
         "Poison" : "2",
         "Sleep" : "1",
         "Paralysis" : "1",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em027_ID.png"
@@ -1276,7 +1276,7 @@
         "Poison" : "3",
         "Sleep" : "1",
         "Paralysis" : "1",
-        "Nitro" : "3",
+        "Blast" : "3",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em024_ID.png"
@@ -1297,7 +1297,7 @@
         "Poison" : "3",
         "Sleep" : "0",
         "Paralysis" : "1",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em105_ID.png"
@@ -1318,7 +1318,7 @@
         "Poison" : "2",
         "Sleep" : "1",
         "Paralysis" : "1",
-        "Nitro" : "3",
+        "Blast" : "3",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em124_ID.png"
@@ -1339,7 +1339,7 @@
         "Poison" : "3",
         "Sleep" : "1",
         "Paralysis" : "1",
-        "Nitro" : "3",
+        "Blast" : "3",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em125_ID.png"
@@ -1360,7 +1360,7 @@
         "Poison" : "2",
         "Sleep" : "2",
         "Paralysis" : "2",
-        "Nitro" : "2",
+        "Blast" : "2",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em121_ID.png"
@@ -1381,7 +1381,7 @@
         "Poison" : "2",
         "Sleep" : "0",
         "Paralysis" : "1",
-        "Nitro" : "3",
+        "Blast" : "3",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em126_ID.png"
@@ -1402,7 +1402,7 @@
         "Poison" : "1",
         "Sleep" : "1",
         "Paralysis" : "1",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
@@ -1423,7 +1423,7 @@
         "Poison" : "3",
         "Sleep" : "1",
         "Paralysis" : "2",
-        "Nitro" : "3",
+        "Blast" : "3",
         "Stun" : "2"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em104_ID.png"
@@ -1444,7 +1444,7 @@
         "Poison" : "1",
         "Sleep" : "1",
         "Paralysis" : "1",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em050_ID.png"
@@ -1465,7 +1465,7 @@
         "Poison" : "1",
         "Sleep" : "1",
         "Paralysis" : "1",
-        "Nitro" : "1",
+        "Blast" : "1",
         "Stun" : "0"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em013_ID.png"
