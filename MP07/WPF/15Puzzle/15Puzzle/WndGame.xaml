@@ -9,7 +9,8 @@
         Title="PuzzleGame" Height="450" Width="800">
     <DockPanel Name="dckPanel">
         <StatusBar DockPanel.Dock="Bottom" Height="40">
-            <StatusBarItem x:Name="sbiTime" Content="Movements : 0"></StatusBarItem>
+            <StatusBarItem x:Name="sbiMovements" Content="Moves : 0"/>
+            <StatusBarItem x:Name="sbiTime" Content="00:00:00.000"/>
         </StatusBar>
     </DockPanel>
 </Window>

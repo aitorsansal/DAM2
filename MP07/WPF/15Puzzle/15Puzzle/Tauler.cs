@@ -1,22 +1,57 @@
 ﻿using System.Printing;
 using System.Reflection.Metadata.Ecma335;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace _15Puzzle;
 
 public class Tauler : Grid
 {
+
+    public event MovementDone ExecutedMovement;
+    public event GameCompleted EndedGame;
+    public int TotalBlocks { get; set; }
     public int NFiles { get; set; }
     public int NColumnes { get; set; }
-    public Casella CasellaBuida { get; set; }
-    public int NumCasellesBenColocades { get; set; }
-    public bool EstaSolucionat { get; set; }
+    public Casella? CasellaBuida { get; set; }
+
+    private int numCasellesBenColocades;
+    public int NumCasellesBenColocades
+    {
+        get => numCasellesBenColocades;
+        set
+        {
+            numCasellesBenColocades = value;
+            CheckIfCompleted();
+        }
+    }
+
+    public bool EstaSolucionat
+    {
+        set
+        {
+            if (value)
+                EndedGame?.Invoke();
+        }
+    }
+
+    private int movements;
+    public int Movements
+    {
+        get => movements;
+        set
+        {
+            movements = value;
+            ExecutedMovement.Invoke(movements);
+        }
+    }
 
     public Tauler(int rows, int columns)
     {
         NFiles = rows;
         NColumnes = columns;
         Inicialitza();
+        TotalBlocks = NFiles * NColumnes - 1;
     }
     
     void Inicialitza()
@@ -40,17 +75,18 @@ public class Tauler : Grid
                 {
                     Casella newCasella = new Casella
                     {
-                        ValorActual = numbers[val],
                         Columna = j,
                         Fila = i,
                         EsVisible = true,
-                        ValorDesitjat = val+1
+                        ValorDesitjat = val+1,
+                        ValorActual = numbers[val]
                     };
                     newCasella.SetValue(Grid.RowProperty, i);
                     newCasella.SetValue(Grid.ColumnProperty, j);
                     val++;
                     Children.Add(newCasella);
                     newCasella.MouseDown += (sender, args) => MouFitxa(newCasella);
+                    if (newCasella.EstaBenColocada) NumCasellesBenColocades++;
                 }
                 else
                 {
@@ -80,16 +116,49 @@ public class Tauler : Grid
     {
         if (CasellaBuida.Fila == toMove.Fila)
         {
-            if (CasellaBuida.Fila < toMove.Fila)
+            if (Math.Abs(CasellaBuida.Columna - toMove.Columna) == 1)
             {
-                for (int i = CasellaBuida.Fila; i < toMove.Fila; i++)
+                MoveTwoBlocks(toMove);
+            }
+            else 
+            {
+                List<Casella> toMoveList = new List<Casella>();
+                if (CasellaBuida.Columna < toMove.Columna)
+                    toMoveList = Children.OfType<Casella>().Where(c => c.Fila == CasellaBuida.Fila && c.Columna > CasellaBuida.Columna && c.Columna <= toMove.Columna).ToList();
+                else
                 {
+                    toMoveList = Children.OfType<Casella>().Where(c => c.Fila == CasellaBuida.Fila && c.Columna < CasellaBuida.Columna && c.Columna >= toMove.Columna).ToList();
+                    toMoveList.Reverse();
+                }
+                foreach (var block in toMoveList)
+                {
+                    MoveTwoBlocks(block);
                 }
             }
+            NumCasellesBenColocades = Children.OfType<Casella>().Where(c => c.EstaBenColocada).ToList().Count;
         }
         else if (CasellaBuida.Columna == toMove.Columna)
         {
-            Console.WriteLine("same column");
+            if (Math.Abs(CasellaBuida.Fila - toMove.Fila) == 1)
+            {
+                MoveTwoBlocks(toMove);
+            }
+            else 
+            {
+                List<Casella> toMoveList = new List<Casella>();
+                if (CasellaBuida.Fila < toMove.Fila)
+                    toMoveList = Children.OfType<Casella>().Where(c => c.Columna == CasellaBuida.Columna && c.Fila > CasellaBuida.Fila && c.Fila <= toMove.Fila).ToList();
+                else
+                {
+                    toMoveList = Children.OfType<Casella>().Where(c => c.Columna == CasellaBuida.Columna && c.Fila < CasellaBuida.Fila && c.Fila >= toMove.Fila).ToList();
+                    toMoveList.Reverse();
+                }
+                foreach (var block in toMoveList)
+                {
+                    MoveTwoBlocks(block);
+                }
+            }
+            NumCasellesBenColocades = Children.OfType<Casella>().Where(c => c.EstaBenColocada).ToList().Count;
         }
     }
 
@@ -136,4 +205,25 @@ public class Tauler : Grid
         }
 
     }
+
+
+    void MoveTwoBlocks(Casella second)
+    {
+        CasellaBuida.ValorActual = second.ValorActual;
+        CasellaBuida.EsVisible = true;
+        var csTemp = CasellaBuida;
+        CasellaBuida = second;
+        CasellaBuida.ValorActual = null;
+        CasellaBuida.EsVisible = false;
+        Movements++;
+    }
+
+    public void CheckIfCompleted()
+    {
+        EstaSolucionat = NumCasellesBenColocades == TotalBlocks;
+    }
+
+    public delegate void MovementDone(int movements);
+
+    public delegate void GameCompleted();
 }

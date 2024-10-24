@@ -20,7 +20,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Slider Grid.Column="0" Margin="20,0,20,0" VerticalAlignment="Center" Name="SldRow" Minimum="2" Maximum="20" Interval="1" TickFrequency="1" IsSnapToTickEnabled="True"/>
+            <Slider Grid.Column="0" Margin="20,0,20,0" VerticalAlignment="Center" Value="4"
+                    Name="SldRow" Minimum="2" Maximum="20" Interval="1" TickFrequency="1" IsSnapToTickEnabled="True"/>
             <TextBlock Grid.Column="1" Text="{Binding ElementName=SldRow, Path=Value}" 
             HorizontalAlignment="Center" VerticalAlignment="Center" 
             Margin="30"/>
@@ -32,7 +33,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Slider Grid.Column="0" Margin="20,0,20,0" VerticalAlignment="Center" Name="SldCol" Minimum="2" Maximum="20" Interval="1" TickFrequency="1" IsSnapToTickEnabled="True"/>
+            <Slider Grid.Column="0" Margin="20,0,20,0" VerticalAlignment="Center" Value="4"
+                    Name="SldCol" Minimum="2" Maximum="20" Interval="1" TickFrequency="1" IsSnapToTickEnabled="True"/>
             <TextBlock Grid.Column="1" Text="{Binding ElementName=SldCol, Path=Value}" 
             HorizontalAlignment="Center" VerticalAlignment="Center" 
             Margin="30"/>
