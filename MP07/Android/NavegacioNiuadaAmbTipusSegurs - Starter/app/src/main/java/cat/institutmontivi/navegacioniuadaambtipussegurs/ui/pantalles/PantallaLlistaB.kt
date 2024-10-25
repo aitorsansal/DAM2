@@ -23,9 +23,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import cat.institutmontivi.navegacioniuadaambtipussegurs.R
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Preview
@@ -33,7 +35,7 @@ import androidx.compose.ui.unit.dp
 fun PantallaLlistaB (llista: List<Char> = ('A'..'Z').toList(), onClickElement: (String) -> Unit = {}){
     LazyColumn(){
         stickyHeader { Text (
-            text = "Llista B",
+            text = stringResource(R.string.llista_b),
             modifier = Modifier
                 .fillMaxWidth()
                 .background(MaterialTheme.colorScheme.secondary)

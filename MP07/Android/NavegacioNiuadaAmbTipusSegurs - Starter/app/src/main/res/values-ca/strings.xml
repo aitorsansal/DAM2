@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NavegacioNiuadaAmbTipusSegurs</string>
+    <string name="llista_a">Llista A</string>
+    <string name="llista_b">Llista B</string>
+    <string name="llista_c">Llista C</string>
+</resources>

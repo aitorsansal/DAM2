@@ -22,9 +22,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import cat.institutmontivi.navegacioniuadaambtipussegurs.R
 import cat.institutmontivi.navegacioniuadaambtipussegurs.ui.comu.ElementHoritzontal
 
 
@@ -35,13 +37,14 @@ fun PantallaLlistaA (
     llista: List<Int> = (1..100).toList(),
     onClickElement: (Int) -> Unit = {},
 ){
-    LazyColumn(Modifier
-        .fillMaxWidth()
-        .padding(8.dp),
+    LazyColumn(
+        Modifier
+            .fillMaxWidth()
+            .padding(8.dp),
 
     ){
         stickyHeader { Text (
-            text = "Llista A",
+            text = stringResource(R.string.llista_a),
             modifier = Modifier
                 .fillMaxWidth()
                 .background(MaterialTheme.colorScheme.primary)

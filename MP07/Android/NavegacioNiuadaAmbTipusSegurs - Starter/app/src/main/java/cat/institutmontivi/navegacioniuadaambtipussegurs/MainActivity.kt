@@ -1,5 +1,6 @@
 package cat.institutmontivi.navegacioniuadaambtipussegurs
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -9,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -32,6 +34,9 @@ import androidx.navigation.PopUpToBuilder
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import cat.institutmontivi.navegacioniuadaambtipussegurs.dades.FakeDataSource
+import cat.institutmontivi.navegacioniuadaambtipussegurs.navegacio.LlistaA
+import cat.institutmontivi.navegacioniuadaambtipussegurs.navegacio.NavigationGraph
+import cat.institutmontivi.navegacioniuadaambtipussegurs.navegacio.categoriesDeNavegacio
 
 import cat.institutmontivi.navegacioniuadaambtipussegurs.ui.theme.NavegacioNiuadaAmbTipusSegursTheme
 
@@ -46,6 +51,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    @SuppressLint("RestrictedApi")
     @OptIn(ExperimentalMaterial3Api::class)
     @Preview
     @Composable
@@ -73,7 +79,7 @@ class MainActivity : ComponentActivity() {
                         navigationIconContentColor = MaterialTheme.colorScheme.onPrimary
                     ),
                     navigationIcon = {
-                        if (destinacioActual?.hasRoute(Int::class) ?: true) {  // <-- Cal actualitzar aquesta condició a la ruta de la pantalla principal
+                        if (destinacioActual?.hasRoute(LlistaA::class) ?: true) {  // <-- Cal actualitzar aquesta condició a la ruta de la pantalla principal
                             IconButton(
                                 onClick = { }
                             ) {
@@ -97,10 +103,29 @@ class MainActivity : ComponentActivity() {
                     }
                 )
             },
-
+            bottomBar = {
+                NavigationBar() {
+                    categoriesDeNavegacio.forEach{ cat ->
+                        val selected = destinacioActual?.hierarchy?.any{it.hasRoute(cat.ruta::class)} == true
+                        NavigationBarItem(
+                            selected = selected,
+                            onClick = {controladorDeNavegacio.navigate(cat.ruta){
+                                popUpTo(controladorDeNavegacio.graph.startDestinationId)
+                                launchSingleTop = true
+                            } },
+                            icon = {
+                                if(selected)
+                                    Icon(cat.iconaSeleccionada, contentDescription = cat.titol)
+                                else
+                                    Icon(cat.iconaNoSeleccionada, contentDescription = cat.titol)
+                            },
+                            label = {Text(cat.titol)}
+                        )
+                    }
+                }
+            }
         ) { innerPadding ->
-
-
+            NavigationGraph(controladorDeNavegacio, innerPadding)
         }
     }
 }
