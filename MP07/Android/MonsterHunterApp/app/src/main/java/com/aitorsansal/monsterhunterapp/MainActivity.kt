@@ -1,6 +1,7 @@
 package com.aitorsansal.monsterhunterapp
 
 import android.annotation.SuppressLint
+import android.graphics.drawable.Icon
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -21,6 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
@@ -38,6 +40,7 @@ import kotlinx.coroutines.launch
 
 
 val MonsterViewModelProvider = compositionLocalOf<MonsterViewModel>{error("No viewmodel passed")}
+var navigationCategories : List<NavigationCategories<out Any>> = listOf()
 
 class MainActivity : ComponentActivity() {
 
@@ -48,7 +51,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MonsterHunterAppTheme {
-                var navigationCategories = listOf(
+                navigationCategories = listOf(
                     NavigationCategories<MonsterHunterWorld>(
                         route = MonsterHunterWorld,
                         selectedIcon = ImageVector.vectorResource(R.drawable.mhworld_icon),
@@ -91,54 +94,11 @@ class MainActivity : ComponentActivity() {
                         // Drawer content
                         Sidebar(drawerState = drawerState, coroutineScope = coroutineScope, onGameSelected = {
                             game -> selectedGame = GameData.games[game]
-                            rememberMonsterData = dataRepository.GetMonsterList(game)
-                            viewModel.setMonsters(rememberMonsterData)
                         })
                     }
                 ) {
                     CompositionLocalProvider(MonsterViewModelProvider provides viewModel) {
-                        Scaffold(
-                            modifier = Modifier.fillMaxSize(),
-                            topBar = {
-                                Box(modifier = Modifier.fillMaxWidth().height(60.dp)){
-                                    Image(
-                                        painter = painterResource(R.drawable.pergamin_background),
-                                        contentDescription = null,
-                                        modifier = Modifier.fillMaxSize(),
-                                        contentScale = ContentScale.Crop
-                                    )
-                                    TopAppBar(
-                                        title = { Text(text = selectedGame ?: "No game selected") },
-                                        navigationIcon = {
-                                            IconButton(onClick = {
-                                                toggleDrawer(drawerState = drawerState, coroutineScope = coroutineScope)
-                                            }) {
-                                                Icon(
-                                                    imageVector = Icons.Filled.Menu,
-                                                    contentDescription = "Open/Close Drawer"
-                                                )
-                                            }
-                                        },
-                                        colors = TopAppBarDefaults.topAppBarColors(
-                                            containerColor = Color.Black.copy(alpha = .0f),
-                                            titleContentColor = Color.White,
-                                            actionIconContentColor = Color.White
-                                        )
-                                    )
-                                }
-
-                            },
-                            bottomBar = {
-                                NavigationBar {
-                                    navigationCategories.forEach{ category ->
-                                        val selected = destination?.hierarchy?.any {it.hasRoute(category.route::class)} == true
-
-                                    }
-                                }
-                            }
-                        ) { paddingValues ->
-                            NavigationGraph(navController, paddingValues = paddingValues, scrollState = gridState)
-                        }
+                        App()
                     }
                 }
             }
@@ -183,7 +143,7 @@ class MainActivity : ComponentActivity() {
                         contentScale = ContentScale.Crop
                     )
                     TopAppBar(
-                        title = { Text(text = gameSelected ?: "No game selected") },
+                        title = { Text(text = selectedGame ?: "No game selected") },
                         navigationIcon = {
                             IconButton(onClick = {
                                 toggleDrawer(drawerState = drawerState, coroutineScope = coroutineScope)
@@ -206,8 +166,13 @@ class MainActivity : ComponentActivity() {
             bottomBar = {
                 NavigationBar {
                     navigationCategories.forEach{ category ->
-                        val selected =
-
+                        val selected = destination?.hierarchy?.any{it.hasRoute(category.route::class)} == true
+                        NavigationBarItem(
+                            selected = selected,
+                            icon = Icon(category.selectedIcon, contentDescription = category.title),
+                            label = Text(category.title),
+                            onClick = {}
+                        )
                     }
                 }
             }

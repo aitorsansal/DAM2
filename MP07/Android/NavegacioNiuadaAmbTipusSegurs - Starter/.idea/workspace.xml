@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b02f9bbc-c12b-4c9b-aaa5-656529be876b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../MonsterHunterApp/app/src/main/res/drawable/mh4u_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MonsterHunterApp/app/src/main/res/drawable/mhrise_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MonsterHunterApp/app/src/main/res/drawable/mhworld_icon.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MonsterHunterApp/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MonsterHunterApp/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/navigation/Destinations.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/navigation/Destinations.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../WPF/15Puzzle/15Puzzle/WndGame.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../WPF/15Puzzle/15Puzzle/WndGame.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../WPF/15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../WPF/15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../WPF/15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../WPF/15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" afterDir="false" />
-    </list>
+    <list default="true" id="29cb91e1-56f2-4a80-8784-2124c66cafaa" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,11 +58,11 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <servers />
   </component>
