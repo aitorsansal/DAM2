@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b02f9bbc-c12b-4c9b-aaa5-656529be876b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../MonsterHunterApp/app/src/main/res/drawable/mh4u_icon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MonsterHunterApp/app/src/main/res/drawable/mhrise_icon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MonsterHunterApp/app/src/main/res/drawable/mhworld_icon.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MonsterHunterApp/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MonsterHunterApp/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/navigation/Destinations.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/navigation/Destinations.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WPF/15Puzzle/15Puzzle/WndGame.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../WPF/15Puzzle/15Puzzle/WndGame.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WPF/15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../WPF/15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../WPF/15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../WPF/15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\aitorsansal\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="NavegacioNiuadaAmbTipusSegurs" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="NavegacioNiuadaAmbTipusSegurs" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="NavegacioNiuadaAmbTipusSegurs" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="NavegacioNiuadaAmbTipusSegurs" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+</project>
