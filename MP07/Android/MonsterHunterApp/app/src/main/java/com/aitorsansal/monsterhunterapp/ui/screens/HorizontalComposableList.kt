@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.aitorsansal.monsterhunterapp.ui.composables.HorizontalFileInformation
-import com.aitorsansal.monsterhunterapp.data.fakeRepository
+import com.aitorsansal.monsterhunterapp.data.dataRepository
 import com.aitorsansal.monsterhunterapp.model.Monster
 
 
@@ -37,5 +37,5 @@ fun HorizontalComposableList(data : List<Monster>,
 @Composable
 fun PreviewHorizontalComposableList(){
     //fakeRepository.obtainData()
-    HorizontalComposableList(fakeRepository.MHRiseData)
+    HorizontalComposableList(dataRepository.MHRiseData)
 }

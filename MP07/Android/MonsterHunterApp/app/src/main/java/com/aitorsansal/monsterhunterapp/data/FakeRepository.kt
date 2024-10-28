@@ -5,14 +5,11 @@ import com.aitorsansal.monsterhunterapp.model.Monster
 import com.aitorsansal.monsterhunterapp.model.MonsterList
 import com.google.gson.Gson
 import kotlinx.serialization.ExperimentalSerializationApi
-import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.decodeFromStream
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
-import kotlin.random.Random
 
-object fakeRepository{
+object dataRepository{
 
 
     public var MHWorldData : List<Monster> = listOf()
@@ -22,6 +19,9 @@ object fakeRepository{
                 private set
 
     public var MH4UData : List<Monster> = listOf()
+                private set
+
+    public var MHWildsData : List<Monster> = listOf()
                 private set
 
 

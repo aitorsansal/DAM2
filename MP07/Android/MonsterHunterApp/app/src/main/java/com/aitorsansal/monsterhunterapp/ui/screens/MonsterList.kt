@@ -1,13 +1,8 @@
 package com.aitorsansal.monsterhunterapp.ui.screens
 
-import android.content.Context
-import android.content.res.Resources
-import android.util.DisplayMetrics
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -18,27 +13,21 @@ import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.aitorsansal.monsterhunterapp.MainActivity
 import com.aitorsansal.monsterhunterapp.MonsterViewModelProvider
 import com.aitorsansal.monsterhunterapp.ui.composables.VerticalFileInformation
-import com.aitorsansal.monsterhunterapp.data.fakeRepository
-import com.aitorsansal.monsterhunterapp.model.Monster
 import com.aitorsansal.monsterhunterapp.R
+import com.aitorsansal.monsterhunterapp.model.Monster
 
 
 @Composable
-fun CustomGridList(onClickElement : (String) -> Unit = {},
-                   gridState:LazyGridState,
-                   viewModel : MonsterViewModel = androidx.lifecycle.viewmodel.compose.viewModel()){
+fun MonsterList(monsterData : List<Monster>,
+                onClickElement : (String) -> Unit = {},
+                gridState:LazyGridState = rememberLazyGridState(),
+                viewModel : MonsterViewModel = androidx.lifecycle.viewmodel.compose.viewModel()){
     val vm = MonsterViewModelProvider.current
-    val monsterData = vm.MonsterData.collectAsState().value
     Image(painter = painterResource(R.drawable.pergamin_background),
         contentDescription = null,
         contentScale = ContentScale.FillBounds,

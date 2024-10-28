@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.aitorsansal.monsterhunterapp.R
-import com.aitorsansal.monsterhunterapp.data.fakeRepository.drops
+import com.aitorsansal.monsterhunterapp.data.dataRepository.drops
 
 @Composable
 fun ItemBlock(

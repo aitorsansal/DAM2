@@ -6,7 +6,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
@@ -16,19 +15,17 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.aitorsansal.monsterhunterapp.data.fakeRepository
+import com.aitorsansal.monsterhunterapp.data.dataRepository
 import com.aitorsansal.monsterhunterapp.navigation.NavigationGraph
 import com.aitorsansal.monsterhunterapp.ui.theme.MonsterHunterAppTheme
 import androidx.navigation.NavHostController
 import com.aitorsansal.monsterhunterapp.data.GameData
-import com.aitorsansal.monsterhunterapp.model.Monster
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -47,7 +44,7 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 val currentRoute by navController.currentBackStackEntryAsState()
                 val destination = currentRoute?.destination
-                fakeRepository.obtainData(this)
+                dataRepository.obtainData(this)
                 val gridState = rememberLazyGridState()
 
                 //viewModel
@@ -60,7 +57,7 @@ class MainActivity : ComponentActivity() {
 
                 //GameDetection
                 var selectedGame by remember{mutableStateOf(GameData.games["MHWorld"])}
-                var rememberMonsterData by remember {mutableStateOf(fakeRepository.MHWorldData)}
+                var rememberMonsterData by remember {mutableStateOf(dataRepository.MHWorldData)}
                 viewModel.setMonsters(rememberMonsterData)
 
                 // ModalDrawer
@@ -70,7 +67,7 @@ class MainActivity : ComponentActivity() {
                         // Drawer content
                         Sidebar(drawerState = drawerState, coroutineScope = coroutineScope, onGameSelected = {
                             game -> selectedGame = GameData.games[game]
-                            rememberMonsterData = fakeRepository.GetMonsterList(game)
+                            rememberMonsterData = dataRepository.GetMonsterList(game)
                             viewModel.setMonsters(rememberMonsterData)
                         })
                     }
