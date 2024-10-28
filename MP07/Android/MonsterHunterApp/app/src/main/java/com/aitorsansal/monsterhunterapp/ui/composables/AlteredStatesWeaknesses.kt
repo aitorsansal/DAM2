@@ -39,10 +39,6 @@ fun AlteredStatesWeaknesses(givenWeakness:Map<String,Int>?, modifier : Modifier 
             var txt = ""
             for (i in 0 until stars) {
                 txt += "⭐"
-//                Image(painter = painterResource(id = R.drawable.star),
-//                    colorFilter = ColorFilter.tint(Color(252,186,3)),
-//                    modifier = Modifier.size(25.dp).padding(horizontal = 1.dp),
-//                    contentDescription = null)
             }
             Text(text = txt)
         }
@@ -52,10 +48,6 @@ fun AlteredStatesWeaknesses(givenWeakness:Map<String,Int>?, modifier : Modifier 
             var txt = ""
             for (i in 0 until stars) {
                 txt += "⭐"
-//                Image(painter = painterResource(id = R.drawable.star),
-//                    colorFilter = ColorFilter.tint(Color(252,186,3)),
-//                    modifier = Modifier.size(25.dp).padding(horizontal = 1.dp),
-//                    contentDescription = null)
             }
             Text(text = txt)
         }
@@ -65,10 +57,6 @@ fun AlteredStatesWeaknesses(givenWeakness:Map<String,Int>?, modifier : Modifier 
             var txt = ""
             for (i in 0 until stars) {
                 txt += "⭐"
-//                Image(painter = painterResource(id = R.drawable.star),
-//                    colorFilter = ColorFilter.tint(Color(252,186,3)),
-//                    modifier = Modifier.size(25.dp).padding(horizontal = 1.dp),
-//                    contentDescription = null)
             }
             Text(text = txt)
         }
@@ -78,10 +66,6 @@ fun AlteredStatesWeaknesses(givenWeakness:Map<String,Int>?, modifier : Modifier 
             var txt = ""
             for (i in 0 until stars) {
                 txt += "⭐"
-//                Image(painter = painterResource(id = R.drawable.star),
-//                    colorFilter = ColorFilter.tint(Color(252,186,3)),
-//                    modifier = Modifier.size(25.dp).padding(horizontal = 1.dp),
-//                    contentDescription = null)
             }
             Text(text = txt)
         }
@@ -91,10 +75,6 @@ fun AlteredStatesWeaknesses(givenWeakness:Map<String,Int>?, modifier : Modifier 
             var txt = ""
             for (i in 0 until stars) {
                 txt += "⭐"
-//                Image(painter = painterResource(id = R.drawable.star),
-//                    colorFilter = ColorFilter.tint(Color(252,186,3)),
-//                    modifier = Modifier.size(25.dp).padding(horizontal = 1.dp),
-//                    contentDescription = null)
             }
             Text(text = txt)
         }
