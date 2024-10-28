@@ -17,7 +17,7 @@ import com.aitorsansal.monsterhunterapp.ui.screens.MonsterList
 
 
 @Composable
-fun NavigationGraph(navController : NavHostController, paddingValues : PaddingValues, scrollState : LazyGridState){
+fun NavigationGraph(navController : NavHostController, paddingValues : PaddingValues){
 
     NavHost(
         navController = navController,
@@ -25,6 +25,8 @@ fun NavigationGraph(navController : NavHostController, paddingValues : PaddingVa
         modifier = Modifier.padding(paddingValues)
     ){
         MonsterHunterWorld(navController)
+        MonsterHunterRise(navController)
+        MonsterHunter4Ultimate(navController)
     }
 }
 

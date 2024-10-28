@@ -31,6 +31,8 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.aitorsansal.monsterhunterapp.MonsterViewModelProvider
 import com.aitorsansal.monsterhunterapp.R
+import com.aitorsansal.monsterhunterapp.data.dataRepository
+import com.aitorsansal.monsterhunterapp.model.Monster
 import com.aitorsansal.monsterhunterapp.ui.composables.AlteredStatesWeaknesses
 import com.aitorsansal.monsterhunterapp.ui.composables.ElementWeaknesses
 
@@ -40,9 +42,14 @@ fun MonsterInformationScreen(
     modifier: Modifier = Modifier,
     onClickElement : () -> Unit = {}
 ){
-    val viewModel = MonsterViewModelProvider.current
-    val monsters = viewModel.MonsterData.collectAsState()
-    val monster = monsters.value.firstOrNull{it.id == id}
+    val monsters : List<Monster> = when (id.split("-")[0]){
+        "MHWorld" -> dataRepository.MHWorldData
+        "MHRise" -> dataRepository.MHRiseData
+        "MH4U" -> dataRepository.MH4UData
+        "MHWilds" -> dataRepository.MHWildsData
+        else -> {listOf()}
+    }
+    val monster = monsters.firstOrNull{it.id == id}
     val screenHalf = LocalConfiguration.current.screenWidthDp/2
     Card(modifier = modifier.fillMaxSize()) {
         Box(modifier = Modifier.fillMaxSize().background(color = Color.DarkGray).padding(top = 30.dp)){

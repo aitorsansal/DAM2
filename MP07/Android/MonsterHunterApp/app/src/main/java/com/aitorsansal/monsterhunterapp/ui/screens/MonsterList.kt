@@ -25,9 +25,7 @@ import com.aitorsansal.monsterhunterapp.model.Monster
 @Composable
 fun MonsterList(monsterData : List<Monster>,
                 onClickElement : (String) -> Unit = {},
-                gridState:LazyGridState = rememberLazyGridState(),
-                viewModel : MonsterViewModel = androidx.lifecycle.viewmodel.compose.viewModel()){
-    val vm = MonsterViewModelProvider.current
+                gridState:LazyGridState = rememberLazyGridState()){
     Image(painter = painterResource(R.drawable.pergamin_background),
         contentDescription = null,
         contentScale = ContentScale.FillBounds,
@@ -44,7 +42,7 @@ fun MonsterList(monsterData : List<Monster>,
         items(monsterData)
         {
             var id : String? = it.id
-            VerticalFileInformation(id, onClickElement = { onClickElement((id).toString())}, modifier = Modifier.size(250.dp))
+            VerticalFileInformation(id,monsterData, onClickElement = { onClickElement((id).toString())}, modifier = Modifier.size(250.dp))
         }
     }
 

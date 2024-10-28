@@ -25,16 +25,17 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.aitorsansal.monsterhunterapp.MonsterViewModelProvider
 import com.aitorsansal.monsterhunterapp.R
+import com.aitorsansal.monsterhunterapp.data.dataRepository
+import com.aitorsansal.monsterhunterapp.model.Monster
 
 @Composable
 fun VerticalFileInformation(id:String?,
+                            monsterData : List<Monster>,
                             modifier : Modifier = Modifier,
                             background:Color = MaterialTheme.colorScheme.primary,
                             colorLetter:Color = MaterialTheme.colorScheme.onPrimaryContainer,
-                            onClickElement : (String?) -> Unit = {}
+                            onClickElement : (String?) -> Unit = {},
 ){
-    val vm = MonsterViewModelProvider.current
-    val monsterData = vm.MonsterData.collectAsState().value
     val monster = monsterData.firstOrNull {it.id == id }
     Box(modifier = modifier.fillMaxSize()){
         Image(painter = painterResource(R.drawable.complete_mark),
@@ -70,5 +71,5 @@ fun VerticalFileInformation(id:String?,
 @Preview(heightDp = 250, widthDp = 150)
 @Composable
 fun PreviewVerticalFileInformation(){
-    VerticalFileInformation("MHWorld-1")
+    VerticalFileInformation("MHWorld-1",dataRepository.MHWorldData)
 }

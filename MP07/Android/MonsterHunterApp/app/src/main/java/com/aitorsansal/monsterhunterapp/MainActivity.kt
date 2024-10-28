@@ -22,6 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -31,6 +32,7 @@ import com.aitorsansal.monsterhunterapp.navigation.NavigationGraph
 import com.aitorsansal.monsterhunterapp.ui.theme.MonsterHunterAppTheme
 import androidx.navigation.NavHostController
 import com.aitorsansal.monsterhunterapp.data.GameData
+import com.aitorsansal.monsterhunterapp.data.dataRepository.GetMonsterList
 import com.aitorsansal.monsterhunterapp.navigation.MonsterHunter4Ultimate
 import com.aitorsansal.monsterhunterapp.navigation.MonsterHunterRise
 import com.aitorsansal.monsterhunterapp.navigation.MonsterHunterWorld
@@ -55,24 +57,23 @@ class MainActivity : ComponentActivity() {
                     NavigationCategories<MonsterHunterWorld>(
                         route = MonsterHunterWorld,
                         selectedIcon = ImageVector.vectorResource(R.drawable.mhworld_icon),
-                        title = "MHW"
+                        title = "MHWorld"
                     ),
                     NavigationCategories<MonsterHunterRise>(
                         route = MonsterHunterRise,
                         selectedIcon = ImageVector.vectorResource(R.drawable.mhrise_icon),
-                        title = "MHW"
+                        title = "MHRise"
                     ),
                     NavigationCategories<MonsterHunter4Ultimate>(
                         route = MonsterHunter4Ultimate,
                         selectedIcon = ImageVector.vectorResource(R.drawable.mh4u_icon),
-                        title = "MHW"
+                        title = "MH4Ultimate"
                     )
                 )
                 val navController = rememberNavController()
                 val currentRoute by navController.currentBackStackEntryAsState()
                 val destination = currentRoute?.destination
                 dataRepository.obtainData(this)
-                val gridState = rememberLazyGridState()
 
                 //viewModel
                 val viewModel : MonsterViewModel = viewModel()
@@ -87,20 +88,25 @@ class MainActivity : ComponentActivity() {
                 var rememberMonsterData by remember {mutableStateOf(dataRepository.MHWorldData)}
                 viewModel.setMonsters(rememberMonsterData)
 
-                // ModalDrawer
-                ModalNavigationDrawer(
-                    drawerState = drawerState,
-                    drawerContent = {
-                        // Drawer content
-                        Sidebar(drawerState = drawerState, coroutineScope = coroutineScope, onGameSelected = {
-                            game -> selectedGame = GameData.games[game]
-                        })
-                    }
-                ) {
-                    CompositionLocalProvider(MonsterViewModelProvider provides viewModel) {
-                        App()
-                    }
+
+
+                CompositionLocalProvider(MonsterViewModelProvider provides viewModel) {
+                    App(drawerState = drawerState, coroutineScope = coroutineScope,
+                        navController = navController, selectedGame = selectedGame, destination = destination)
                 }
+                // ModalDrawer
+//                ModalNavigationDrawer(
+//                    drawerState = drawerState,
+//                    drawerContent = {
+//                        // Drawer content
+//                        Sidebar(drawerState = drawerState, coroutineScope = coroutineScope, onGameSelected = {
+//                            game -> selectedGame = GameData.games[game]
+//                            viewModel.setMonsters(GetMonsterList(game))
+//                        })
+//                    }
+//                ) {
+//
+//                }
             }
         }
     }
@@ -125,12 +131,13 @@ class MainActivity : ComponentActivity() {
 
 
 
+    @SuppressLint("RestrictedApi")
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     fun App(drawerState: DrawerState, coroutineScope: CoroutineScope,
             navController : NavHostController,
-            gridState : LazyGridState,
-            gameSelected : String? = "Monster Hunter World")
+            destination : NavDestination?,
+            selectedGame : String? = "Monster Hunter World")
     {
         Scaffold(
             modifier = Modifier.fillMaxSize(),
@@ -169,15 +176,20 @@ class MainActivity : ComponentActivity() {
                         val selected = destination?.hierarchy?.any{it.hasRoute(category.route::class)} == true
                         NavigationBarItem(
                             selected = selected,
-                            icon = Icon(category.selectedIcon, contentDescription = category.title),
-                            label = Text(category.title),
-                            onClick = {}
+                            icon = {Icon(category.selectedIcon, contentDescription = category.title)},
+                            label = {Text(category.title)},
+                            onClick = {
+                                navController.navigate(category.route){
+                                    popUpTo(MonsterHunterWorld)
+                                }
+                            },
+                            modifier = Modifier.size(16.dp)
                         )
                     }
                 }
             }
         ) { paddingValues ->
-            NavigationGraph(navController, paddingValues = paddingValues, scrollState = gridState)
+            NavigationGraph(navController, paddingValues = paddingValues)
         }
     }
 
