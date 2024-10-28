@@ -2,28 +2,28 @@
   "monsters": [
     {
       "id" :"MHWorld-1",
-      "name": "Great Jagras",
+      "name": "Aknosom",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
-        "Fire" :  "3",
-        "Water" : "0",
-        "Thunder" : "2",
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "3",
         "Ice" : "2",
-        "Draco" : "1"
+        "Draco" : "0"
       },
       "weaknessToAlteredStates": {
-        "Poison" : "3",
-        "Sleep" : "3",
-        "Paralysis" : "3",
-        "Blast" : "3",
-        "Stun" : "3"
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "2",
+        "Stun" : "1"
       },
       "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em101_ID.png"
     },
     {
       "id" : "MHWorld-2",
-      "name": "Kulu-YaKu",
+      "name": "Anjanath",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -44,7 +44,7 @@
     },
     {
       "id" : "MHWorld-3",
-      "name": "Barroth",
+      "name": "Astalos",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -65,7 +65,7 @@
     },
     {
       "id" : "MHWorld-4",
-      "name": "Jyuratodus",
+      "name": "Barioth",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -86,7 +86,7 @@
     },
     {
       "id" : "MHWorld-5",
-      "name": "Nargacuga",
+      "name": "Barroth",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -107,7 +107,7 @@
     },
     {
       "id" : "MHWorld-6",
-      "name": "Banbaro",
+      "name": "Basarios",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -275,7 +275,7 @@
     },
     {
       "id" : "MHWorld-14",
-      "name": "Rathian",
+      "name": "Almudon",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -296,7 +296,7 @@
     },
     {
       "id" : "MHWorld-15",
-      "name": "Pink Rathian",
+      "name": "Magma Almudon",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -317,7 +317,7 @@
     },
     {
       "id" : "MHWorld-16",
-      "name": "Gold Rathian",
+      "name": "Arzuros",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -338,7 +338,7 @@
     },
     {
       "id" : "MHWorld-55",
-      "name": "Rathalos",
+      "name": "Arzuros Apex",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -359,7 +359,7 @@
     },
     {
       "id" : "MHWorld-56",
-      "name": "Blue Rathalos",
+      "name": "Bazelgeuse",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -380,7 +380,7 @@
     },
     {
       "id" : "MHWorld-57",
-      "name": "Silver Rathalos",
+      "name": "Bazelgeuse Magma",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -401,7 +401,7 @@
     },
     {
       "id" : "MHWorld-17",
-      "name": "Pukei-Pukei",
+      "name": "Bishaten",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -422,7 +422,7 @@
     },
     {
       "id" : "MHWorld-18",
-      "name": "Coral Pukei-Pukei",
+      "name": "Blood Orange Bishaten",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -443,7 +443,7 @@
     },
     {
       "id" : "MHWorld-19",
-      "name": "Tobi-Kadachi",
+      "name": "Diablos",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -464,7 +464,7 @@
     },
     {
       "id" : "MHWorld-20",
-      "name": "Viper Tobi-Kadachi",
+      "name": "Apex Diablos",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -485,7 +485,7 @@
     },
     {
       "id" : "MHWorld-21",
-      "name": "Anjanath",
+      "name": "Mizutsune",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -506,7 +506,7 @@
     },
     {
       "id" : "MHWorld-22",
-      "name": "Fulgur Anjanath",
+      "name": "Apex Mizutsune",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -527,7 +527,7 @@
     },
     {
       "id" : "MHWorld-23",
-      "name": "Paolumu",
+      "name": "Rathalos",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -548,7 +548,7 @@
     },
     {
       "id" : "MHWorld-24",
-      "name": "Nightshade Paolumu",
+      "name": "Apex Rathalos",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -569,7 +569,7 @@
     },
     {
       "id" : "MHWorld-25",
-      "name": "Legiana",
+      "name": "Rathian",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -590,7 +590,7 @@
     },
     {
       "id" : "MHWorld-26",
-      "name": "Shrieking Legiana",
+      "name": "Apex Rathian",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -611,7 +611,7 @@
     },
     {
       "id" : "MHWorld-27",
-      "name": "Odogaron",
+      "name": "Zinogre",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -632,7 +632,7 @@
     },
     {
       "id" : "MHWorld-28",
-      "name": "Ebony Odogaron",
+      "name": "Apex Zinogre",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -653,7 +653,7 @@
     },
     {
       "id" : "MHWorld-29",
-      "name": "Diablos",
+      "name": "Somnacanth",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -674,7 +674,7 @@
     },
     {
       "id" : "MHWorld-30",
-      "name": "Black Diablos",
+      "name": "Aurora Somnacanth",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -695,7 +695,7 @@
     },
     {
       "id" : "MHWorld-31",
-      "name": "Bazelgeuse",
+      "name": "Chameleos",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -716,7 +716,7 @@
     },
     {
       "id" : "MHWorld-32",
-      "name": "Seething Bazelgeuse",
+      "name": "Risen Chameleos",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -737,7 +737,7 @@
     },
     {
       "id" : "MHWorld-33",
-      "name": "Barioth",
+      "name": "Gore Magala",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -758,7 +758,7 @@
     },
     {
       "id" : "MHWorld-34",
-      "name": "FrostFang Barioth",
+      "name": "Chaotic Gore Magala",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -779,7 +779,7 @@
     },
     {
       "id" : "MHWorld-35",
-      "name": "Glavenus",
+      "name": "Crimson Glow Valstrax",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -800,7 +800,7 @@
     },
     {
       "id" : "MHWorld-36",
-      "name": "Acidic Glavenus",
+      "name": "Risen Crimson Glow Valstrax",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -821,7 +821,7 @@
     },
     {
       "id" : "MHWorld-37",
-      "name": "Tigrex",
+      "name": "Daimyo Hermitaur",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -842,7 +842,7 @@
     },
     {
       "id" : "MHWorld-38",
-      "name": "Brute Tigrex",
+      "name": "Espinas",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -863,7 +863,7 @@
     },
     {
       "id" : "MHWorld-39",
-      "name": "Deviljho",
+      "name": "Flaming Espinas",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -884,7 +884,7 @@
     },
     {
       "id" : "MHWorld-40",
-      "name": "Savage Deviljho",
+      "name": "Rajang",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -905,7 +905,7 @@
     },
     {
       "id" : "MHWorld-41",
-      "name": "Brachydios",
+      "name": "Flaming Rajang",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -926,7 +926,7 @@
     },
     {
       "id" : "MHWorld-42",
-      "name": "Raging Brachydios",
+      "name": "Gaismagorm",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -947,7 +947,7 @@
     },
     {
       "id" : "MHWorld-43",
-      "name": "Zinogre",
+      "name": "Garangolm",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -968,7 +968,7 @@
     },
     {
       "id" : "MHWorld-44",
-      "name": "Stygian Zinogre",
+      "name": "Gold Rathian",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -989,7 +989,7 @@
     },
     {
       "id" : "MHWorld-45",
-      "name": "Rajang",
+      "name": "Goss Harag",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1010,7 +1010,7 @@
     },
     {
       "id" : "MHWorld-46",
-      "name": "Furious Rajang",
+      "name": "Great Baggi",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1031,7 +1031,7 @@
     },
     {
       "id" : "MHWorld-47",
-      "name": "Yian Garuga",
+      "name": "Great Izuchi",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1052,7 +1052,7 @@
     },
     {
       "id" : "MHWorld-47",
-      "name": "Scarret Yian Garuga",
+      "name": "Great Wroggi",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1073,7 +1073,7 @@
     },
     {
       "id" : "MHWorld-49",
-      "name": "Leshen",
+      "name": "Jyuratodus",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1094,7 +1094,7 @@
     },
     {
       "id" : "MHWorld-50",
-      "name": "Ancient Leshen",
+      "name": "Khezu",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1115,7 +1115,7 @@
     },
     {
       "id" : "MHWorld-51",
-      "name": "Nergigante",
+      "name": "Kulu-Ya-Ku",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1136,7 +1136,7 @@
     },
     {
       "id" : "MHWorld-52",
-      "name": "Ruiner Nergigante",
+      "name": "Kushala Daora",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1157,7 +1157,7 @@
     },
     {
       "id" : "MHWorld-53",
-      "name": "Vaal Hazak",
+      "name": "Lagombi",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1178,7 +1178,7 @@
     },
     {
       "id" : "MHWorld-54",
-      "name": "Blackveil Vaal Hazak",
+      "name": "Nargacuga",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1199,7 +1199,7 @@
     },
     {
       "id" : "MHWorld-58",
-      "name": "Kirin",
+      "name": "Lucent Nargacuga",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1220,7 +1220,7 @@
     },
     {
       "id" : "MHWorld-59",
-      "name": "Zorah Magdaros",
+      "name": "Lunagaron",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1241,7 +1241,7 @@
     },
     {
       "id" : "MHWorld-60",
-      "name": "Teostra",
+      "name": "Magnamalo",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1262,7 +1262,7 @@
     },
     {
       "id" : "MHWorld-61",
-      "name": "Kushala Daora",
+      "name": "Narwa the Allmother",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1283,7 +1283,7 @@
     },
     {
       "id" : "MHWorld-62",
-      "name": "Xeno'jiiva",
+      "name": "Pukei-Pukei",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1304,7 +1304,7 @@
     },
     {
       "id" : "MHWorld-63",
-      "name": "Velkhana",
+      "name": "Rakna-Kadaki",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1325,7 +1325,7 @@
     },
     {
       "id" : "MHWorld-64",
-      "name": "Namielle",
+      "name": "Pyre Rakna-Kadaki",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1346,7 +1346,7 @@
     },
     {
       "id" : "MHWorld-65",
-      "name": "Behemoth",
+      "name": "Risen Kushala Daora",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1367,7 +1367,7 @@
     },
     {
       "id" : "MHWorld-66",
-      "name": "Shara Ishvalda",
+      "name": "Risen Shagaru Magala",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1388,7 +1388,301 @@
     },
     {
       "id" : "MHWorld-67",
-      "name": "Kulve Taroth",
+      "name": "Risen Teostra",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
+    },
+    {
+      "id" : "MHWorld-67",
+      "name": "Royal Ludoth",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
+    },
+    {
+      "id" : "MHWorld-67",
+      "name": "Scorned Magnamalo",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
+    },
+    {
+      "id" : "MHWorld-67",
+      "name": "Seregios",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
+    },
+    {
+      "id" : "MHWorld-67",
+      "name": "Shagaru Magala",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
+    },
+    {
+      "id" : "MHWorld-67",
+      "name": "Shogun Ceantaur",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
+    },
+    {
+      "id" : "MHWorld-67",
+      "name": "Silver Rathalos",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
+    },
+    {
+      "id" : "MHWorld-67",
+      "name": "Tetranadon",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
+    },
+    {
+      "id" : "MHWorld-67",
+      "name": "Thunder Serpent Narwa",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
+    },
+    {
+      "id" : "MHWorld-67",
+      "name": "Tigrex",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
+    },
+    {
+      "id" : "MHWorld-67",
+      "name": "Tobi-Kadachi",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
+    },
+    {
+      "id" : "MHWorld-67",
+      "name": "Velkhana",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
+    },
+    {
+      "id" : "MHWorld-67",
+      "name": "Violet Mizutsune",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
+    },
+    {
+      "id" : "MHWorld-67",
+      "name": "Volvidon",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png"
+    },
+    {
+      "id" : "MHWorld-67",
+      "name": "Wind Serpent Ibushi",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1409,7 +1703,7 @@
     },
     {
       "id" : "MHWorld-68",
-      "name": "Safi'jiva",
+      "name": "Malzeno",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1430,7 +1724,7 @@
     },
     {
       "id" : "MHWorld-69",
-      "name": "Alatreon",
+      "name": "Primordial Malzeno",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
@@ -1451,7 +1745,7 @@
     },
     {
       "id" : "MHWorld-70",
-      "name": "Fatalis",
+      "name": "Amatsu",
       "minSize": 998.69,
       "maxSize": 1364.88,
       "weakness": {
