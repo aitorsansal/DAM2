@@ -14,22 +14,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import coil.compose.AsyncImage
-import coil.request.ImageRequest
-import com.aitorsansal.monsterhunterapp.data.fakeRepository
+import com.aitorsansal.monsterhunterapp.data.dataRepository
 import com.aitorsansal.monsterhunterapp.model.Monster
-import com.aitorsansal.monsterhunterapp.R
 
 @Composable
 fun FirstList(data : List<Monster>,
-              onClickWarrior : (Int) -> Unit = {}){
+              onClickWarrior : (String?) -> Unit = {}){
     LazyColumn (modifier = Modifier
         .padding(16.dp)
         .fillMaxSize()
@@ -55,36 +48,17 @@ fun FirstList(data : List<Monster>,
                         textAlign = TextAlign.Center
                     )
                 },
-                supportingContent = {
-                    if(it.completedCatchingChallenge)
-                        Text(
-                            text = "Catch challenge:\n ${it.quantityCaptured }/${it.totalToCapture}",
-                            style = MaterialTheme.typography.bodySmall,
-                            textAlign = TextAlign.Center,
-                            overflow = TextOverflow.Ellipsis,
-                            color = Color.Green,
-                        )
-                    else
-                        Text(
-                            text = "Catch challenge:\n ${it.quantityCaptured }/${it.totalToCapture}",
-                            style = MaterialTheme.typography.bodySmall,
-                            textAlign = TextAlign.Center,
-                            overflow = TextOverflow.Ellipsis,
-                            color = Color.Yellow
-                        )
-
-                },
                 trailingContent = { Text(text = "${it.id}") },
-                leadingContent = {
-                    AsyncImage(
-                        model = ImageRequest
-                        .Builder(LocalContext.current)
-                        .data(it.image)
-                        .size(250)
-                        .build(), contentDescription = null,
-                        placeholder = painterResource(R.drawable.ic_launcher_foreground),
-                        contentScale = ContentScale.Crop)
-                }
+//                leadingContent = {
+//                    AsyncImage(
+//                        model = ImageRequest
+//                        .Builder(LocalContext.current)
+//                        .data(it.image)
+//                        .size(250)
+//                        .build(), contentDescription = null,
+//                        placeholder = painterResource(R.drawable.ic_launcher_foreground),
+//                        contentScale = ContentScale.Crop)
+//                }
             )
         }
     }
@@ -93,6 +67,6 @@ fun FirstList(data : List<Monster>,
 @Preview
 @Composable
 fun PreviewFirstList(){
-    fakeRepository.obtainData()
-    FirstList(fakeRepository.MHRiseData)
+//    fakeRepository.obtainData()
+    FirstList(dataRepository.MHRiseData)
 }

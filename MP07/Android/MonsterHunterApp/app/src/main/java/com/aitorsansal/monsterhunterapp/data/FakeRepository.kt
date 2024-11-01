@@ -1,9 +1,15 @@
 package com.aitorsansal.monsterhunterapp.data
 
+import android.content.Context
 import com.aitorsansal.monsterhunterapp.model.Monster
-import kotlin.random.Random
+import com.aitorsansal.monsterhunterapp.model.MonsterList
+import com.google.gson.Gson
+import kotlinx.serialization.ExperimentalSerializationApi
+import java.io.BufferedReader
+import java.io.InputStream
+import java.io.InputStreamReader
 
-object fakeRepository{
+object dataRepository{
 
 
     public var MHWorldData : List<Monster> = listOf()
@@ -15,32 +21,73 @@ object fakeRepository{
     public var MH4UData : List<Monster> = listOf()
                 private set
 
+    public var MHWildsData : List<Monster> = listOf()
+                private set
 
-    public fun obtainData()  {
-        if(MHRiseData.isEmpty())
-            MHRiseData = (0 until monsterNames.size).toList().map{GenerateMonster(it) }.toList()
-    }
 
-    fun GenerateMonster(pos: Int) : Monster
-    {
-        val nOfDrops = Random.nextInt(1,10)
-        val dropsList : MutableList<String> = mutableListOf()
-        for (i in 1..nOfDrops)
-        {
-            dropsList.add(getRandomDrop(dropsList)?.first ?: "")
+    @OptIn(ExperimentalSerializationApi::class)
+    public fun obtainData(context: Context)  {
+        try {
+            var inputStream = context.assets.open("MHWorldMonsters.json")
+            MHWorldData = loadJson(inputStream)
+            inputStream = context.assets.open("MHRiseMonsters.json")
+            MHRiseData = loadJson(inputStream)
+            inputStream = context.assets.open("MH4UMonsters.json")
+            MH4UData = loadJson(inputStream)
         }
-        return Monster(
-            id = pos + 1,
-            name = monsterNames[pos],
-            image = imagesLinks[pos],
-            hp = Random.nextInt(1,10),
-            strength = Random.nextInt(1,10),
-            speed = Random.nextInt(1,10),
-            quantityCaptured = Random.nextInt(0,1000),
-            totalToCapture = Random.nextInt(100,1000),
-            drops = dropsList
-        )
+        catch (e : Exception){
+
+        }
+
     }
+
+    fun loadJson(jsonFileStream: InputStream) : List<Monster>{
+        var monsters : List<Monster> = listOf()
+        try {
+            val gson = Gson()
+            val reader = BufferedReader(InputStreamReader(jsonFileStream))
+
+            monsters = gson.fromJson(reader, MonsterList::class.java).monsters
+
+            jsonFileStream.close()
+        }
+        catch (e : Exception){
+            print(e.message)
+        }
+        return monsters
+    }
+
+    fun GetMonsterList(id:String) : List<Monster>
+    {
+        return when (id) {
+            "MHWorld" -> MHWorldData
+            "MH4U" -> MH4UData
+            "MHRise" -> MHRiseData
+            else -> listOf<Monster>()
+        }
+    }
+
+
+//    fun GenerateMonster(pos: Int) : Monster
+//    {
+//        val nOfDrops = Random.nextInt(1,10)
+//        val dropsList : MutableList<String> = mutableListOf()
+//        for (i in 1..nOfDrops)
+//        {
+//            dropsList.add(getRandomDrop(dropsList)?.first ?: "")
+//        }
+//        return Monster(
+//            id = pos + 1,
+//            name = monsterNames[pos],
+//            image = imagesLinks[pos],
+//            hp = Random.nextInt(1,10),
+//            strength = Random.nextInt(1,10),
+//            speed = Random.nextInt(1,10),
+//            quantityCaptured = Random.nextInt(0,1000),
+//            totalToCapture = Random.nextInt(100,1000),
+//            drops = dropsList
+//        )
+//    }
 
     fun getRandomDrop(usedItems : MutableList<String>): Pair<String, String>? {
         // Get a list of unused items
@@ -213,70 +260,6 @@ object fakeRepository{
     )
 
     val imagesLinks = mutableListOf(
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em101_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em102_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em107_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em109_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em044_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em108_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em100_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em100_01_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em113_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em113_01_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em002_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em002_01_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em002_02_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em001_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em001_01_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em001_02_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em007_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em007_01_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em111_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em111_05_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em042_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em042_05_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em118_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em118_05_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em043_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em043_05_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em103_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em103_05_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em115_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em115_05_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em063_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em063_05_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em057_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em057_01_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em110_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em110_01_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em127_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em127_01_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em023_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em023_05_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em018_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em018_05_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em032_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em032_01_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em037_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em123_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em120_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em114_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em116_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em122_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em036_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em024_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em027_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em105_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em106_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em121_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em126_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em125_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em011_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em117_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em104_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em124_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em050_ID.png",
-        "https://cdn.kiranico.net/file/kiranico/mhworld-web/mhw/icon/em013_ID.png",
         "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em091_00.png", //aknosom
         "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em095_00.png", //almudron
         "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em095_01.png",//magma almudron

@@ -1,0 +1,78 @@
+Index: ../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/ui/composables/AlteredStatesWeaknesses.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.aitorsansal.monsterhunterapp.ui.composables\r\n\r\n\r\nimport androidx.compose.foundation.Image\r\nimport androidx.compose.foundation.layout.Column\r\nimport androidx.compose.foundation.layout.Row\r\nimport androidx.compose.foundation.layout.fillMaxSize\r\nimport androidx.compose.foundation.layout.padding\r\nimport androidx.compose.foundation.layout.size\r\nimport androidx.compose.material3.Text\r\nimport androidx.compose.runtime.Composable\r\nimport androidx.compose.ui.Alignment\r\nimport androidx.compose.ui.Modifier\r\nimport androidx.compose.ui.graphics.Color\r\nimport androidx.compose.ui.graphics.ColorFilter\r\nimport androidx.compose.ui.res.painterResource\r\nimport androidx.compose.ui.tooling.preview.Preview\r\nimport androidx.compose.ui.unit.dp\r\nimport com.aitorsansal.monsterhunterapp.R\r\nimport kotlin.math.absoluteValue\r\n\r\n@Composable\r\nfun AlteredStatesWeaknesses(givenWeakness:Map<String,Int>?, modifier : Modifier = Modifier){\r\n    Column(modifier = modifier.fillMaxSize()) {\r\n        var weakness = mapOf<String, Int>()\r\n        weakness = if(givenWeakness == null){\r\n            mapOf(\r\n                \"Poison\" to 0,\r\n                \"Sleep\" to 0,\r\n                \"Paralysis\" to 0,\r\n                \"Blast\" to 0,\r\n                \"Stun\" to 0\r\n            )\r\n        } else\r\n            givenWeakness\r\n        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(vertical = 5.dp)) {\r\n            Image(painter = painterResource(id = R.drawable.posion_element), contentDescription = null)\r\n            var stars = weakness[\"Poison\"] ?: 0\r\n            var txt = \"\"\r\n            for (i in 0 until stars) {\r\n                txt += \"⭐\"\r\n//                Image(painter = painterResource(id = R.drawable.star),\r\n//                    colorFilter = ColorFilter.tint(Color(252,186,3)),\r\n//                    modifier = Modifier.size(25.dp).padding(horizontal = 1.dp),\r\n//                    contentDescription = null)\r\n            }\r\n            Text(text = txt)\r\n        }\r\n        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(vertical = 5.dp)) {\r\n            Image(painter = painterResource(id = R.drawable.sleep_element), contentDescription = null)\r\n            var stars = weakness[\"Sleep\"] ?: 0\r\n            var txt = \"\"\r\n            for (i in 0 until stars) {\r\n                txt += \"⭐\"\r\n//                Image(painter = painterResource(id = R.drawable.star),\r\n//                    colorFilter = ColorFilter.tint(Color(252,186,3)),\r\n//                    modifier = Modifier.size(25.dp).padding(horizontal = 1.dp),\r\n//                    contentDescription = null)\r\n            }\r\n            Text(text = txt)\r\n        }\r\n        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(vertical = 5.dp)) {\r\n            Image(painter = painterResource(id = R.drawable.paralysis_element), contentDescription = null)\r\n            var stars = weakness[\"Paralysis\"] ?: 0\r\n            var txt = \"\"\r\n            for (i in 0 until stars) {\r\n                txt += \"⭐\"\r\n//                Image(painter = painterResource(id = R.drawable.star),\r\n//                    colorFilter = ColorFilter.tint(Color(252,186,3)),\r\n//                    modifier = Modifier.size(25.dp).padding(horizontal = 1.dp),\r\n//                    contentDescription = null)\r\n            }\r\n            Text(text = txt)\r\n        }\r\n        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(vertical = 5.dp)) {\r\n            Image(painter = painterResource(id = R.drawable.blast_element), contentDescription = null)\r\n            var stars = weakness[\"Blast\"] ?: 0\r\n            var txt = \"\"\r\n            for (i in 0 until stars) {\r\n                txt += \"⭐\"\r\n//                Image(painter = painterResource(id = R.drawable.star),\r\n//                    colorFilter = ColorFilter.tint(Color(252,186,3)),\r\n//                    modifier = Modifier.size(25.dp).padding(horizontal = 1.dp),\r\n//                    contentDescription = null)\r\n            }\r\n            Text(text = txt)\r\n        }\r\n        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(vertical = 5.dp)) {\r\n            Image(painter = painterResource(id = R.drawable.stun_element), contentDescription = null)\r\n            var stars = weakness[\"Stun\"] ?: 0\r\n            var txt = \"\"\r\n            for (i in 0 until stars) {\r\n                txt += \"⭐\"\r\n//                Image(painter = painterResource(id = R.drawable.star),\r\n//                    colorFilter = ColorFilter.tint(Color(252,186,3)),\r\n//                    modifier = Modifier.size(25.dp).padding(horizontal = 1.dp),\r\n//                    contentDescription = null)\r\n            }\r\n            Text(text = txt)\r\n        }\r\n    }\r\n}\r\n\r\n@Preview\r\n@Composable\r\nfun PreviewAlteredStatesWeakness(){\r\n    AlteredStatesWeaknesses(mapOf(\r\n        \"Poison\" to 1,\r\n        \"Sleep\" to 3,\r\n        \"Paralysis\" to 2,\r\n        \"Blast\" to 1,\r\n        \"Stun\" to 0\r\n    ))\r\n}
+===================================================================
+diff --git a/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/ui/composables/AlteredStatesWeaknesses.kt b/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/ui/composables/AlteredStatesWeaknesses.kt
+--- a/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/ui/composables/AlteredStatesWeaknesses.kt	(revision 8831c41140bc528e999b686a9031bd4383036e71)
++++ b/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/ui/composables/AlteredStatesWeaknesses.kt	(date 1730132860141)
+@@ -7,12 +7,12 @@
+ import androidx.compose.foundation.layout.fillMaxSize
+ import androidx.compose.foundation.layout.padding
+ import androidx.compose.foundation.layout.size
++import androidx.compose.material3.Icon
+ import androidx.compose.material3.Text
+ import androidx.compose.runtime.Composable
+ import androidx.compose.ui.Alignment
+ import androidx.compose.ui.Modifier
+-import androidx.compose.ui.graphics.Color
+-import androidx.compose.ui.graphics.ColorFilter
++import androidx.compose.ui.graphics.vector.ImageVector
+ import androidx.compose.ui.res.painterResource
+ import androidx.compose.ui.tooling.preview.Preview
+ import androidx.compose.ui.unit.dp
+@@ -39,10 +39,6 @@
+             var txt = ""
+             for (i in 0 until stars) {
+                 txt += "⭐"
+-//                Image(painter = painterResource(id = R.drawable.star),
+-//                    colorFilter = ColorFilter.tint(Color(252,186,3)),
+-//                    modifier = Modifier.size(25.dp).padding(horizontal = 1.dp),
+-//                    contentDescription = null)
+             }
+             Text(text = txt)
+         }
+@@ -52,10 +48,6 @@
+             var txt = ""
+             for (i in 0 until stars) {
+                 txt += "⭐"
+-//                Image(painter = painterResource(id = R.drawable.star),
+-//                    colorFilter = ColorFilter.tint(Color(252,186,3)),
+-//                    modifier = Modifier.size(25.dp).padding(horizontal = 1.dp),
+-//                    contentDescription = null)
+             }
+             Text(text = txt)
+         }
+@@ -65,10 +57,6 @@
+             var txt = ""
+             for (i in 0 until stars) {
+                 txt += "⭐"
+-//                Image(painter = painterResource(id = R.drawable.star),
+-//                    colorFilter = ColorFilter.tint(Color(252,186,3)),
+-//                    modifier = Modifier.size(25.dp).padding(horizontal = 1.dp),
+-//                    contentDescription = null)
+             }
+             Text(text = txt)
+         }
+@@ -78,10 +66,6 @@
+             var txt = ""
+             for (i in 0 until stars) {
+                 txt += "⭐"
+-//                Image(painter = painterResource(id = R.drawable.star),
+-//                    colorFilter = ColorFilter.tint(Color(252,186,3)),
+-//                    modifier = Modifier.size(25.dp).padding(horizontal = 1.dp),
+-//                    contentDescription = null)
+             }
+             Text(text = txt)
+         }
+@@ -91,10 +75,6 @@
+             var txt = ""
+             for (i in 0 until stars) {
+                 txt += "⭐"
+-//                Image(painter = painterResource(id = R.drawable.star),
+-//                    colorFilter = ColorFilter.tint(Color(252,186,3)),
+-//                    modifier = Modifier.size(25.dp).padding(horizontal = 1.dp),
+-//                    contentDescription = null)
+             }
+             Text(text = txt)
+         }

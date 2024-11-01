@@ -12,13 +12,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.aitorsansal.monsterhunterapp.ui.composables.HorizontalFileInformation
-import com.aitorsansal.monsterhunterapp.data.fakeRepository
+import com.aitorsansal.monsterhunterapp.data.dataRepository
 import com.aitorsansal.monsterhunterapp.model.Monster
 
 
 @Composable
 fun HorizontalComposableList(data : List<Monster>,
-              onClickElement : (Int) -> Unit = {}){
+              onClickElement : (String?) -> Unit = {}){
     LazyColumn (modifier = Modifier
         .fillMaxSize()
         .background(color = Color.DarkGray)
@@ -28,7 +28,7 @@ fun HorizontalComposableList(data : List<Monster>,
     ) {
         items(data)
         {
-            HorizontalFileInformation(it.id-1, onClickElement = onClickElement)
+            HorizontalFileInformation(it.id, onClickElement = onClickElement)
         }
     }
 }
@@ -36,6 +36,6 @@ fun HorizontalComposableList(data : List<Monster>,
 @Preview(showSystemUi = true)
 @Composable
 fun PreviewHorizontalComposableList(){
-    fakeRepository.obtainData()
-    HorizontalComposableList(fakeRepository.MHRiseData)
+    //fakeRepository.obtainData()
+    HorizontalComposableList(dataRepository.MHRiseData)
 }
