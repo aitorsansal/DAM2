@@ -67,7 +67,7 @@ class MainActivity : ComponentActivity() {
                     NavigationCategories<MonsterHunter4Ultimate>(
                         route = MonsterHunter4Ultimate,
                         selectedIcon = ImageVector.vectorResource(R.drawable.mh4u_icon),
-                        title = "MH4Ultimate"
+                        title = "MH4"
                     )
                 )
                 val navController = rememberNavController()

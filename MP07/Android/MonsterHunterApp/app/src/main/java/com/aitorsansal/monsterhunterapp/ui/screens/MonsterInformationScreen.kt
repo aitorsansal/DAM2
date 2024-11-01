@@ -45,7 +45,7 @@ fun MonsterInformationScreen(
     val monsters : List<Monster> = when (id.split("-")[0]){
         "MHWorld" -> dataRepository.MHWorldData
         "MHRise" -> dataRepository.MHRiseData
-        "MH4U" -> dataRepository.MH4UData
+        "MH4" -> dataRepository.MH4UData
         "MHWilds" -> dataRepository.MHWildsData
         else -> {listOf()}
     }
