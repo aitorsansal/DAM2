@@ -5,133 +5,155 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StarterTeclatMouseControlsDinàmics"
         mc:Ignorable="d"
-        Title="Controls dinàmics" Height="450" Width="800">
-    <TabControl>
-        <TabItem Header="Controls dinàmics">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <local:Graella Grid.Row="1" Grid.Column="0" x:Name="Graella"/>
-                <Slider Grid.Row="0" Grid.Column="0" Minimum="1" Maximum="50" Orientation="Horizontal" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="SldNumFiles_ValueChanged"/>
-            </Grid>
-        </TabItem>
-        <TabItem Header="Cronòmetre">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <TextBlock
-                    x:Name="tbkCronometre"
-                    Grid.ColumnSpan="2"
-                    Grid.Row="0"
-                    Text="00:00:00"
-                    FontSize="50"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    />
-                <Button
-                    x:Name="btnIniciar"
-                    Grid.Column="0"
-                    Grid.Row="1"
-                    Content="Iniciar"
-                    Margin="10"
-                    />
-                <Button
-                    x:Name="btnParar"
-                    Grid.Column="1"
-                    Grid.Row="1"
-                    Content="Parar"
-                    Margin="10"
-                    />
-            </Grid>
-        </TabItem>
-        <TabItem Header="Teclat">
-            <Grid 
-                x:Name="grdFinestra"
-                Margin="25"
-                Background="Aquamarine">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <DockPanel LastChildFill="False"
-                    x:Name="dckEsquerra"
-                    Margin="25"
-                    Background="Beige">
-                    <TextBlock 
-                        Margin="15"
-                        DockPanel.Dock="Top"
-                        x:Name="tbkVermell"
-                        Background="Red"
-                        Text="Vermell"
-                        />
-                    <TextBlock 
-                        Margin="15"
-                        DockPanel.Dock="Top"
-                        x:Name="tbkGroc"
-                        Background="Yellow"
-                        Text="Groc"
-                        />
-                    <TextBlock 
-                        Margin="15"
-                        DockPanel.Dock="Top"
-                        x:Name="tbkVerd"
-                        Background="Green"
-                        Text="Verd"
-                        />
-                    <Image x:Name="imgDaus" Source="Imatges/daus.png"/>
-                    <Image x:Name="imgBolet" Source="Imatges/bolet.png"/>
-                </DockPanel>
-            <DockPanel
-                x:Name="dckDreta"
-                Margin="25"
-                Background="LightYellow" Grid.Column="1"
-                >
-                    <Button 
-                        Margin="15"
-                        DockPanel.Dock="Top"
-                        x:Name="btnFocus"
-                        Content="Posa el focus aquí"
-                        />
+        Title="Controls dinamics" Height="450" Width="800">
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem x:Name="sbiNumBotons" Content="NUMERO DE BOTONS: 0"/>
+            <Separator/>
+            <StatusBarItem Content="SUPERESCATACLECK"/>
+            <Separator/>
+            <StatusBarItem  Content="ASDLKFJDKLSAJFT"/>
+        </StatusBar>
+        <TabControl>
+            <TabItem Header="Controls dinàmics">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Slider Name ="sldNumFiles" 
+                    Minimum="1" 
+                    Maximum="50" 
+                    Orientation="Horizontal"
+                    IsSnapToTickEnabled="True"
+                    TickFrequency="1"
+                    ValueChanged="sldNumFiles_ValueChanged"/>
+                    <local:Graella x:Name="graGraella" Grid.Row="1" Grid.Column="0" NFiles="5"/>
+                    <DockPanel x:Name="dckBotons" Grid.Column="1" Grid.Row="1" LastChildFill="False"/>
+                    <DockPanel Grid.Column="1">
+                        <Button x:Name="btnCrea" Content="CREA" Click="btnCrea_Click" Margin="8"/>
+                        <Button x:Name="btnElimina" Content="ELIMINA" Click="btnElimina_Click" Margin="8"/>
+                    </DockPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Cronòmetre">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
                     <TextBlock
-                        Margin="5"
-                        x:Name="Resultat2"
-                        DockPanel.Dock="Bottom"
-                        Text="Resultat 2:"/>
-                    <TextBlock
-                        Margin="5"
-                        x:Name="Resultat1"
-                        DockPanel.Dock="Bottom"
-                        Text="Resultat 1:"/>
-                    <TextBox 
-                        x:Name="txtText"
-                        />
+                x:Name="tbkCronometre"
+                Grid.ColumnSpan="2"
+                Grid.Row="0"
+                Text="00:00:00"
+                FontSize="50"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                />
+                    <Button
+                x:Name="btnEngegaAtura"
+                Grid.Column="0"
+                Grid.Row="1"
+                Content="Engega"
+                Margin="10" Click="btnEngegaAtura_Click"
+                />
+                    <Button
+                x:Name="btnZero"
+                Grid.Column="1"
+                Grid.Row="1"
+                Content="Zero"
+                Margin="10"
+                        Click="btnZero_Click"
+                />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Teclat">
+                <Grid 
+            x:Name="grdFinestra"
+            Margin="25"
+            Background="Aquamarine">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <DockPanel LastChildFill="False"
+                x:Name="dckEsquerra"
+                Margin="25"
+                Background="Beige">
+                        <TextBlock 
+                    Margin="15"
+                    DockPanel.Dock="Top"
+                    x:Name="tbkVermell"
+                    Background="Red"
+                    Text="Vermell"
+                    />
+                        <TextBlock 
+                    Margin="15"
+                    DockPanel.Dock="Top"
+                    x:Name="tbkGroc"
+                    Background="Yellow"
+                    Text="Groc"
+                    />
+                        <TextBlock 
+                    Margin="15"
+                    DockPanel.Dock="Top"
+                    x:Name="tbkVerd"
+                    Background="Green"
+                    Text="Verd"
+                    />
+                        <Image x:Name="imgDaus" Source="Imatges/daus.png"/>
+                        <Image x:Name="imgBolet" Source="Imatges/bolet.png"/>
+                    </DockPanel>
+                    <DockPanel
+            x:Name="dckDreta"
+            Margin="25"
+            Background="LightYellow" Grid.Column="1"
+            >
+                        <Button 
+                    Margin="15"
+                    DockPanel.Dock="Top"
+                    x:Name="btnFocus"
+                    Content="Posa el focus aquí"
+                    />
+                        <TextBlock
+                    Margin="5"
+                    x:Name="Resultat2"
+                    DockPanel.Dock="Bottom"
+                    Text="Resultat 2:"/>
+                        <TextBlock
+                    Margin="5"
+                    x:Name="Resultat1"
+                    DockPanel.Dock="Bottom"
+                    Text="Resultat 1:"/>
+                        <TextBox 
+                    x:Name="txtText"
+                    />
+                    </DockPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Pissarra">
+                <DockPanel>
+                    <StackPanel
+                Orientation="Horizontal" DockPanel.Dock="Top">
+                        <TextBlock x:Name="tbX" Text="X: "/>
+                        <TextBlock x:Name="tbY" Text="Y: "
+                           Margin=" 20,0,0,0"/>
+                    </StackPanel>
+                    <Canvas
+                Background="AliceBlue"
+                x:Name="cnvPissarra"/>
                 </DockPanel>
-            </Grid>
-        </TabItem>
-        <TabItem Header="Pissarra">
-            <DockPanel>
-                <StackPanel
-                    Orientation="Horizontal" DockPanel.Dock="Top">
-                            <TextBlock x:Name="tbX" Text="X: "/>
-                            <TextBlock x:Name="tbY" Text="Y: "
-                               Margin=" 20,0,0,0"/>
-                        </StackPanel>
-                <Canvas
-                    Background="AliceBlue"
-                    x:Name="cnvPissarra"/>
-            </DockPanel>
-        </TabItem>
-    </TabControl>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+    
 </Window>

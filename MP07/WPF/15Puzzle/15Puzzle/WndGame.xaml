@@ -1,0 +1,16 @@
+﻿<Window x:Class="_15Puzzle.WndGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:_15Puzzle"
+        mc:Ignorable="d"
+        Loaded="WndGame_OnLoaded"
+        Title="PuzzleGame" Height="450" Width="800">
+    <DockPanel Name="dckPanel">
+        <StatusBar DockPanel.Dock="Bottom" Height="40">
+            <StatusBarItem x:Name="sbiMovements" Content="Moves : 0"/>
+            <StatusBarItem x:Name="sbiTime" Content="00:00:00.000"/>
+        </StatusBar>
+    </DockPanel>
+</Window>

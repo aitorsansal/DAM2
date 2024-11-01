@@ -69,7 +69,7 @@ public class MidSquareAccess: IDAO
 
     public bool IsFeasible(string name, string nif)
     {
-        return posicionsValidades.Count > name.Length+nif.Length;
+        return  fs.CanWrite && posicionsValidades.Count > name.Length+nif.Length;
     }
     
     public void WriteData(string name, string nif)

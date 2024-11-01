@@ -1,43 +1,46 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Controls;
 
-namespace StarterTeclatMouseControlsDinàmics;
-
-public class Graella : Grid
+namespace StarterTeclatMouseControlsDinàmics
 {
-    private int nFiles = 0;
-
-
-    public Graella()
+    public class Graella : Grid
     {
-        ShowGridLines = true;
-    }
-
-    public int NFiles
-    {
-        get => nFiles;
-        set
+        int nFiles = 0;
+        
+        public Graella()
         {
-            nFiles = value;
-            ConfiguraFiles();
+            ShowGridLines = true;
         }
-    }
 
-    private void ConfiguraFiles()
-    {
-        if (NFiles > RowDefinitions.Count)
+        public int NFiles { 
+            get { return nFiles; } 
+            set { 
+                nFiles = value; 
+                ConfiguraFiles(); 
+            } 
+        }
+
+        private void ConfiguraFiles()
         {
-            for (int i = RowDefinitions.Count; i < NFiles; i++)
+            if(nFiles > RowDefinitions.Count)
             {
-                RowDefinitions.Add(new RowDefinition());
-                ColumnDefinitions.Add(new ColumnDefinition());
+                for(int fila = RowDefinitions.Count; fila < nFiles; fila++)
+                {
+                    RowDefinitions.Add(new RowDefinition());
+                    ColumnDefinitions.Add(new ColumnDefinition());
+                }
             }
-        }
-        else if (NFiles < RowDefinitions.Count)
-        {
-            for (int i = 0; i < RowDefinitions.Count-NFiles; i--)
+            else if (nFiles < RowDefinitions.Count) 
             {
-                RowDefinitions.RemoveAt(0);
-                ColumnDefinitions.RemoveAt(0);
+                for (int fila = 0; fila < RowDefinitions.Count-nFiles; fila++)
+                {
+                    RowDefinitions.RemoveAt(0);
+                    ColumnDefinitions.RemoveAt(0);
+                }
             }
         }
     }

@@ -7,7 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23fd6c90-8577-4d9c-8bc4-da0283256557" name="Changes" comment="" />
+    <list default="true" id="23fd6c90-8577-4d9c-8bc4-da0283256557" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Threads/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Threads/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Threads/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Threads/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Threads/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Threads/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Threads/Threads.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Threads/Threads.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Threads/bin/Debug/net8.0/Threads.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Threads/bin/Debug/net8.0/Threads.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Threads/bin/Debug/net8.0/Threads.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Threads/bin/Debug/net8.0/Threads.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Threads/bin/Debug/net8.0/Threads.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Threads/bin/Debug/net8.0/Threads.exe" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,9 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42a1f59076e24ecb88ad72b865a0b779d0f10/af/8614a844/StatusExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/36f346b6c0454bc8a6afa7aed38119fe5bbffcc983298d9bfa4dbd5f49461f/Monitor.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5159b23811b96792d12316dd5148242a372bd596ea9d614d53abeda41057f4/Thread.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9eda537f15ea23cdfae523c19e87eb303a3ded88937ae7e55919387a43f70/ExecutionContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9f2b55173c5858e468c89bfdbb76d38f894184b06cda3a8d6e52decd46e70/Thread.CoreCLR.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dc62e1f6795544aefc7593bda765b9295d9613194b63bdb54ff525311534a9/Bitmap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/OneDrive/Escriptori/Unity/N5_JapanesePracticeApp/Assets/Scripts/General Tools/Singleton.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2nnSCRHSYLo3WMhiOEMEMZDMQId" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -70,6 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1729607220205</updated>
       <workItem from="1729607220276" duration="3698000" />
+      <workItem from="1729695323152" duration="6956000" />
     </task>
     <servers />
   </component>
