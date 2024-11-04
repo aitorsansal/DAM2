@@ -32,7 +32,7 @@ namespace StarterTeclatMouseControlsDinàmics
             cronometre.Interval = new TimeSpan(100);
             cronometre.Tick += Cronometre_Tick;
         }
-
+#region Timer
         private void Cronometre_Tick(object? sender, EventArgs e)
         {
             
@@ -45,8 +45,34 @@ namespace StarterTeclatMouseControlsDinàmics
             TimeSpan diferencia = ara.Subtract(inici);
             diferencia = diferencia.Add(acumulat);
             tbkCronometre.Text = String.Format($"{diferencia.Hours:00}:{diferencia.Minutes:00}:{diferencia.Seconds:00}.{diferencia.Milliseconds:000}");
+        }        private void btnEngegaAtura_Click(object sender, RoutedEventArgs e)
+        {
+            if (btnEngegaAtura.Content.ToString().Equals("Engega"))
+            {
+                btnEngegaAtura.Content = "Atura";
+                
+                inici = DateTime.Now;     
+                cronometre.Start();
+                
+            }
+            else
+            {
+                btnEngegaAtura.Content = "Engega";
+                acumulat = acumulat.Add(DateTime.Now.Subtract(inici));
+                
+                cronometre.Stop();
+            }
         }
 
+        private void btnZero_Click(object sender, RoutedEventArgs e)
+        {
+            acumulat = TimeSpan.Zero;
+            //cronometre.Stop();
+            inici = DateTime.Now;
+            EscriuTemps();
+        }
+        #endregion
+#region DinamicControls
         private void sldNumFiles_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             if(graGraella!=null)
@@ -93,33 +119,32 @@ namespace StarterTeclatMouseControlsDinàmics
         {
             return Color.FromRgb((Byte)r.Next(256), (Byte)r.Next(256), (Byte)r.Next(256));
         }
+        #endregion
 
 
-        private void btnEngegaAtura_Click(object sender, RoutedEventArgs e)
+        private void TbkVermell_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (btnEngegaAtura.Content.ToString().Equals("Engega"))
-            {
-                btnEngegaAtura.Content = "Atura";
-                
-                inici = DateTime.Now;     
-                cronometre.Start();
-                
-            }
-            else
-            {
-                btnEngegaAtura.Content = "Engega";
-                acumulat = acumulat.Add(DateTime.Now.Subtract(inici));
-                
-                cronometre.Stop();
-            }
+            throw new NotImplementedException();
         }
 
-        private void btnZero_Click(object sender, RoutedEventArgs e)
+        private void TbkGroc_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            acumulat = TimeSpan.Zero;
-            //cronometre.Stop();
-            inici = DateTime.Now;
-            EscriuTemps();
+            throw new NotImplementedException();
+        }
+
+        private void TbkVerd_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void DckEsquerra_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Title = "Finestra";
         }
     }
 }

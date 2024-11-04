@@ -8,15 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b64a12af-6b70-4926-9810-0033b53dae67" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/res/drawable/mh4u_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/res/drawable/mhrise_icon.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/res/drawable/mhworld_icon.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/MonsterHunterApp/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/MonsterHunterApp/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/navigation/Destinations.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/navigation/Destinations.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/NavegacioNiuadaAmbTipusSegurs - Starter/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/NavegacioNiuadaAmbTipusSegurs - Starter/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15Puzzle/WndGame.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/15Puzzle/WndGame.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" beforeDir="false" afterPath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" beforeDir="false" afterPath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.15Puzzle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.15Puzzle/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,14 +29,26 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Toolset" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2oO92SBRkQVg9CpZvbKS2mvHGQ6" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Project.Unnamed.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
@@ -67,8 +71,20 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b64a12af-6b70-4926-9810-0033b53dae67" name="Changes" comment="" />
+      <created>1730729554751</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730729554751</updated>
+      <workItem from="1730729557259" duration="10000" />
+    </task>
     <servers />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
 </project>

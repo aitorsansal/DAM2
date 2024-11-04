@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StarterTeclatMouseControlsDinàmics"
         mc:Ignorable="d"
-        Title="Controls dinamics" Height="450" Width="800">
+        Title="Controls dinamics" Height="450" Width="800"
+        MouseDown="MainWindow_OnMouseDown">
     <DockPanel>
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem x:Name="sbiNumBotons" Content="NUMERO DE BOTONS: 0"/>
@@ -77,7 +78,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Teclat">
-                <Grid 
+        <Grid 
             x:Name="grdFinestra"
             Margin="25"
             Background="Aquamarine">
@@ -85,35 +86,40 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <DockPanel LastChildFill="False"
+            <DockPanel LastChildFill="False"
                 x:Name="dckEsquerra"
                 Margin="25"
-                Background="Beige">
-                        <TextBlock 
+                Background="Beige"
+                MouseDown="DckEsquerra_OnMouseDown">
+                <TextBlock 
                     Margin="15"
                     DockPanel.Dock="Top"
                     x:Name="tbkVermell"
                     Background="Red"
                     Text="Vermell"
+                    MouseDown="TbkVermell_OnMouseDown"
                     />
-                        <TextBlock 
+                <TextBlock 
                     Margin="15"
                     DockPanel.Dock="Top"
                     x:Name="tbkGroc"
                     Background="Yellow"
                     Text="Groc"
+                    MouseDown="TbkGroc_OnMouseDown"
                     />
-                        <TextBlock 
+                <TextBlock 
                     Margin="15"
                     DockPanel.Dock="Top"
                     x:Name="tbkVerd"
                     Background="Green"
                     Text="Verd"
+                    MouseDown="TbkVerd_OnMouseDown"
                     />
-                        <Image x:Name="imgDaus" Source="Imatges/daus.png"/>
-                        <Image x:Name="imgBolet" Source="Imatges/bolet.png"/>
-                    </DockPanel>
-                    <DockPanel
+                <Image x:Name="imgDaus" Source="Imatges/daus.png"/>
+                <Image x:Name="imgBolet" Source="Imatges/bolet.png"/>
+                   
+            </DockPanel>    
+                <DockPanel
             x:Name="dckDreta"
             Margin="25"
             Background="LightYellow" Grid.Column="1"

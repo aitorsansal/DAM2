@@ -8,19 +8,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f6f33e5-8812-4b65-bb89-dd56f1056b60" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../15Puzzle/15Puzzle/Casella.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../15Puzzle/15Puzzle/Casella.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../15Puzzle/15Puzzle/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/../15Puzzle/15Puzzle/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../15Puzzle/15Puzzle/Tauler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../15Puzzle/15Puzzle/Tauler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../15Puzzle/15Puzzle/WndGame.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/../15Puzzle/15Puzzle/WndGame.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../15Puzzle/15Puzzle/WndGame.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../15Puzzle/15Puzzle/WndGame.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StarterTeclatMouseControlsDinàmics/Model/Person.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StarterTeclatMouseControlsDinàmics/WndPropietatsDeDendencia.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StarterTeclatMouseControlsDinàmics/WndPropietatsDeDendencia.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../15Puzzle/.idea/.idea.15Puzzle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../15Puzzle/.idea/.idea.15Puzzle/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.StarterTeclatMouseControlsDinàmics/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.StarterTeclatMouseControlsDinàmics/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StarterTeclatMouseControlsDinàmics/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/StarterTeclatMouseControlsDinàmics/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StarterTeclatMouseControlsDinàmics/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/StarterTeclatMouseControlsDinàmics/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StarterTeclatMouseControlsDinàmics/bin/Debug/net7.0-windows/StarterTeclatMouseControlsDinàmics.dll" beforeDir="false" afterPath="$PROJECT_DIR$/StarterTeclatMouseControlsDinàmics/bin/Debug/net7.0-windows/StarterTeclatMouseControlsDinàmics.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StarterTeclatMouseControlsDinàmics/bin/Debug/net7.0-windows/StarterTeclatMouseControlsDinàmics.exe" beforeDir="false" afterPath="$PROJECT_DIR$/StarterTeclatMouseControlsDinàmics/bin/Debug/net7.0-windows/StarterTeclatMouseControlsDinàmics.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -29,24 +33,28 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2nqeAhWL0LlyA2Yw8clMl8XrRzb" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aitorsansal/DAM2/MP07/WPF/StarterTimerTeclatMouseControlsDinàmics&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.StarterTeclatMouseControlsDinàmics.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/aitorsansal/DAM2/MP07/WPF/StarterTimerTeclatMouseControlsDinàmics",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="StarterTeclatMouseControlsDinàmics" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -77,6 +85,7 @@
       <updated>1729704891627</updated>
       <workItem from="1729704892663" duration="2636000" />
       <workItem from="1729777311458" duration="1313000" />
+      <workItem from="1730729617353" duration="5566000" />
     </task>
     <servers />
   </component>
