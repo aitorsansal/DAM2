@@ -8,7 +8,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b64a12af-6b70-4926-9810-0033b53dae67" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.15Puzzle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.15Puzzle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.15Puzzle/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_10_2024_17_30_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/App.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/App.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/Fonts/Glorify.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/Fonts/TenorSans-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/Imatges/happyface.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/Imatges/luigi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/Imatges/mario.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/Imatges/sadface.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/MainWindow.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/MainWindow.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/RecursosIEstils.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/bin/Debug/net7.0-windows/RecursosIEstils.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/bin/Debug/net7.0-windows/RecursosIEstils.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/bin/Debug/net7.0-windows/RecursosIEstils.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/bin/Debug/net7.0-windows/RecursosIEstils.runtimeconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndEstilsAutomatics.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndEstilsAutomatics.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndEventSetter.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndEventSetter.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndEventTriggers.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndEventTriggers.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndHerènciaDEstils.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndHerènciaDEstils.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndRecursosDeFinestra.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndRecursosDeFinestra.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndRecursosDeLaApp.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndRecursosDeLaApp.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndRecursosDinamics.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndRecursosDinamics.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndReutilitzaFontAmbRecursos.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndReutilitzaFontAmbRecursos.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndReutilitzaFontsAmbEstils.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../StarterRecursosIEstils/RecursosIEstils/RecursosIEstils/wndReutilitzaFontsAmbEstils.xaml.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +64,10 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Toolset" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2oO92SBRkQVg9CpZvbKS2mvHGQ6" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -46,6 +81,8 @@
     ".NET Project.Unnamed.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
@@ -80,8 +117,12 @@
       <option name="presentableId" value="Default" />
       <updated>1730729554751</updated>
       <workItem from="1730729557259" duration="10000" />
+      <workItem from="1730834424641" duration="603000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
