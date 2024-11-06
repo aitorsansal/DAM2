@@ -4,6 +4,15 @@
              xmlns:local="clr-namespace:_15Puzzle"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+         <ResourceDictionary>
+             <ResourceDictionary.MergedDictionaries>
+                 <ResourceDictionary Source="Themes/Border.xaml"/>
+                 <ResourceDictionary Source="Themes/TextBlock.xaml"/>
+                 <ResourceDictionary Source="Themes/Slider.xaml"/>
+                 <ResourceDictionary Source="Themes/Buttons.xaml"/>
+                 <ResourceDictionary Source="Themes/SliderThumb.xaml"/>
+                 <ResourceDictionary Source="Themes/Window.xaml"/>
+             </ResourceDictionary.MergedDictionaries>
+         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -40,13 +40,6 @@ public class Casella : ContentControl
     }
 
     public int ValorDesitjat { get; set; }
-    public Color ColorFonsCorrecte { get; set; } = Colors.Green;
-    public Color ColorLLetraCorrecte { get; set; } = Colors.Black;
-    public Color ColorFonsIncorrecte { get; set; } = Colors.Red;
-    public Color ColorLletraIncorrecte { get; set; } = Colors.White;
-    
-    SolidColorBrush backgroundBrush = new SolidColorBrush();
-    SolidColorBrush textBrush = new SolidColorBrush();
 
     private bool estaBenColocada;
     public bool EstaBenColocada
@@ -54,9 +47,8 @@ public class Casella : ContentControl
         get => estaBenColocada;
         set
         {
-            backgroundBrush.Color = value ? ColorFonsCorrecte : ColorFonsIncorrecte;
-            textBrush.Color = value ? ColorLLetraCorrecte : ColorLletraIncorrecte;
             estaBenColocada = value;
+            UpdateStyles();
         }
     }
 
@@ -75,11 +67,18 @@ public class Casella : ContentControl
         this.Content = marc;
         marc.Child = viewBox;
         viewBox.Child = textBlock;
-
-        marc.BorderThickness = new Thickness(5, 5, 5, 5);
-        marc.BorderBrush = Brushes.Black;
-        marc.Background = backgroundBrush;
-        textBlock.Foreground = textBrush;
-
+        UpdateStyles();
     }
+    
+    private void UpdateStyles()
+    {
+        // Choose the appropriate style keys
+        string borderStyleKey = EstaBenColocada ? "BorderStyleCorrect" : "BorderStyleIncorrect";
+        string textBlockStyleKey = EstaBenColocada ? "TextBlockStyleCorrect" : "TextBlockStyleIncorrect";
+        
+        // Apply the styles
+        ((Border)Content).Style = (Style)FindResource(borderStyleKey);
+        ((TextBlock)((Viewbox)((Border)Content).Child).Child).Style = (Style)FindResource(textBlockStyleKey);
+    }
+
 }

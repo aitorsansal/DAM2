@@ -26,9 +26,15 @@ public partial class MainWindow : Window
         var gmWnd = new WndGame();
         gmWnd.Rows = (int)SldRow.Value;
         gmWnd.Cols = (int)SldCol.Value;
-            
-        
+
         
         gmWnd.ShowDialog();
+    }
+
+    private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
+    {
+        var screen = System.Windows.SystemParameters.WorkArea;
+        this.Left = screen.Left + screen.Width / 2 - this.Width / 2;
+        this.Top = screen.Top + screen.Height / 2 - this.Height / 2;
     }
 }

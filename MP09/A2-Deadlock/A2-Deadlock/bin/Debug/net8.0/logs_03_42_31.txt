@@ -1,0 +1,90 @@
+Press 1 for generating the new files and 2 for start the program: (0 for quit)
+2
+=====
+STARTING PROGRAM
+=====
+Account 1 is trying to send 124 to Account 2.
+inside execute transaction
+Account 1 has been blocked with Mutex bc of sending.
+Account 2 has been blocked with Mutex bc of recieving.
+Account 1 is trying to send 40 to Account 4.
+inside execute transaction
+Account 4 is trying to send 440 to Account 1.
+inside execute transaction
+Account 4 is trying to send 263 to Account 1.
+inside execute transaction
+Account 2 is trying to send 405 to Account 1.
+inside execute transaction
+-->Account 1 before amount was: 1000. New amount: 876.
+-->Account 2 before amount was: 1000. New amount: 1124. Added from account 1.
+Released Mutex of account 1 and account 2.
+================================================================
+Account 1 has been blocked with Mutex bc of sending.
+Account 4 has been blocked with Mutex bc of recieving.
+Account 1 is trying to send 424 to Account 3.
+inside execute transaction
+Account 2 is trying to send 402 to Account 1.
+inside execute transaction
+Account 1 is trying to send 352 to Account 4.
+inside execute transaction
+Account 1 is trying to send 105 to Account 3.
+inside execute transaction
+Account 4 is trying to send 369 to Account 1.
+inside execute transaction
+-->Account 1 before amount was: 876. New amount: 836.
+-->Account 4 before amount was: 1000. New amount: 1040. Added from account 1.
+Released Mutex of account 1 and account 4.
+================================================================
+Account 4 has been blocked with Mutex bc of sending.
+Account 1 has been blocked with Mutex bc of recieving.
+-->Account 4 before amount was: 1040. New amount: 600.
+-->Account 1 before amount was: 836. New amount: 1276. Added from account 4.
+Released Mutex of account 4 and account 1.
+================================================================
+Account 4 has been blocked with Mutex bc of sending.
+Account 1 has been blocked with Mutex bc of recieving.
+-->Account 4 before amount was: 600. New amount: 337.
+-->Account 1 before amount was: 1276. New amount: 1539. Added from account 4.
+Released Mutex of account 4 and account 1.
+================================================================
+Account 2 has been blocked with Mutex bc of sending.
+Account 1 has been blocked with Mutex bc of recieving.
+-->Account 2 before amount was: 1124. New amount: 719.
+-->Account 1 before amount was: 1539. New amount: 1944. Added from account 2.
+Released Mutex of account 2 and account 1.
+================================================================
+Account 1 has been blocked with Mutex bc of sending.
+Account 3 has been blocked with Mutex bc of recieving.
+-->Account 1 before amount was: 1000. New amount: 576.
+-->Account 3 before amount was: 1000. New amount: 1424. Added from account 1.
+Released Mutex of account 1 and account 3.
+================================================================
+Account 2 has been blocked with Mutex bc of sending.
+Account 1 has been blocked with Mutex bc of recieving.
+-->Account 2 before amount was: 1000. New amount: 598.
+-->Account 1 before amount was: 576. New amount: 978. Added from account 2.
+Released Mutex of account 2 and account 1.
+================================================================
+Account 1 has been blocked with Mutex bc of sending.
+Account 4 has been blocked with Mutex bc of recieving.
+-->Account 1 before amount was: 978. New amount: 626.
+-->Account 4 before amount was: 1000. New amount: 1352. Added from account 1.
+Released Mutex of account 1 and account 4.
+================================================================
+Account 1 has been blocked with Mutex bc of sending.
+Account 3 has been blocked with Mutex bc of recieving.
+-->Account 1 before amount was: 626. New amount: 521.
+-->Account 3 before amount was: 1000. New amount: 1105. Added from account 1.
+Released Mutex of account 1 and account 3.
+================================================================
+Account 4 has been blocked with Mutex bc of sending.
+Account 1 has been blocked with Mutex bc of recieving.
+-->Account 4 before amount was: 1352. New amount: 983.
+-->Account 1 before amount was: 521. New amount: 890. Added from account 4.
+Released Mutex of account 4 and account 1.
+================================================================
+acc1.bin final amount: 890
+acc2.bin final amount: 598
+acc3.bin final amount: 1105
+acc4.bin final amount: 983
+Program finished correctly. Shutting down.

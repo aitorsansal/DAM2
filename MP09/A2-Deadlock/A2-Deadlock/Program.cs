@@ -10,38 +10,95 @@ internal class Program
     static readonly Mutex mutexAcc2 = new Mutex(false, "acc2");
     static readonly Mutex mutexAcc3 = new Mutex(false, "acc3");
     static readonly Mutex mutexAcc4 = new Mutex(false, "acc4");
+    static Mutex mutexLog;
     static Random random = new Random();
     static string[] fileNames = ["acc1.bin", "acc2.bin", "acc3.bin", "acc4.bin"];
+    private const int QUANTITY_OF_THREADS = 10;
+
+    private static string logsFileName = "logs_";
     
     public static void Main(string[] args)
     {
-        CreateFiles();
-        int quantityOfThreads = 50;
-        Thread[] threads = new Thread[quantityOfThreads];
-        
-        for (int i = 0; i < quantityOfThreads; i++)
+        try
         {
-            threads[i] = new Thread(ExecuteTransaction);
-            threads[i].Start();
-            Thread.Sleep(200);
-        }
-
-        foreach (var thread in threads)
-        {
-            thread.Join();
-        }
-
-        foreach (var fileName in fileNames)
-        {
-            FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            BinaryReader br = new BinaryReader(fs);
+            logsFileName += DateTime.Now.ToString("hh_mm_ss") + ".txt";
+            mutexLog = new Mutex(false, logsFileName);
+            File.Create(logsFileName).Close();
+            bool doneProgram = false;
+            while (!doneProgram)
             {
-                br.BaseStream.Seek(0, SeekOrigin.Begin);
-                Console.WriteLine($"{fileName} final amount: {br.ReadInt32()}");
+                WriteOnFileAndConsole("Press 1 for generating the new files and 2 for start the program: (0 for quit)");
+                int val = int.Parse(Console.ReadLine());
+                WriteOnFileAndConsole(val.ToString(), justFile:true);
+                switch (val)
+                {
+                    case 1:
+                        CreateFiles();
+                        break;
+                    case 2:
+                    {
+                        WriteOnFileAndConsole("=====\nSTARTING PROGRAM\n=====");
+                        Thread[] threads = new Thread[QUANTITY_OF_THREADS];
+        
+                        for (int i = 0; i < QUANTITY_OF_THREADS; i++)
+                        {
+                            threads[i] = new Thread(ExecuteTransaction);
+                            threads[i].Start();
+                            Thread.Sleep(200);
+                        }
+
+                        foreach (var thread in threads)
+                        {
+                            thread.Join();
+                        }
+
+                        foreach (var fileName in fileNames)
+                        {
+                            FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                            BinaryReader br = new BinaryReader(fs);
+                            {
+                                br.BaseStream.Seek(0, SeekOrigin.Begin);
+                                WriteOnFileAndConsole($"{fileName} final amount: {br.ReadInt32()}");
+                            }
+                        }
+                        WriteOnFileAndConsole("Program finished correctly. Shutting down.");
+                        Thread.Sleep(500);
+                        doneProgram = true;
+                        break;
+                    }
+                    case 0:
+                        WriteOnFileAndConsole("Program finished correctly. Shutting down.");
+                        Thread.Sleep(500);
+                        doneProgram = true;
+                        break;
+                    default:
+                        WriteOnFileAndConsole("Value not recognized.");
+                        break;
+                }
             }
+
         }
+        catch (Exception e)
+        {
+            WriteOnFileAndConsole(e.Message, ConsoleColor.DarkRed);
+        }
+
     }
 
+
+    static void WriteOnFileAndConsole(string message, ConsoleColor color = ConsoleColor.White, bool justFile = false)
+    {
+        Console.ForegroundColor = color;
+        if(!justFile)
+            Console.WriteLine(message);
+        mutexLog.WaitOne();
+        using (FileStream fs = new FileStream(logsFileName,FileMode.Append, FileAccess.Write))
+        using (StreamWriter sw = new StreamWriter(fs))
+        {
+            sw.WriteLine(message);
+        }
+        mutexLog.ReleaseMutex();
+    }
 
 
     static void ExecuteTransaction()
@@ -51,8 +108,8 @@ internal class Program
         int reciver = random.Next(4);
         while(reciver == sender)
             reciver = random.Next(4);
-        Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WriteLine($"Account {sender+1} is trying to send {quantityToSend} to Account {reciver+1}.");
+        WriteOnFileAndConsole($"Account {sender+1} is trying to send {quantityToSend} to Account {reciver+1}.", ConsoleColor.Blue);
+        WriteOnFileAndConsole("inside execute transaction");
         try
         {
             if (sender < reciver)
@@ -65,10 +122,8 @@ internal class Program
                 BlockMutex(reciver);
                 BlockMutex(sender);
             }
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"Account {sender+1} has been blocked with Mutex bc of sending.");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"Account {reciver+1} has been blocked with Mutex bc of recieving.");
+            WriteOnFileAndConsole($"Account {sender+1} has been blocked with Mutex bc of sending.", ConsoleColor.Red);
+            WriteOnFileAndConsole($"Account {reciver+1} has been blocked with Mutex bc of recieving.", ConsoleColor.Red);
             using (FileStream fsSender = new FileStream(fileNames[sender], FileMode.OpenOrCreate, FileAccess.ReadWrite,
                        FileShare.Read))
             using (FileStream fsReciever = new FileStream(fileNames[reciver], FileMode.OpenOrCreate,
@@ -82,8 +137,7 @@ internal class Program
                 int actualTotal = brSender.ReadInt32();
                 if (actualTotal < quantityToSend)
                 {
-                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                    Console.WriteLine($"Account {sender + 1} doesn't have the necessary amount.");
+                    WriteOnFileAndConsole($"Account {sender + 1} doesn't have the necessary amount.", ConsoleColor.DarkMagenta);
                 }
                 else
                 {
@@ -91,14 +145,14 @@ internal class Program
                     int newTotal = actualTotal - quantityToSend;
                     fsSender.Seek(0, SeekOrigin.Begin);
                     bwSender.Write(newTotal);
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine($"-->Account {sender + 1} before amount was: {actualTotal}. New amount: {newTotal}.");
+                    WriteOnFileAndConsole($"-->Account {sender + 1} before amount was: {actualTotal}. New amount: {newTotal}.", ConsoleColor.Yellow);
                     int recieverActualTotal = brReciever.ReadInt32();
                     int newRecieverActualTotal = recieverActualTotal + quantityToSend;
                     fsReciever.Seek(0, SeekOrigin.Begin);
                     bwReciever.Write(newRecieverActualTotal);
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine($"-->Account {reciver + 1} before amount was: {recieverActualTotal}. New amount: {newRecieverActualTotal}. Added from account {sender + 1}.");
+                    WriteOnFileAndConsole($"-->Account {reciver + 1} before amount was: {recieverActualTotal}. New amount: {newRecieverActualTotal}. Added from account {sender + 1}.",
+                        ConsoleColor.Yellow);
 
                 }
             }
@@ -109,8 +163,7 @@ internal class Program
         }
         finally
         {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine($"Released Mutex of account {sender+1} and account {reciver+1}.\n================================================================");
+            WriteOnFileAndConsole($"Released Mutex of account {sender+1} and account {reciver+1}.\n================================================================");
             ReleaseMutex(sender);
             ReleaseMutex(reciver);
         }
@@ -158,13 +211,16 @@ internal class Program
     
     static void CreateFiles()
     {
-        foreach (var fileName in fileNames)
-        {   
-            using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write))
+        for (int i = 0; i < fileNames.Length; i++)
+        {
+            BlockMutex(i+1);
+            using (FileStream fs = new FileStream(fileNames[i], FileMode.OpenOrCreate, FileAccess.Write))
             using (BinaryWriter bw = new BinaryWriter(fs))
             {
                 bw.Write(1000);
             }
+            WriteOnFileAndConsole($"File for account {i+1} has been created.");
+            ReleaseMutex(i+1);
         }
     }
 }

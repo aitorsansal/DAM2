@@ -32,11 +32,18 @@ public partial class WndGame : Window
         {
             timer.Stop();
             var mb = MessageBox.Show(
-                $"Felicitats! Has completat el joc en {tauler.Movements} i un temps de {WriteTime()}");
+                $"Felicitats! Has completat el joc en {tauler.Movements} moviments i un temps de {WriteTime()}");
             if (mb == MessageBoxResult.OK)
                 Close();
         };
         tauler.ExecutedMovement += (movements) => sbiMovements.Content = $"Moves {movements}";
+        var screen = System.Windows.SystemParameters.WorkArea;
+        Left = screen.Left + screen.Width / 2 - Width / 2;
+        Top = screen.Top + screen.Height / 2 - Height / 2;
+        if (Top < screen.Top)
+            Top = screen.Top;
+        if(Left < screen.Left)
+            Left = screen.Left;
         tauler.CheckIfCompleted();
     }
     
