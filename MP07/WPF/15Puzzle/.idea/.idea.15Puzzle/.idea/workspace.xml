@@ -7,33 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b64a12af-6b70-4926-9810-0033b53dae67" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/15Puzzle/Themes/Border.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/15Puzzle/Themes/Buttons.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/15Puzzle/Themes/Slider.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/15Puzzle/Themes/SliderThumb.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/15Puzzle/Themes/TextBlock.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/15Puzzle/Themes/Window.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.15Puzzle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.15Puzzle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15Puzzle/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/15Puzzle/App.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15Puzzle/Casella.cs" beforeDir="false" afterPath="$PROJECT_DIR$/15Puzzle/Casella.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15Puzzle/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/15Puzzle/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15Puzzle/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/15Puzzle/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15Puzzle/WndGame.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/15Puzzle/WndGame.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" beforeDir="false" afterPath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" beforeDir="false" afterPath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/A2-Deadlock.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/A2-Deadlock.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/A2-Deadlock.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/A2-Deadlock.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/acc1.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/acc1.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/acc1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/acc2.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/acc2.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/acc2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/acc3.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/acc3.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/acc3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/acc4.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/acc4.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP09/A2-Deadlock/A2-Deadlock/bin/Debug/net8.0/acc4.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="b64a12af-6b70-4926-9810-0033b53dae67" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,6 +87,7 @@
       <workItem from="1730834424641" duration="603000" />
       <workItem from="1730904399306" duration="10284000" />
       <workItem from="1730916597854" duration="5000" />
+      <workItem from="1730995121995" duration="776000" />
     </task>
     <servers />
   </component>

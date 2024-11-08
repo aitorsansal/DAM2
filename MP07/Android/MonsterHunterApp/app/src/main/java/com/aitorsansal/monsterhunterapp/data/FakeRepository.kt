@@ -12,21 +12,21 @@ import java.io.InputStreamReader
 object dataRepository{
 
 
-    public var MHWorldData : List<Monster> = listOf()
+    var MHWorldData : List<Monster> = listOf()
         private set
 
-    public var MHRiseData : List<Monster> = listOf()
+    var MHRiseData : List<Monster> = listOf()
                 private set
 
-    public var MH4UData : List<Monster> = listOf()
+    var MH4UData : List<Monster> = listOf()
                 private set
 
-    public var MHWildsData : List<Monster> = listOf()
+    var MHWildsData : List<Monster> = listOf()
                 private set
 
 
     @OptIn(ExperimentalSerializationApi::class)
-    public fun obtainData(context: Context)  {
+    fun obtainData(context: Context)  {
         try {
             var inputStream = context.assets.open("MHWorldMonsters.json")
             MHWorldData = loadJson(inputStream)

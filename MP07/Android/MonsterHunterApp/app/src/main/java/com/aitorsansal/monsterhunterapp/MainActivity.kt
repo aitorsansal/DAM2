@@ -25,6 +25,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.aitorsansal.monsterhunterapp.data.dataRepository
@@ -180,7 +181,11 @@ class MainActivity : ComponentActivity() {
                             label = {Text(category.title)},
                             onClick = {
                                 navController.navigate(category.route){
-                                    popUpTo(MonsterHunterWorld)
+                                    popUpTo(navController.graph.findStartDestination().id){
+                                        saveState = true;
+                                    }
+                                    launchSingleTop = true;
+                                    restoreState = true;
                                 }
                             },
                             modifier = Modifier.size(16.dp)
