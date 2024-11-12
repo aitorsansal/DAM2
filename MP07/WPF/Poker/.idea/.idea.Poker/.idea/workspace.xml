@@ -8,18 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8f593a6-8903-46a5-a8db-2e15dc5afb6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/AppDrawer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/ui/composables/CustomDrawerItem.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/res/drawable/mh_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/res/drawable/mh_logo_no_color.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker/Jocs.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/CartesPoker.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/navigation/Destinations.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/navigation/Destinations.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/MonsterHunterApp/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/MonsterHunterApp/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../15Puzzle/.idea/.idea.15Puzzle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../15Puzzle/.idea/.idea.15Puzzle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../15Puzzle/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Commands/Commands/EditorCommands.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Commands.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +20,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2oi3GUluAzJNshOUG36oIQlOMHs" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -41,19 +32,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Poker" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -83,6 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731338473813</updated>
       <workItem from="1731338476055" duration="1426000" />
+      <workItem from="1731438597177" duration="116000" />
     </task>
     <servers />
   </component>
