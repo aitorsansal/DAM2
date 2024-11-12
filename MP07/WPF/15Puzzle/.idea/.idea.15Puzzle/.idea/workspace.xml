@@ -7,7 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b64a12af-6b70-4926-9810-0033b53dae67" name="Changes" comment="" />
+    <list default="true" id="b64a12af-6b70-4926-9810-0033b53dae67" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.15Puzzle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.15Puzzle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" beforeDir="false" afterPath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" beforeDir="false" afterPath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,6 +92,7 @@
       <workItem from="1730904399306" duration="10284000" />
       <workItem from="1730916597854" duration="5000" />
       <workItem from="1730995121995" duration="776000" />
+      <workItem from="1731335267891" duration="406000" />
     </task>
     <servers />
   </component>

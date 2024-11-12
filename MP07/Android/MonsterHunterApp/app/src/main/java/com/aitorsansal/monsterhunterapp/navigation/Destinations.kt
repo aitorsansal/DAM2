@@ -7,6 +7,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 import androidx.core.content.ContextCompat
 import kotlinx.serialization.Serializable
+import com.aitorsansal.monsterhunterapp.R
 
 @Serializable
 object MonsterHunterWorld
@@ -33,7 +34,25 @@ data class MonsterInformation(val id : String)
 
 data class NavigationCategories<T:Any>(
     val route : T,
-    val selectedIcon : ImageVector,
+    val icon : Int,
     val title: String
+)
+
+val navigationCategories = listOf(
+    NavigationCategories<MonsterHunterWorld>(
+        route = MonsterHunterWorld,
+        icon = R.drawable.mhworld_icon,
+        title = "MHWorld"
+    ),
+    NavigationCategories<MonsterHunterRise>(
+        route = MonsterHunterRise,
+        icon = R.drawable.mhrise_icon,
+        title = "MHRise"
+    ),
+    NavigationCategories<MonsterHunter4Ultimate>(
+        route = MonsterHunter4Ultimate,
+        icon = R.drawable.mh4u_icon,
+        title = "MH4"
+    )
 )
 

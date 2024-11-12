@@ -1,5 +1,5 @@
 [versions]
-agp = "8.7.1"
+agp = "8.7.2"
 coil = "<version>"
 coilCompose = "2.7.0"
 gson = "2.10.1"
