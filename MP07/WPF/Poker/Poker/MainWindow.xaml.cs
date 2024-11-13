@@ -20,4 +20,9 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
     }
+
+    private void Card_OnClick(object sender, RoutedEventArgs e)
+    {
+        ((Button)sender).Margin = ((Button)sender).Margin.Top == 20 ? new Thickness(0,-20,0,20) : new Thickness(0,20,0,0);
+    }
 }

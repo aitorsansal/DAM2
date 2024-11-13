@@ -8,17 +8,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8f593a6-8903-46a5-a8db-2e15dc5afb6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Commands/Commands/EditorCommands.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker/Commands.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/Coins/1 coin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/Coins/2 coins.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/Coins/3 coins.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/Coins/4 coins.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/Coins/5 Coins.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/Coins/CoinsPlace.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/Coins/coins.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/AppDrawer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/AppDrawer.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poker/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poker/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poker/Poker.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/Poker.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dabac0ffdfa95a6721a5bc6e12d103feba64d95f9a2987e0f22a42c039f1/RowDefinition.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -32,19 +47,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.Poker.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Poker" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -75,6 +91,7 @@
       <updated>1731338473813</updated>
       <workItem from="1731338476055" duration="1426000" />
       <workItem from="1731438597177" duration="116000" />
+      <workItem from="1731522429223" duration="5146000" />
     </task>
     <servers />
   </component>

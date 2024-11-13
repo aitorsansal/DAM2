@@ -5,8 +5,242 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Poker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="1080" Width="1920"
+        FontSize="32"
+        Background="DarkGray"
+        WindowStyle="None"
+        WindowState="Maximized">
+    <DockPanel>
+        <Grid DockPanel.Dock="Bottom" Margin="0,0,0,15" Height="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".5*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width=".5*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width=".05*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1"  Margin="5,0,5,0">
+                <Image Source="Resources/Images/Coins/1 coin.png"></Image>
+            </Button>
+            <Button Grid.Column="2" Margin="5,0,5,0">
+                <Image Source="Resources/Images/Coins/2 coins.png"></Image>
+            </Button>
+            <Button Grid.Column="3" Margin="5,0,5,0">
+                <Image Source="Resources/Images/Coins/3 coins.png"></Image>
+            </Button>
+            <Button Grid.Column="4" Margin="5,0,5,0">
+                <Image Source="Resources/Images/Coins/4 coins.png"></Image>
+            </Button>
+            <Button Grid.Column="5" Margin="5,0,5,0">
+                <Image Source="Resources/Images/Coins/5 coins.png"></Image>
+            </Button>
+            <Image Grid.Column="7" Source="Resources/Images/Coins/CoinsPlace.png" Margin="-10,-20,-10,-20"/>
+            <Image Grid.Column="7" Source="Resources/Images/Coins/5 coins.png" Margin="5"/>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".8*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0"> <!--Grid for prizes-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width=".5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".5*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height=".5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Text="Mà actual" TextAlignment="Left"/>
+                    <TextBlock Grid.Row="2" Text="Escala real de color" TextAlignment="Left"/>
+                    <TextBlock Grid.Row="3" Text="Escala de color" TextAlignment="Left"/>
+                    <TextBlock Grid.Row="4" Text="Pòquer" TextAlignment="Left"/>
+                    <TextBlock Grid.Row="5" Text="Full" TextAlignment="Left"/>
+                    <TextBlock Grid.Row="6" Text="Color" TextAlignment="Left"/>
+                    <TextBlock Grid.Row="7" Text="Escala" TextAlignment="Left"/>
+                    <TextBlock Grid.Row="8" Text="Trio" TextAlignment="Left"/>
+                    <TextBlock Grid.Row="9" Text="Doble parella" TextAlignment="Left"/>
+                    <TextBlock Grid.Row="10" Text="Jacks o més" TextAlignment="Left"/>
+                </Grid> <!--Prizes Names-->
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".5*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height=".5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Text="1 crèdit" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="2" Text="250" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="3" Text="50" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="4" Text="25" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="5" Text="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="6" Text="6" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="7" Text="4" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="8" Text="3" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="9" Text="2" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="10" Text="1" TextAlignment="Center"/>
+                </Grid> <!--Prizes 1 coin-->
+                <Grid Grid.Column="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".5*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height=".5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Text="2 crèdit" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="2" Text="500" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="3" Text="100" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="4" Text="50" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="5" Text="18" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="6" Text="12" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="7" Text="8" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="8" Text="6" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="9" Text="4" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="10" Text="2" TextAlignment="Center"/>
+                </Grid> <!--Prizes 2 coins-->
+                <Grid Grid.Column="4">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".5*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height=".5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Text="3 crèdit" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="2" Text="750" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="3" Text="150" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="4" Text="75" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="5" Text="27" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="6" Text="18" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="7" Text="12" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="8" Text="9" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="9" Text="6" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="10" Text="3" TextAlignment="Center"/>
+                </Grid> <!--Prizes 3 coins-->
+                <Grid Grid.Column="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".5*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height=".5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Text="4 crèdit" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="2" Text="1000" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="3" Text="200" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="4" Text="100" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="5" Text="36" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="6" Text="24" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="7" Text="16" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="8" Text="12" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="9" Text="8" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="10" Text="4" TextAlignment="Center"/>
+                </Grid> <!--Prizes 4 coins-->
+                <Grid Grid.Column="6">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".5*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height=".5*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Text="5 crèdit" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="2" Text="4000" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="3" Text="250" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="4" Text="125" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="5" Text="45" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="6" Text="30" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="7" Text="20" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="8" Text="15" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="9" Text="10" TextAlignment="Center"/>
+                    <TextBlock Grid.Row="10" Text="5" TextAlignment="Center"/>
+                </Grid> <!--Prizes 5 coins-->
+            </Grid>
+            <Grid Grid.Row="1"> <!--Grid for cards-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width=".5*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Margin="5,20,5,0"  Background="Transparent" Click="Card_OnClick">
+                    <Image Source="{StaticResource 2C}"/>
+                </Button>
+                <Button Grid.Column="2" Margin="5,20,5,0"  Background="Transparent" Click="Card_OnClick">
+                    <Image Source="{StaticResource 2C}"/>
+                </Button>
+                <Button Grid.Column="3" Margin="5,20,5,0"  Background="Transparent" Click="Card_OnClick">
+                    <Image Source="{StaticResource 2C}"/>
+                </Button>
+                <Button Grid.Column="4" Margin="5,20,5,0"  Background="Transparent" Click="Card_OnClick">
+                    <Image Source="{StaticResource 2C}"/>
+                </Button>
+                <Button Grid.Column="5" Margin="5,20,5,0"  Background="Transparent" Click="Card_OnClick">
+                    <Image Source="{StaticResource 2C}"/>
+                </Button>
+            </Grid>
+        </Grid>
+    </DockPanel>
 
-    </Grid>
 </Window>

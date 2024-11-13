@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
@@ -161,15 +163,30 @@ fun App(drawerState: DrawerState, coroutineScope: CoroutineScope,
                 TopAppBar(
                     title = { Text(actualRoute?.destination?.route?.substringAfterLast(".") ?: "Monster Hunter World") },
                     navigationIcon = {
-                        IconButton(onClick = {
-                            coroutineScope.launch{
-                                drawerState.open()
+                        if(listOf(MHWorldList::class,
+                                MHRiseList::class,
+                                MH4UList::class
+                            ).any { actualRoute?.destination?.hasRoute(it) == true }) {
+                            IconButton(onClick = {
+                                coroutineScope.launch {
+                                    drawerState.open()
+                                }
+                            }) {
+                                Icon(
+                                    imageVector = Icons.Filled.Menu,
+                                    contentDescription = "Open/Close Drawer"
+                                )
                             }
-                        }) {
-                            Icon(
-                                imageVector = Icons.Filled.Menu,
-                                contentDescription = "Open/Close Drawer"
-                            )
+                        }
+                        else{
+                            IconButton(onClick = {
+                                navController.navigateUp()
+                            }) {
+                                Icon(
+                                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                                    contentDescription = "Open/Close Drawer"
+                                )
+                            }
                         }
                     },
                     colors = TopAppBarDefaults.topAppBarColors(
