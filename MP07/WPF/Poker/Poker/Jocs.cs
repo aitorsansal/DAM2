@@ -301,7 +301,11 @@ public class Ma : IEnumerable<Card>
  
         cartes.RemoveAt(posicio);
     }
- 
+
+    public void Clear()
+    {
+        cartes.Clear();
+    }
  
  
     /// <summary>

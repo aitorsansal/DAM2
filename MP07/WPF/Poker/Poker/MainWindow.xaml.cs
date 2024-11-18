@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows;
 using System.Windows.Automation.Peers;
@@ -19,23 +20,54 @@ namespace Poker;
 /// </summary>
 public partial class MainWindow : Window
 {
-    private int quantityOfCoins;
     private int coinsPlayed;
     private int internalCoinsPlayed;
+    private int quantityOfCoins;
+    private int wonCoins;
+    private int doublesPlayed;
+    private int coinsPlayedOnDoubles;
     private Deck deck;
     private Ma currHand;
+    private Ma doublesHand;
     private List<int> cardsToChange;
     private bool changedCards;
     private bool playedCards;
+    private bool isPlaying;
+    private bool isOnBonusRound;
+
+    public static readonly DependencyProperty PlayerCoinsProperty = DependencyProperty.Register(
+        nameof(PlayerCoins), typeof(string), typeof(MainWindow), new PropertyMetadata(default(string)));
+
+    public string PlayerCoins
+    {
+        get => (string)GetValue(PlayerCoinsProperty);
+        set => SetValue(PlayerCoinsProperty, value);
+    }
+    
+    private static readonly Dictionary<string, int[]> PayoutTable = new()
+    {
+        { "Escala real de color", [250, 500, 750, 1000, 4000] },
+        { "Escala de color", [50, 100, 150, 200, 250] },
+        { "Pòquer", [25, 50, 75, 100, 125] },
+        { "Full", [9, 18, 27, 36, 45] },
+        { "Color", [6, 12, 18, 24, 30] },
+        { "Escala", [4, 8, 12, 16, 20] },
+        { "Trio", [3, 6, 9, 12, 15] },
+        { "Doble parella", [2, 4, 6, 8, 10] },
+        { "Jacks or més", [1, 2, 3, 4, 5] }
+    };
+    
     public MainWindow()
     {
         InitializeComponent();
     
         CreateCommands();
-        quantityOfCoins = 100;
+        quantityOfCoins = 1000;
         deck = new Deck();
         currHand = new Ma();
         cardsToChange = new List<int>();
+        PlayerCoins = quantityOfCoins.ToString();
+        DataContext = this;
     }
 
     void CreateCommands()
@@ -47,6 +79,7 @@ public partial class MainWindow : Window
         
         CommandBinding addCoinsBinding = new CommandBinding(PokerCommands.AddCoins);
         addCoinsBinding.Executed += AddCoinsBindingOnExecuted;
+        addCoinsBinding.CanExecute += (_, e) => { e.CanExecute = !isPlaying; };
         CommandBindings.Add(addCoinsBinding);
 
         CommandBinding startBinding = new CommandBinding(PokerCommands.StartGame);
@@ -63,84 +96,101 @@ public partial class MainWindow : Window
         playCardsBinding.Executed += PlayCardsBindingOnExecuted;
         playCardsBinding.CanExecute += (_, e) => { e.CanExecute = !playedCards && currHand.Count > 0; };
         CommandBindings.Add(playCardsBinding);
+
+        CommandBinding playForDoubleBinding = new CommandBinding(PokerCommands.PlayForDouble);
+        playForDoubleBinding.Executed += PlayForDoubleBindingOnExecuted;
+        CommandBindings.Add(playForDoubleBinding);
+    }
+
+    private void PlayForDoubleBindingOnExecuted(object sender, ExecutedRoutedEventArgs e)
+    {
+        ClearBoard();
+        coinsPlayedOnDoubles = (string)e.Parameter switch
+        {
+            "Double" => wonCoins,
+            "SemiDouble" => wonCoins / 2 + wonCoins % 2,
+            _ => coinsPlayedOnDoubles
+        };
+        deck = new Deck();
+
+        for (int i = 0; i < 5; i++)
+        {
+            Card c = deck.Roba();
+            Image cardImage = new Image
+            {
+                Source = (ImageSource)FindResource("Dors05"),
+                Margin = new Thickness(0,-2500,0,0),
+                Tag = c.ImageKey,
+            };
+            ScaleTransform sct = new ScaleTransform
+            {
+                ScaleX = 1,
+                ScaleY = 1, 
+            };
+            cardImage.RenderTransformOrigin = new Point(0.5, 0.5);
+            cardImage.RenderTransform = sct;
+            cardImage.MouseDown += RotateCard;
+            cardImage.SetValue(Grid.ColumnProperty, i+1);
+            grdCardsPlacement.Children.Add(cardImage);
+            StartCardAnimCoroutine(cardImage, new Thickness(0));
+        }
     }
 
     private void PlayCardsBindingOnExecuted(object sender, ExecutedRoutedEventArgs e)
     {
         playedCards = true;
+        bool won = true;
         if (currHand.HiHaEscalaReialDeColor){    
-            txtWin.Text = "ESCALA REIAL DE COLOR";
+            txtWin.Text = "ESCALA REAL DE COLOR";
+            wonCoins = GetWinnings("Escala real de color");
         }
         else if(currHand.HiHaEscalaDeColor){    
             txtWin.Text = "ESCALA DE COLOR";
+            wonCoins = GetWinnings("Escala de color");
         }
         else if(currHand.HiHaPoker){    
             txtWin.Text = "POKER";
+            wonCoins = GetWinnings("Poker");
         }
         else if(currHand.HiHaFull){    
             txtWin.Text = "FULL";
+            wonCoins = GetWinnings("Full");
         }
         else if(currHand.HiHaColor){    
             txtWin.Text = "COLOR";
+            wonCoins = GetWinnings("Color");
         }
         else if(currHand.HiHaEscala){    
             txtWin.Text = "ESCALA";
+            wonCoins = GetWinnings("Escala");
         }
         else if(currHand.HiHaTrio){    
             txtWin.Text = "TRIO";
+            wonCoins = GetWinnings("Trio");
         }
         else if(currHand.HiHaDobleParella){    
             txtWin.Text = "DOBLE PARELLA";
+            wonCoins = GetWinnings("Doble parella");
         }
         else if(currHand.HiHaParellaMinima(Valor.Jota)){        
             txtWin.Text = "MINIMA PARELLA";
+            wonCoins = GetWinnings("Jacks or més");
         }
-    }
+        else {
+            won = false;
+        }
 
+        if (won) {
+            //todo change styles.
+            isOnBonusRound = true;
+        }
+        isPlaying = false;
+        SlideButtonsOut(true);
+    }
+    
     private void SortCardsBindingOnExecuted(object sender, ExecutedRoutedEventArgs e)
     {
         SortCardsAsync();
-    }
-
-    private async void SortCardsAsync()
-    {
-        var cards = grdCardsPlacement.Children.Cast<UIElement>()
-            .Where(x => (int)x.GetValue(Grid.ColumnProperty) is >= 1 and <= 5).OrderBy(x => (int)x.GetValue(Grid.ColumnProperty)).ToList();
-        MoveCardAnimation(
-            (Image)cards[0],
-            new Thickness(570, 0, -570, 0), durationTime:0.2f);
-        MoveCardAnimation(
-            (Image)cards[1],
-            new Thickness(285, 0, -285, 0), durationTime:0.2f);
-        MoveCardAnimation(
-            (Image)cards[3],
-            new Thickness(-285, 0, 285, 0), durationTime:0.2f);
-        MoveCardAnimation(
-            (Image)cards[4],
-            new Thickness(-570, 0, 570, 0), durationTime:0.2f);
-        await Task.Delay(TimeSpan.FromSeconds(0.4));
-        foreach (var uiElem in cards)
-        {
-            MoveCardAnimation((Image)uiElem, new Thickness(0), durationTime: 0f);
-            uiElem.SetValue(Grid.ColumnProperty, 3);
-        }
-        currHand.Ordena();
-        for (var i = 0; i < cards.Count; i++)
-        {
-            var cardToMove = cards.First(x => (string)((Image)x).Tag == currHand[i].ImageKey);
-            var thickness = i switch
-            {
-                0 => new Thickness(-570, 0, 570, 0),
-                1 => new Thickness(-285, 0, 285, 0),
-                2 => new Thickness(0, 0, 0, 0),
-                3 => new Thickness(285, 0, -285, 0),
-                4 => new Thickness(570, 0, -570, 0)
-            };
-            MoveCardAnimation((Image)cardToMove, thickness, durationTime: 0.1f);
-            await Task.Delay(TimeSpan.FromSeconds(0.1));
-            cardToMove.SetValue(Grid.ColumnProperty, i+1);
-            MoveCardAnimation((Image)cardToMove, new Thickness(0), durationTime: 0);
-        }
     }
 
     private void ChangeCardsBindingOnExecuted(object sender, ExecutedRoutedEventArgs e)
@@ -154,7 +204,7 @@ public partial class MainWindow : Window
                 {
                     if (Grid.GetColumn(elem) == cardsToChange[i] + 1)
                     {
-                        StartCardAnimCoroutine((Image)elem, new Thickness(0,-2500,0,0), deleteOnEnd:true);
+                        StartCardAnimCoroutine((Image)elem, new Thickness(0,-2500,0,0));
                         toDelete.Add((Image)elem);
                     }
                 }
@@ -175,10 +225,16 @@ public partial class MainWindow : Window
 
     private void StartBindingOnExecuted(object sender, ExecutedRoutedEventArgs e)
     {
+        currHand.Clear();
+        ClearBoard();
+        isPlaying = true;
+        deck = new Deck();
         internalCoinsPlayed = coinsPlayed;
         quantityOfCoins -= coinsPlayed;
+        PlayerCoins = quantityOfCoins.ToString();
         coinsPlayed = 0;
         changedCards = false;
+        playedCards = false;
         SlideButtonsOut();
         ChangeBetImage();
         for (int i = 0; i < 5; i++)
@@ -190,6 +246,10 @@ public partial class MainWindow : Window
     
     private void AddCoinsBindingOnExecuted(object sender, ExecutedRoutedEventArgs e)
     {
+        if (isOnBonusRound)
+        {
+            ClearBoard();
+        }
         int played = int.Parse((string)e.Parameter);
         if (played > (quantityOfCoins-coinsPlayed))
             played = quantityOfCoins - coinsPlayed;
@@ -201,15 +261,20 @@ public partial class MainWindow : Window
         {
             StartBindingOnExecuted(sender, e);
         }
+
+        if (wonCoins == 0) return;
+        quantityOfCoins += wonCoins;
+        PlayerCoins = quantityOfCoins.ToString();
+        wonCoins = 0;
     }
 
-    private async void StartCardAnimCoroutine(Image? im, Thickness targetThicnkess, float durationTime = 1f, bool deleteOnEnd = false)
+    private void StartCardAnimCoroutine(Image? im, Thickness targetThicnkess, float durationTime = 1f)
     {
         if (im is null) return;
-        await MoveCardAnimation(im, targetThicnkess, durationTime);
+            MoveCardAnimation(im, targetThicnkess, durationTime);
     }
 
-    private async Task MoveCardAnimation(Image? img, Thickness targetThickness, float durationTime = 1f)
+    private void MoveCardAnimation(Image? img, Thickness targetThickness, float durationTime = 1f)
     {
         ThicknessAnimation cardAnim = new ThicknessAnimation
         {
@@ -241,12 +306,12 @@ public partial class MainWindow : Window
         StartCardAnimCoroutine(clickedCard, targetThickness, 0.2f);
     }
 
-    private void SlideButtonsOut()
+    private void SlideButtonsOut(bool enter = false)
     {
         ThicknessAnimation bottomSideAnimation = new ThicknessAnimation
         {
-            From = new Thickness(0, 0, 0, 15),
-            To = new Thickness(0, 0, 0, -250),
+            From = enter ? new Thickness(-250) : new Thickness(0, 0, 0, 15),
+            To = enter ? new Thickness(0,0,0,15) : new Thickness(0, 0, 0, -250),
             Duration = TimeSpan.FromSeconds(0.5f),
             EasingFunction = new QuadraticEase()
         };
@@ -282,4 +347,98 @@ public partial class MainWindow : Window
         StartCardAnimCoroutine(cardImage, new Thickness(0,0,0,0));
         return c;
     }
+
+    private void ClearBoard()
+    {
+        var cards = grdCardsPlacement.Children.Cast<UIElement>()
+            .Where(x => (int)x.GetValue(Grid.ColumnProperty) is >= 1 and <= 5).ToList();
+        foreach (var card in cards)
+        {
+            grdCardsPlacement.Children.Remove(card);
+        }
+
+        txtWin.Text = "";
+    }
+
+    int GetWinnings(string result)
+    {
+        return PayoutTable[result][internalCoinsPlayed - 1];
+    }
+
+    private async void SortCardsAsync()
+    {
+        var cards = grdCardsPlacement.Children.Cast<UIElement>()
+            .Where(x => (int)x.GetValue(Grid.ColumnProperty) is >= 1 and <= 5).OrderBy(x => (int)x.GetValue(Grid.ColumnProperty)).ToList();
+        MoveCardAnimation(
+            (Image)cards[0],
+            new Thickness(570, 0, -570, 0), durationTime:0.2f);
+        MoveCardAnimation(
+            (Image)cards[1],
+            new Thickness(285, 0, -285, 0), durationTime:0.2f);
+        MoveCardAnimation(
+            (Image)cards[3],
+            new Thickness(-285, 0, 285, 0), durationTime:0.2f);
+        MoveCardAnimation(
+            (Image)cards[4],
+            new Thickness(-570, 0, 570, 0), durationTime:0.2f);
+        await Task.Delay(TimeSpan.FromSeconds(0.4));
+        foreach (var uiElem in cards)
+        {
+            MoveCardAnimation((Image)uiElem, new Thickness(0), durationTime: 0f);
+            uiElem.SetValue(Grid.ColumnProperty, 3);
+        }
+        currHand.Ordena();
+        for (var i = 0; i < cards.Count; i++)
+        {
+            var cardToMove = cards.First(x => (string)((Image)x).Tag == currHand[i].ImageKey);
+            var thickness = i switch
+            {
+                0 => new Thickness(-570, 0, 570, 0),
+                1 => new Thickness(-285, 0, 285, 0),
+                2 => new Thickness(0, 0, 0, 0),
+                3 => new Thickness(285, 0, -285, 0),
+                4 => new Thickness(570, 0, -570, 0),
+                _ => throw new ArgumentOutOfRangeException()
+            };
+            MoveCardAnimation((Image)cardToMove, thickness, durationTime: 0.1f);
+            await Task.Delay(TimeSpan.FromSeconds(0.1));
+            cardToMove.SetValue(Grid.ColumnProperty, i+1);
+            MoveCardAnimation((Image)cardToMove, new Thickness(0), durationTime: 0);
+        }
+    }
+
+    private void RotateCard(object sender, MouseButtonEventArgs e)
+    {
+        Image img = (Image)sender;
+        // Shrink the card to look edge-on
+        DoubleAnimation shrinkAnimation = new DoubleAnimation
+        {
+            From = 1,
+            To = 0,
+            Duration = TimeSpan.FromSeconds(0.2),
+            AutoReverse = false,
+            EasingFunction = new SineEase { EasingMode = EasingMode.EaseInOut }
+        };
+
+        shrinkAnimation.Completed += (s, e) =>
+        {
+            img.Source = (ImageSource)FindResource((string)img.Tag);
+            DoubleAnimation expandAnimation = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = TimeSpan.FromSeconds(0.2),
+                AutoReverse = false,
+                EasingFunction = new SineEase { EasingMode = EasingMode.EaseInOut }
+            };
+
+            img.RenderTransform.BeginAnimation(ScaleTransform.ScaleXProperty, expandAnimation);
+        };
+
+
+        img.RenderTransform.BeginAnimation(ScaleTransform.ScaleXProperty, shrinkAnimation);
+        img.MouseDown -= RotateCard;
+    }
+    
+    
 }
