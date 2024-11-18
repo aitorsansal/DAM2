@@ -1,0 +1,1642 @@
+{
+  "monsters": [
+    {
+      "id" :"MHRise-1",
+      "name": "Aknosom",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "3",
+        "Ice" : "2",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em091_00.png"
+    },
+    {
+      "id" : "MHRise-2",
+      "name": "Kulu-Ya-Ku",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "1",
+        "Thunder" : "3",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em107_00.png"
+    },
+    {
+      "id" : "MHRise-3",
+      "name": "Great Baggi",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "0",
+        "Ice" : "2",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em054_00.png"
+    },
+    {
+      "id" : "MHRise-4",
+      "name": "Great Izuchi",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "0",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "2",
+        "Blast" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em098_00.png"
+    },
+    {
+      "id" : "MHRise-5",
+      "name": "Great Wroggi",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "0",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "2",
+        "Blast" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em059_00.png"
+    },
+    {
+      "id" : "MHRise-6",
+      "name": "Anjanath",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "3",
+        "Thunder" : "2",
+        "Ice" : "2",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em100_00.png"
+    },
+    {
+      "id" : "MHRise-7",
+      "name": "Jyuratodus",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "0",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "0",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em108_00.png"
+    },
+    {
+      "id" : "MHRise-8",
+      "name": "Khezu",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "0",
+        "Thunder" : "1",
+        "Ice" : "1",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "0",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em003_00.png"
+    },
+    {
+      "id" : "MHRise-9",
+      "name": "Goss Harag",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "0",
+        "Ice" : "3",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em097_00.png"
+    },
+    {
+      "id" : "MHRise-10",
+      "name": "Volvidon",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em062_00.png"
+    },
+    {
+      "id" : "MHRise-11",
+      "name": "Royal Ludoth",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em047_00.png"
+    },
+    {
+      "id" : "MHRise-13",
+      "name": "Barioth",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "0",
+        "Thunder" : "3",
+        "Ice" : "1",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "1",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "3"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em042_00.png"
+    },
+    {
+      "id" : "MHRise-14",
+      "name": "Barroth",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "0",
+        "Thunder" : "3",
+        "Ice" : "1",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em044_00.png"
+    },
+    {
+      "id" : "MHRise-15",
+      "name": "Basarios",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "0",
+        "Thunder" : "1",
+        "Ice" : "0",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "3",
+        "Stun" : "3"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em004_00.png"
+    },
+    {
+      "id" : "MHRise-16",
+      "name": "Pukei-Pukei",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "2",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "0",
+        "Paralysis" : "1",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em102_00.png"
+    },
+    {
+      "id" : "MHRise-17",
+      "name": "Tetranadon",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em092_00.png"
+    },
+    {
+      "id" : "MHRise-18",
+      "name": "Lagombi",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "0",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em061_00.png"
+    },
+    {
+      "id" : "MHRise-19",
+      "name": "Tigrex",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em032_00.png"
+    },
+    {
+      "id" : "MHRise-20",
+      "name": "Tobi-Kadachi",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em109_00.png"
+    },
+    {
+      "id" : "MHRise-21",
+      "name": "Seregios",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em077_00.png"
+    },
+    {
+      "id" : "MHRise-22",
+      "name": "Nargacuga",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "1",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em037_00.png"
+    },
+    {
+      "id" : "MHRise-23",
+      "name": "Lucent Nargacuga",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "2",
+        "Thunder" : "0",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "0",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em037_02.png"
+    },
+    {
+      "id" : "MHRise-24",
+      "name": "Bishaten",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "0",
+        "Thunder" : "3",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "3",
+        "Paralysis" : "3",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em090_00.png"
+    },
+    {
+      "id" : "MHRise-25",
+      "name": "Blood Orange Bishaten",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "0",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image": "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em090_01.png"
+    },
+    {
+      "id" : "MHRise-26",
+      "name": "Somnacanth",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "2",
+        "Thunder" : "1",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "3",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em093_00.png"
+    },
+    {
+      "id" : "MHRise-27",
+      "name": "Aurora Somnacanth",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "1",
+        "Ice" : "3",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "3",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em093_01.png"
+    },
+    {
+      "id" : "MHRise-28",
+      "name": "Daimyo Hermitaur",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "3",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em019_00.png"
+    },
+    {
+      "id" : "MHRise-29",
+      "name": "Shogun Ceantaur",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em020_00.png"
+    },
+    {
+      "id" : "MHRise-30",
+      "name": "Rajang",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "2",
+        "Thunder" : "3",
+        "Ice" : "1",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "3",
+        "Paralysis" : "3",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em023_00.png"
+    },
+    {
+      "id" : "MHRise-31",
+      "name": "Furious Rajang",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "2",
+        "Thunder" : "1",
+        "Ice" : "3",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em023_05.png"
+    },
+    {
+      "id" : "MHRise-32",
+      "name": "Espinas",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em136_00.png"
+    },
+    {
+      "id" : "MHRise-33",
+      "name": "Flaming Espinas",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "2",
+        "Thunder" : "3",
+        "Ice" : "1",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em136_01.png"
+    },
+    {
+      "id" : "MHRise-34",
+      "name": "Rakna-Kadaki",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "0",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "3",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em094_00.png"
+    },
+    {
+      "id" : "MHRise-35",
+      "name": "Pyre Rakna-Kadaki",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "0",
+        "Thunder" : "0",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em094_01.png"
+    },
+    {
+      "id" : "MHRise-36",
+      "name": "Almudon",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "3"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em095_00.png"
+    },
+    {
+      "id" : "MHRise-37",
+      "name": "Magma Almudon",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "3"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em095_01.png"
+    },
+    {
+      "id" : "MHRise-38",
+      "name": "Bazelgeuse",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em118_00.png"
+    },
+    {
+      "id" : "MHRise-39",
+      "name": "Seething Bazelgeuse",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em118_05.png"
+    },
+    {
+      "id" : "MHRise-40",
+      "name": "Arzuros",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em060_00.png"
+    },
+    {
+      "id" : "MHRise-41",
+      "name": "Arzuros Apex",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em060_07.png"
+    },
+    {
+      "id" : "MHRise-42",
+      "name": "Diablos",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "3",
+        "Thunder" : "0",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em007_00.png"
+    },
+    {
+      "id" : "MHRise-43",
+      "name": "Apex Diablos",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "0",
+        "Thunder" : "2",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "1",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image": "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em007_07.png"
+    },
+    {
+      "id" : "MHRise-44",
+      "name": "Zinogre",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "3",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em057_00.png"
+    },
+    {
+      "id" : "MHRise-45",
+      "name": "Apex Zinogre",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "3",
+        "Thunder" : "2",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "2",
+        "Paralysis" : "3",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em057_07.png"
+    },
+    {
+      "id" : "MHRise-46",
+      "name": "Mizutsune",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "2",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em082_00.png"
+    },
+    {
+      "id" : "MHRise-47",
+      "name": "Violet Mizutsune",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em082_02.png"
+    },
+    {
+      "id" : "MHRise-48",
+      "name": "Apex Mizutsune",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "2",
+        "Thunder" : "0",
+        "Ice" : "3",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em082_07.png"
+    },
+    {
+      "id" : "MHRise-49",
+      "name": "Rathalos",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "0",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "3",
+        "Stun" : "3"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em002_00.png"
+    },
+    {
+      "id" : "MHRise-50",
+      "name": "Silver Rathalos",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em002_02.png"
+    },
+    {
+      "id" : "MHRise-51",
+      "name": "Apex Rathalos",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "3",
+        "Thunder" : "1",
+        "Ice" : "1",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "1",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em002_07.png"
+    },
+    {
+      "id" : "MHRise-52",
+      "name": "Rathian",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "1",
+        "Thunder" : "3",
+        "Ice" : "0",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em001_00.png"
+    },
+    {
+      "id" : "MHRise-53",
+      "name": "Gold Rathian",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "2",
+        "Thunder" : "3",
+        "Ice" : "2",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em001_02.png"
+    },
+    {
+      "id" : "MHRise-54",
+      "name": "Apex Rathian",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "1",
+        "Thunder" : "3",
+        "Ice" : "0",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em001_07.png"
+    },
+    {
+      "id" : "MHRise-12",
+      "name": "Astalos",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "0",
+        "Thunder" : "2",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "2",
+        "Paralysis" : "3",
+        "Blast" : "3",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em081_00.png"
+    },
+    {
+      "id" : "MHRise-55",
+      "name": "Magnamalo",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em089_00.png"
+    },
+    {
+      "id" : "MHRise-56",
+      "name": "Scorned Magnamalo",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em089_05.png"
+    },
+    {
+      "id" : "MHRise-57",
+      "name": "Gore Magala",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "0",
+        "Thunder" : "2",
+        "Ice" : "0",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em071_00.png"
+    },
+    {
+      "id" : "MHRise-58",
+      "name": "Chaotic Gore Magala",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em071_05.png"
+    },
+    {
+      "id" : "MHRise-59",
+      "name": "Chameleos",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "3",
+        "Ice" : "2",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em025_00.png"
+    },
+    {
+      "id" : "MHRise-60",
+      "name": "Risen Chameleos",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "3",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em025_08.png"
+    },
+    {
+      "id" : "MHRise-61",
+      "name": "Crimson Glow Valstrax",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image": "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em086_05.png"
+    },
+    {
+      "id" : "MHRise-62",
+      "name": "Risen Crimson Glow Valstrax",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image": "https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em086_08.png"
+    },
+    {
+      "id" : "MHRise-63",
+      "name": "Kushala Daora",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "3",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em024_00.png"
+    },
+    {
+      "id" : "MHRise-64",
+      "name": "Risen Kushala Daora",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "2",
+        "Thunder" : "1",
+        "Ice" : "3",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em024_08.png"
+    },
+    {
+      "id" : "MHRise-65",
+      "name": "Teostra",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em027_00.png"
+    },
+    {
+      "id" : "MHRise-66",
+      "name": "Risen Teostra",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em027_08.png"
+    },
+    {
+      "id" : "MHRise-67",
+      "name": "Shagaru Magala",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em072_00.png"
+    },
+    {
+      "id" : "MHRise-68",
+      "name": "Risen Shagaru Magala",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "0",
+        "Ice" : "3",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "0",
+        "Paralysis" : "1",
+        "Blast" : "3",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em072_08.png"
+    },
+    {
+      "id" : "MHRise-69",
+      "name": "Velkhana",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em124_00.png"
+    },
+    {
+      "id" : "MHRise-70",
+      "name": "Garangolm",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "1",
+        "Thunder" : "0",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "1",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em134_00.png"
+    },
+    {
+      "id" : "MHRise-71",
+      "name": "Lunagaron",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "0",
+        "Sleep" : "0",
+        "Paralysis" : "0",
+        "Blast" : "0",
+        "Stun" : "0"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em133_00.png"
+    },
+    {
+      "id" : "MHRise-72",
+      "name": "Gaismagorm",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "2",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em135_00.png"
+    },
+    {
+      "id" : "MHRise-73",
+      "name": "Narwa the Allmother",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "1",
+        "Thunder" : "3",
+        "Ice" : "0",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em099_05.png"
+    },
+    {
+      "id" : "MHRise-74",
+      "name": "Thunder Serpent Narwa",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em099_00.png"
+    },
+    {
+      "id" : "MHRise-75",
+      "name": "Wind Serpent Ibushi",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em096_00.png"
+    },
+    {
+      "id" : "MHRise-76",
+      "name": "Amatsu",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "1",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "0"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em058_00.png"
+    },
+    {
+      "id" : "MHRise-77",
+      "name": "Malzeno",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "3",
+        "Thunder" : "3",
+        "Ice" : "3",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "1",
+        "Paralysis" : "2",
+        "Blast" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em132_00.png"
+    },
+    {
+      "id" : "MHRise-78",
+      "name": "Primordial Malzeno",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "1",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://cdn.kiranico.net/file/kiranico/mhrise-web/images/icons/em132_05.png"
+    }
+  ]
+}
