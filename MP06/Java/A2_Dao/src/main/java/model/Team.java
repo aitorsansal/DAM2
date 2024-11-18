@@ -1,0 +1,40 @@
+package model;
+
+public class Team {
+	String abv;
+	String name;
+	String logo_link;
+	int goalsScored;
+	
+		public Team(String abv, String name, String logo_link) {
+		super();
+		this.abv = abv;
+		this.name = name;
+		this.logo_link = logo_link;
+		this.goalsScored = 0;
+	}
+	public String getAbv() {
+		return abv;
+	}
+	public void setAbv(String abv) {
+		this.abv = abv;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getLogo_link() {
+		return logo_link;
+	}
+	public void setLogo_link(String logo_link) {
+		this.logo_link = logo_link;
+	}
+	public int getGoalsScored() {
+		return goalsScored;
+	}
+	public void setGoalsScored(int goalsScored) {
+		this.goalsScored = goalsScored;
+	}
+}

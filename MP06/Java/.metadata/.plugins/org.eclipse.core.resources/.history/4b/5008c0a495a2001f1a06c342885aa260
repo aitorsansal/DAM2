@@ -1,0 +1,7 @@
+package a2_dao;
+
+public interface DAOManager extends AutoClosable {
+	public boolean AddTeam(Team oneTeam);
+	public Team GetTeam(String teamAbreviation);
+	public String GetTeamAbbreviation(String teamName);
+}

@@ -1,0 +1,59 @@
+package dao;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import model.Team;
+
+public class DAOManagerJDBCImpl implements DAOManager {
+	
+	private Connection con;
+	
+	public DAOManagerJDBCImpl() throws DAOException {
+		try
+		{
+			String connectionUrl = "jdbc:mysql://localhost:3306/premier?serverTimezone=UTC";
+			con = DriverManager.getConnection(connectionUrl, "root", "12345");
+		}
+		catch(Exception e) {
+			throw new DAOException(e);
+		}
+	}
+
+	@Override
+	public boolean AddTeam(Team oneTeam) throws DAOException{
+		try
+		{
+			String storedProcedureCall = "{call AddTeam(?,?,?)}";	
+			CallableStatement cS = con.prepareCall(storedProcedureCall);
+			cS.setString(1, oneTeam.getName());
+			cS.setString(2, oneTeam.getAbv());			
+			cS.setString(3, oneTeam.getLogo_link());
+			cS.execute();
+		}
+		catch(Exception e) {
+			throw new DAOException(e);
+		}
+		return false;
+	}
+
+	@Override
+	public Team GetTeam(String teamAbreviation) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String GetTeamAbbreviation(String teamName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void close() throws Exception {
+		con.close();
+		
+	}
+
+}

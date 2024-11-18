@@ -29,7 +29,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.aitorsansal.monsterhunterapp.MonsterViewModelProvider
 import com.aitorsansal.monsterhunterapp.R
 import com.aitorsansal.monsterhunterapp.data.dataRepository
 import com.aitorsansal.monsterhunterapp.model.Monster

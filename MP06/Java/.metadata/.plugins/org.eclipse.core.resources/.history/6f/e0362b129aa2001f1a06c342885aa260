@@ -1,0 +1,8 @@
+package model;
+
+public class Team {
+	String abv;
+	String name;
+	String logo_link;
+	int goalsScored;
+}

@@ -9,7 +9,6 @@ class MonsterViewModel : ViewModel() {
     private val _monsterData = MutableStateFlow<List<Monster>>(emptyList())
     val MonsterData: StateFlow<List<Monster>> = _monsterData
 
-    fun setMonsters(monsters: List<Monster>) {
-        _monsterData.value = monsters
+    fun setMonsters(monsters: List<Monster>) {        _monsterData.value = monsters
     }
 }

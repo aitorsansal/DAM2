@@ -1,0 +1,199 @@
+package jdbcExercises;
+
+import java.sql.*;
+
+public class ExercisesJDBC {
+
+	public static void main(String[] args) {
+		String connectionUrl = "jdbc:mysql://localhost:3306/hospital?serverTimezone=UTC";
+		try {
+			Connection conn = DriverManager.getConnection(connectionUrl, "root", "12345");
+			if (conn!=null) 
+				System.out.println("CONNECTED");
+			//conn.createStatement().executeUpdate("DELETE FROM doctor");
+			doExercise1(conn);
+			doExercise2(conn);
+			doExercise3(conn);
+			doExercise4(conn);
+			doExercise5(conn);
+			doExercise6(conn);
+
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+	
+	public static void doExercise1(Connection conn) {
+		try
+		{
+			Statement st = conn.createStatement();
+			String sSql = "UPDATE hospital SET hospital_adreca='test' WHERE hospital_codi=18;";
+			int result = st.executeUpdate(sSql);
+			System.out.println("Rows affected on update: " + result);
+			
+			sSql = "DELETE FROM malalt WHERE malalt_num=14024;";
+			result = st.executeUpdate(sSql);
+			System.out.println("Rows affected on delete: " + result);
+		}
+		catch(Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+
+	}
+	public static void doExercise2(Connection conn) {
+		try
+		{			
+			String sSql = "SELECT * FROM dept WHERE dept_num = ?;";
+			PreparedStatement pS = conn.prepareStatement(sSql);
+			for(int i = 1; i<= 3; i++) {
+				pS.setInt(1, i*10);
+				ResultSet resSet = pS.executeQuery();
+				ShowResults(resSet);
+			}
+		}
+		catch(Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+
+	}
+	
+	public static void ShowResults(ResultSet resSet) throws SQLException {
+		while(resSet.next())
+		{
+			System.out.println("DEPARTMENT ID: " + resSet.getInt("dept_num") +
+					", DEPARTMENT NAME: " + resSet.getString("dept_nom")+
+					", DEPARTMENT LOCATION: " + resSet.getString("dept_loc"));
+		}
+	}
+	public static void doExercise3(Connection conn) {
+		try
+		{
+			String sSql = "INSERT INTO doctor VALUES (?,?,?,?)";
+			PreparedStatement pS = conn.prepareStatement(sSql);
+			pS.setInt(1, 111);
+			pS.setInt(2, 13);
+			pS.setString(3, "Joan A.");
+			pS.setString(4, "Pedagogia");
+			pS.addBatch();
+			pS.setInt(1, 222);
+			pS.setInt(2, 22);
+			pS.setString(3, "Manel J.");
+			pS.setString(4, "Alergologia");
+			pS.addBatch();
+			pS.setInt(1, 333);
+			pS.setInt(2, 45);
+			pS.setString(3, "Maria N.");
+			pS.setString(4, "Psiquiatria");
+			pS.addBatch();			
+			pS.executeBatch();
+			
+			sSql = "UPDATE sala SET sala_nllits = 0 WHERE sala_codi = ? && sala_hospital_codi = 22;";
+			pS = conn.prepareStatement(sSql);
+			pS.setInt(1, 1);
+			pS.addBatch();
+			pS.setInt(1, 2);
+			pS.addBatch();
+			pS.setInt(1, 6);
+			pS.addBatch();
+			pS.executeBatch();
+		}
+		catch(Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+		
+	}
+	public static void doExercise4(Connection conn) {
+		try
+		{
+			String storedProcedureCall = "{call GetDepartmentName(?,?)}";
+			CallableStatement cS = conn.prepareCall(storedProcedureCall);
+			int deptId = 10;
+			cS.setInt(1, deptId);
+			cS.registerOutParameter(2, Types.VARCHAR);
+			cS.execute();
+			String departmentName = cS.getString(2);
+			System.out.println("Name of the department " + deptId + " is: " + departmentName);
+		}
+		catch(Exception e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+		
+	}
+	public static void doExercise5(Connection conn) {
+		try {
+			String storedProcedureCall = "{call GetDoctor(?)}";
+			CallableStatement cS = conn.prepareCall(storedProcedureCall);
+			int doctId = 386;
+			cS.setInt(1, doctId);
+			boolean hasResults = cS.execute();
+			if(hasResults) {
+				ResultSet resultSet = cS.getResultSet();
+				while(resultSet.next()) {
+					System.out.println("El doctor amb codi " + doctId + " és el doctor " + resultSet.getString("doctor_nom"));
+				}
+			}
+			else
+				System.out.println("No ResultSet was returned.");
+		}
+		catch(Exception e) {
+			
+		}
+		
+	}
+	public static void doExercise6(Connection conn) {
+		try
+		{
+			Doctor d1 = new Doctor(311, 22, "Joan M", "Psicologia");
+			boolean worked = CreateAndUpdate(d1, 13, conn);
+			if(worked) System.out.println("Creation of new Doctor worked correctly.");
+			else System.out.println("There was an error with the creation of the new Doctor");
+			
+			Doctor d2 = new Doctor(211,22, "Maria F", "Radiografia");
+			worked = CreateAndUpdate(d2, 50, conn);		
+			if(worked) System.out.println("Creation of new Doctor worked correctly.");
+			else System.out.println("There was an error with the creation of the new Doctor");
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public static boolean CreateAndUpdate(Doctor d, int updateHospitalCode, Connection conn) throws SQLException{
+		boolean everythingCorrect = false;
+		try
+		{
+			conn.setAutoCommit(false);
+			String storedProcedureCall = "{call CreateDoctor(?,?,?,?)}";
+			CallableStatement cS = conn.prepareCall(storedProcedureCall);
+			cS.setInt(1, d.doctor_codi);
+			cS.setInt(2, d.doctor_hospital_codi);
+			cS.setString(3, d.doctor_nom);
+			cS.setString(4, d.doctor_especialitat);
+			
+			int changed= cS.executeUpdate();
+			if(changed == 1)
+			{		
+				storedProcedureCall = "{call EditHospitalCode(?,?)}";
+				cS = conn.prepareCall(storedProcedureCall);
+				cS.setInt(1, d.doctor_codi);
+				cS.setInt(2, updateHospitalCode);
+				changed = cS.executeUpdate();
+				everythingCorrect = changed == 1;
+			}
+			if(!everythingCorrect) conn.rollback();
+		}
+		catch(Exception e) {
+			conn.rollback();
+			everythingCorrect = false;
+		}
+		finally {
+			conn.setAutoCommit(true);
+		}
+
+
+		return everythingCorrect;
+	}
+
+}

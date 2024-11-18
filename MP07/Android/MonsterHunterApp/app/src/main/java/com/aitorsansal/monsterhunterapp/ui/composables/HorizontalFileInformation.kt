@@ -22,12 +22,11 @@ import com.aitorsansal.monsterhunterapp.model.Monster
 @Composable
 fun HorizontalFileInformation(
     monsterId: String?,
+    monster : Monster?,
     modifier : Modifier = Modifier,
     background:Color = MaterialTheme.colorScheme.primary,
     colorLetter:Color = MaterialTheme.colorScheme.onPrimary,
     onClickElement : (String?) -> Unit = {}){
-    val viewModel : MonsterViewModel = viewModel()
-        val monster : Monster? = viewModel.MonsterData.value?.firstOrNull {it.id == monsterId} //todo change this shit
         Card {
             Row(modifier = modifier.fillMaxWidth().background(color = background)
                 .clickable { onClickElement(monsterId) }) {

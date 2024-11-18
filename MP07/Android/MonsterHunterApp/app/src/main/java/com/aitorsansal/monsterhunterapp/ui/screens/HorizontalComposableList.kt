@@ -28,7 +28,7 @@ fun HorizontalComposableList(data : List<Monster>,
     ) {
         items(data)
         {
-            HorizontalFileInformation(it.id, onClickElement = onClickElement)
+            HorizontalFileInformation(it.id, onClickElement = onClickElement, monster = null)
         }
     }
 }

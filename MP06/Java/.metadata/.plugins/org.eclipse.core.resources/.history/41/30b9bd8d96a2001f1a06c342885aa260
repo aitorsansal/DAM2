@@ -1,0 +1,8 @@
+package a2_dao;
+
+public class Team {
+	String abv;
+	String name;
+	String logo_link;
+	int goalsScored;
+}
