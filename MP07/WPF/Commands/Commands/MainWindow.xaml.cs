@@ -62,7 +62,7 @@ public partial class MainWindow : Window
         CommandBindings.Add(redoBinding);
 
         CommandBinding augmentSizeBinding = new CommandBinding(EditorCommands.AugmentSize);
-        augmentSizeBinding.Executed += (_, e) => ChangeFontSize(FontSize + int.Parse((string)e.Parameter));
+        augmentSizeBinding.Executed += (_, e) => ChangeFontSize(FontSize + int.Parse((string)e.Parameter)); 
         CommandBindings.Add(augmentSizeBinding);
         CommandBinding reduceSizeBinding = new CommandBinding(EditorCommands.ReduceSize);
         reduceSizeBinding.Executed += (_, e) => ChangeFontSize(FontSize - int.Parse((string)e.Parameter));

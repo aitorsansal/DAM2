@@ -8,9 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b64a12af-6b70-4926-9810-0033b53dae67" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.15Puzzle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.15Puzzle/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" beforeDir="false" afterPath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" beforeDir="false" afterPath="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Poker/Poker/Resources/ButtonStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Commands/Commands/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Commands/Commands/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Poker/.idea/.idea.Poker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/.idea/.idea.Poker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Poker/Poker/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/Poker/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Poker/Poker/Commands.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/Poker/PokerCommands.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Poker/Poker/Jocs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/Poker/Jocs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Poker/Poker/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/Poker/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Poker/Poker/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/Poker/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Poker/Poker/bin/Debug/net8.0-windows/Poker.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/Poker/bin/Debug/net8.0-windows/Poker.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Poker/Poker/bin/Debug/net8.0-windows/Poker.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/Poker/bin/Debug/net8.0-windows/Poker.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +100,7 @@
       <workItem from="1730916597854" duration="5000" />
       <workItem from="1730995121995" duration="776000" />
       <workItem from="1731335267891" duration="406000" />
+      <workItem from="1731950426060" duration="77000" />
     </task>
     <servers />
   </component>

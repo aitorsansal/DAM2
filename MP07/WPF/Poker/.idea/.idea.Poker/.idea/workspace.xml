@@ -8,18 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8f593a6-8903-46a5-a8db-2e15dc5afb6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/Coins/1 coin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/Coins/2 coins.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/Coins/3 coins.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/Coins/4 coins.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/Coins/5 Coins.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/Coins/CoinsPlace.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/Coins/coins.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/AppDrawer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/MonsterHunterApp/app/src/main/java/com/aitorsansal/monsterhunterapp/AppDrawer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/ButtonStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../15Puzzle/.idea/.idea.15Puzzle/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../15Puzzle/.idea/.idea.15Puzzle/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Commands/Commands/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Commands/Commands/MainWindow.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poker/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poker/Commands.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/PokerCommands.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poker/Jocs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/Jocs.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poker/Poker.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/Poker.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +32,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2c8e7ca976f350cba9836d5565dac56b11e0b56656fa786460eb1395857a6fa/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8163a164a95e2697ea845a161b1de3b0c28aeb31e3d81969562f2f5379d97/VisualCollection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dabac0ffdfa95a6721a5bc6e12d103feba64d95f9a2987e0f22a42c039f1/RowDefinition.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -80,6 +81,24 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="Poker" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Poker/Poker.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -92,6 +111,7 @@
       <workItem from="1731338476055" duration="1426000" />
       <workItem from="1731438597177" duration="116000" />
       <workItem from="1731522429223" duration="5146000" />
+      <workItem from="1731944704313" duration="14519000" />
     </task>
     <servers />
   </component>

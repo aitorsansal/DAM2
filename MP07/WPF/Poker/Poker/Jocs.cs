@@ -16,7 +16,7 @@ public enum Valor
     Dos, Tres, Quatre, Cinc, Sis, Set, Vuit,
     Nou, Deu, Jota, Reina, Rei, As, Joker
 }
-public class Jocs : IComparable<Jocs>
+public class Card : IComparable<Card>
 {
     private Pal pal;
     private Valor valor;
@@ -24,13 +24,13 @@ public class Jocs : IComparable<Jocs>
     private String dors;  
  
  
-    public Jocs() : this(Pal.Piques, Valor.As)
+    public Card() : this(Pal.Piques, Valor.As)
     {
     }
-    public Jocs(Pal nouPal, Valor nouValor) : this(nouPal, nouValor, "Dors01")
+    public Card(Pal nouPal, Valor nouValor) : this(nouPal, nouValor, "Dors01")
     {
     }
-    public Jocs(Pal nouPal, Valor nouValor, String clauDors)
+    public Card(Pal nouPal, Valor nouValor, String clauDors)
     {
         pal = nouPal;
         valor = nouValor;
@@ -43,16 +43,16 @@ public class Jocs : IComparable<Jocs>
     }
     public Pal Pal
     {
-        get { return pal; }
-        set { pal = value; }
+        get => pal;
+        set => pal = value;
     }
     public bool BocaAvall
     {
-        get { return bocaAvall; }
-        set { bocaAvall = value; }
+        get => bocaAvall;
+        set => bocaAvall = value;
     }
  
-    public int CompareTo(Jocs other)
+    public int CompareTo(Card other)
     {
         if (this.Valor == other.Valor)
             return this.Pal - other.Pal;
@@ -64,7 +64,7 @@ public class Jocs : IComparable<Jocs>
     /// Retorna la clau per obtenir el recurs d'imatge de la carta definit al diccionari de recursos
     /// Si la carta està 
     /// </summary>
-    public String ClauImatge
+    public String ImageKey
     {
         get
         {
@@ -116,12 +116,12 @@ public class Jocs : IComparable<Jocs>
     }
 }
  
-public class Baralla : IEnumerable<Jocs>
+public class Deck : IEnumerable<Card>
 {
  
     private Pal[] pals;
     private Valor[] valors;
-    List<Jocs> cartes;
+    List<Card> cards;
  
     public Pal[] Pals
     {
@@ -146,7 +146,7 @@ public class Baralla : IEnumerable<Jocs>
     /// <summary>
     /// Crea una joc de cartes complet, amb tots els pals i tots els valors, però sense comodins.
     /// </summary>
-    public Baralla()
+    public Deck()
     {
         pals = new Pal[] { Pal.Piques, Pal.Cors, Pal.Diamants, Pal.Trèbols };
         valors = new Valor[] {Valor.As, Valor.Dos, Valor.Tres, Valor.Quatre, Valor.Cinc, Valor.Sis,
@@ -164,53 +164,53 @@ public class Baralla : IEnumerable<Jocs>
     /// </summary>
     private void CreaBaralla()
     {
-        cartes = new List<Jocs>();
+        cards = new List<Card>();
         //Allibera les cartes utilitzades fins ara
-        cartes.Clear();
+        cards.Clear();
  
         //Afegir les noves cartes
         for (int unPal = 0; unPal < pals.Length; unPal++)
         for (int unValor = 0; unValor < valors.Length; unValor++)
-            cartes.Add(new Jocs(pals[unPal], valors[unValor]));
+            cards.Add(new Card(pals[unPal], valors[unValor]));
     }
  
     /// <summary>
     /// Remena les cartes contingudes a la baralla
     /// </summary>
-    public void Remena()
+    private void Remena()
     {
         Random rGen = new Random();
-        List<Jocs> novaBaralla = new List<Jocs>();
+        List<Card> novaBaralla = new List<Card>();
  
-        while (cartes.Count > 0)
+        while (cards.Count > 0)
         {
             //Tria una carta per eliminar-la.
-            int aEliminar = rGen.Next(0, cartes.Count - 1);
-            Jocs cartaEliminada = (Jocs)cartes[aEliminar];
-            cartes.Remove(cartaEliminada);
+            int aEliminar = rGen.Next(0, cards.Count - 1);
+            Card cartaEliminada = (Card)cards[aEliminar];
+            cards.Remove(cartaEliminada);
             //Afegeix la carta eliminada a la nova baralla
             novaBaralla.Add(cartaEliminada);
         }
         //Remplaça la baralla vella per la nova amb les cartes barrejades
-        cartes = novaBaralla;
+        cards = novaBaralla;
     }
     /// <summary>
     /// Propietat que retorna el número de cartes que té la baralla.
     /// </summary>
     public int Count
     {
-        get { return cartes.Count; }
+        get { return cards.Count; }
     }
  
     /// <summary>
     /// Indexador que retorna la carta de la baralla que correspon a l'index rebut.
     /// </summary>
-    public Jocs this[int index]
+    public Card this[int index]
     {
         get
         {
-            if ((index >= 0) && (index < cartes.Count))
-            { return ((Jocs)cartes[index]); }
+            if ((index >= 0) && (index < cards.Count))
+            { return ((Card)cards[index]); }
             else
             { throw new ArgumentOutOfRangeException("Índex fora de rang"); }
         }
@@ -220,12 +220,12 @@ public class Baralla : IEnumerable<Jocs>
     /// Extreu la primera carta de la baralla i la retorna.
     /// </summary>
     /// <returns></returns>
-    public Jocs Roba()
+    public Card Roba()
     {
         if (Count == 0)
             throw new IndexOutOfRangeException("No es pot robar d'una baralla buida");
-        Jocs carta = cartes[0];
-        cartes.RemoveAt(0);
+        Card carta = cards[0];
+        cards.RemoveAt(0);
         return carta;
     }
  
@@ -234,41 +234,41 @@ public class Baralla : IEnumerable<Jocs>
     /// </summary>
     /// <param name="carta"></param>
     /// <param name="posicio"></param>
-    public void Afegeix(Jocs carta, int posicio)
+    public void Afegeix(Card carta, int posicio)
     {
         if (Count > posicio)
             throw new IndexOutOfRangeException("La posició màxima a on es pot inserir és: " + Count);
  
-        cartes.Insert(posicio, carta);
+        cards.Insert(posicio, carta);
     }
  
-    public IEnumerator<Jocs> GetEnumerator()
+    public IEnumerator<Card> GetEnumerator()
     {
-        return ((IEnumerable<Jocs>)cartes).GetEnumerator();
+        return ((IEnumerable<Card>)cards).GetEnumerator();
     }
  
     IEnumerator IEnumerable.GetEnumerator()
     {
-        return ((IEnumerable<Jocs>)cartes).GetEnumerator();
+        return ((IEnumerable<Card>)cards).GetEnumerator();
     }
 }
-public class Ma : IEnumerable<Jocs>
+public class Ma : IEnumerable<Card>
 {
  
-    List<Jocs> cartes;
-    List<Jocs> comodins;
+    List<Card> cartes;
+    List<Card> comodins;
  
  
     public Ma()
     {
-        comodins = new List<Jocs>();
-        cartes = new List<Jocs>();
+        comodins = new List<Card>();
+        cartes = new List<Card>();
     }
  
-    public Ma(Jocs[] cartes)
+    public Ma(Card[] cartes)
     {
-        this.cartes = new List<Jocs>();
-        comodins = new List<Jocs>();
+        this.cartes = new List<Card>();
+        comodins = new List<Card>();
         this.cartes.AddRange(cartes);
     }
  
@@ -277,7 +277,7 @@ public class Ma : IEnumerable<Jocs>
     /// Afegeix una carta la mà
     /// </summary>
     /// <param name="carta"></param>
-    public void Afegeix(Jocs carta)
+    public void Afegeix(Card carta)
     {
         cartes.Add(carta);
     }
@@ -286,7 +286,7 @@ public class Ma : IEnumerable<Jocs>
     /// Afegeix un rang de cartes a la mà
     /// </summary>
     /// <param name="cartes"></param>
-    public void AfegeixRang(Jocs[] cartes)
+    public void AfegeixRang(Card[] cartes)
     {
         this.cartes.AddRange(cartes);
     }
@@ -323,12 +323,12 @@ public class Ma : IEnumerable<Jocs>
     /// <summary>
     /// Indexador que retorna la carta de la baralla que correspon a l'index rebut.
     /// </summary>
-    public Jocs this[int index]
+    public Card this[int index]
     {
         get
         {
             if ((index >= 0) && (index < cartes.Count))
-            { return ((Jocs)cartes[index]); }
+            { return ((Card)cartes[index]); }
             else
             { throw new ArgumentOutOfRangeException("Índex fora de rang"); }
         }
@@ -347,9 +347,9 @@ public class Ma : IEnumerable<Jocs>
     /// <summary>
     /// Obté o assigna quines cartes fan de comodí
     /// </summary>
-    public Jocs[] Comodins
+    public Card[] Comodins
     {
-        get { return comodins.ToArray<Jocs>(); }
+        get { return comodins.ToArray<Card>(); }
         set { comodins.Clear(); comodins.AddRange(value); }
     }
  
@@ -358,14 +358,14 @@ public class Ma : IEnumerable<Jocs>
     /// </summary>
     /// <param name="ma"></param>
     /// <returns></returns>
-    private Dictionary<Valor, List<Jocs>> DescomposaValors()
+    private Dictionary<Valor, List<Card>> DescomposaValors()
     {
-        Dictionary<Valor, List<Jocs>> resultat = new Dictionary<Valor, List<Jocs>>();
+        Dictionary<Valor, List<Card>> resultat = new Dictionary<Valor, List<Card>>();
         foreach (Valor v in Enum.GetValues(typeof(Valor)))
         {
-            resultat.Add(v, new List<Jocs>());
+            resultat.Add(v, new List<Card>());
         }
-        foreach (Jocs carta in cartes)
+        foreach (Card carta in cartes)
         {
             if (Conte(comodins, carta))
                 resultat[Valor.Joker].Add(carta);
@@ -381,14 +381,14 @@ public class Ma : IEnumerable<Jocs>
     /// </summary>
     /// <param name="ma"></param>
     /// <returns></returns>
-    private Dictionary<Pal, List<Jocs>> DescomposaPals()
+    private Dictionary<Pal, List<Card>> DescomposaPals()
     {
-        Dictionary<Pal, List<Jocs>> resultat = new Dictionary<Pal, List<Jocs>>();
+        Dictionary<Pal, List<Card>> resultat = new Dictionary<Pal, List<Card>>();
         foreach (Pal v in Enum.GetValues(typeof(Pal)))
         {
-            resultat.Add(v, new List<Jocs>());
+            resultat.Add(v, new List<Card>());
         }
-        foreach (Jocs carta in cartes)
+        foreach (Card carta in cartes)
         {
             if (!Conte(comodins, carta))
                 resultat[carta.Pal].Add(carta);
@@ -401,7 +401,7 @@ public class Ma : IEnumerable<Jocs>
     {
         get
         {
-            Dictionary<Valor, List<Jocs>> dic = DescomposaValors();
+            Dictionary<Valor, List<Card>> dic = DescomposaValors();
             bool hiHaParella = dic[Valor.Joker].Count > 0;
             int index = 0;
             while (!hiHaParella && index < dic.Keys.Count)
@@ -414,7 +414,7 @@ public class Ma : IEnumerable<Jocs>
     }
     public bool HiHaParellaMinima(Valor v)
     {
-        Dictionary<Valor, List<Jocs>> dic = DescomposaValors();
+        Dictionary<Valor, List<Card>> dic = DescomposaValors();
         bool hiHaParella = dic[Valor.Joker].Count > 0;
         int index = 0;
         while (!hiHaParella && index < dic.Keys.Count)
@@ -429,7 +429,7 @@ public class Ma : IEnumerable<Jocs>
     {
         get
         {
-            Dictionary<Valor, List<Jocs>> dic = DescomposaValors();
+            Dictionary<Valor, List<Card>> dic = DescomposaValors();
             bool hiHaDobleParella = dic[Valor.Joker].Count > 1;
             int index = 0;
             int comptaParelles = 0;
@@ -448,7 +448,7 @@ public class Ma : IEnumerable<Jocs>
     {
         get
         {
-            Dictionary<Valor, List<Jocs>> dic = DescomposaValors();
+            Dictionary<Valor, List<Card>> dic = DescomposaValors();
             bool hiHaTrio = dic[Valor.Joker].Count > 1;
             int index = 0;
             while (!hiHaTrio && index < dic.Keys.Count)
@@ -464,7 +464,7 @@ public class Ma : IEnumerable<Jocs>
     {
         get
         {
-            Dictionary<Valor, List<Jocs>> dic = DescomposaValors();
+            Dictionary<Valor, List<Card>> dic = DescomposaValors();
             bool hiHaPoker = dic[Valor.Joker].Count > 2;
             int index = 0;
             while (!hiHaPoker && index < dic.Keys.Count)
@@ -480,7 +480,7 @@ public class Ma : IEnumerable<Jocs>
     {
         get
         {
-            Dictionary<Valor, List<Jocs>> dic = DescomposaValors();
+            Dictionary<Valor, List<Card>> dic = DescomposaValors();
             return dic[Valor.Dos].Count >= 4;
         }
     }
@@ -488,7 +488,7 @@ public class Ma : IEnumerable<Jocs>
     {
         get
         {
-            Dictionary<Valor, List<Jocs>> dic = DescomposaValors();
+            Dictionary<Valor, List<Card>> dic = DescomposaValors();
             bool hiHaRepoker = dic[Valor.Joker].Count > 3;
             int index = 0;
             while (!hiHaRepoker && index < dic.Keys.Count)
@@ -503,7 +503,7 @@ public class Ma : IEnumerable<Jocs>
     {
         get
         {
-            Dictionary<Valor, List<Jocs>> dic = DescomposaValors();
+            Dictionary<Valor, List<Card>> dic = DescomposaValors();
             bool hiHaFull = false;
             int max1 = 0;
             int max2 = 0;
@@ -543,7 +543,7 @@ public class Ma : IEnumerable<Jocs>
         get
         {
             int nComodins = DescomposaValors()[Valor.Joker].Count;
-            Dictionary<Pal, List<Jocs>> dic = DescomposaPals();
+            Dictionary<Pal, List<Card>> dic = DescomposaPals();
             bool hihaColor = false;
             foreach (Pal p in dic.Keys)
             {
@@ -559,14 +559,14 @@ public class Ma : IEnumerable<Jocs>
         get
         {
  
-            List<Jocs> llistaCartes = new List<Jocs>();
+            List<Card> llistaCartes = new List<Card>();
             int nComodins = DescomposaValors()[Valor.Joker].Count;
-            Dictionary<Pal, List<Jocs>> dic = DescomposaPals();
+            Dictionary<Pal, List<Card>> dic = DescomposaPals();
  
  
             foreach (Pal p in dic.Keys)
             {
-                foreach (Jocs c in dic[p])
+                foreach (Card c in dic[p])
                     llistaCartes.Add(c);
             }
  
@@ -605,14 +605,14 @@ public class Ma : IEnumerable<Jocs>
     {
         get
         {
-            List<Jocs> llistaCartes = new List<Jocs>();
+            List<Card> llistaCartes = new List<Card>();
             int nComodins = DescomposaValors()[Valor.Joker].Count;
-            Dictionary<Pal, List<Jocs>> dic = DescomposaPals();
+            Dictionary<Pal, List<Card>> dic = DescomposaPals();
  
  
             foreach (Pal p in dic.Keys)
             {
-                foreach (Jocs c in dic[p])
+                foreach (Card c in dic[p])
                     llistaCartes.Add(c);
             }
  
@@ -644,14 +644,14 @@ public class Ma : IEnumerable<Jocs>
     {
         get
         {
-            List<Jocs> llistaCartes = new List<Jocs>();
+            List<Card> llistaCartes = new List<Card>();
             int nComodins = DescomposaValors()[Valor.Joker].Count;
-            Dictionary<Pal, List<Jocs>> dic = DescomposaPals();
+            Dictionary<Pal, List<Card>> dic = DescomposaPals();
  
  
             foreach (Pal p in dic.Keys)
             {
-                foreach (Jocs c in dic[p])
+                foreach (Card c in dic[p])
                     llistaCartes.Add(c);
             }
  
@@ -686,7 +686,7 @@ public class Ma : IEnumerable<Jocs>
     /// <param name="comodins"></param>
     /// <param name="carta"></param>
     /// <returns></returns>
-    private static bool Conte(List<Jocs> comodins, Jocs carta)
+    private static bool Conte(List<Card> comodins, Card carta)
     {
         int index = 0;
         while (index < comodins.Count && carta.CompareTo(comodins[index]) != 0)
@@ -695,13 +695,13 @@ public class Ma : IEnumerable<Jocs>
         return index < comodins.Count;
     }
  
-    public IEnumerator<Jocs> GetEnumerator()
+    public IEnumerator<Card> GetEnumerator()
     {
-        return ((IEnumerable<Jocs>)cartes).GetEnumerator();
+        return ((IEnumerable<Card>)cartes).GetEnumerator();
     }
  
     IEnumerator IEnumerable.GetEnumerator()
     {
-        return ((IEnumerable<Jocs>)cartes).GetEnumerator();
+        return ((IEnumerable<Card>)cartes).GetEnumerator();
     }
 }
