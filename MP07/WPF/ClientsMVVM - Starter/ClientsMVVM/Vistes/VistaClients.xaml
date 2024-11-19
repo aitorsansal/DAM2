@@ -1,0 +1,116 @@
+﻿<Window x:Class="ClientsMVVM.Vistes.VistaClients"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClientsMVVM.Vistes"
+        xmlns:vm="clr-namespace:ClientsMVVM.ViewModel"
+        xmlns:converters="clr-namespace:ClientsMVVM.Converters"
+        mc:Ignorable="d"
+        Title="VistaClients" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:ClientViewModel1/>
+    </Window.DataContext>
+    <Window.Resources>
+        <Style x:Key="EtiquetaStyle">
+            <Setter Property="Control.FontSize" Value="20"/>
+            <Setter Property="Control.FontWeight" Value="Thin"/>
+        </Style>
+        <Style x:Key="ValorStyle">
+            <Setter Property="Control.FontSize" Value="25"/>
+            <Setter Property="Control.FontWeight" Value="DemiBold"/>
+        </Style>
+        <converters:ColorClientConverter x:Key="ColorClientConverter"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <ToolBar Grid.Row="0" Grid.ColumnSpan="3">
+            <Button Content="Crea clients" />
+            <Separator/>
+            <Button Content="Afegeix" />
+            <Button Content="Edita" />
+            <Button Content="Confirma" />
+            <Button Content="Descarta" />
+            <Button Content="Elimina" />
+        </ToolBar>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+            <StackPanel DockPanel.Dock="Top" Orientation="Vertical" Margin="20">
+                <TextBlock DockPanel.Dock="Top" Text="" Style="{StaticResource ResourceKey=ValorStyle}"/>
+                <DockPanel >
+                    <TextBlock DockPanel.Dock="Left" Text="Nom:" Style="{StaticResource ResourceKey=EtiquetaStyle}"/>
+                    <TextBox DockPanel.Dock="Left" Text="" Style="{StaticResource ResourceKey=ValorStyle}" HorizontalAlignment="Stretch"/>
+                </DockPanel>
+                <DockPanel >
+                    <TextBlock DockPanel.Dock="Left" Text="Cognom:" Style="{StaticResource ResourceKey=EtiquetaStyle}"/>
+                    <TextBox DockPanel.Dock="Left" Text="" Style="{StaticResource ResourceKey=ValorStyle}"/>
+                </DockPanel>
+                <DockPanel >
+                    <TextBlock DockPanel.Dock="Left" Text="Saldo:" Style="{StaticResource ResourceKey=EtiquetaStyle}"/>
+                    <TextBox DockPanel.Dock="Left" Text="" Style="{StaticResource ResourceKey=ValorStyle}"/>
+                </DockPanel>
+
+            </StackPanel>
+
+        </StackPanel>
+        <GridSplitter Grid.Row="2" Grid.Column="0" Grid.ColumnSpan ="1" Height="5" HorizontalAlignment="Stretch"/>
+        <ListView Grid.Row="3" Grid.Column="0" ItemsSource="{Binding Clients}" SelectedIndex="{Binding Posicio}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Nom}"/>
+                    <GridViewColumn Header="Cognom" DisplayMemberBinding="{Binding Cognom}"/>
+                    <GridViewColumn Header="Saldo" DisplayMemberBinding="{Binding Saldo}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Padding="5" BorderThickness="3" BorderBrush="{Binding Saldo, Converter={StaticResource ColorClientConverter}}">
+                                    <TextBlock Text="{Binding Saldo}" 
+                                               Foreground="{Binding Saldo, Converter={StaticResource ColorClientConverter}}"/>
+                                </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <GridSplitter Grid.Row="0" Grid.Column="1" Grid.RowSpan="4" Width="5" VerticalAlignment="Stretch"/>
+        <ListBox Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" 
+                 HorizontalContentAlignment="Stretch"
+                 ItemsSource="{Binding Clients}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Aqua" BorderThickness="2" CornerRadius="5">
+                       <Grid HorizontalAlignment="Stretch" Margin="20,0,20,0">
+                           <Grid.RowDefinitions>
+                               <RowDefinition Height="Auto"/>
+                               <RowDefinition Height="Auto"/>
+                           </Grid.RowDefinitions>
+                           <Grid.ColumnDefinitions>
+                               <ColumnDefinition Width="*"/>
+                               <ColumnDefinition Width="*"/>
+                               <ColumnDefinition Width="*"/>
+                           </Grid.ColumnDefinitions>
+                           <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="{Binding Foto}" Stretch="Uniform" Height="40" Margin="0,0,20,0"/>
+                           <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Nom}" FontSize="12" FontWeight="Medium"/>
+                           <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Cognom}" FontSize="12" FontWeight="Medium"/>
+                           <TextBlock Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" Text="{Binding Saldo}" FontSize="12" FontWeight="Bold" 
+                                      TextAlignment="Right" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                      Foreground="{Binding Saldo, Converter={StaticResource ColorClientConverter}}"/>
+                       </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </Grid>
+</Window>
+
