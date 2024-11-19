@@ -1,0 +1,56 @@
+﻿<Window x:Class="A3_Searcher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:A3_Searcher"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".05*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Inputs -->
+        <Grid Grid.Row="0" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width=".5*"/>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Selecciona Carpeta" Click="SelectFolder_Click"/>
+            <TextBox Grid.Column="1" x:Name="FileNameTextBox" Margin="10,0,10,0" Tag="Nom de l'arxiu"/>
+            <Slider Grid.Column="2" x:Name="ThreadSlider" Minimum="1" Maximum="{Binding MaxThreads, RelativeSource={RelativeSource AncestorType=Window}}"
+                    TickFrequency="1" IsSnapToTickEnabled="True" Value="1" Margin="10,0,10,0"/>
+            <TextBlock Grid.Column="3" Text="Threads:" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            <TextBlock Grid.Column="4" Text="{Binding ElementName=ThreadSlider, Path=Value}" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            <Button Grid.Column="5" Content="Inicia Cerca" Click="StartSearch_Click" Margin="10,0,10,0"/>
+            <Button Grid.Column="6" Content="Atura Cerca" Click="StopSearch_Click" Margin="10,0,10,0"/>
+            <Button Grid.Column="7" Content="Neteja" Click="ClearResults_Click"  Margin="10,0,10,0"/>
+        </Grid>
+
+        <!-- Resultats -->
+        <ListView x:Name="ResultsListView" Grid.Row="1" MouseDoubleClick="ResultsListView_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <!-- Columna Nom -->
+                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Name}" Width="300" />
+
+                    <!-- Columna Ruta -->
+                    <GridViewColumn Header="Ruta" DisplayMemberBinding="{Binding Path}" Width="600" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        <TextBlock Grid.Row="2" HorizontalAlignment="Right" Text="{Binding SelectedFolder}"
+                   d:DataContext="{d:DesignInstance local:MainWindow}" />
+
+    </Grid>
+</Window>
