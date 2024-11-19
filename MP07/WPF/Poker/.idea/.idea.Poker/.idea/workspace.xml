@@ -9,10 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b8f593a6-8903-46a5-a8db-2e15dc5afb6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poker/Jocs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/Jocs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poker/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poker/PokerCommands.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/PokerCommands.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.exe" afterDir="false" />
     </list>
@@ -22,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DpaMonitoringSettings">
-    <option name="autoShow" value="false" />
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -121,6 +118,7 @@
       <workItem from="1731961918146" duration="121000" />
       <workItem from="1731962083480" duration="5083000" />
       <workItem from="1731969497914" duration="3535000" />
+      <workItem from="1732000916892" duration="3569000" />
     </task>
     <servers />
   </component>

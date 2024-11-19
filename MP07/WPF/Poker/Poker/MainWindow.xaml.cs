@@ -112,10 +112,12 @@ public partial class MainWindow : Window
             _ => coinsPlayedOnDoubles
         };
         deck = new Deck();
+        List<Image> backImgs = [];
 
         for (int i = 0; i < 5; i++)
         {
             Card c = deck.Roba();
+            doublesHand.Afegeix(c);
             Image cardImage = new Image
             {
                 Source = (ImageSource)FindResource("Dors05"),
@@ -129,11 +131,40 @@ public partial class MainWindow : Window
             };
             cardImage.RenderTransformOrigin = new Point(0.5, 0.5);
             cardImage.RenderTransform = sct;
-            cardImage.MouseDown += RotateCard;
             cardImage.SetValue(Grid.ColumnProperty, i+1);
             grdCardsPlacement.Children.Add(cardImage);
+            backImgs.Add(cardImage);
             StartCardAnimCoroutine(cardImage, new Thickness(0));
         }
+
+        PlayDoubles(backImgs);
+    }
+
+    private async Task PlayDoubles(List<Image> cards)
+    {
+        await Task.Delay(TimeSpan.FromSeconds(0.4f));
+        foreach (Image img in cards)
+        {
+            img.MouseDown += RotateCard;
+        }
+        Random random = new Random();
+        int selRandomCard = random.Next(1, 6);
+        var selfImg = (Image)grdCardsPlacement.Children.Cast<UIElement>()
+            .FirstOrDefault(x => (int)x.GetValue(Grid.ColumnProperty) == selRandomCard)!;
+        Card crupierCard = doublesHand[selRandomCard-1];
+        MouseButtonEventArgs mouseEventArgs = new MouseButtonEventArgs(Mouse.PrimaryDevice, 0, MouseButton.Left)
+        {
+            RoutedEvent = MouseLeftButtonDownEvent,
+            Source = selfImg
+        };
+        RotateCard(selfImg, mouseEventArgs);
+        await Task.Delay(TimeSpan.FromSeconds(0.4f));
+        var cardsSelected = grdCardsPlacement.Children.Cast<UIElement>().Where(x => (bool)((Image)x).Tag);
+        foreach (var card in cardsSelected)
+        {
+            
+        }
+        
     }
 
     private void PlayCardsBindingOnExecuted(object sender, ExecutedRoutedEventArgs e)
@@ -438,6 +469,7 @@ public partial class MainWindow : Window
 
         img.RenderTransform.BeginAnimation(ScaleTransform.ScaleXProperty, shrinkAnimation);
         img.MouseDown -= RotateCard;
+        img.Tag = true;
     }
     
     
