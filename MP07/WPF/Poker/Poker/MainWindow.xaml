@@ -78,7 +78,7 @@
                     <ColumnDefinition Width=".5*"/>
                 </Grid.ColumnDefinitions>
             </Grid> <!--Grid for cards-->
-            <Grid Grid.Row="2">
+            <Grid Grid.Row="2" Visibility="Collapsed" Name="grdDoublesButton">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>

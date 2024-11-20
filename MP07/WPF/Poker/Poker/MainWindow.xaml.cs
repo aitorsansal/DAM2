@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks.Dataflow;
 using System.Windows;
 using System.Windows.Automation.Peers;
 using System.Windows.Controls;
@@ -12,6 +13,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Poker;
 
@@ -34,6 +36,8 @@ public partial class MainWindow : Window
     private bool playedCards;
     private bool isPlaying;
     private bool isOnBonusRound;
+    private int inDoublesCardsRotated = 0;
+    private Card crupierCard;
 
     public static readonly DependencyProperty PlayerCoinsProperty = DependencyProperty.Register(
         nameof(PlayerCoins), typeof(string), typeof(MainWindow), new PropertyMetadata(default(string)));
@@ -89,7 +93,7 @@ public partial class MainWindow : Window
         
         CommandBinding sortCardsBinding = new CommandBinding(PokerCommands.SortCards);
         sortCardsBinding.Executed += SortCardsBindingOnExecuted;
-        sortCardsBinding.CanExecute += (_, e) => { e.CanExecute = currHand.Count > 0; };
+        sortCardsBinding.CanExecute += (_, e) => { e.CanExecute = currHand.Count > 0 && !isOnBonusRound; };
         CommandBindings.Add(sortCardsBinding);
         
         CommandBinding playCardsBinding = new CommandBinding(PokerCommands.PlayCards);
@@ -104,13 +108,24 @@ public partial class MainWindow : Window
 
     private void PlayForDoubleBindingOnExecuted(object sender, ExecutedRoutedEventArgs e)
     {
+        grdDoublesButton.Visibility = Visibility.Collapsed;
         ClearBoard();
-        coinsPlayedOnDoubles = (string)e.Parameter switch
+        inDoublesCardsRotated = 0;
+        doublesHand = new Ma();
+        string enteredParameter = (string)e.Parameter;
+        switch (enteredParameter)
         {
-            "Double" => wonCoins,
-            "SemiDouble" => wonCoins / 2 + wonCoins % 2,
-            _ => coinsPlayedOnDoubles
-        };
+            case "Double":
+                coinsPlayedOnDoubles = wonCoins;
+                wonCoins = 0;
+                break;
+            case "SemiDouble":
+                coinsPlayedOnDoubles = wonCoins / 2 + wonCoins % 2;
+                wonCoins -= coinsPlayedOnDoubles;
+                quantityOfCoins += wonCoins;
+                PlayerCoins = quantityOfCoins.ToString();
+                break;
+        }
         deck = new Deck();
         List<Image> backImgs = [];
 
@@ -143,28 +158,64 @@ public partial class MainWindow : Window
     private async Task PlayDoubles(List<Image> cards)
     {
         await Task.Delay(TimeSpan.FromSeconds(0.4f));
+        Random random = new Random();
+        int selRandomCard = random.Next(1, 6);
+        crupierCard = doublesHand[selRandomCard-1];
         foreach (Image img in cards)
         {
             img.MouseDown += RotateCard;
+            img.MouseDown += OnDoublesPlayerClickedCard;
         }
-        Random random = new Random();
-        int selRandomCard = random.Next(1, 6);
         var selfImg = (Image)grdCardsPlacement.Children.Cast<UIElement>()
             .FirstOrDefault(x => (int)x.GetValue(Grid.ColumnProperty) == selRandomCard)!;
-        Card crupierCard = doublesHand[selRandomCard-1];
         MouseButtonEventArgs mouseEventArgs = new MouseButtonEventArgs(Mouse.PrimaryDevice, 0, MouseButton.Left)
         {
             RoutedEvent = MouseLeftButtonDownEvent,
             Source = selfImg
         };
         RotateCard(selfImg, mouseEventArgs);
-        await Task.Delay(TimeSpan.FromSeconds(0.4f));
-        var cardsSelected = grdCardsPlacement.Children.Cast<UIElement>().Where(x => (bool)((Image)x).Tag);
-        foreach (var card in cardsSelected)
+    }
+
+    private void OnDoublesPlayerClickedCard(object sender, MouseButtonEventArgs e)
+    {
+        var inBoardCards = grdCardsPlacement.Children.Cast<UIElement>();
+        foreach (var card in inBoardCards)
         {
-            
+            card.MouseDown -= RotateCard;
+            card.MouseDown -= OnDoublesPlayerClickedCard;
         }
-        
+
+        var cardsRotated = inBoardCards.Where(x => bool.TryParse(((Image)x).Tag.ToString(), out var _))
+            .Select(x => (int)x.GetValue(Grid.ColumnProperty));
+        Card? playerCard = null;
+        foreach (var card in cardsRotated)
+        {
+            if(!doublesHand[card-1].Equals(crupierCard))
+                playerCard = doublesHand[card-1];
+        }
+
+        if (playerCard is not null && playerCard.CompareTo(crupierCard) < 0)
+        {
+            wonCoins += coinsPlayedOnDoubles * 2;
+            txtWin.Text = $"Won {wonCoins}";
+            coinsPlayedOnDoubles = 0;
+        }
+        else
+        {
+            coinsPlayedOnDoubles = 0;
+            txtWin.Text = $"Lost";
+        }
+
+        Thread.Sleep(TimeSpan.FromMilliseconds(3000));
+        var frame = new DispatcherFrame();
+        Thread thread = Thread.CurrentThread =>
+        {
+            Thread.Sleep(TimeSpan.FromMilliseconds(3000));
+            frame.Continue = false;
+        });
+        thread.Start();
+        Dispatcher.PushFrame(frame);
+        ClearBoard();
     }
 
     private void PlayCardsBindingOnExecuted(object sender, ExecutedRoutedEventArgs e)
@@ -214,6 +265,7 @@ public partial class MainWindow : Window
         if (won) {
             //todo change styles.
             isOnBonusRound = true;
+            grdDoublesButton.Visibility = Visibility.Visible;
         }
         isPlaying = false;
         SlideButtonsOut(true);
@@ -281,6 +333,8 @@ public partial class MainWindow : Window
         {
             ClearBoard();
         }
+
+        isOnBonusRound = false;
         int played = int.Parse((string)e.Parameter);
         if (played > (quantityOfCoins-coinsPlayed))
             played = quantityOfCoins - coinsPlayed;
@@ -293,8 +347,9 @@ public partial class MainWindow : Window
             StartBindingOnExecuted(sender, e);
         }
 
-        if (wonCoins == 0) return;
+        if (wonCoins == 0 && coinsPlayedOnDoubles == 0) return;
         quantityOfCoins += wonCoins;
+        quantityOfCoins += coinsPlayedOnDoubles;
         PlayerCoins = quantityOfCoins.ToString();
         wonCoins = 0;
     }
@@ -441,7 +496,6 @@ public partial class MainWindow : Window
     private void RotateCard(object sender, MouseButtonEventArgs e)
     {
         Image img = (Image)sender;
-        // Shrink the card to look edge-on
         DoubleAnimation shrinkAnimation = new DoubleAnimation
         {
             From = 1,
@@ -462,6 +516,10 @@ public partial class MainWindow : Window
                 AutoReverse = false,
                 EasingFunction = new SineEase { EasingMode = EasingMode.EaseInOut }
             };
+            expandAnimation.Completed += (_, _) =>
+            {
+                img.Tag = true;
+            };
 
             img.RenderTransform.BeginAnimation(ScaleTransform.ScaleXProperty, expandAnimation);
         };
@@ -469,7 +527,7 @@ public partial class MainWindow : Window
 
         img.RenderTransform.BeginAnimation(ScaleTransform.ScaleXProperty, shrinkAnimation);
         img.MouseDown -= RotateCard;
-        img.Tag = true;
+        inDoublesCardsRotated++;
     }
     
     
