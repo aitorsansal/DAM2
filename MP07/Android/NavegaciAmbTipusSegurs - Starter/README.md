@@ -1,1 +1,0 @@
-## Navegació amb tipus segurs
