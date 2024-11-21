@@ -11,7 +11,7 @@
         Background="DarkGray"
         WindowStyle="None"
         WindowState="Maximized">
-    <DockPanel>
+    <DockPanel Name="dkPnlGeneral">
         <Grid DockPanel.Dock="Bottom" Margin="0,0,0,15" Height="100" Name="bottomSidePanel">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width=".5*"/>

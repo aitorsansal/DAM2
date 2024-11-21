@@ -8,6 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8f593a6-8903-46a5-a8db-2e15dc5afb6f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../MP06/Java/HibernateTest/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.jdt.core/indexNamesMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.jdt.core/indexNamesMap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/A2_Dao/2024/11/46/refactorings.index" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/A2_Dao/2024/11/46/refactorings.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/jdbc/2024/11/46/refactorings.index" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/jdbc/2024/11/46/refactorings.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.2.1.20231030-1438.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.2.1.20231030-1438.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.wildwebdeveloper.xml/system-catalog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.wildwebdeveloper.xml/system-catalog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/A2_Dao/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/A2_Dao/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/A2_Dao/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/A2_Dao/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/MainWindow.xaml.cs" afterDir="false" />
@@ -53,20 +63,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.Poker.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.Poker.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Poker" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />

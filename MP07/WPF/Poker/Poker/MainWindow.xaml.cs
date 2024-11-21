@@ -206,15 +206,16 @@ public partial class MainWindow : Window
             txtWin.Text = $"Lost";
         }
 
-        Thread.Sleep(TimeSpan.FromMilliseconds(3000));
+        dkPnlGeneral.IsHitTestVisible = false;
         var frame = new DispatcherFrame();
-        Thread thread = Thread.CurrentThread =>
+        Thread thread = new Thread(() =>
         {
             Thread.Sleep(TimeSpan.FromMilliseconds(3000));
             frame.Continue = false;
         });
         thread.Start();
         Dispatcher.PushFrame(frame);
+        dkPnlGeneral.IsHitTestVisible = true;
         ClearBoard();
     }
 
