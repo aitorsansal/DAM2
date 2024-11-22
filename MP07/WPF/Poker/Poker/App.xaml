@@ -7,7 +7,7 @@
          <ResourceDictionary>
              <ResourceDictionary.MergedDictionaries>
                  <ResourceDictionary Source="Resources/CartesPoker.xaml"/>
-                 <ResourceDictionary Source="Resources/ButtonStyles.xaml"/>
+                 <ResourceDictionary Source="Resources/MenuItemStyles.xaml"/>
              </ResourceDictionary.MergedDictionaries>
          </ResourceDictionary>
     </Application.Resources>

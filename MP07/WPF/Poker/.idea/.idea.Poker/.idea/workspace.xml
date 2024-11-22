@@ -8,19 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8f593a6-8903-46a5-a8db-2e15dc5afb6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../MP06/Java/HibernateTest/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.jdt.core/indexNamesMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.jdt.core/indexNamesMap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/A2_Dao/2024/11/46/refactorings.index" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/A2_Dao/2024/11/46/refactorings.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/jdbc/2024/11/46/refactorings.index" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/jdbc/2024/11/46/refactorings.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.2.1.20231030-1438.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.2.1.20231030-1438.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.wildwebdeveloper.xml/system-catalog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/.metadata/.plugins/org.eclipse.wildwebdeveloper.xml/system-catalog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/A2_Dao/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/A2_Dao/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../MP06/Java/A2_Dao/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../MP06/Java/A2_Dao/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/MenuItemStyles.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poker/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/App.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poker/Resources/ButtonStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/Resources/ButtonStyles.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.exe" afterDir="false" />
     </list>
@@ -30,7 +23,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DpaMonitoringSettings">
-    <option name="autoShow" value="false" />
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -50,6 +43,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2c8e7ca976f350cba9836d5565dac56b11e0b56656fa786460eb1395857a6fa/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/59109b68aa8966a8b4c17bb8642684239e9598dc1f117d294c355534a932786/CastHelpers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7c1ab578e66a1b766b609c418417d9320b7743bbc9065d1639c5b570c87d3/DependencyObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8acf49a4be14ab29bb9f67615c6890e2b88d309ea9814fb13dcf75b161ac2f3/UIElement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9349c6a67823e37b4ecda5ffa0ae83c89b566798c0d462b4c5f2f5e49a7c5f/Helper.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -63,20 +59,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.Poker.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.Poker.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Poker" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -132,6 +129,8 @@
       <workItem from="1731969497914" duration="3535000" />
       <workItem from="1732000916892" duration="3569000" />
       <workItem from="1732126916327" duration="5585000" />
+      <workItem from="1732220582434" duration="2393000" />
+      <workItem from="1732224110712" duration="10979000" />
     </task>
     <servers />
   </component>
@@ -141,24 +140,5 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Poker/MainWindow.xaml.cs</url>
-          <line>196</line>
-          <properties documentPath="C:\Users\aitorsansal\DAM2\MP07\WPF\Poker\Poker\MainWindow.xaml.cs" containingFunctionPresentation="Method 'OnDoublesPlayerClickedCard'">
-            <startOffsets>
-              <option value="7295" />
-            </startOffsets>
-            <endOffsets>
-              <option value="7363" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

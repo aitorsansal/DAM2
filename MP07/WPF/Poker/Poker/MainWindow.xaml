@@ -5,62 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Poker"
         mc:Ignorable="d"
-        x:Name="Window"
-        Title="MainWindow" Height="1080" Width="1920"
-        FontSize="32"
-        Background="DarkGray"
+        x:Name="wndGame"
+        Title="Jacks or More" Height="1080" Width="1920"
+        Background="#793c47"
+        FontSize="25"
         WindowStyle="None"
         WindowState="Maximized">
     <DockPanel Name="dkPnlGeneral">
-        <Grid DockPanel.Dock="Bottom" Margin="0,0,0,15" Height="100" Name="bottomSidePanel">
+        <Grid DockPanel.Dock="Bottom" Height="100" Name="bottomSidePanel">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width=".5*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width=".5*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width=".05*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="1"  Margin="5,0,5,0" Command="local:PokerCommands.AddCoins" CommandParameter="1">
-                <Image Source="Resources/Images/Coins/1 coin.png"/>
-            </Button>
-            <Button Grid.Column="2" Margin="5,0,5,0" Command="local:PokerCommands.AddCoins" CommandParameter="2">
-                <Image Source="Resources/Images/Coins/2 coins.png"/>
-            </Button>
-            <Button Grid.Column="3" Margin="5,0,5,0" Command="local:PokerCommands.AddCoins" CommandParameter="3">
-                <Image Source="Resources/Images/Coins/3 coins.png"/>
-            </Button>
-            <Button Grid.Column="4" Margin="5,0,5,0" Command="local:PokerCommands.AddCoins" CommandParameter="4">
-                <Image Source="Resources/Images/Coins/4 coins.png"/>
-            </Button>
-            <Button Grid.Column="5" Margin="5,0,5,0" Command="local:PokerCommands.AddCoins" CommandParameter="5">
-                <Image Source="Resources/Images/Coins/5 coins.png"/>
-            </Button>
-            <Image Grid.Column="7" Source="Resources/Images/Coins/CoinsPlace.png" Margin="-10,-20,-10,-20"/>
-            <Image Grid.Column="7" Margin="5" Name="imgTotalCoins"/>
-        </Grid> <!--Grid for bet buttons-->
-        <Grid DockPanel.Dock="Right" Width="200" Name="rightSidePanel">
-            <Grid.RowDefinitions>
-                <RowDefinition Height=".6*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height=".6*"/>
-            </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Path=PlayerCoins, ElementName=Window}"/>
-            <Button Grid.Row="1" Command="local:PokerCommands.StartGame">
-                Start game
-            </Button>
-            <Button Grid.Row="2" Command="local:PokerCommands.ChangeCards" Name="btnChangeCards">
-                Play Cards
-            </Button>
-            <Button Grid.Row="3" Command="local:PokerCommands.SortCards">
-                Sort cards
-            </Button>
-        </Grid> <!--Grid for actions button-->
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Current coins:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="50"/>
+                <TextBlock Grid.Column="1" Text="{Binding PlayerCoins}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="50" Padding="10,0,0,0"
+                           d:DataContext="{d:DesignInstance local:MainWindow}" />
+            </Grid>
+            <Image Grid.Column="1" Source="Resources/Images/Coins/CoinsPlace.png" Margin="0,0,0,0"/>
+            <Image Grid.Column="1" Margin="5" Name="imgTotalCoins"/>
+        </Grid> <!--Grid for bottom part-->
+        <Menu DockPanel.Dock="Top" Height="50" Background="#d9b584">
+            <MenuItem Header="Start Game" Command="local:PokerCommands.StartGame"/>
+            <MenuItem Header="Play" Command="local:PokerCommands.PlayCards"/>
+            <MenuItem Header="Change Cards" Command="local:PokerCommands.ChangeCards"/>
+            <MenuItem Header="Sort Cards" Command="local:PokerCommands.SortCards"/>
+            <MenuItem Header="Bet">
+                <MenuItem Header="1" Command="local:PokerCommands.AddCoins" CommandParameter="1"/>
+                <MenuItem Header="2" Command="local:PokerCommands.AddCoins" CommandParameter="2"/>
+                <MenuItem Header="3" Command="local:PokerCommands.AddCoins" CommandParameter="3"/>
+                <MenuItem Header="4" Command="local:PokerCommands.AddCoins" CommandParameter="4"/>
+                <MenuItem Header="5" Command="local:PokerCommands.AddCoins" CommandParameter="5"/>
+            </MenuItem>
+            <MenuItem Header="Doubles" Command="local:PokerCommands.PlayForDouble" CommandParameter="Double"/>
+            <MenuItem Header="Semi Double" Command="local:PokerCommands.PlayForDouble" CommandParameter="SemiDouble"/>
+        </Menu>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -87,11 +70,12 @@
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Double" Width="250" Height="150" Command="local:PokerCommands.PlayForDouble" CommandParameter="Double"/>
                 <Button Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="SemiDouble" Width="250" Height="150" Command="local:PokerCommands.PlayForDouble" CommandParameter="SemiDouble"/>
-            </Grid> <!--Grid for buttons-->
-            <Grid Grid.Row="1">
-                <TextBlock Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Name="txtWin"/>
-            </Grid> <!--Grid for winning text-->
-            <Grid Grid.Row="0" Background="Aqua"> 
+            </Grid> <!--Grid for doubles buttons-->
+            <Border Grid.Row="1" Background="Gold" BorderBrush="Silver" BorderThickness="15" Name="brdrWinningText" Visibility="Collapsed">
+                <TextBlock Text="ESCALA DE COLOR: 50 FITXES" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Name="txtWin"/> 
+            </Border> <!--Grid for winning text-->
+            <Border Grid.Row="0" BorderBrush="#4f4340" Background="#ad6d47" BorderThickness="25" Name="brdrPrizes">
+                <Grid> 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width=".5*"/>
                     <ColumnDefinition Width="Auto"/>
@@ -259,6 +243,8 @@
                     <TextBlock Grid.Row="10" Text="5" TextAlignment="Center"/>
                 </Grid> <!--Prizes 5 coins-->
             </Grid> <!--Grid for prizes-->
+                
+            </Border> <!--Grid for prizes-->
         </Grid> <!--Center grid-->
     </DockPanel>
 
