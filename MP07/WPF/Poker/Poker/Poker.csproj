@@ -37,6 +37,37 @@
       <Resource Include="Resources\Images\Coins\CoinsPlace.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
+      <None Remove="Resources\Images\PlayButton.png" />
+      <Resource Include="Resources\Images\PlayButton.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Images\SortCards.png" />
+      <Resource Include="Resources\Images\SortCards.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Images\PlayCards.png" />
+      <Resource Include="Resources\Images\PlayCards.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Images\ChangeCards.png" />
+      <Resource Include="Resources\Images\ChangeCards.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Images\SemiDoublesImage.png" />
+      <Resource Include="Resources\Images\SemiDoublesImage.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Images\DoublesImage.png" />
+      <Resource Include="Resources\Images\DoublesImage.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\Images\redCross.png" />
+      <Content Include="Resources\Images\redCross.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
- 
+using System.Windows.Controls;
+
 namespace Poker;
 
 public enum Pal
@@ -22,6 +23,7 @@ public class Card : IComparable<Card>
     private Valor valor;
     private bool bocaAvall;
     private String dors;  
+    public Image SelfCrossImage { get; set; }
  
  
     public Card() : this(Pal.Piques, Valor.As)

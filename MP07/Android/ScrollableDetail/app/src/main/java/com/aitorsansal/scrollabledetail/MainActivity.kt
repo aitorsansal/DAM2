@@ -13,6 +13,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.aitorsansal.scrollabledetail.data.dataRepository
 import com.aitorsansal.scrollabledetail.ui.theme.ScrollableDetailTheme
+import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,8 +41,5 @@ fun MHNormalApp(){
     // Coroutine scope for drawer operations
     val coroutineScope = rememberCoroutineScope()
 
-
-
-    BottomNavigationApp(drawerState = drawerState, coroutineScope = coroutineScope,
-        navController = navController, destination = destination)
+    BottomNavigationApp(navController = navController, destination = destination)
 }

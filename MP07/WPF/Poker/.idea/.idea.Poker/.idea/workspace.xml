@@ -8,12 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8f593a6-8903-46a5-a8db-2e15dc5afb6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/MenuItemStyles.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/ChangeCards.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/DoublesImage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/PlayButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/PlayCards.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/SemiDoublesImage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/SortCards.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/redCross.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/BottomNavigation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/BottomNavigation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/navigation/NavigationGraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/navigation/NavigationGraph.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poker/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poker/Jocs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/Jocs.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poker/Resources/ButtonStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/Resources/ButtonStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poker/Poker.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/Poker.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.exe" afterDir="false" />
     </list>
@@ -23,7 +33,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DpaMonitoringSettings">
-    <option name="firstShow" value="false" />
+    <option name="autoShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -41,11 +51,10 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0b4f8fdd5fd968170a58078fe59765850a8a5ed4873abf46908f3779e8a3c/ResourcePart.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2c8e7ca976f350cba9836d5565dac56b11e0b56656fa786460eb1395857a6fa/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/59109b68aa8966a8b4c17bb8642684239e9598dc1f117d294c355534a932786/CastHelpers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7c1ab578e66a1b766b609c418417d9320b7743bbc9065d1639c5b570c87d3/DependencyObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8acf49a4be14ab29bb9f67615c6890e2b88d309ea9814fb13dcf75b161ac2f3/UIElement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9349c6a67823e37b4ecda5ffa0ae83c89b566798c0d462b4c5f2f5e49a7c5f/Helper.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -59,21 +68,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.Poker.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.Poker.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Poker" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -131,6 +140,9 @@
       <workItem from="1732126916327" duration="5585000" />
       <workItem from="1732220582434" duration="2393000" />
       <workItem from="1732224110712" duration="10979000" />
+      <workItem from="1732284122769" duration="2975000" />
+      <workItem from="1732287140487" duration="4498000" />
+      <workItem from="1732292218386" duration="234000" />
     </task>
     <servers />
   </component>

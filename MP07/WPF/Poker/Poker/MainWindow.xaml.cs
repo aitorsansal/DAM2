@@ -287,6 +287,7 @@ public partial class MainWindow : Window
     private void SortCardsBindingOnExecuted(object sender, ExecutedRoutedEventArgs e)
     {
         SortCardsAsync();
+        cardsToChange.Clear();
     }
 
     private void ChangeCardsBindingOnExecuted(object sender, ExecutedRoutedEventArgs e)
@@ -356,7 +357,7 @@ public partial class MainWindow : Window
         if (coinsPlayed + played > 5)
             played = 5 - coinsPlayed;
         coinsPlayed += played;
-        SetNewCoins(-coinsPlayed);
+        SetNewCoins(-played);
         ChangeBetImage();
         if (coinsPlayed == 5)
         {
@@ -391,16 +392,19 @@ public partial class MainWindow : Window
     {
         if(changedCards) return;
         Image clickedCard = (Image)sender;
+        Card card = (Card)clickedCard.Tag;
         Thickness targetThickness;
         if (clickedCard.Margin.Top == 0)
         {
             targetThickness = new Thickness(0, -20, 0, 20);
             cardsToChange.Add((int)clickedCard.GetValue(Grid.ColumnProperty) - 1);
+            card.SelfCrossImage.Visibility = Visibility.Visible;
         }
         else
         {
             targetThickness = new Thickness(0, 0, 0, 0);
             cardsToChange.Remove((int)clickedCard.GetValue(Grid.ColumnProperty) - 1);
+            card.SelfCrossImage.Visibility = Visibility.Hidden;
         }
 
         //btnChangeCards.Content = cardsToChange.Count > 0 ? "Change Cards" : "Play Cards";
@@ -424,15 +428,26 @@ public partial class MainWindow : Window
     private Card CreateNewCard(int columnIndex)
     {
         Card c = deck.Roba();
+        Image crossImage = new Image
+        {
+            Source = new BitmapImage(new Uri("pack://application:,,,/Resources/Images/redCross.png")),
+            Stretch = Stretch.Fill,
+            IsHitTestVisible = false,
+            Tag = null,
+            Visibility = Visibility.Hidden
+        };
+        c.SelfCrossImage = crossImage;
         Image? cardImage = new Image
         {
             Source = (ImageSource)FindResource(c.ImageKey),
             Margin = new Thickness(0,-500,0,520),
-            Tag = c.ImageKey
+            Tag = c
         };
         cardImage.MouseDown += Card_OnClick;
         cardImage.SetValue(Grid.ColumnProperty, columnIndex);
+        crossImage.SetValue(Grid.ColumnProperty, columnIndex);
         grdCardsPlacement.Children.Add(cardImage);
+        grdCardsPlacement.Children.Add(crossImage);
         StartCardAnimCoroutine(cardImage, new Thickness(0,0,0,0));
         return c;
     }
@@ -457,20 +472,28 @@ public partial class MainWindow : Window
 
     private async void SortCardsAsync()
     {
-        var cards = grdCardsPlacement.Children.Cast<UIElement>()
-            .Where(x => (int)x.GetValue(Grid.ColumnProperty) is >= 1 and <= 5).OrderBy(x => (int)x.GetValue(Grid.ColumnProperty)).ToList();
+        var allElements = grdCardsPlacement.Children.Cast<UIElement>()
+            .Where(x => (int)x.GetValue(Grid.ColumnProperty) is >= 1 and <= 5)
+            .OrderBy(x => (int)x.GetValue(Grid.ColumnProperty)).ToList();
+        var cards = allElements
+            .Where(x => ((Image)x).Tag is not null).ToList();
+        var crosses = allElements.Except(cards).Cast<Image>().Where(x => x.Visibility == Visibility.Visible).ToList();
+        foreach (var cross in crosses)
+        {
+            cross.Visibility = Visibility.Hidden;
+        }
         MoveCardAnimation(
             (Image)cards[0],
-            new Thickness(640, 0, -640, 0), durationTime:0.2f);
+            new Thickness(600, 0, -600, 0), durationTime:0.2f);
         MoveCardAnimation(
             (Image)cards[1],
-            new Thickness(320, 0, -320, 0), durationTime:0.2f);
+            new Thickness(300, 0, -300, 0), durationTime:0.2f);
         MoveCardAnimation(
             (Image)cards[3],
-            new Thickness(-320, 0, 320, 0), durationTime:0.2f);
+            new Thickness(-300, 0, 300, 0), durationTime:0.2f);
         MoveCardAnimation(
             (Image)cards[4],
-            new Thickness(-640, 0, 640, 0), durationTime:0.2f);
+            new Thickness(-600, 0, 600, 0), durationTime:0.2f);
         await Task.Delay(TimeSpan.FromSeconds(0.4));
         foreach (var uiElem in cards)
         {
@@ -478,21 +501,24 @@ public partial class MainWindow : Window
             uiElem.SetValue(Grid.ColumnProperty, 3);
         }
         currHand.Ordena();
+        //
         for (var i = 0; i < cards.Count; i++)
         {
-            var cardToMove = cards.First(x => (string)((Image)x).Tag == currHand[i].ImageKey);
+            var cardToMove = cards.First(x => (Card)((Image)x).Tag == currHand[i]);
             var thickness = i switch
             {
-                0 => new Thickness(-640, 0, 640, 0),
-                1 => new Thickness(-320, 0, 320, 0),
+                0 => new Thickness(-600, 0, 600, 0),
+                1 => new Thickness(-300, 0, 300, 0),
                 2 => new Thickness(0, 0, 0, 0),
-                3 => new Thickness(320, 0, -320, 0),
-                4 => new Thickness(640, 0, -640, 0),
+                3 => new Thickness(300, 0, -300, 0),
+                4 => new Thickness(600, 0, -600, 0),
                 _ => throw new ArgumentOutOfRangeException()
             };
             MoveCardAnimation((Image)cardToMove, thickness, durationTime: 0.1f);
             await Task.Delay(TimeSpan.FromSeconds(0.1));
             cardToMove.SetValue(Grid.ColumnProperty, i+1);
+            Card c = (Card)((Image)cardToMove).Tag;
+            c.SelfCrossImage.SetValue(Grid.ColumnProperty, i+1);
             MoveCardAnimation((Image)cardToMove, new Thickness(0), durationTime: 0);
         }
     }

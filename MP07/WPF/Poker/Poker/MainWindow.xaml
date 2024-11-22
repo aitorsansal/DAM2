@@ -12,23 +12,6 @@
         WindowStyle="None"
         WindowState="Maximized">
     <DockPanel Name="dkPnlGeneral">
-        <Grid DockPanel.Dock="Bottom" Height="100" Name="bottomSidePanel">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="Current coins:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="50"/>
-                <TextBlock Grid.Column="1" Text="{Binding PlayerCoins}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="50" Padding="10,0,0,0"
-                           d:DataContext="{d:DesignInstance local:MainWindow}" />
-            </Grid>
-            <Image Grid.Column="1" Source="Resources/Images/Coins/CoinsPlace.png" Margin="0,0,0,0"/>
-            <Image Grid.Column="1" Margin="5" Name="imgTotalCoins"/>
-        </Grid> <!--Grid for bottom part-->
         <Menu DockPanel.Dock="Top" Height="50" Background="#d9b584">
             <MenuItem Header="Start Game" Command="local:PokerCommands.StartGame"/>
             <MenuItem Header="Play" Command="local:PokerCommands.PlayCards"/>
@@ -44,6 +27,66 @@
             <MenuItem Header="Doubles" Command="local:PokerCommands.PlayForDouble" CommandParameter="Double"/>
             <MenuItem Header="Semi Double" Command="local:PokerCommands.PlayForDouble" CommandParameter="SemiDouble"/>
         </Menu>
+        <ToolBarTray DockPanel.Dock="Right" Orientation="Vertical" Background="#d9b584">
+            <ToolBar Header="Start game" Background="Transparent" Padding="0" Margin="0" OverflowMode="Never">
+                <Button Command="local:PokerCommands.StartGame" Background="#ad6d47" Padding="5" Margin="0,2,0,10">
+                    <Image Source="pack://application:,,,/Resources/Images/PlayButton.png" Width="50" Margin="0"/>    
+                </Button>
+            </ToolBar>
+            <ToolBar Header="Utils" Background="Transparent" Padding="0" Margin="0" OverflowMode="Never" Style="{x:Null}">
+                <Button Command="local:PokerCommands.PlayCards" Background="#ad6d47" Padding="5" Margin="2">
+                    <Image Source="pack://application:,,,/Resources/Images/PlayCards.png" Width="50" Margin="0"/>    
+                </Button>
+                <Button Command="local:PokerCommands.ChangeCards" Background="#ad6d47" Padding="5" Margin="2">
+                    <Image Source="pack://application:,,,/Resources/Images/ChangeCards.png" Width="50" Margin="0"/>    
+                </Button>
+                <Button Command="local:PokerCommands.SortCards" Background="#ad6d47" Padding="5" Margin="0,2,0,10">
+                    <Image Source="pack://application:,,,/Resources/Images/SortCards.png" Width="50" Margin="0"/>    
+                </Button>
+            </ToolBar>
+            <ToolBar Header="Bets" Background="Transparent" Padding="0" Margin="0" OverflowMode="Never" Style="{x:Null}">
+                <Button Command="local:PokerCommands.AddCoins" CommandParameter="1" Background="#ad6d47" Padding="5" Margin="2">
+                    <Image Source="pack://application:,,,/Resources/Images/Coins/1 coin.png" Width="50" Margin="0"/>    
+                </Button>
+                <Button Command="local:PokerCommands.AddCoins" CommandParameter="2" Background="#ad6d47" Padding="5" Margin="2">
+                    <Image Source="pack://application:,,,/Resources/Images/Coins/2 coins.png" Width="50" Margin="0"/>    
+                </Button>
+                <Button Command="local:PokerCommands.AddCoins" CommandParameter="3" Background="#ad6d47" Padding="5" Margin="2">
+                    <Image Source="pack://application:,,,/Resources/Images/Coins/3 coins.png" Width="50" Margin="0"/>    
+                </Button>
+                <Button Command="local:PokerCommands.AddCoins" CommandParameter="4" Background="#ad6d47" Padding="5" Margin="2">
+                    <Image Source="pack://application:,,,/Resources/Images/Coins/4 coins.png" Width="50" Margin="0"/>    
+                </Button>
+                <Button Command="local:PokerCommands.AddCoins" CommandParameter="5" Background="#ad6d47" Padding="5" Margin="0,2,0,10">
+                    <Image Source="pack://application:,,,/Resources/Images/Coins/5 coins.png" Width="50" Margin="0"/>    
+                </Button>
+            </ToolBar>
+            <ToolBar  Header="Doubles" Background="Transparent" Padding="0" Margin="0" OverflowMode="Never" Style="{x:Null}">
+                <Button Command="local:PokerCommands.PlayForDouble" CommandParameter="Double" Background="#ad6d47" Padding="5" Margin="0,2,0,10">
+                    <Image Source="pack://application:,,,/Resources/Images/DoublesImage.png" Width="50" Margin="0"/>    
+                </Button>
+                <Button Command="local:PokerCommands.PlayForDouble" CommandParameter="SemiDouble" Background="#ad6d47" Padding="5" Margin="0,2,0,10">
+                    <Image Source="pack://application:,,,/Resources/Images/SemiDoublesImage.png" Width="50" Margin="0"/>    
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+        <Grid DockPanel.Dock="Bottom" Height="100" Name="bottomSidePanel">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Current coins:" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="50"/>
+                <TextBlock Grid.Column="1" Text="{Binding PlayerCoins}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="50" Padding="10,0,0,0"
+                           d:DataContext="{d:DesignInstance local:MainWindow}" />
+            </Grid>
+            <!--<Image Grid.Column="1" Source="Resources/Images/Coins/CoinsPlace.png" Margin="0,0,0,0"/>-->
+            <Image Grid.Column="1" Margin="5" Name="imgTotalCoins"/>
+        </Grid> <!--Grid for bottom part-->
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>

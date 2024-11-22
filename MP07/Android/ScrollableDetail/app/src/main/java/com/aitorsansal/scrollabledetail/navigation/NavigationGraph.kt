@@ -12,7 +12,7 @@ import com.aitorsansal.scrollabledetail.ui.screens.MonstersPager
 
 
 @Composable
-fun NavigationGraph(navController : NavHostController, paddingValues : PaddingValues){
+fun NavigationGraph(navController : NavHostController, paddingValues : PaddingValues = 0){
 
     NavHost(
         navController = navController,

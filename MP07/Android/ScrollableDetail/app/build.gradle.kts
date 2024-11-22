@@ -62,6 +62,8 @@ dependencies {
     implementation ("androidx.compose.material3:material3:1.3.1")
     implementation ("com.google.code.gson:gson:2.10.1")
 
+    implementation("androidx.compose.material3.adaptive:adaptive:1.0.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
