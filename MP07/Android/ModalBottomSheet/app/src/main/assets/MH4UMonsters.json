@@ -1,0 +1,1075 @@
+{
+  "monsters": [
+    {
+      "id" : "MH4-1",
+      "name": "Iodrome",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "0",
+        "Thunder" : "3",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "3",
+        "Paralysis" : "3",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/6/6f/MH4U-Iodrome_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-2",
+      "name": "Gendrome",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "2",
+        "Thunder" : "3",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/7/77/MH4U-Gendrome_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-3",
+      "name": "Velocidrome",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "3",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/d/d3/MH4U-Velocidrome_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-4",
+      "name": "Kecha Wacha",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "0",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image": "https://static.wikia.nocookie.net/monsterhunter/images/b/b2/MH4U-Kecha_Wacha_Icon.png/revision/latest"
+    },
+    {
+      "id" :"MH4-5",
+      "name": "Akantor",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "0",
+        "Thunder" : "2",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "3",
+        "Paralysis" : "3",
+        "Blast" : "3",
+        "Stun" : "3"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/c/c9/MH4U-Akantor_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-6",
+      "name": "Zamtrios",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "2",
+        "Thunder" : "1",
+        "Ice" : "3",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/b/b7/MH4U-Zamtrios_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-7",
+      "name": "Tetsucabra",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "0",
+        "Thunder" : "2",
+        "Ice" : "0",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/5/5f/MH4U-Tetsucabra_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-8",
+      "name": "Brachydios",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "0",
+        "Thunder" : "3",
+        "Ice" : "1",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "1",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "3"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/7/77/MH4U-Brachydios_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-9",
+      "name": "Lagombi",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "2",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/4/44/MH4U-Lagombi_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-10",
+      "name": "Najarala",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "2",
+        "Thunder" : "0",
+        "Ice" : "3",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/8/8b/MH4U-Najarala_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-11",
+      "name": "Great Jaggi",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "3"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/2/2d/MH4U-Great_Jaggi_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-12",
+      "name": "Nerscylla",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "0",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "3",
+        "Stun" : "3"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/e/e6/MH4U-Nerscylla_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-13",
+      "name": "Congalala",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "0",
+        "Thunder" : "3",
+        "Ice" : "1",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/2/2b/MH4U-Congalala_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-14",
+      "name": "Emerald Congalala",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "0",
+        "Thunder" : "1",
+        "Ice" : "0",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "3",
+        "Stun" : "3"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/7/7f/MH4U-Emerald_Congalala_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-15",
+      "name": "Basarios",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "3",
+        "Thunder" : "2",
+        "Ice" : "2",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/e/e1/MH4U-Basarios_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-16",
+      "name": "Ruby Basarios",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "0",
+        "Thunder" : "2",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "2",
+        "Paralysis" : "3",
+        "Blast" : "3",
+        "Stun" : "1"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/9/97/MH4U-Ruby_Basarios_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-17",
+      "name": "Deviljho",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "2",
+        "Thunder" : "3",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/f/f2/MH4U-Deviljho_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-18",
+      "name": "Savage Deviljho",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "1",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "1",
+        "Paralysis" : "2",
+        "Blast" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/9/93/MH4U-Savage_Deviljho_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-19",
+      "name": "Gravios",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "3",
+        "Thunder" : "0",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "3",
+        "Paralysis" : "1",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/5/54/MH4U-Gravios_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-20",
+      "name": "Black Gravios",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "1",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "3"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/5/5b/MH4U-Black_Gravios_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-21",
+      "name": "Gypceros",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "3"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/a/a6/MH4U-Gypceros_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-22",
+      "name": "Purple Gypceros",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "2",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/a/a8/MH4U-Purple_Gypceros_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-23",
+      "name": "Khezu",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "3",
+        "Thunder" : "0",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/1/14/MH4U-Khezu_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-24",
+      "name": "Red Khezu",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "0",
+        "Thunder" : "2",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "1",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image": "https://static.wikia.nocookie.net/monsterhunter/images/5/56/MH4U-Red_Khezu_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-25",
+      "name": "Rathalos",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "1",
+        "Thunder" : "3",
+        "Ice" : "0",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/9/92/MH4U-Rathalos_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-26",
+      "name": "Azure Rathalos",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "1",
+        "Thunder" : "3",
+        "Ice" : "0",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/6/6a/MH4U-Azure_Rathalos_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-27",
+      "name": "Silver Rathalos",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "2",
+        "Paralysis" : "3",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/3/3b/MH4U-Silver_Rathalos_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-28",
+      "name": "Rathian",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "3",
+        "Thunder" : "2",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "2",
+        "Paralysis" : "3",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/9/9f/MH4U-Rathian_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-29",
+      "name": "Pink Rathian",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "2",
+        "Thunder" : "1",
+        "Ice" : "3",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "3",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/9/9b/MH4U-Pink_Rathian_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-30",
+      "name": "Gold Rathian",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "1",
+        "Ice" : "3",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "3",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/2/2d/MH4U-Gold_Rathian_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-31",
+      "name": "Seltas",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "3",
+        "Ice" : "2",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "1"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/7/71/MH4U-Seltas_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-32",
+      "name": "Seltas Queen",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "3",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "3",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/1/12/MH4U-Seltas_Queen_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-33",
+      "name": "Yian Kut-Ku",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "2",
+        "Thunder" : "3",
+        "Ice" : "1",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/0/08/MH4U-Yian_Kut-Ku_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-34",
+      "name": "Blue Yian Kut-Ku",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "2",
+        "Thunder" : "3",
+        "Ice" : "1",
+        "Draco" : "3"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "3",
+        "Paralysis" : "3",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/2/28/MH4U-Blue_Yian_Kut-Ku_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-35",
+      "name": "Zinogre",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "2",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/4/48/MH4U-Zinogre_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-36",
+      "name": "Stygain Zinogre",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "1",
+        "Thunder" : "0",
+        "Ice" : "2",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "1",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/f/f4/MH4U-Stygian_Zinogre_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-37",
+      "name": "Tigrex",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/1/19/MH4U-Tigrex_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-38",
+      "name": "Brute Tigrex",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "1",
+        "Ice" : "2",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image": "https://static.wikia.nocookie.net/monsterhunter/images/a/a9/MH4U-Brute_Tigrex_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-39",
+      "name": "Molten Tigrex",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image": "https://static.wikia.nocookie.net/monsterhunter/images/6/67/MH4U-Molten_Tigrex_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-40",
+      "name": "Rajang",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "3",
+        "Thunder" : "1",
+        "Ice" : "1",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "1",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/f/f4/MH4U-Rajang_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-41",
+      "name": "Scarred Yian Garuga",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/0/05/MH4U-Yian_Garuga_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-42",
+      "name": "Dah'ren Mohran",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "2",
+        "Thunder" : "3",
+        "Ice" : "2",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/1/14/MH4U-Dah%27ren_Mohran_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-43",
+      "name": "Fatalis",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "0",
+        "Ice" : "2",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/4/42/MH4U-Unknown_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-44",
+      "name": "Crimson Fatalis",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "0",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "2",
+        "Blast" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/4/42/MH4U-Unknown_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-45",
+      "name": "Kirin",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "3",
+        "Thunder" : "0",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "2",
+        "Blast" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/b/b7/MH4U-Kirin_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-46",
+      "name": "Oroshi Kirin",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "0",
+        "Thunder" : "2",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "0",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/e/e0/MH4U-Oroshi_Kirin_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-47",
+      "name": "Kushala Daora",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "0",
+        "Thunder" : "1",
+        "Ice" : "1",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "0",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/9/9a/MH4U-Kushala_Daora_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-48",
+      "name": "Teostra",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "1",
+        "Water" : "1",
+        "Thunder" : "3",
+        "Ice" : "1",
+        "Draco" : "2"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "2",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/0/08/MH4U-Teostra_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-49",
+      "name": "Gore Magala",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "3",
+        "Water" : "1",
+        "Thunder" : "2",
+        "Ice" : "0",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "2",
+        "Sleep" : "2",
+        "Paralysis" : "2",
+        "Blast" : "3",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/8/82/MH4U-Gore_Magala_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-50",
+      "name": "Shagaru Magala",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "2",
+        "Water" : "3",
+        "Thunder" : "1",
+        "Ice" : "1",
+        "Draco" : "1"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "3",
+        "Sleep" : "1",
+        "Paralysis" : "2",
+        "Blast" : "1",
+        "Stun" : "2"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/a/a7/MH4U-Shagaru_Magala_Icon.png/revision/latest"
+    },
+    {
+      "id" : "MH4-51",
+      "name": "Dalamadur",
+      "minSize": 998.69,
+      "maxSize": 1364.88,
+      "weakness": {
+        "Fire" :  "0",
+        "Water" : "1",
+        "Thunder" : "0",
+        "Ice" : "3",
+        "Draco" : "0"
+      },
+      "weaknessToAlteredStates": {
+        "Poison" : "1",
+        "Sleep" : "1",
+        "Paralysis" : "1",
+        "Blast" : "2",
+        "Stun" : "1"
+      },
+      "image":"https://static.wikia.nocookie.net/monsterhunter/images/0/02/MH4U-Dalamadur-Head_Icon.png/revision/latest"
+    }
+  ]
+}

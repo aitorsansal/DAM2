@@ -45,7 +45,7 @@ import kotlinx.coroutines.CoroutineScope
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BottomNavigationApp(navController : NavHostController,
-        destination : NavDestination?,)
+        destination : NavDestination?)
 {
     val windowSizeClass = currentWindowAdaptiveInfo().windowSizeClass
     val isCompacted = windowSizeClass.windowHeightSizeClass == WindowHeightSizeClass.COMPACT

@@ -1,7 +1,7 @@
 package dao;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 
 import model.Match;
 import model.Team;
@@ -14,5 +14,6 @@ public interface DAOManager extends AutoCloseable {
 	public int GoalsOfTeam(Team t) throws DAOException;
 	public int AwayGoals() throws DAOException;
 	public ArrayList<Match> MatchesOfTeam(Team oneTeam) throws DAOException;
+	public int RedCards(Team oneTeam) throws DAOException;
 	public Team TopScorerTeam() throws DAOException;
 }

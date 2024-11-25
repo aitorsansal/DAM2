@@ -8,22 +8,81 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8f593a6-8903-46a5-a8db-2e15dc5afb6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/ChangeCards.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/DoublesImage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/PlayButton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/PlayCards.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/SemiDoublesImage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/SortCards.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Poker/Resources/Images/redCross.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/BottomNavigation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/BottomNavigation.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/navigation/NavigationGraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/navigation/NavigationGraph.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/.idea/migrations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/androidTest/java/com/aitorsansal/modalbottomsheet/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/assets/MH4UMonsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/assets/MHRiseMonsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/assets/MHWorldMonsters.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/data/FakeRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/data/GameData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/model/Monster.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/navigation/Destinations.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/navigation/NavigationGraph.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/ui/composables/AlteredStatesWeaknesses.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/ui/composables/ElementWeakness.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/ui/composables/HorizontalFileInformation.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/ui/screens/HorizontalComposableList.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/ui/screens/MonsterInformationScreen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/ui/theme/Color.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/ui/theme/Theme.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/ui/theme/Type.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/blast_element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/complete_mark.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/complete_mark_horizontal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/draco_element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/electric_element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/fire_element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/ice_element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/mh4u_icon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/mhrise_icon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/mhworld_icon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/paralysis_element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/pergamin_background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/posion_element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/sleep_element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/stun_element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/drawable/water_element.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/test/java/com/aitorsansal/modalbottomsheet/ExampleUnitTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/gradle/libs.versions.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/settings.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Poker/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poker/Jocs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/Jocs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poker/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poker/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poker/Poker.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/Poker.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Poker/bin/Debug/net8.0-windows/Poker.exe" afterDir="false" />
     </list>
@@ -143,6 +202,8 @@
       <workItem from="1732284122769" duration="2975000" />
       <workItem from="1732287140487" duration="4498000" />
       <workItem from="1732292218386" duration="234000" />
+      <workItem from="1732543249433" duration="1259000" />
+      <workItem from="1732551070417" duration="705000" />
     </task>
     <servers />
   </component>
