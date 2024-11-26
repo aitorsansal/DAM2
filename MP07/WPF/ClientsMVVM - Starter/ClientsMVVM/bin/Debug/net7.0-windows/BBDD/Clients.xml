@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfClient xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Client>
-    <Id>b735018f-4858-48c0-87f5-87e767ed424a</Id>
-    <Nom>Roser</Nom>
-    <Cognom>Murri</Cognom>
-    <Saldo>449</Saldo>
-    <Foto>https://loremflickr.com/320/240/portrait,Roser?lock=b735018f-4858-48c0-87f5-87e767ed424a</Foto>
-  </Client>
-  <Client>
-    <Id>117d3dee-854b-4517-aab7-2aaa2beb2710</Id>
-    <Nom>Roser</Nom>
+    <Id>ba967518-1ed2-476c-999f-1f04893048f8</Id>
+    <Nom>Pere</Nom>
     <Cognom>Palol</Cognom>
-    <Saldo>-49552</Saldo>
-    <Foto>https://loremflickr.com/320/240/portrait,Roser?lock=117d3dee-854b-4517-aab7-2aaa2beb2710</Foto>
+    <Saldo>54401</Saldo>
+    <Foto>https://loremflickr.com/320/240/portrait,Pere?lock=ba967518-1ed2-476c-999f-1f04893048f8</Foto>
   </Client>
   <Client>
-    <Id>d2595dd2-706a-46e8-948e-545ef0b61c50</Id>
-    <Nom>Laura</Nom>
-    <Cognom>Xurriguera</Cognom>
-    <Saldo>78809</Saldo>
-    <Foto>https://loremflickr.com/320/240/portrait,Laura?lock=d2595dd2-706a-46e8-948e-545ef0b61c50</Foto>
-  </Client>
-  <Client>
-    <Id>6e87505e-44dd-44b0-be7e-7ce871044a7b</Id>
+    <Id>056e7610-7f6c-421c-a63a-9747da963449</Id>
     <Nom>Sílvia</Nom>
-    <Cognom>Lladó</Cognom>
-    <Saldo>49830</Saldo>
-    <Foto>https://loremflickr.com/320/240/portrait,Sílvia?lock=6e87505e-44dd-44b0-be7e-7ce871044a7b</Foto>
+    <Cognom>Palol</Cognom>
+    <Saldo>73086</Saldo>
+    <Foto>https://loremflickr.com/320/240/portrait,Sílvia?lock=056e7610-7f6c-421c-a63a-9747da963449</Foto>
   </Client>
   <Client>
-    <Id>e27504fb-a4dd-4cd0-8e56-907ba87aaba1</Id>
-    <Nom>Lluís</Nom>
+    <Id>4cef3647-806b-4459-b2af-4f1f6313caef</Id>
+    <Nom>Maria</Nom>
     <Cognom>Lladó</Cognom>
-    <Saldo>47455</Saldo>
-    <Foto>https://loremflickr.com/320/240/portrait,Lluís?lock=e27504fb-a4dd-4cd0-8e56-907ba87aaba1</Foto>
+    <Saldo>8086</Saldo>
+    <Foto>https://loremflickr.com/320/240/portrait,Maria?lock=4cef3647-806b-4459-b2af-4f1f6313caef</Foto>
   </Client>
   <Client>
-    <Id>77a0af4c-1479-4012-a22e-d874193acb38</Id>
+    <Id>92a7f370-03a8-4d54-9f3b-c908b5d95de6</Id>
+    <Nom>Laura</Nom>
+    <Cognom>Ridaura</Cognom>
+    <Saldo>-88115</Saldo>
+    <Foto>https://loremflickr.com/320/240/portrait,Laura?lock=92a7f370-03a8-4d54-9f3b-c908b5d95de6</Foto>
+  </Client>
+  <Client>
+    <Id>47027671-83d3-47aa-bf41-a3df11087fb5</Id>
     <Nom>Sílvia</Nom>
-    <Cognom>Lladó</Cognom>
-    <Saldo>54157</Saldo>
-    <Foto>https://loremflickr.com/320/240/portrait,Sílvia?lock=77a0af4c-1479-4012-a22e-d874193acb38</Foto>
+    <Cognom>Murri</Cognom>
+    <Saldo>8966</Saldo>
+    <Foto>https://loremflickr.com/320/240/portrait,Sílvia?lock=47027671-83d3-47aa-bf41-a3df11087fb5</Foto>
   </Client>
   <Client>
-    <Id>05196a03-dcb4-49b9-9fce-51c0ba7e6944</Id>
-    <Nom>Laura</Nom>
-    <Cognom>Sala</Cognom>
-    <Saldo>3741</Saldo>
-    <Foto>https://loremflickr.com/320/240/portrait,Laura?lock=05196a03-dcb4-49b9-9fce-51c0ba7e6944</Foto>
-  </Client>
-  <Client>
-    <Id>8fbaf104-3b18-4783-83c2-4b1987729c28</Id>
+    <Id>ff17f0b9-1d48-4ed0-bef2-e01e5f40c3e9</Id>
     <Nom>Lluís</Nom>
-    <Cognom>Roca</Cognom>
-    <Saldo>-44038</Saldo>
-    <Foto>https://loremflickr.com/320/240/portrait,Lluís?lock=8fbaf104-3b18-4783-83c2-4b1987729c28</Foto>
+    <Cognom>Dalmau</Cognom>
+    <Saldo>-97833</Saldo>
+    <Foto>https://loremflickr.com/320/240/portrait,Lluís?lock=ff17f0b9-1d48-4ed0-bef2-e01e5f40c3e9</Foto>
   </Client>
   <Client>
-    <Id>4ce83702-c540-47b3-a6af-dba96942d800</Id>
-    <Nom>Laura</Nom>
-    <Cognom>Sala</Cognom>
-    <Saldo>11245</Saldo>
-    <Foto>https://loremflickr.com/320/240/portrait,Laura?lock=4ce83702-c540-47b3-a6af-dba96942d800</Foto>
-  </Client>
-  <Client>
-    <Id>d6f57bee-8284-4e5e-84f6-49d6adbd4743</Id>
+    <Id>4d280826-6328-4732-9892-7b4da2343503</Id>
     <Nom>Ricard</Nom>
     <Cognom>Xurriguera</Cognom>
-    <Saldo>29397</Saldo>
-    <Foto>https://loremflickr.com/320/240/portrait,Ricard?lock=d6f57bee-8284-4e5e-84f6-49d6adbd4743</Foto>
+    <Saldo>45282</Saldo>
+    <Foto>https://loremflickr.com/320/240/portrait,Ricard?lock=4d280826-6328-4732-9892-7b4da2343503</Foto>
+  </Client>
+  <Client>
+    <Id>d7072131-78b7-4c33-b6e7-d79da5c6efb0</Id>
+    <Nom>Roser</Nom>
+    <Cognom>Dalmau</Cognom>
+    <Saldo>-92189</Saldo>
+    <Foto>https://loremflickr.com/320/240/portrait,Roser?lock=d7072131-78b7-4c33-b6e7-d79da5c6efb0</Foto>
+  </Client>
+  <Client>
+    <Id>54866429-3950-4164-a5ce-7f09468656c2</Id>
+    <Nom>Lluís</Nom>
+    <Cognom>Roca</Cognom>
+    <Saldo>-75625</Saldo>
+    <Foto>https://loremflickr.com/320/240/portrait,Lluís?lock=54866429-3950-4164-a5ce-7f09468656c2</Foto>
+  </Client>
+  <Client>
+    <Id>91885406-38f1-4eb8-b060-925b132f29b5</Id>
+    <Nom>Joan</Nom>
+    <Cognom>Palol</Cognom>
+    <Saldo>-75090</Saldo>
+    <Foto>https://loremflickr.com/320/240/portrait,Joan?lock=91885406-38f1-4eb8-b060-925b132f29b5</Foto>
   </Client>
 </ArrayOfClient>

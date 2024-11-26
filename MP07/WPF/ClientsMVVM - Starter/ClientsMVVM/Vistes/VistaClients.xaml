@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="VistaClients" Height="450" Width="800">
     <Window.DataContext>
-        <vm:ClientViewModel1/>
+        <vm:ClientViewModelCommunityToolkit/>
     </Window.DataContext>
     <Window.Resources>
         <Style x:Key="EtiquetaStyle">
@@ -36,35 +36,35 @@
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <ToolBar Grid.Row="0" Grid.ColumnSpan="3">
-            <Button Content="Crea clients" />
+            <Button Content="Crea clients" Command="{Binding CreateClientsCommand}" CommandParameter="10"/>
             <Separator/>
-            <Button Content="Afegeix" />
-            <Button Content="Edita" />
-            <Button Content="Confirma" />
-            <Button Content="Descarta" />
-            <Button Content="Elimina" />
+            <Button Content="Afegeix" Command="{Binding AddClientCommand}"/>
+            <Button Content="Edita" Command="{Binding EditClientCommand}"/>
+            <Button Content="Confirma" Command="{Binding ConfirmClientCommand}"/>
+            <Button Content="Descarta" Command="{Binding DismissClientCommand}"/>
+            <Button Content="Elimina" Command="{Binding DeleteClientCommand}"/>
         </ToolBar>
-        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+        <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Center">
             <StackPanel DockPanel.Dock="Top" Orientation="Vertical" Margin="20">
-                <TextBlock DockPanel.Dock="Top" Text="" Style="{StaticResource ResourceKey=ValorStyle}"/>
+                <TextBlock DockPanel.Dock="Top" Text="{Binding CompleteName}" Style="{StaticResource ResourceKey=ValorStyle}"/>
                 <DockPanel >
                     <TextBlock DockPanel.Dock="Left" Text="Nom:" Style="{StaticResource ResourceKey=EtiquetaStyle}"/>
-                    <TextBox DockPanel.Dock="Left" Text="" Style="{StaticResource ResourceKey=ValorStyle}" HorizontalAlignment="Stretch"/>
+                    <TextBox DockPanel.Dock="Left" Text="{Binding Name}" Style="{StaticResource ResourceKey=ValorStyle}" HorizontalAlignment="Stretch"/>
                 </DockPanel>
                 <DockPanel >
                     <TextBlock DockPanel.Dock="Left" Text="Cognom:" Style="{StaticResource ResourceKey=EtiquetaStyle}"/>
-                    <TextBox DockPanel.Dock="Left" Text="" Style="{StaticResource ResourceKey=ValorStyle}"/>
+                    <TextBox DockPanel.Dock="Left" Text="{Binding Surname}" Style="{StaticResource ResourceKey=ValorStyle}"/>
                 </DockPanel>
                 <DockPanel >
                     <TextBlock DockPanel.Dock="Left" Text="Saldo:" Style="{StaticResource ResourceKey=EtiquetaStyle}"/>
-                    <TextBox DockPanel.Dock="Left" Text="" Style="{StaticResource ResourceKey=ValorStyle}"/>
+                    <TextBox DockPanel.Dock="Left" Text="{Binding Paycheck}" Style="{StaticResource ResourceKey=ValorStyle}"/>
                 </DockPanel>
 
             </StackPanel>
 
         </StackPanel>
         <GridSplitter Grid.Row="2" Grid.Column="0" Grid.ColumnSpan ="1" Height="5" HorizontalAlignment="Stretch"/>
-        <ListView Grid.Row="3" Grid.Column="0" ItemsSource="{Binding Clients}" SelectedIndex="{Binding Posicio}">
+        <ListView Grid.Row="3" Grid.Column="0" ItemsSource="{Binding Clients}" SelectedIndex="{Binding Position}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Nom}"/>
@@ -72,9 +72,9 @@
                     <GridViewColumn Header="Saldo" DisplayMemberBinding="{Binding Saldo}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Border Padding="5" BorderThickness="3" BorderBrush="{Binding Saldo, Converter={StaticResource ColorClientConverter}}">
-                                    <TextBlock Text="{Binding Saldo}" 
-                                               Foreground="{Binding Saldo, Converter={StaticResource ColorClientConverter}}"/>
+                                <Border Padding="5" BorderThickness="3" BorderBrush="{Binding Paycheck, Converter={StaticResource ColorClientConverter}}">
+                                    <TextBlock Text="{Binding Paycheck}" 
+                                               Foreground="{Binding Paycheck, Converter={StaticResource ColorClientConverter}}"/>
                                 </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -85,7 +85,8 @@
         <GridSplitter Grid.Row="0" Grid.Column="1" Grid.RowSpan="4" Width="5" VerticalAlignment="Stretch"/>
         <ListBox Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" 
                  HorizontalContentAlignment="Stretch"
-                 ItemsSource="{Binding Clients}">
+                 ItemsSource="{Binding Clients}"
+                 SelectedIndex="{Binding Position}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Aqua" BorderThickness="2" CornerRadius="5">
