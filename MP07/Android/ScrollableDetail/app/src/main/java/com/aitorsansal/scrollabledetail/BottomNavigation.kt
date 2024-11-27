@@ -92,7 +92,7 @@ fun BottomNavigationApp(navController : NavHostController,
                                     popUpTo(MHWorldListNav)
                                 }
                             },
-                            modifier = Modifier.size(16.dp)
+                            modifier = Modifier.size(32.dp)
                         )
                     }
                 }
@@ -126,7 +126,7 @@ private fun BottomBar(
                         popUpTo(MHWorldListNav)
                     }
                 },
-                modifier = Modifier.size(16.dp)
+                modifier = Modifier.size(32.dp)
             )
         }
     }

@@ -4,7 +4,8 @@
              xmlns:local="clr-namespace:_15Puzzle"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         <ResourceDictionary>
+        
+        <ResourceDictionary>
              <ResourceDictionary.MergedDictionaries>
                  <ResourceDictionary Source="Themes/Border.xaml"/>
                  <ResourceDictionary Source="Themes/TextBlock.xaml"/>

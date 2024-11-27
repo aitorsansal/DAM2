@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "RkPpSsLzSk/1.0.0": {
+        "dependencies": {
+          "CommunityToolkit.Mvvm": "8.4.0-preview2"
+        },
+        "runtime": {
+          "RkPpSsLzSk.dll": {}
+        }
+      },
+      "CommunityToolkit.Mvvm/8.4.0-preview2": {
+        "runtime": {
+          "lib/net8.0/CommunityToolkit.Mvvm.dll": {
+            "assemblyVersion": "8.4.0.0",
+            "fileVersion": "8.4.0.1"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RkPpSsLzSk/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CommunityToolkit.Mvvm/8.4.0-preview2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Bq2Z9uCw8PmmMUZ7ShwwOZLnCTmf48eGWtORAbrUMjXoKhjywbsxuzLwVSqVRTNXb9yUA6QSrYgr4Uiqz4O/OA==",
+      "path": "communitytoolkit.mvvm/8.4.0-preview2",
+      "hashPath": "communitytoolkit.mvvm.8.4.0-preview2.nupkg.sha512"
+    }
+  }
+}

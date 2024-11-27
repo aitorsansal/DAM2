@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ExitToApp
+import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.DrawerValue
@@ -88,7 +89,7 @@ fun App(navController : NavHostController,
         floatingActionButton = {
             if(!isCompacted)
                 IconButton(onClick = {activity.finish()}) {
-                    Icon(imageVector = Icons.Default.Home, null)
+                    Icon(imageVector = Icons.AutoMirrored.Default.ExitToApp, null)
                 }
         },
         bottomBar = {
@@ -122,7 +123,7 @@ fun App(navController : NavHostController,
                                     popUpTo(MHWorldListNav)
                                 }
                             },
-                            modifier = Modifier.size(24.dp)
+                            modifier = Modifier.size(32.dp)
                         )
                     }
                 }
@@ -157,7 +158,7 @@ private fun BottomBar(
                         popUpTo(MHWorldListNav)
                     }
                 },
-                modifier = Modifier.size(16.dp)
+                modifier = Modifier.size(32.dp)
             )
         }
     }

@@ -8,16 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b64a12af-6b70-4926-9810-0033b53dae67" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Poker/Poker/Resources/ButtonStyles.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Commands/Commands/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Commands/Commands/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Poker/.idea/.idea.Poker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/.idea/.idea.Poker/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Poker/Poker/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/Poker/App.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Poker/Poker/Commands.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/Poker/PokerCommands.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Poker/Poker/Jocs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/Poker/Jocs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Poker/Poker/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/Poker/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Poker/Poker/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/Poker/MainWindow.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Poker/Poker/bin/Debug/net8.0-windows/Poker.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/Poker/bin/Debug/net8.0-windows/Poker.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Poker/Poker/bin/Debug/net8.0-windows/Poker.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Poker/Poker/bin/Debug/net8.0-windows/Poker.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RkPpSsLzSk/RkPpSsLzSk/Resources/CustomCheckbox.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/ModalBottomSheet/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/ModalBottomSheet/app/src/main/java/com/aitorsansal/modalbottomsheet/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/BottomNavigation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/BottomNavigation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/navigation/NavigationGraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android/ScrollableDetail/app/src/main/java/com/aitorsansal/scrollabledetail/navigation/NavigationGraph.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15Puzzle/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/15Puzzle/App.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,18 +50,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Project.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.Unnamed.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Unnamed" type="DotNetProject" factoryName=".NET Project" nameIsGenerated="true">
       <option name="EXE_PATH" value="$PROJECT_DIR$/15Puzzle/bin/Debug/net8.0-windows/15Puzzle.exe" />
@@ -101,6 +98,7 @@
       <workItem from="1730995121995" duration="776000" />
       <workItem from="1731335267891" duration="406000" />
       <workItem from="1731950426060" duration="77000" />
+      <workItem from="1732720427411" duration="22000" />
     </task>
     <servers />
   </component>

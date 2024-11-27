@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPlayer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Player>
+    <Name>testing</Name>
+    <MaxInSingleTournament>0</MaxInSingleTournament>
+    <TotalPoints>150</TotalPoints>
+    <WonGames>0</WonGames>
+    <WonRounds>0</WonRounds>
+    <LostRounds>0</LostRounds>
+  </Player>
+  <Player>
+    <Name>testing2</Name>
+    <MaxInSingleTournament>0</MaxInSingleTournament>
+    <TotalPoints>0</TotalPoints>
+    <WonGames>0</WonGames>
+    <WonRounds>0</WonRounds>
+    <LostRounds>0</LostRounds>
+  </Player>
+  <Player>
+    <Name>a</Name>
+    <MaxInSingleTournament>0</MaxInSingleTournament>
+    <TotalPoints>0</TotalPoints>
+    <WonGames>0</WonGames>
+    <WonRounds>0</WonRounds>
+    <LostRounds>0</LostRounds>
+  </Player>
+  <Player>
+    <Name>ab</Name>
+    <MaxInSingleTournament>0</MaxInSingleTournament>
+    <TotalPoints>0</TotalPoints>
+    <WonGames>0</WonGames>
+    <WonRounds>0</WonRounds>
+    <LostRounds>0</LostRounds>
+  </Player>
+</ArrayOfPlayer>
