@@ -116,9 +116,9 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Text="{Binding PlayerName}"/>
-                        <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Text="5"/>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Text="{Binding CurrentRoundPlayerScore}"/>
                         <TextBlock Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Text="-"/>
-                        <TextBlock Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Text="2"/>
+                        <TextBlock Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Text="{Binding CurrentRoundEnemyScore}"/>
                         <TextBlock Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Text="{Binding EnemyName}"/>
 
                     </Grid>
