@@ -18,12 +18,12 @@
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Play" Command="{Binding }"/>
+            <MenuItem Header="Play" Command="{Binding StartGameCommand}"/>
             <MenuItem Header="Config" Command="{Binding OpenConfigCommand}"/>
             <MenuItem Header="Records" Command="{Binding OpenRecordsCommand}"/>
         </Menu>
         <Grid>
-            <Grid Visibility="{Binding CurrentScreen, Converter={StaticResource VisibilityConverter}, ConverterParameter=Config}">
+            <Grid Visibility="Collapsed">
                 <Grid.RowDefinitions>
                     <RowDefinition Height=".7*"/>
                     <RowDefinition Height="*"/>
@@ -83,16 +83,74 @@
                     <ComboBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" SelectedIndex="0" FontSize="15"
                               ItemsSource="{Binding PlayerNames}" SelectedValue="{Binding SelectedNameIndex}"/>
                     <TextBox Grid.Column="2" Grid.Row="0" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="50" FontSize="15"
-                             Text="{Binding PlayerName}"/>
+                             Text="{Binding EnteringPlayerName}"/>
                     <Button Grid.Column="2" Grid.Row="1" Content="Add New Player" HorizontalAlignment="Center" VerticalAlignment="Center" 
                             Padding="5" FontSize="15" Command="{Binding CreateNewPlayerCommand}"/>
                 </Grid>
                 
             </Grid> <!--Grid for settings-->
+            
             <Grid Visibility="{Binding CurrentScreen, Converter={StaticResource VisibilityConverter}, ConverterParameter=Playing}">
-                <TextBlock Text="Playing"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".5*"/>
+                    <RowDefinition/>
+                    <RowDefinition Height=".6*"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".6*"/>
+                    <ColumnDefinition/><!--start-->
+                    <ColumnDefinition/>
+                    <ColumnDefinition/><!--end-->
+                    <ColumnDefinition Width=".6*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" FontSize="32" FontWeight="Bold" Text="{Binding CurrentGameRound}"/>
+                <Border Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" BorderBrush="Crimson" BorderThickness="2" Background="DarkRed">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width=".1*"/>
+                            <ColumnDefinition Width=".1*"/>
+                            <ColumnDefinition Width=".1*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Text="{Binding PlayerName}"/>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Text="5"/>
+                        <TextBlock Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Text="-"/>
+                        <TextBlock Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Text="2"/>
+                        <TextBlock Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Text="{Binding EnemyName}"/>
+
+                    </Grid>
+                </Border> <!--Punctuation-->
+                <Image Grid.Row="1" Grid.Column="2" Source="{Binding EnemyImageSelectionPath}"/>
+                <Image Grid.Row="3" Grid.Column="2" Source="{Binding PlayerImageSelectionPath}"/>
+                <Grid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4"> <!--action buttons-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Padding="5" Command="{Binding OptionSelectedCommand}" CommandParameter="{x:Static local:SelectionValues.Rock}">
+                        <Image Source="Resources/Images/Rock.png"></Image>
+                    </Button>
+                    <Button Grid.Column="1" Padding="5" Command="{Binding OptionSelectedCommand}" CommandParameter="{x:Static local:SelectionValues.Paper}">
+                        <Image Source="Resources/Images/Paper.png"></Image>
+                    </Button>
+                    <Button Grid.Column="2" Padding="5" Command="{Binding OptionSelectedCommand}" CommandParameter="{x:Static local:SelectionValues.Scissors}">
+                        <Image Source="Resources/Images/Scissors.png"></Image>
+                    </Button>
+                    <Button Grid.Column="3" Padding="5" Command="{Binding OptionSelectedCommand}" CommandParameter="{x:Static local:SelectionValues.Lizard}">
+                        <Image Source="Resources/Images/Lizard.png"></Image>
+                    </Button>
+                    <Button Grid.Column="4" Padding="5" Command="{Binding OptionSelectedCommand}" CommandParameter="{x:Static local:SelectionValues.Spock}">
+                        <Image Source="Resources/Images/Spock.png"></Image>
+                    </Button>
+                </Grid> <!--action buttons-->
             </Grid>
-            <Grid Visibility="{Binding CurrentScreen, Converter={StaticResource VisibilityConverter}, ConverterParameter=Records}">
+            <Grid Visibility="Collapsed">
                 <Grid.RowDefinitions>
                     <RowDefinition Height=".5*"/>
                     <RowDefinition Height="2*"/>

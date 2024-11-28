@@ -12,4 +12,31 @@
       <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0-preview2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="Resources\Images\Lizard.png" />
+      <Resource Include="Resources\Images\Lizard.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Images\Paper.png" />
+      <Resource Include="Resources\Images\Paper.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Images\Rock.png" />
+      <Resource Include="Resources\Images\Rock.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Images\RpSLSWinningChart.png" />
+      <Resource Include="Resources\Images\RpSLSWinningChart.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Images\Scissors.png" />
+      <Resource Include="Resources\Images\Scissors.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Images\Spock.png" />
+      <Resource Include="Resources\Images\Spock.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+
 </Project>

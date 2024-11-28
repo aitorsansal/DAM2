@@ -6,20 +6,24 @@ using RkPpSsLzSk.Repositiori;
 
 namespace RkPpSsLzSk;
 
+public enum Screens { Config, Playing, Records }
+public enum SelectionValues {Rock, Paper, Scissors, Lizard, Spock}
+
 public partial class ViewModel : ObservableObject
 {
-    public enum Screens { Config, Playing, Records }
-
     #region Properties
     
-    [ObservableProperty] 
-    Screens currentScreen;
+    [ObservableProperty, NotifyCanExecuteChangedFor(nameof(OpenConfigCommand)), NotifyCanExecuteChangedFor(nameof(OpenRecordsCommand))] 
+    Screens currentScreen = Screens.Playing;
     [ObservableProperty]
     ObservableCollection<object> recordsList;
 
-    [ObservableProperty, NotifyCanExecuteChangedFor(nameof(CreateNewPlayerCommand))] 
-    private string playerName;
+    [ObservableProperty] 
+    private string playerName = "Aitor";
 
+    [ObservableProperty]
+    private string enemyName = "Enemy Testing";
+    
     [ObservableProperty, NotifyCanExecuteChangedFor(nameof(CreateNewPlayerCommand))]
     private ObservableCollection<string> playerNames = ["New Player"];
 
@@ -32,11 +36,32 @@ public partial class ViewModel : ObservableObject
     [ObservableProperty]
     private bool only3Rounds;
     
+    [ObservableProperty, NotifyCanExecuteChangedFor(nameof(OpenConfigCommand)), NotifyCanExecuteChangedFor(nameof(StartGameCommand)), NotifyCanExecuteChangedFor(nameof(OpenRecordsCommand))]
+    private bool currentlyPlaying;
+
+    [ObservableProperty] 
+    private string currentGameRound = "Round 1";
+
+    [ObservableProperty, NotifyCanExecuteChangedFor(nameof(CreateNewPlayerCommand))]
+    private string enteringPlayerName;
+    
+    [ObservableProperty]
+    private string enemyImageSelectionPath;
+
+    [ObservableProperty]
+    private string playerImageSelectionPath;
+    
+    [ObservableProperty]
+    private SelectionValues playerSelection = SelectionValues.Rock;
+    
+    [ObservableProperty]
+    private SelectionValues enemySelection = SelectionValues.Rock;
+    
     #endregion
 
     #region Fields
 
-    readonly Header header = new Header
+    readonly Header header = new()
     {
         Name = "Name",
         TotalPoints = "Total Points",
@@ -47,7 +72,6 @@ public partial class ViewModel : ObservableObject
     };
 
     private readonly IPlayersRepository playersRepository;
-    private bool currentlyPlaying;
 
     #endregion
 
@@ -55,9 +79,12 @@ public partial class ViewModel : ObservableObject
     {
         playersRepository = Repository.OpenBDPlayers();
         RecordsList = new ObservableCollection<object>();
-        OpenRecords();
-        PlayerName = string.Empty;
+        //OpenRecords();
+        CurrentScreen = Screens.Playing;
         SelectedNameIndex = "New Player";
+        EnteringPlayerName = string.Empty;
+        PlayerImageSelectionPath = "Resources/Images/Lizard.png";
+        enemyImageSelectionPath = "Resources/Images/Lizard.png";
     }
 
     [RelayCommand (CanExecute = nameof(CanOpenRecords))]
@@ -90,10 +117,31 @@ public partial class ViewModel : ObservableObject
         PlayerName = string.Empty;
     }
 
-    private bool CanCreateNewPlayer()
+    [RelayCommand (CanExecute = nameof(CanStartGame))]
+    void StartGame()
     {
-        return PlayerName != string.Empty && !PlayerNames.Contains(PlayerName) && (string)SelectedNameIndex == "New Player";
+        CurrentlyPlaying = true;
+        CurrentScreen = Screens.Playing;
     }
-    private bool CanOpenRecords() => !currentlyPlaying && CurrentScreen != Screens.Records;
-    private bool CanOpenConfig() => !currentlyPlaying && CurrentScreen != Screens.Config;
+
+
+    [RelayCommand]
+    void OnOptionSelected(object? sender)
+    {
+        PlayerImageSelectionPath = (SelectionValues)(sender ?? SelectionValues.Rock) switch
+        {
+            SelectionValues.Rock => "Resources/Images/Rock.png",
+            SelectionValues.Paper => "Resources/Images/Paper.png",
+            SelectionValues.Scissors => "Resources/Images/Scissors.png",
+            SelectionValues.Lizard => "Resources/Images/Lizard.png",
+            SelectionValues.Spock => "Resources/Images/Spock.png",
+            _ => string.Empty
+        };
+    }
+    //&& CurrentScreen != Screens.Records
+    private bool CanCreateNewPlayer() =>EnteringPlayerName != string.Empty && !PlayerNames.Contains(EnteringPlayerName) && (string)SelectedNameIndex == "New Player";
+    private bool CanOpenRecords() => !CurrentlyPlaying && CurrentScreen != Screens.Records;
+    private bool CanOpenConfig() => !CurrentlyPlaying && CurrentScreen != Screens.Config;
+    private bool CanStartGame() => !CurrentlyPlaying;
+
 }
