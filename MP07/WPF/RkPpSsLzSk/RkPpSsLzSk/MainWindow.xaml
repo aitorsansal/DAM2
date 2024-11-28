@@ -14,7 +14,8 @@
         <local:ViewModel/>
     </Window.DataContext>
     <Window.Resources>
-        <converters:GridVisibilityConverter x:Key="VisibilityConverter"/>
+        <converters:GridVisibilityConverter x:Key="GridsVisibilityConverter"/>
+        <converters:ActionButtonsVisibilityConverters x:Key="ButtonsVisibilityConverters"/>
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -23,7 +24,7 @@
             <MenuItem Header="Records" Command="{Binding OpenRecordsCommand}"/>
         </Menu>
         <Grid>
-            <Grid Visibility="Collapsed">
+            <Grid Visibility="{Binding CurrentScreen, Converter={StaticResource GridsVisibilityConverter}, ConverterParameter=Config}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height=".7*"/>
                     <RowDefinition Height="*"/>
@@ -45,7 +46,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="Normal" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="15" />
-                        <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CheckBoxSwitchStyle}" IsChecked="{Binding OnNormalMode}"/>
+                        <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CheckBoxSwitchStyle}" IsChecked="{Binding OnExtendedMode}"/>
                         <TextBlock Grid.Column="2" Text="Extended" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15" />
                     </Grid>
                     
@@ -64,7 +65,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="3 rounds" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="15" />
-                        <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CheckBoxSwitchStyle}" IsChecked="{Binding Only3Rounds}"/>
+                        <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource CheckBoxSwitchStyle}" IsChecked="{Binding PlayFor5Rounds}"/>
                         <TextBlock Grid.Column="2" Text="5 rounds" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="15" />
                     </Grid>
                     
@@ -81,7 +82,7 @@
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Text="Player Selection" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <ComboBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" SelectedIndex="0" FontSize="15"
-                              ItemsSource="{Binding PlayerNames}" SelectedValue="{Binding SelectedNameIndex}"/>
+                              ItemsSource="{Binding PlayerNames}" SelectedValue="{Binding PlayerName}"/>
                     <TextBox Grid.Column="2" Grid.Row="0" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="50" FontSize="15"
                              Text="{Binding EnteringPlayerName}"/>
                     <Button Grid.Column="2" Grid.Row="1" Content="Add New Player" HorizontalAlignment="Center" VerticalAlignment="Center" 
@@ -90,7 +91,7 @@
                 
             </Grid> <!--Grid for settings-->
             
-            <Grid Visibility="{Binding CurrentScreen, Converter={StaticResource VisibilityConverter}, ConverterParameter=Playing}">
+            <Grid Visibility="{Binding CurrentScreen, Converter={StaticResource GridsVisibilityConverter}, ConverterParameter=Playing}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height=".5*"/>
                     <RowDefinition/>
@@ -99,11 +100,11 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".6*"/>
+                    <ColumnDefinition Width=".4*"/>
                     <ColumnDefinition/><!--start-->
                     <ColumnDefinition/>
                     <ColumnDefinition/><!--end-->
-                    <ColumnDefinition Width=".6*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" FontSize="32" FontWeight="Bold" Text="{Binding CurrentGameRound}"/>
                 <Border Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" BorderBrush="Crimson" BorderThickness="2" Background="DarkRed">
@@ -120,12 +121,12 @@
                         <TextBlock Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Text="-"/>
                         <TextBlock Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Text="{Binding CurrentRoundEnemyScore}"/>
                         <TextBlock Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" Text="{Binding EnemyName}"/>
-
                     </Grid>
                 </Border> <!--Punctuation-->
                 <Image Grid.Row="1" Grid.Column="2" Source="{Binding EnemyImageSelectionPath}"/>
                 <Image Grid.Row="3" Grid.Column="2" Source="{Binding PlayerImageSelectionPath}"/>
-                <Grid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4"> <!--action buttons-->
+                <ListView Grid.Row="0" Grid.Column="4" Grid.RowSpan="5" ItemsSource="{Binding DefeatedEnemies}"/>
+                <Grid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4"> <!--action buttons 5 options-->
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -148,9 +149,26 @@
                     <Button Grid.Column="4" Padding="5" Command="{Binding OptionSelectedCommand}" CommandParameter="{x:Static local:SelectionValues.Spock}">
                         <Image Source="Resources/Images/Spock.png"></Image>
                     </Button>
-                </Grid> <!--action buttons-->
-            </Grid>
-            <Grid Visibility="Collapsed">
+                </Grid> <!--action buttons 5 options-->
+                <Grid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4" Visibility="{Binding OnExtendedMode, Converter={StaticResource ButtonsVisibilityConverters}}"> <!--action buttons 3 options-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Padding="5" Command="{Binding OptionSelectedCommand}" CommandParameter="{x:Static local:SelectionValues.Rock}">
+                        <Image Source="Resources/Images/Rock.png"></Image>
+                    </Button>
+                    <Button Grid.Column="1" Padding="5" Command="{Binding OptionSelectedCommand}" CommandParameter="{x:Static local:SelectionValues.Paper}">
+                        <Image Source="Resources/Images/Paper.png"></Image>
+                    </Button>
+                    <Button Grid.Column="2" Padding="5" Command="{Binding OptionSelectedCommand}" CommandParameter="{x:Static local:SelectionValues.Scissors}">
+                        <Image Source="Resources/Images/Scissors.png"></Image>
+                    </Button>
+                </Grid> <!--action buttons 3 options-->
+            </Grid><!--Grid for game-->
+            
+            <Grid Visibility="{Binding CurrentScreen, Converter={StaticResource GridsVisibilityConverter}, ConverterParameter=Records}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height=".5*"/>
                     <RowDefinition Height="2*"/>
@@ -158,7 +176,7 @@
                 <TextBlock Grid.Row="0" Text="Records" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"/>
                 
                 <ListBox Grid.Row="1" ItemsSource="{Binding RecordsList}" ItemTemplateSelector="{StaticResource PlayerTemplateSelector}" HorizontalContentAlignment="Stretch"/>
-            </Grid>
+            </Grid><!--Grid for records-->
         </Grid>
 
     </DockPanel>

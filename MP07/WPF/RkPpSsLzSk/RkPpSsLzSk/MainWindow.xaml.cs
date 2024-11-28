@@ -20,7 +20,32 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         MoveToSecondScreen();
+        ViewModel.StartFightAnimationEvent += res => FightAnimation(res);
     }
+
+    #region Animations
+
+    public static event Action FinishedFightAnimation;
+    async Task FightAnimation(Result result)
+    {
+        await Task.Delay(TimeSpan.FromSeconds(1));
+        FinishedFightAnimation?.Invoke();
+    }
+
+    #endregion
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    #region Change Screen On Start
 
     private void MoveToSecondScreen()
     {
@@ -60,4 +85,6 @@ public partial class MainWindow : Window
             new Rect(virtualScreenLeft + primaryScreenWidth, virtualScreenTop, primaryScreenWidth, primaryScreenHeight) // Assume second screen is to the right of the primary
         };
     }
+
+    #endregion
 }
