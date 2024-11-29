@@ -1,17 +1,13 @@
 ﻿using System.Globalization;
-using System.Windows;
 using System.Windows.Data;
 
 namespace RkPpSsLzSk.Converters;
 
-public class GridVisibilityConverter : IValueConverter
+public class PlayerNameConverter : IValueConverter
 {
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if ((Screens)parameter == Screens.Playing)
-            return (Screens)value ==  (Screens)parameter || (Screens)value == Screens.StartMenu ? Visibility.Visible : Visibility.Collapsed;
-
-        return (Screens)value ==  (Screens)parameter ? Visibility.Visible : Visibility.Collapsed;
+        return value.ToString() == "New Player" ? string.Empty : value.ToString();
     }
 
     public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)

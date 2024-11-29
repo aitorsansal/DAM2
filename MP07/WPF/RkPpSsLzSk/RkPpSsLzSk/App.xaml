@@ -8,6 +8,8 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/CustomCheckbox.xaml"/>
                 <ResourceDictionary Source="Resources/CustomListBoxStyle.xaml"/>
+                <ResourceDictionary Source="Resources/CustomButtonStyles.xaml"/>
+                <ResourceDictionary Source="Resources/BrushesStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

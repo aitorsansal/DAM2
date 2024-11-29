@@ -2,23 +2,23 @@
 <ArrayOfPlayer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Player>
     <Name>a</Name>
-    <MaxInSingleTournament>2</MaxInSingleTournament>
-    <TotalPoints>17</TotalPoints>
-    <WonGames>2</WonGames>
-    <WonRounds>5</WonRounds>
-    <LostRounds>3</LostRounds>
+    <MaxInSingleTournament>7</MaxInSingleTournament>
+    <TotalPoints>111</TotalPoints>
+    <WonGames>14</WonGames>
+    <WonRounds>29</WonRounds>
+    <LostRounds>17</LostRounds>
     <Selections>
       <SerializableKeyValue>
         <Key>Rock</Key>
-        <Value>0</Value>
+        <Value>13</Value>
       </SerializableKeyValue>
       <SerializableKeyValue>
         <Key>Paper</Key>
-        <Value>0</Value>
+        <Value>24</Value>
       </SerializableKeyValue>
       <SerializableKeyValue>
         <Key>Scissors</Key>
-        <Value>11</Value>
+        <Value>26</Value>
       </SerializableKeyValue>
       <SerializableKeyValue>
         <Key>Lizard</Key>
@@ -27,6 +27,66 @@
       <SerializableKeyValue>
         <Key>Spock</Key>
         <Value>0</Value>
+      </SerializableKeyValue>
+    </Selections>
+  </Player>
+  <Player>
+    <Name>Aitor</Name>
+    <MaxInSingleTournament>2</MaxInSingleTournament>
+    <TotalPoints>41</TotalPoints>
+    <WonGames>5</WonGames>
+    <WonRounds>20</WonRounds>
+    <LostRounds>24</LostRounds>
+    <Selections>
+      <SerializableKeyValue>
+        <Key>Rock</Key>
+        <Value>16</Value>
+      </SerializableKeyValue>
+      <SerializableKeyValue>
+        <Key>Paper</Key>
+        <Value>28</Value>
+      </SerializableKeyValue>
+      <SerializableKeyValue>
+        <Key>Scissors</Key>
+        <Value>28</Value>
+      </SerializableKeyValue>
+      <SerializableKeyValue>
+        <Key>Lizard</Key>
+        <Value>10</Value>
+      </SerializableKeyValue>
+      <SerializableKeyValue>
+        <Key>Spock</Key>
+        <Value>8</Value>
+      </SerializableKeyValue>
+    </Selections>
+  </Player>
+  <Player>
+    <Name>aitorsansal</Name>
+    <MaxInSingleTournament>100</MaxInSingleTournament>
+    <TotalPoints>951</TotalPoints>
+    <WonGames>106</WonGames>
+    <WonRounds>213</WonRounds>
+    <LostRounds>5</LostRounds>
+    <Selections>
+      <SerializableKeyValue>
+        <Key>Rock</Key>
+        <Value>15</Value>
+      </SerializableKeyValue>
+      <SerializableKeyValue>
+        <Key>Paper</Key>
+        <Value>22</Value>
+      </SerializableKeyValue>
+      <SerializableKeyValue>
+        <Key>Scissors</Key>
+        <Value>21</Value>
+      </SerializableKeyValue>
+      <SerializableKeyValue>
+        <Key>Lizard</Key>
+        <Value>8</Value>
+      </SerializableKeyValue>
+      <SerializableKeyValue>
+        <Key>Spock</Key>
+        <Value>9</Value>
       </SerializableKeyValue>
     </Selections>
   </Player>

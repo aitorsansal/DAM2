@@ -4,14 +4,11 @@ using System.Windows.Data;
 
 namespace RkPpSsLzSk.Converters;
 
-public class GridVisibilityConverter : IValueConverter
+public class ToolTipNameConverter : IValueConverter
 {
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-        if ((Screens)parameter == Screens.Playing)
-            return (Screens)value ==  (Screens)parameter || (Screens)value == Screens.StartMenu ? Visibility.Visible : Visibility.Collapsed;
-
-        return (Screens)value ==  (Screens)parameter ? Visibility.Visible : Visibility.Collapsed;
+        return value.ToString() != "New Player" && !string.IsNullOrEmpty(value.ToString()) ? Visibility.Collapsed : Visibility.Visible;
     }
 
     public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)

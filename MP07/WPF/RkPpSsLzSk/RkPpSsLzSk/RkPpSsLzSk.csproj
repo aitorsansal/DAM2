@@ -38,6 +38,31 @@
       <Resource Include="Resources\Images\Spock.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
+      <None Remove="Resources\Images\exit-to-app-button.png" />
+      <Resource Include="Resources\Images\exit-to-app-button.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Images\play-button-arrowhead.png" />
+      <Resource Include="Resources\Images\play-button-arrowhead.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Images\scroll.png" />
+      <Resource Include="Resources\Images\scroll.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="Resources\Images\setting.png" />
+      <None Remove="Resources\Images\settings.png" />
+      <Resource Include="Resources\Images\settings.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="Resources\BrushesStyles.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
     </ItemGroup>
 
 </Project>

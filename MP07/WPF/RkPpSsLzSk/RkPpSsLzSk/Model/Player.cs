@@ -56,14 +56,20 @@ namespace RkPpSsLzSk.Model
     }
     
 
-    public class SerializableKeyValue
+    public class SerializableKeyValue : IComparable<SerializableAttribute>
     {
         public SelectionValues Key { get; set; }
         public int Value { get; set; }
+
+        public int CompareTo(SerializableAttribute? other)
+        {
+            return Value.CompareTo(Value);
+        }
 
         public override int GetHashCode()
         {
             return HashCode.Combine(Key);
         }
+        
     }
 }

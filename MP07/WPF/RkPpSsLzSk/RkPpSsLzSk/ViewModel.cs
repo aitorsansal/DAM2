@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows;
 using Bogus;
 using RkPpSsLzSk.Model;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -7,7 +8,7 @@ using RkPpSsLzSk.Repositiori;
 
 namespace RkPpSsLzSk;
 
-public enum Screens { Config, Playing, Records }
+public enum Screens { Config, Playing, Records, StartMenu }
 public enum SelectionValues {Rock, Paper, Scissors, Lizard, Spock}
 public enum Result {Win, Lose, Draw}
 
@@ -21,7 +22,7 @@ public partial class ViewModel : ObservableObject
     ObservableCollection<object> recordsList;
 
     [ObservableProperty, NotifyCanExecuteChangedFor(nameof(StartGameCommand)), NotifyCanExecuteChangedFor(nameof(CreateNewPlayerCommand))] 
-    private string playerName = "Aitor";
+    private string playerName;
 
     [ObservableProperty]
     private string enemyName;
@@ -38,7 +39,10 @@ public partial class ViewModel : ObservableObject
     [ObservableProperty]
     private bool playFor5Rounds;
     
-    [ObservableProperty, NotifyCanExecuteChangedFor(nameof(OpenConfigCommand)), NotifyCanExecuteChangedFor(nameof(StartGameCommand)), NotifyCanExecuteChangedFor(nameof(OpenRecordsCommand))]
+    [ObservableProperty, NotifyCanExecuteChangedFor(nameof(OpenConfigCommand)), 
+     NotifyCanExecuteChangedFor(nameof(StartGameCommand)), 
+     NotifyCanExecuteChangedFor(nameof(OpenRecordsCommand)),
+     NotifyCanExecuteChangedFor(nameof(SurrenderCommand))]
     private bool currentlyPlaying;
 
     [ObservableProperty] 
@@ -94,35 +98,36 @@ public partial class ViewModel : ObservableObject
     {
         playersRepository = Repository.OpenBDPlayers();
         RecordsList = new ObservableCollection<object>();
-        OpenConfig();
+        CurrentScreen = Screens.StartMenu;
         SelectedName = "New Player";
         EnteringPlayerName = string.Empty;
         CanSelectValue = true;
-        MainWindow.FinishedFightAnimation += () =>
-        {
-            CanSelectValue = true;
-            if (CurrentRoundPlayerScore >= quantityToWin)
-            {
-                currentTournamentWins++;
-                playerPoints.MaxInSingleTournament =
-                    Math.Max(playerPoints.MaxInSingleTournament, currentTournamentWins);
-                playerPoints.TotalPoints += 5;
-                playerPoints.WonGames++;
-                DefeatedEnemies.Add(new EnemyResult{Name = EnemyName, Score = $"{CurrentRoundPlayerScore}-{CurrentRoundEnemyScore}"});
-                SavePointsToPlayer();
-                StartRound();
-            }
-            else if(CurrentRoundEnemyScore >= quantityToWin)
-            {
-                SavePointsToPlayer();
-                OpenRecords();
-                CurrentlyPlaying = false;
-            }
-        };
+        MainWindow.FinishedFightAnimation += OnFinishedAnimation;
+        MainWindow.ClosingWindow += Exit;
         PlayerNames = ["New Player"];
         foreach (var player in playersRepository.Obtain())
         {
             PlayerNames.Add(player.Name);
+        }
+    }
+
+    private void OnFinishedAnimation()
+    {
+        CanSelectValue = true;
+        if (CurrentRoundPlayerScore >= quantityToWin)
+        {
+            currentTournamentWins++;
+            playerPoints.MaxInSingleTournament =
+                Math.Max(playerPoints.MaxInSingleTournament, currentTournamentWins);
+            playerPoints.TotalPoints += 5;
+            playerPoints.WonGames++;
+            DefeatedEnemies.Add(new EnemyResult{Name = EnemyName, Score = $"{CurrentRoundPlayerScore}-{CurrentRoundEnemyScore}"});
+            StartRound();
+        }
+        else if(CurrentRoundEnemyScore >= quantityToWin)
+        {
+            ReturnToMenu();
+            CurrentlyPlaying = false;
         }
     }
 
@@ -151,6 +156,7 @@ public partial class ViewModel : ObservableObject
     [RelayCommand (CanExecute = nameof(CanCreateNewPlayer))]
     void CreateNewPlayer()
     {
+        if (string.IsNullOrEmpty(EnteringPlayerName)) return; 
         PlayerNames.Add(EnteringPlayerName);
         playersRepository.Add(new Player{ Name = EnteringPlayerName });
         PlayerName = EnteringPlayerName;
@@ -165,8 +171,8 @@ public partial class ViewModel : ObservableObject
         quantityToWin = PlayFor5Rounds ? 3 : 2;
         currentRound = 0;
         enumValues = OnExtendedMode ? Enum.GetValues(typeof(SelectionValues)) : Enum.GetValues(typeof(SelectionValues)).Cast<SelectionValues>().Take(3).ToArray();
+        playerPoints = playersRepository.Obtain().First(player => player.Name.Equals(PlayerName));
         StartRound(); 
-        playerPoints = playersRepository.Obtain().FirstOrDefault(player => player.Name.Equals(PlayerName));
         currentTournamentWins = 0;
         DefeatedEnemies = new ObservableCollection<EnemyResult>();
     }
@@ -180,8 +186,36 @@ public partial class ViewModel : ObservableObject
         playersRepository.ModifySelection(PlayerSelection, PlayerName);
         PlayerImageSelectionPath = GetImagePath(PlayerSelection);
         Random random = new();
-        EnemySelection = (SelectionValues)enumValues
-            .GetValue(random.Next(enumValues.Length))!;
+        var player = playersRepository.Obtain().First(x => x.Name == PlayerName);
+        var ordered = player.Selections.OrderByDescending(x => x.Value).ToList();
+        if (random.Next(10) < 4)
+        {
+            var moreUsed = ordered.First().Key;
+            EnemySelection = moreUsed switch
+            {
+                SelectionValues.Rock => OnExtendedMode
+                    ? random.Next(2) == 0 ? SelectionValues.Paper : SelectionValues.Spock
+                    : SelectionValues.Paper,
+                SelectionValues.Paper => OnExtendedMode
+                    ? random.Next(2) == 0 ? SelectionValues.Scissors : SelectionValues.Lizard
+                    : SelectionValues.Paper,
+                SelectionValues.Scissors => OnExtendedMode
+                    ? random.Next(2) == 0 ? SelectionValues.Rock : SelectionValues.Spock
+                    : SelectionValues.Rock,
+                SelectionValues.Lizard => OnExtendedMode
+                    ? random.Next(2) == 0 ? SelectionValues.Rock : SelectionValues.Scissors
+                    : SelectionValues.Rock,
+                SelectionValues.Spock => OnExtendedMode
+                    ? random.Next(2) == 0 ? SelectionValues.Lizard : SelectionValues.Paper
+                    : SelectionValues.Paper,
+                _ => throw new ArgumentOutOfRangeException()
+            };
+        }
+        else
+        {
+            EnemySelection = (SelectionValues)enumValues
+                .GetValue(random.Next(enumValues.Length))!;
+        }
         EnemyImageSelectionPath = GetImagePath(EnemySelection);
         var result = GetResult(PlayerSelection, EnemySelection);
         switch (result)
@@ -200,12 +234,36 @@ public partial class ViewModel : ObservableObject
         StartFightAnimationEvent?.Invoke(result);
         
     }
+
+    [RelayCommand (CanExecute = nameof(CanSurrender))]
+    void Surrender()
+    {
+        SavePointsToPlayer();
+        ReturnToMenu();
+        CurrentlyPlaying = false;
+    }
+
+    [RelayCommand]
+    void Exit()
+    {
+        if (CurrentlyPlaying)
+            Surrender();
+        Application.Current.Shutdown();
+    }
+
+    [RelayCommand]
+    void ReturnToMenu()
+    {
+        CurrentScreen = Screens.StartMenu;
+    }
+    
     
     private bool CanCreateNewPlayer() =>EnteringPlayerName != string.Empty && !PlayerNames.Contains(EnteringPlayerName) && PlayerName == "New Player";
     private bool CanOpenRecords() => !CurrentlyPlaying && CurrentScreen != Screens.Records;
     private bool CanOpenConfig() => !CurrentlyPlaying && CurrentScreen != Screens.Config;
     private bool CanStartGame() => !CurrentlyPlaying && PlayerName != "New Player";
     private bool CanSelectOption() => CanSelectValue;
+    private bool CanSurrender() => CurrentlyPlaying;
 
     #endregion
 
@@ -270,6 +328,7 @@ public partial class ViewModel : ObservableObject
         CurrentRoundEnemyScore = 0;
         var fkr = new Faker("es");
         EnemyName = fkr.Name.FirstName();
+        SavePointsToPlayer();
     }
     
     void SavePointsToPlayer()

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.ComponentModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -156,7 +157,11 @@ public partial class MainWindow : Window
     
     #endregion
 
-
+    public static event Action ClosingWindow;
+    private void MainWindow_OnClosing(object? sender, CancelEventArgs e)
+    {
+        ClosingWindow?.Invoke();
+    }
 
 
 
@@ -209,4 +214,6 @@ public partial class MainWindow : Window
     }
 
     #endregion
+
+
 }
