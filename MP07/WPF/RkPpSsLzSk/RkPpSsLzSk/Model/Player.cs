@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace RkPpSsLzSk.Model
 {
+
     public class Player : IComparable<Player>
     {
         public string Name { get; set; }
@@ -14,6 +16,21 @@ namespace RkPpSsLzSk.Model
         public int WonGames { get; set; }
         public int WonRounds { get; set; }
         public int LostRounds { get; set; }
+        
+        public SerializableKeyValue[] Selections { get; set; }
+
+
+        public Player()
+        {
+            Selections =
+            [
+                new SerializableKeyValue() {Key = SelectionValues.Rock, Value = 0},
+                new SerializableKeyValue() {Key = SelectionValues.Paper, Value = 0},
+                new SerializableKeyValue() {Key = SelectionValues.Scissors, Value = 0},
+                new SerializableKeyValue() {Key = SelectionValues.Lizard, Value = 0},
+                new SerializableKeyValue() {Key = SelectionValues.Spock, Value = 0}
+            ];
+        }
 
         public int CompareTo(Player other)
         {
@@ -35,6 +52,18 @@ namespace RkPpSsLzSk.Model
             if (result != 0) return result;
 
             return string.Compare(Name, other.Name, StringComparison.Ordinal);
+        }
+    }
+    
+
+    public class SerializableKeyValue
+    {
+        public SelectionValues Key { get; set; }
+        public int Value { get; set; }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Key);
         }
     }
 }

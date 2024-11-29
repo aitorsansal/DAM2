@@ -101,8 +101,6 @@ public partial class ViewModel : ObservableObject
         MainWindow.FinishedFightAnimation += () =>
         {
             CanSelectValue = true;
-            EnemyImageSelectionPath = "";
-            PlayerImageSelectionPath = "";
             if (CurrentRoundPlayerScore >= quantityToWin)
             {
                 currentTournamentWins++;
@@ -179,6 +177,7 @@ public partial class ViewModel : ObservableObject
     {
         CanSelectValue = false;
         PlayerSelection = (SelectionValues)sender;
+        playersRepository.ModifySelection(PlayerSelection, PlayerName);
         PlayerImageSelectionPath = GetImagePath(PlayerSelection);
         Random random = new();
         EnemySelection = (SelectionValues)enumValues
@@ -275,7 +274,7 @@ public partial class ViewModel : ObservableObject
     
     void SavePointsToPlayer()
     {
-        playersRepository.Modify(playerPoints);
+        playersRepository.Modify(playerPoints, playersRepository.Obtain());
     }
     
     #endregion

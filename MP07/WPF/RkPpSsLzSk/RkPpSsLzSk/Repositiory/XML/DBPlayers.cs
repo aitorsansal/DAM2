@@ -15,13 +15,13 @@ namespace RkPpSsLzSk.Dades
         /// <summary>
         /// Desa els clients en un fitxer XML
         /// </summary>
-        /// <param name="clients">Dades dels clients que ha de desar</param>
-        public void Save(ObservableCollection<Player> clients)
+        /// <param name="players">Dades dels clients que ha de desar</param>
+        public void Save(ObservableCollection<Player> players)
         {
             using (TextWriter fitxer = new StreamWriter(rutaFitxerXml))
             {
                 XmlSerializer serialitzador = new XmlSerializer(typeof(ObservableCollection<Player>));
-                serialitzador.Serialize(fitxer, clients);
+                serialitzador.Serialize(fitxer, players);
             }
         }
 
@@ -31,33 +31,55 @@ namespace RkPpSsLzSk.Dades
         /// <returns>Les dades dels clients en format de llista observable</returns>
         public ObservableCollection<Player> Obtain()
         {
-            ObservableCollection<Player> clients;
+            ObservableCollection<Player> players;
 
             using (TextReader fitxer = new StreamReader(rutaFitxerXml, new FileStreamOptions{Mode = FileMode.OpenOrCreate} ))
             {
                 if (fitxer.Peek() != -1)
                 {
                     XmlSerializer serialitzador = new XmlSerializer(typeof(ObservableCollection<Player>));
-                    clients = (ObservableCollection<Player>)serialitzador.Deserialize(fitxer) ;
+                    players = (ObservableCollection<Player>)serialitzador.Deserialize(fitxer);
                 }
                 else
                 {
-                    clients = new ObservableCollection<Player>();
+                    players = new ObservableCollection<Player>();
                 }
             }
-            return clients;
+            return players;
+        }
+
+        public void ModifySelection(SelectionValues value, string playerName)
+        {
+            // Get the list of players
+            var players = Obtain();
+
+            // Find the player by name
+            Player modifPlayer = players.FirstOrDefault(p => p.Name == playerName);
+
+            if (modifPlayer != null)
+            {
+                modifPlayer.Selections.First(x => x.Key == value).Value++;
+
+                // Save the updated list back to the XML file
+                Save(players);
+            }
+            else
+            {
+                // Handle case where player is not found (optional)
+                Console.WriteLine("Player not found!");
+            }
         }
 
         /// <summary>
         /// Modifica un client
         /// </summary>
         /// <param name="player">Noves dades que ha de tenir el client</param>
+        /// <param name="players"></param>
         /// <returns></returns>
-        public bool Modify(Player player)
+        public bool Modify(Player player, ObservableCollection<Player> players)
         {
             bool modified = false;
-            ObservableCollection<Player> clients = Obtain();
-            Player modificablePlayer = clients.FirstOrDefault(clientActual => clientActual.Name == player.Name);
+            Player modificablePlayer = players.FirstOrDefault(p => p.Name == player.Name);
             if (modificablePlayer != null)
             {
                 modificablePlayer.Name = player.Name;
@@ -68,7 +90,7 @@ namespace RkPpSsLzSk.Dades
                 modificablePlayer.TotalPoints = player.TotalPoints;
                 modified = true;
             }
-            Save(clients);
+            Save(players);
             return modified;
         }
 
@@ -91,4 +113,7 @@ namespace RkPpSsLzSk.Dades
             return added;
         }
     }
+    
+    
+    
 }
