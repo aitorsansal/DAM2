@@ -90,4 +90,34 @@
       </SerializableKeyValue>
     </Selections>
   </Player>
+  <Player>
+    <Name>wwww</Name>
+    <MaxInSingleTournament>1</MaxInSingleTournament>
+    <TotalPoints>18</TotalPoints>
+    <WonGames>2</WonGames>
+    <WonRounds>4</WonRounds>
+    <LostRounds>0</LostRounds>
+    <Selections>
+      <SerializableKeyValue>
+        <Key>Rock</Key>
+        <Value>6</Value>
+      </SerializableKeyValue>
+      <SerializableKeyValue>
+        <Key>Paper</Key>
+        <Value>5</Value>
+      </SerializableKeyValue>
+      <SerializableKeyValue>
+        <Key>Scissors</Key>
+        <Value>9</Value>
+      </SerializableKeyValue>
+      <SerializableKeyValue>
+        <Key>Lizard</Key>
+        <Value>1</Value>
+      </SerializableKeyValue>
+      <SerializableKeyValue>
+        <Key>Spock</Key>
+        <Value>2</Value>
+      </SerializableKeyValue>
+    </Selections>
+  </Player>
 </ArrayOfPlayer>
