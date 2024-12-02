@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.map
 
 class Preferences(private val context : Context) {
 
-    private val Context.dataStore by preferencesDataStore("preferences")
+    private val Context.dataStore by  preferencesDataStore("preferences")
     private val PLAYER_NAME = stringPreferencesKey("playerName")
     private val PLAY_MODE = intPreferencesKey("playMode")
     private val QUANTITY_OF_GAMES_TO_WIN = intPreferencesKey("quantityToWin")
@@ -48,6 +48,18 @@ class Preferences(private val context : Context) {
     suspend fun setGamesToWin(quantityOfGames:Int){
         context.dataStore.edit { pref ->
             pref[QUANTITY_OF_GAMES_TO_WIN] = quantityOfGames
+        }
+    }
+
+
+    companion object {
+        @Volatile
+        private var INSTANCE: Preferences? = null
+
+        fun getInstance(context: Context): Preferences {
+            return INSTANCE ?: synchronized(this) {
+                INSTANCE ?: Preferences(context.applicationContext).also { INSTANCE = it }
+            }
         }
     }
 }

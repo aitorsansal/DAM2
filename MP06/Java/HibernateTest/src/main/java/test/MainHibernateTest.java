@@ -16,11 +16,13 @@ public class MainHibernateTest {
 
 	public static void main(String[] args) {
 		DAOManager daoManager = new DAOManagerHibernateImplementation();
-		ArrayList<Team> t = daoManager.getAllTeams();
 
-		for (Team team : t) {
-			System.out.println(team.getClubName());
-		}
+		Team teamToUpdate = new Team();
+		teamToUpdate.setAbv("ABC");
+		teamToUpdate.setLogoLink("aaaaaaaaaaa");
+		daoManager.updateTeam(teamToUpdate);
+		Team tm = daoManager.getTeamByAbbr("ABC");
+		System.out.println(tm.getLogoLink());
 	}
 
 }

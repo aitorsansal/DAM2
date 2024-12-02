@@ -28,6 +28,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -42,15 +43,14 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.aitorsansal.rps.data.Preferences
 import com.aitorsansal.rps.model.PlayMode
+import com.aitorsansal.rps.model.toInt
 import com.aitorsansal.rps.navigation.EndGameScreenDestination
 import com.aitorsansal.rps.navigation.GameScreenDestination
 import com.aitorsansal.rps.navigation.HomeScreenDestination
 import com.aitorsansal.rps.navigation.NavigationGraph
 import com.aitorsansal.rps.navigation.PreferencesScreenDestination
 import com.aitorsansal.rps.navigation.drawerOptions
-import com.aitorsansal.rps.ui.screens.PreferencesScreen
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.compose
 import kotlinx.coroutines.launch
 
 @SuppressLint("RestrictedApi")
@@ -62,7 +62,9 @@ fun CustomNavigationDrawer(
     actualRoute: NavBackStackEntry?,
     actualDestination: NavDestination?
 ) {
-    val playMode =  Preferences(LocalContext.current).getPlayMode.collectAsState(initial = PlayMode.Normal).value
+    val context = LocalContext.current
+    val preferences = remember { Preferences.getInstance(context) }
+    val playMode = preferences.getPlayMode.collectAsState(initial = PlayMode.Normal).value
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
@@ -97,7 +99,13 @@ fun CustomNavigationDrawer(
                                 drawerState.close()
                             }
                             if(cat.route == GameScreenDestination){
-                                navController.navigate(GameScreenDestination(playMode))
+                                navController.navigate(GameScreenDestination){
+                                    popUpTo(navController.graph.findStartDestination().id){
+                                        saveState = true
+                                    }
+                                    launchSingleTop = true
+                                    restoreState = true
+                                }
                             }
                             else{
                                 navController.navigate(cat.route) {

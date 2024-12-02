@@ -20,6 +20,7 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -35,10 +36,11 @@ import kotlinx.coroutines.launch
 @Composable
 fun PreferencesScreen(){
 
-    val preferences = Preferences(LocalContext.current)
+    val context = LocalContext.current
+    val preferences = remember { Preferences.getInstance(context) }
     val playerName by preferences.getPlayerName.collectAsState(initial = 0)
     val gameMode by preferences.getPlayMode.collectAsState(initial = 0)
-    val quantityOfGames by preferences.getQuantityOfGamesToWin.collectAsState(initial = 0)
+    val quantityOfGames by preferences.getQuantityOfGamesToWin.collectAsState(initial = 2)
 
     val coroutineScope = rememberCoroutineScope()
     Column (

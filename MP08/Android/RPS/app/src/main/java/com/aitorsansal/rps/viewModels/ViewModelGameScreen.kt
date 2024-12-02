@@ -13,6 +13,7 @@ import com.aitorsansal.rps.model.GameOptions
 import com.aitorsansal.rps.model.PlayMode
 import com.aitorsansal.rps.model.PlayerEndData
 import com.aitorsansal.rps.model.Results
+import com.aitorsansal.rps.model.toPlayMode
 import com.aitorsansal.rps.navigation.GameScreenDestination
 
 
@@ -20,19 +21,14 @@ class ViewModelGameScreen(savedStateHandle: SavedStateHandle) : ViewModel() {
     var state by mutableStateOf(GameScreenState())
         private set
     init {
-        state = state.copy(playMode = PlayMode.Normal, playerName = "", enemyName = "")
-        val args = savedStateHandle.toRoute<GameScreenDestination>()
+        var params = savedStateHandle.toRoute<GameScreenDestination>()
+        state = state.copy(playMode = params.gameMode.toPlayMode(), playerName = "", enemyName = "")
     }
     var playerData : PlayerEndData = PlayerEndData(state.playerName, 0,0,0)
 
     fun SelectOption(selOption : GameOptions){
         var enemySelection = GetEnemySelection()
 
-    }
-
-    @Composable
-    fun GetPreferences() : Preferences{
-        return Preferences(LocalContext.current)
     }
 
     private fun GetResult(playerOption: GameOptions, enemyOption: GameOptions) : Results{

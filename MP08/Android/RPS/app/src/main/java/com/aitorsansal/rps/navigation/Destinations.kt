@@ -23,7 +23,8 @@ object HomeScreenDestination
 object PreferencesScreenDestination
 
 @Serializable
-data class GameScreenDestination(var gameMode : PlayMode)
+data class GameScreenDestination(var gameMode : Int)
+//object GameScreenDestination
 
 @Serializable
 object InstructionsScreenDestination
