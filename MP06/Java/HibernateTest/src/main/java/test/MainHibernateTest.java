@@ -6,24 +6,21 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import DAO.DAOManager;
+import DAO.DAOManagerHibernateImplementation;
 import model.Team;
+
+import java.util.ArrayList;
 
 public class MainHibernateTest {
 
 	public static void main(String[] args) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("ORMFutbol");
-		EntityManager entityManager = emf.createEntityManager();
-		EntityTransaction t = null;
-		t = entityManager.getTransaction();
-		t.begin();
-		Team team = new Team();
-		team.setAbv("ABC");
-		team.setClubName("CLUB");
-		team.setLogoLink("noPhotoLink");
-		entityManager.persist(team);
-		t.commit();
-		entityManager.close();
-		emf.close();
+		DAOManager daoManager = new DAOManagerHibernateImplementation();
+		ArrayList<Team> t = daoManager.getAllTeams();
+
+		for (Team team : t) {
+			System.out.println(team.getClubName());
+		}
 	}
 
 }
