@@ -72,4 +72,7 @@ dependencies {
 
     //Serialització
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+
+    implementation ("io.github.serpro69:kotlin-faker:1.13.0")
+
 }

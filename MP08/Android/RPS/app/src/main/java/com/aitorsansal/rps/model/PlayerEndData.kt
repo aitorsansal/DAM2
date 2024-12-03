@@ -1,6 +1,7 @@
 package com.aitorsansal.rps.model
 
 import android.os.Parcelable
+import androidx.navigation.NavHostController
 import kotlinx.parcelize.Parcelize
 
 @Parcelize

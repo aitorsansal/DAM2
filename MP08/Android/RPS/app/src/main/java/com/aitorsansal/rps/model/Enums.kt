@@ -4,9 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.Serializable
 
-@Parcelize
-@Serializable
-enum class PlayMode: Parcelable{
+enum class PlayMode{
     Extended, Normal
 }
 

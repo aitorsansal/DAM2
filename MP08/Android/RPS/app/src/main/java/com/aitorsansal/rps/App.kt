@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -65,6 +66,7 @@ fun CustomNavigationDrawer(
     val context = LocalContext.current
     val preferences = remember { Preferences.getInstance(context) }
     val playMode = preferences.getPlayMode.collectAsState(initial = PlayMode.Normal).value
+    val playerName = preferences.getPlayerName.collectAsState(initial = "").value
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
@@ -98,8 +100,8 @@ fun CustomNavigationDrawer(
                             coroutineScope.launch {
                                 drawerState.close()
                             }
-                            if(cat.route == GameScreenDestination){
-                                navController.navigate(GameScreenDestination){
+                            if(cat.route == GameScreenDestination(PlayMode.Normal, "")){
+                                navController.navigate(GameScreenDestination(playMode, playerName)){
                                     popUpTo(navController.graph.findStartDestination().id){
                                         saveState = true
                                     }
@@ -191,13 +193,11 @@ fun Bastida(
                         }
                     }
                     else{
-                        IconButton(onClick = { navController.navigateUp()}) {
-                            Icon(
-                                imageVector = Icons.Default.ArrowBack,
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.onPrimary
-                            )
-                        }
+                        Icon(
+                            imageVector = Icons.Filled.PlayArrow,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.onPrimary
+                        )
                     }
                 })
         }
