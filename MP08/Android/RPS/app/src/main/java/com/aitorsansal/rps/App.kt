@@ -67,6 +67,7 @@ fun CustomNavigationDrawer(
     val preferences = remember { Preferences.getInstance(context) }
     val playMode = preferences.getPlayMode.collectAsState(initial = PlayMode.Normal).value
     val playerName = preferences.getPlayerName.collectAsState(initial = "").value
+    val maxGames = preferences.getQuantityOfGamesToWin.collectAsState(initial = 0).value
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
@@ -100,8 +101,8 @@ fun CustomNavigationDrawer(
                             coroutineScope.launch {
                                 drawerState.close()
                             }
-                            if(cat.route == GameScreenDestination(PlayMode.Normal, "")){
-                                navController.navigate(GameScreenDestination(playMode, playerName)){
+                            if(cat.route == GameScreenDestination(PlayMode.Normal, "", 0)){
+                                navController.navigate(GameScreenDestination(playMode, playerName, maxGames)){
                                     popUpTo(navController.graph.findStartDestination().id){
                                         saveState = true
                                     }

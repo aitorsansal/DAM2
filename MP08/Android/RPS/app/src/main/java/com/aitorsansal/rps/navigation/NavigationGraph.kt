@@ -26,10 +26,11 @@ fun NavigationGraph(navController : NavHostController, paddingValues: PaddingVal
     var pref = Preferences.getInstance(LocalContext.current)
     var gameMode = pref.getPlayMode.collectAsState(initial = PlayMode.Normal).value
     var playerName = pref.getPlayerName.collectAsState(initial = "").value
+    var maxGames = pref.getQuantityOfGamesToWin.collectAsState(initial = 0).value
     NavHost(navController = navController, modifier = Modifier.padding(paddingValues), startDestination = HomeScreenDestination){
 
         composable<HomeScreenDestination> {
-            HomeScreen(onPlayClick = { navController.navigate(GameScreenDestination(playMode = gameMode, playerName)){
+            HomeScreen(onPlayClick = { navController.navigate(GameScreenDestination(playMode = gameMode, playerName, maxGames)){
                 popUpTo(navController.graph.findStartDestination().id){
                     saveState = true
                 }

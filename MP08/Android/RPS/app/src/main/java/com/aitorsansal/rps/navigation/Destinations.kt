@@ -25,7 +25,7 @@ object HomeScreenDestination
 object PreferencesScreenDestination
 
 @Serializable
-data class GameScreenDestination(var playMode : PlayMode, var playerName : String)
+data class GameScreenDestination(var playMode : PlayMode, var playerName : String, var maxGames : Int)
 //object GameScreenDestination
 
 @Serializable
@@ -38,7 +38,7 @@ data class DrawerOption<T:Any>(val route:T, val nonSelectedIcon: ImageVector, va
 
 val drawerOptions = listOf(
     DrawerOption(HomeScreenDestination, Icons.Outlined.Home, Icons.Filled.Home, "Home Screen"),
-    DrawerOption(GameScreenDestination(PlayMode.Normal, ""), Icons.Outlined.PlayArrow, Icons.Filled.PlayArrow, "Game Screen"),
+    DrawerOption(GameScreenDestination(PlayMode.Normal, "", 0), Icons.Outlined.PlayArrow, Icons.Filled.PlayArrow, "Game Screen"),
     DrawerOption(PreferencesScreenDestination, Icons.Outlined.Settings, Icons.Filled.Settings, "Preferences", showBadge = true),
     DrawerOption(InstructionsScreenDestination, Icons.Outlined.Book, Icons.Filled.Book, "Instructions"),
 )

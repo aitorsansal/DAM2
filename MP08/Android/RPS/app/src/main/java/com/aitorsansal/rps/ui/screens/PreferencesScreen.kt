@@ -18,8 +18,11 @@ import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -41,6 +44,7 @@ fun PreferencesScreen(){
     val playerName by preferences.getPlayerName.collectAsState(initial = 0)
     val gameMode by preferences.getPlayMode.collectAsState(initial = 0)
     val quantityOfGames by preferences.getQuantityOfGamesToWin.collectAsState(initial = 2)
+    var nom by remember { mutableStateOf("") }
 
     val coroutineScope = rememberCoroutineScope()
     Column (
@@ -77,10 +81,11 @@ fun PreferencesScreen(){
                     .fillMaxWidth()
                     .height(3.dp))
                 TextField(
-                    value = playerName.toString(),
+                    value = nom,
                     onValueChange = { coroutineScope.launch{
-                        preferences.setPlayerName(it)
+                        preferences.setPlayerName(nom)
                         }
+                        nom = it
                     },
                     modifier = Modifier.fillMaxWidth().padding(horizontal = 10.dp))
                 Spacer(modifier = Modifier.height(16.dp))

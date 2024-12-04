@@ -30,7 +30,7 @@ class ViewModelGameScreen(savedStateHandle: SavedStateHandle) : ViewModel() {
     val navigationEvent = MutableSharedFlow<EndGameScreenDestination>()
     init {
         var params = savedStateHandle.toRoute<GameScreenDestination>()
-        state = state.copy(playMode = params.playMode, playerName = params.playerName)
+        state = state.copy(playMode = params.playMode, playerName = params.playerName, gamesToWin = params.maxGames)
         startNewRound()
     }
     var playerData : PlayerEndData = PlayerEndData(state.playerName, 0,0,0)
@@ -53,11 +53,11 @@ class ViewModelGameScreen(savedStateHandle: SavedStateHandle) : ViewModel() {
             Results.Draw -> state = state
         }
 
-        if(state.currentPlayerPoints == 3) {
+        if(state.currentPlayerPoints == state.gamesToWin) {
             playerData.wonEnemies++
             startNewRound()
         }
-        else if(state.currentEnemyPoints == 3){
+        else if(state.currentEnemyPoints == state.gamesToWin){
             navigateToEndScreen()
         }
     }
@@ -129,5 +129,6 @@ data class GameScreenState(
     val currentRound : String = "Round 1",
     val currentPlayerPoints : Int = 0,
     val currentEnemyPoints : Int = 0,
-    val currentResult : String = "0-0"
+    val currentResult : String = "0-0",
+    val gamesToWin : Int = 0
 )

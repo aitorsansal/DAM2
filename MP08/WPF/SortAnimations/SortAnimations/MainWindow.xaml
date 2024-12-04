@@ -1,0 +1,112 @@
+﻿<Window x:Class="SortAnimations.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:SortAnimations"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".15*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="Títol" Text="Configuració" TextAlignment="Left" Padding="5,5,10,5" 
+                   Background="{StaticResource FrontBrush}" Foreground="White" FontSize="15"/>
+        <Grid Grid.Row="0" Grid.Column="1" Background="Gray">
+            <StackPanel Orientation="Horizontal" x:Name="TopBar" Background="{StaticResource FrontBrush}">
+                <Button x:Name="btnGenerate" Click="Generate_OnClick" Padding="10" Margin="10,5,10,5" Width="75">Generate</Button>
+                <Button x:Name="btnSort" Click="Sort_OnClick" Padding="10" Margin="10,5,10,5" Width="75">Sort</Button>
+                <Button x:Name="btnStop" Click="Stop_OnClick" Padding="10" Margin="10,5,10,5" Width="75">Stop</Button>
+            </StackPanel>
+        </Grid>
+        <ScrollViewer Grid.Row="1" Grid.Column="0" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Background="{StaticResource BackgroundBrush}">
+            <StackPanel>
+                <Expander Header="Elements" Style="{StaticResource SettingsExpanderStyle}" MouseDown="Expander_OnMouseDown" IsExpanded="False">
+                    <StackPanel>
+                        <TextBlock Text="Quantity of Elements" Style="{StaticResource ConfigTextBlockStyle}"/>
+                        <xctk:IntegerUpDown x:Name="nElemBox" Value="10" Minimum="2"/>
+                        <TextBlock Text="Border Thickness" Style="{StaticResource ConfigTextBlockStyle}"/>
+                        <xctk:IntegerUpDown x:Name="gruixMarcBox" Value="2" Minimum="0"/>
+                        <TextBlock Text="Column Radius" Style="{StaticResource ConfigTextBlockStyle}"/>
+                        <xctk:IntegerUpDown x:Name="radiColumnsBox" Value="0" Minimum="0"/>
+                        <!--Type of graphic-->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Columns" Style="{StaticResource ConfigTextBlockStyle}" HorizontalAlignment="Center"/>
+                            <CheckBox Grid.Column="1" Style="{StaticResource SwitchStyle}" Name="IsElipseCheckBox"/>
+                            <TextBlock Grid.Column="2" Text="Points" Style="{StaticResource ConfigTextBlockStyle}" HorizontalAlignment="Center"/>
+                        </Grid>
+                        <Grid Margin="0,10,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Inverted" Style="{StaticResource ConfigTextBlockStyle}" HorizontalAlignment="Center"/>
+                            <CheckBox Grid.Row="0" Grid.Column="1" Style="{StaticResource SwitchStyle}" Name="typeOfGenSwitch"/>
+                            <TextBlock Grid.Column="2" Text="Random" Style="{StaticResource ConfigTextBlockStyle}" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+                </Expander>
+                <Expander Header="Sorting Settings" Style="{StaticResource SettingsExpanderStyle}" MouseDown="Expander_OnMouseDown">
+                    <StackPanel>
+                        <TextBlock Text="Wait Time" Style="{StaticResource ConfigTextBlockStyle}"/>
+                        <xctk:IntegerUpDown x:Name="waitTimeUpDown" Value="50" Minimum="0"/>
+                        <TextBlock Text="Type of Sort" Style="{StaticResource ConfigTextBlockStyle}"/>
+                        <ComboBox x:Name="sortingTypeCB"/>
+                    </StackPanel>
+                    
+                </Expander>
+
+                <Expander Header="Colors" Style="{StaticResource SettingsExpanderStyle}" MouseDown="Expander_OnMouseDown" IsExpanded="True">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="1.3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Correct" Style="{StaticResource ConfigTextBlockStyle}"/>
+                        <xctk:ColorPicker Grid.Row="0" Grid.Column="1" Margin="5,5,5,5" x:Name="CorrectColorPicker" SelectedColor="Green"
+                                          SelectedColorChanged="ColorPicker_ColorChanged"/>
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Incorrect" Style="{StaticResource ConfigTextBlockStyle}"/>
+                        <xctk:ColorPicker Grid.Row="1" Grid.Column="1" Margin="5,5,5,5" x:Name="IncorrectColorPicker" SelectedColor="Red"
+                                          SelectedColorChanged="ColorPicker_ColorChanged"/>
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Changing" Style="{StaticResource ConfigTextBlockStyle}"/>
+                        <xctk:ColorPicker Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" x:Name="ChangingColorPicker" SelectedColor="Orange"
+                                          SelectedColorChanged="ColorPicker_ColorChanged"/>
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Background" Style="{StaticResource ConfigTextBlockStyle}"/>
+                        <xctk:ColorPicker Grid.Row="3" Grid.Column="1" Margin="5,5,5,5" x:Name="BackgroundColorPicker" SelectedColor="Plum"
+                                          SelectedColorChanged="ColorPicker_ColorChanged"/>
+                        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Reset to defaults"
+                                HorizontalAlignment="Center" VerticalAlignment="Center"
+                                Padding="10" Margin="0,5,0,0" Click="ResetDefaults_OnClick"/>
+
+                    </Grid>
+                    
+                </Expander>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <Viewbox Grid.Column="1" Grid.Row="1">
+            <Canvas x:Name="sortingCanvas" Background="Transparent" Width="500" Height="500"/>
+        </Viewbox>
+        
+    </Grid>
+</Window>
