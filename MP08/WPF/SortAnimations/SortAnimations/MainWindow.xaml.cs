@@ -11,11 +11,7 @@ namespace SortAnimations;
     public partial class MainWindow : Window
     {
         #region Members
-        public enum OrdenationType { Bubble = 0, Heap = 1, Insercio = 2, Pancake = 3, QuickSort = 4 }
-        public enum elementsType { Barra = 0, Punts = 1 }
-        public enum tipusAnimacio { Alçada = 0, Posicio = 1 }
-        public enum tipusEasing { Back = 0, Bounce = 1, Circle = 2, Cubic = 3, Elastic = 4, Exponential = 5, Power = 6, Quadratic = 7, Quartic = 8, Quintic = 9, Sine = 10 }
-        enum modeEasing { IN = 0, OUT = 1, IN_OUT = 2 }
+        public enum OrdenationType { Bubble, Pancake, QuickSort }
         int[] toOrderArray;
         Rectangle[] rectangles;
         int nElements;
@@ -52,25 +48,17 @@ namespace SortAnimations;
 
             if (sortingTypeCB.SelectedItem != null)
             {
-                if ((OrdenationType)sortingTypeCB.SelectedItem == OrdenationType.Bubble)
+                switch ((OrdenationType)sortingTypeCB.SelectedItem)
                 {
-                    BubbleSort();
-                }
-                else if ((OrdenationType)sortingTypeCB.SelectedItem == OrdenationType.Heap)
-                {
-                    Heap();
-                }
-                else if ((OrdenationType)sortingTypeCB.SelectedItem == OrdenationType.Insercio)
-                {
-                    InsertionSort();
-                }
-                else if ((OrdenationType)sortingTypeCB.SelectedItem == OrdenationType.Pancake)
-                {
-                    PancakeSort();
-                }
-                else if ((OrdenationType)sortingTypeCB.SelectedItem == OrdenationType.QuickSort)
-                {
-                    QuickSort();
+                    case OrdenationType.Bubble:
+                        BubbleSort();
+                        break;
+                    case OrdenationType.Pancake:
+                        PancakeSort();
+                        break;
+                    case OrdenationType.QuickSort:
+                        QuickSort();
+                        break;
                 }
             }
 
@@ -115,7 +103,6 @@ namespace SortAnimations;
 
                     rectangles[i] = rect;
                     sortingCanvas.Children.Add(rect);
-                    ColumnsRepaint(i);
                 }
                 else
                 {
@@ -135,8 +122,9 @@ namespace SortAnimations;
 
                     rectangles[i] = ellipse;
                     sortingCanvas.Children.Add(ellipse);
-                    ColumnsRepaint(i);
                 }
+
+                ColumnsRepaint(i);
             }
         }
         private void Stop_OnClick(object sender, RoutedEventArgs e)
@@ -149,91 +137,19 @@ namespace SortAnimations;
 
         #region Bubble
 
-        public void BubbleSort()
-        {
-            bool flag = true;
-            int totalElements = toOrderArray.Length;
-
-            while (flag && totalElements > 1)
-            {
-                flag = false;
-
-                for (int i = 0; i < totalElements - 1; i++)
-                {
-
-                    if (toOrderArray[i] > toOrderArray[i + 1])
-                    {
-
-                        flag = true;
-
-                        ChangeElements(i, i + 1);
-                    }
-                }
-
-                totalElements--;
-            }
-        }
-        #endregion
-
-        #region Heap
-        public void Heap()
-        {
-            if (nElements > 1)
-            {
-                for (int i = nElements / 2 - 1; i >= 0; i--)
-                {
-                    Heapify(toOrderArray, nElements, i);
-                    ChangeElements(toOrderArray[nElements-1], toOrderArray[i]);
-                }
-                for (int i = nElements - 1; i >= 0; i--)
-                {
-                    Heapify(toOrderArray, i, 0);
-                    ChangeElements(toOrderArray[i], toOrderArray[0]);
-                }
-            }
-        }
-
-        void Heapify(int[] array, int size, int index)
-        {
-            var largestIndex = index;
-            var leftChild = 2 * index + 1;
-            var rightChild = 2 * index + 2;
-            if (leftChild < size && array[leftChild] > array[largestIndex])
-            {
-                largestIndex = leftChild;
-                ChangeElements(largestIndex, leftChild);
-            }
-            if (rightChild < size && array[rightChild] > array[largestIndex])
-            {
-                largestIndex = rightChild;
-                ChangeElements(largestIndex, rightChild);
-            }
-            if (largestIndex != index)
-            {
-                ChangeElements(index, largestIndex);
-                Heapify(array, size, largestIndex);
-            }
-        }
-        #endregion
-
-        #region Inserció
-        public void InsertionSort()
+        void BubbleSort()
         {
             for (int i = 0; i < toOrderArray.Length - 1; i++)
             {
-                for (int j = i + 1; j > 0; j--)
+                for (int j = 0; j < toOrderArray.Length - i - 1; j++)
                 {
-                    // Swap if the element at j - 1 position is greater than the element at j position
-                    if (toOrderArray[j - 1] > toOrderArray[j])
+                    if (toOrderArray[j] > toOrderArray[j + 1])
                     {
-                        ChangeElements(j-1,j);
+                        ChangeElements(j, j + 1);
                     }
                 }
             }
-            
         }
-
-       
         #endregion
 
         #region QuickSort
@@ -344,7 +260,8 @@ namespace SortAnimations;
                 rect1.Fill = changingColor;
                 rect2.Fill = changingColor;
 
-                WaitForMiliseconds(Convert.ToInt32(waitTimeUpDown.Text));
+                
+                WaitForMiliseconds(Convert.ToInt32(string.IsNullOrEmpty(waitTimeUpDown.Text) ? "0" : waitTimeUpDown.Text));
 
                 SetHeight(pos1);
                 SetHeight(pos2);
@@ -372,7 +289,6 @@ namespace SortAnimations;
         private void ColumnsRepaint(int pos)
         {
             int nElem = toOrderArray.Length;
-            int[] arrayCorrecte = CreateSortedArray(nElem);
             rectangles[pos].Fill = toOrderArray[pos] == pos+1 ? correctColor : incorrectColor;
 
         }

@@ -46,4 +46,34 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <Style TargetType="Button" x:Key="ConfigButtonStyle">
+        <Setter Property="Background" Value="{StaticResource ButtonBackgroundColorBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ButtonForegroundColorBrush}"/>
+        <Setter Property="Margin" Value="10,5,10,5"/>
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" 
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="ContentPresenter"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!-- MouseOver Trigger -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="DodgerBlue" />
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter TargetName="border" Property="Opacity" Value="0.9" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

@@ -16,18 +16,21 @@
             <RowDefinition Height=".15*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="Títol" Text="Configuració" TextAlignment="Left" Padding="5,5,10,5" 
-                   Background="{StaticResource FrontBrush}" Foreground="White" FontSize="15"/>
+        <Grid Grid.Row="0" Grid.Column="0" Background="{StaticResource FrontBrush}">
+            
+            <TextBlock  Text="Settings" TextAlignment="Left" Padding="5,5,10,5" 
+                         Foreground="White" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
         <Grid Grid.Row="0" Grid.Column="1" Background="Gray">
             <StackPanel Orientation="Horizontal" x:Name="TopBar" Background="{StaticResource FrontBrush}">
-                <Button x:Name="btnGenerate" Click="Generate_OnClick" Padding="10" Margin="10,5,10,5" Width="75">Generate</Button>
-                <Button x:Name="btnSort" Click="Sort_OnClick" Padding="10" Margin="10,5,10,5" Width="75">Sort</Button>
-                <Button x:Name="btnStop" Click="Stop_OnClick" Padding="10" Margin="10,5,10,5" Width="75">Stop</Button>
+                <Button Click="Generate_OnClick" Content="Generate" Style="{StaticResource ConfigButtonStyle}"/>
+                <Button Click="Sort_OnClick" Content="Sort" Style="{StaticResource ConfigButtonStyle}"/>
+                <Button Click="Stop_OnClick" Content="Stop" Style="{StaticResource ConfigButtonStyle}"/>
             </StackPanel>
         </Grid>
         <ScrollViewer Grid.Row="1" Grid.Column="0" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Background="{StaticResource BackgroundBrush}">
             <StackPanel>
-                <Expander Header="Elements" Style="{StaticResource SettingsExpanderStyle}" MouseDown="Expander_OnMouseDown" IsExpanded="False">
+                <Expander Header="Elements" Style="{StaticResource SettingsExpanderStyle}" MouseDown="Expander_OnMouseDown" IsExpanded="True">
                     <StackPanel>
                         <TextBlock Text="Quantity of Elements" Style="{StaticResource ConfigTextBlockStyle}"/>
                         <xctk:IntegerUpDown x:Name="nElemBox" Value="10" Minimum="2"/>
@@ -63,12 +66,12 @@
                         <TextBlock Text="Wait Time" Style="{StaticResource ConfigTextBlockStyle}"/>
                         <xctk:IntegerUpDown x:Name="waitTimeUpDown" Value="50" Minimum="0"/>
                         <TextBlock Text="Type of Sort" Style="{StaticResource ConfigTextBlockStyle}"/>
-                        <ComboBox x:Name="sortingTypeCB"/>
+                        <ComboBox x:Name="sortingTypeCB" SelectedIndex="0"/>
                     </StackPanel>
                     
                 </Expander>
 
-                <Expander Header="Colors" Style="{StaticResource SettingsExpanderStyle}" MouseDown="Expander_OnMouseDown" IsExpanded="True">
+                <Expander Header="Colors" Style="{StaticResource SettingsExpanderStyle}" MouseDown="Expander_OnMouseDown">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -93,9 +96,8 @@
                         <TextBlock Grid.Row="3" Grid.Column="0" Text="Background" Style="{StaticResource ConfigTextBlockStyle}"/>
                         <xctk:ColorPicker Grid.Row="3" Grid.Column="1" Margin="5,5,5,5" x:Name="BackgroundColorPicker" SelectedColor="Plum"
                                           SelectedColorChanged="ColorPicker_ColorChanged"/>
-                        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Reset to defaults"
-                                HorizontalAlignment="Center" VerticalAlignment="Center"
-                                Padding="10" Margin="0,5,0,0" Click="ResetDefaults_OnClick"/>
+                        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Reset defaults"
+                                Click="ResetDefaults_OnClick" Style="{StaticResource ConfigButtonStyle}" Width="125" Height="35"/>
 
                     </Grid>
                     

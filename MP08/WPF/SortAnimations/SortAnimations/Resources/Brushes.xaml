@@ -5,4 +5,6 @@
     <SolidColorBrush x:Key="ObjectBackgroundBrush" Color="MediumPurple"/>
     <SolidColorBrush x:Key="BackgroundBrush" Color="Plum"/>
     <SolidColorBrush x:Key="ConfigFontColorBrush" Color="#603E63"/>
+    <SolidColorBrush x:Key="ButtonBackgroundColorBrush" Color="#4e0041"/>
+    <SolidColorBrush x:Key="ButtonForegroundColorBrush" Color="#fe6060"/>
 </ResourceDictionary>
