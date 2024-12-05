@@ -8,9 +8,11 @@ import javax.persistence.Persistence;
 
 import DAO.DAOManager;
 import DAO.DAOManagerHibernateImplementation;
+import model.Player;
 import model.Team;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainHibernateTest {
 
@@ -18,11 +20,16 @@ public class MainHibernateTest {
 		DAOManager daoManager = new DAOManagerHibernateImplementation();
 
 		Team teamToUpdate = new Team();
-		teamToUpdate.setAbv("ABC");
+		teamToUpdate.setAbv("TTT");
 		teamToUpdate.setLogoLink("aaaaaaaaaaa");
-		daoManager.updateTeam(teamToUpdate);
-		Team tm = daoManager.getTeamByAbbr("ABC");
-		System.out.println(tm.getLogoLink());
+		teamToUpdate.setClubName("Testing Team");
+		Player player1 = new Player("TTT", 1, "A", "TE");
+		Player player2 = new Player("TTT", 2, "B", "CA");
+		Player player3 = new Player("TTT", 3, "C", "WA");
+		Player player4 = new Player("TTT", 4, "D", "DW");
+		Player player5 = new Player("TTT", 5, "E", "PW");
+		List<Player> players = List.of(player1, player2, player3, player4, player5);
+		daoManager.addTeam(teamToUpdate, players);
 	}
 
 }

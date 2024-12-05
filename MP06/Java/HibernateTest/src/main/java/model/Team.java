@@ -1,12 +1,8 @@
 package model;
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.Set;
+import javax.persistence.*;
 
 @Table(name="team")
 @Entity
@@ -46,8 +42,33 @@ public class Team implements Serializable {
 	public void setHexCode(String hexCode) {
 		this.hexCode = hexCode;
 	}
+	
+	@OneToMany(targetEntity = Player.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "abv")
+	private Set<Player> players;
+
+    public Set<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(Set<Player> players) {
+        this.players = players;
+    }
+
 	public Team() {}
-	
-	
-	
+
+	public Team(String clubName, String abv, String logoLink, String hexCode) {
+		this.clubName = clubName;
+		this.abv = abv;
+		this.logoLink = logoLink;
+		this.hexCode = hexCode;
+	}
+
+	public Team(String clubName, String abv, String logoLink, String hexCode, Set<Player> players) {
+		this.clubName = clubName;
+		this.abv = abv;
+		this.logoLink = logoLink;
+		this.hexCode = hexCode;
+		this.players = players;
+	}
 }
