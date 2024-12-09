@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SortAnimations"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Sorting Methods" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -23,9 +23,9 @@
         </Grid>
         <Grid Grid.Row="0" Grid.Column="1" Background="Gray">
             <StackPanel Orientation="Horizontal" x:Name="TopBar" Background="{StaticResource FrontBrush}">
-                <Button Click="Generate_OnClick" Content="Generate" Style="{StaticResource ConfigButtonStyle}"/>
-                <Button Click="Sort_OnClick" Content="Sort" Style="{StaticResource ConfigButtonStyle}"/>
-                <Button Click="Stop_OnClick" Content="Stop" Style="{StaticResource ConfigButtonStyle}"/>
+                <Button Click="Generate_OnClick" Content="Generate" Style="{StaticResource ConfigButtonStyle}" Height="35"/>
+                <Button Click="Sort_OnClick" Content="Sort" Style="{StaticResource ConfigButtonStyle}" Height="35"/>
+                <Button Click="Stop_OnClick" Content="Stop" Style="{StaticResource ConfigButtonStyle}" Height="35"/>
             </StackPanel>
         </Grid>
         <ScrollViewer Grid.Row="1" Grid.Column="0" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Background="{StaticResource BackgroundBrush}">
@@ -33,11 +33,11 @@
                 <Expander Header="Elements" Style="{StaticResource SettingsExpanderStyle}" MouseDown="Expander_OnMouseDown" IsExpanded="True">
                     <StackPanel>
                         <TextBlock Text="Quantity of Elements" Style="{StaticResource ConfigTextBlockStyle}"/>
-                        <xctk:IntegerUpDown x:Name="nElemBox" Value="10" Minimum="2"/>
-                        <TextBlock Text="Border Thickness" Style="{StaticResource ConfigTextBlockStyle}"/>
-                        <xctk:IntegerUpDown x:Name="gruixMarcBox" Value="2" Minimum="0"/>
+                        <xctk:IntegerUpDown x:Name="nElemBox" Value="50" Minimum="5" Maximum="500"/>
+                        <TextBlock Text="Border Thickness" Style="{StaticResource ConfigTextBlockStyle}" />
+                        <xctk:IntegerUpDown x:Name="columnWidth" Value="1" Minimum="0" ValueChanged="ColumnValue_OnChanged"/>
                         <TextBlock Text="Column Radius" Style="{StaticResource ConfigTextBlockStyle}"/>
-                        <xctk:IntegerUpDown x:Name="radiColumnsBox" Value="0" Minimum="0"/>
+                        <xctk:IntegerUpDown x:Name="columnRadius" Value="5" Minimum="0" ValueChanged="ColumnValue_OnChanged"/>
                         <!--Type of graphic-->
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -46,7 +46,7 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Text="Columns" Style="{StaticResource ConfigTextBlockStyle}" HorizontalAlignment="Center"/>
-                            <CheckBox Grid.Column="1" Style="{StaticResource SwitchStyle}" Name="IsElipseCheckBox"/>
+                            <CheckBox Grid.Column="1" Style="{StaticResource SwitchStyle}" Name="IsElipseCheckBox" Checked="IsElipse_OnValueChange" Unchecked="IsElipse_OnValueChange"/>
                             <TextBlock Grid.Column="2" Text="Points" Style="{StaticResource ConfigTextBlockStyle}" HorizontalAlignment="Center"/>
                         </Grid>
                         <Grid Margin="0,10,0,0">
@@ -56,7 +56,7 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Text="Inverted" Style="{StaticResource ConfigTextBlockStyle}" HorizontalAlignment="Center"/>
-                            <CheckBox Grid.Row="0" Grid.Column="1" Style="{StaticResource SwitchStyle}" Name="typeOfGenSwitch"/>
+                            <CheckBox Grid.Row="0" Grid.Column="1" Style="{StaticResource SwitchStyle}" Name="typeOfGenSwitch" IsChecked="True"/>
                             <TextBlock Grid.Column="2" Text="Random" Style="{StaticResource ConfigTextBlockStyle}" HorizontalAlignment="Center"/>
                         </Grid>
                     </StackPanel>
@@ -64,7 +64,7 @@
                 <Expander Header="Sorting Settings" Style="{StaticResource SettingsExpanderStyle}" MouseDown="Expander_OnMouseDown">
                     <StackPanel>
                         <TextBlock Text="Wait Time" Style="{StaticResource ConfigTextBlockStyle}"/>
-                        <xctk:IntegerUpDown x:Name="waitTimeUpDown" Value="50" Minimum="0"/>
+                        <xctk:IntegerUpDown x:Name="waitTimeUpDown" Value="10" Minimum="0"/>
                         <TextBlock Text="Type of Sort" Style="{StaticResource ConfigTextBlockStyle}"/>
                         <ComboBox x:Name="sortingTypeCB" SelectedIndex="0"/>
                     </StackPanel>

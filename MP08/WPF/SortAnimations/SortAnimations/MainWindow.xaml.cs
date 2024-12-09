@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Runtime.InteropServices.ComTypes;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -11,7 +12,7 @@ namespace SortAnimations;
     public partial class MainWindow : Window
     {
         #region Members
-        public enum OrdenationType { Bubble, Pancake, QuickSort }
+        public enum OrdenationType { Bubble, SelectionSort, QuickSort }
         int[] toOrderArray;
         Rectangle[] rectangles;
         int nElements;
@@ -45,7 +46,7 @@ namespace SortAnimations;
 
         private void Sort_OnClick(object sender, RoutedEventArgs e)
         {
-
+            isCanceled = false;
             if (sortingTypeCB.SelectedItem != null)
             {
                 switch ((OrdenationType)sortingTypeCB.SelectedItem)
@@ -53,8 +54,8 @@ namespace SortAnimations;
                     case OrdenationType.Bubble:
                         BubbleSort();
                         break;
-                    case OrdenationType.Pancake:
-                        PancakeSort();
+                    case OrdenationType.SelectionSort:
+                        SelectionSort();
                         break;
                     case OrdenationType.QuickSort:
                         QuickSort();
@@ -67,13 +68,10 @@ namespace SortAnimations;
         {
             sortingCanvas.Children.Clear();
             nElements = Convert.ToInt32(nElemBox.Text);
+            isCanceled = false;
             toOrderArray = new int[nElements];
             rectangles = new Rectangle[nElements];
-            isCanceled = false;
-
-            sortingTypeCB.ItemsSource = Enum.GetValues(typeof(OrdenationType));
             isElipse = (bool)IsElipseCheckBox.IsChecked!;
-            Background = bgColor;
 
             toOrderArray = (bool)typeOfGenSwitch.IsChecked!
                 ? CreateRandomArray(nElements)
@@ -81,49 +79,18 @@ namespace SortAnimations;
 
 
             double width = sortingCanvas.ActualWidth / nElements;
-            double height = 0;
 
             for (int i = 0; i < nElements; i++)
             {
-                if (!isElipse)
+                Rectangle rect = new Rectangle
                 {
-                    height = sortingCanvas.ActualHeight * toOrderArray[i] / nElements;
-                    Rectangle rect = new Rectangle
-                    {
-                        Stroke = new SolidColorBrush(Colors.Black),
-                        Width = width,
-                        Height = height,
-                        StrokeThickness = (int)gruixMarcBox.Value,
-                        RadiusX = (int)radiColumnsBox.Value,
-                        RadiusY = (int)radiColumnsBox.Value
-                    };
-
-                    Canvas.SetLeft(rect, i * width);
-                    Canvas.SetTop(rect, sortingCanvas.ActualHeight - height);
-
-                    rectangles[i] = rect;
-                    sortingCanvas.Children.Add(rect);
-                }
-                else
-                {
-                    height = sortingCanvas.ActualHeight - sortingCanvas.ActualHeight * toOrderArray[i] / nElements;
-                    Rectangle ellipse = new Rectangle
-                    {
-                        Stroke = new SolidColorBrush(Colors.Black),
-                        Width = width,
-                        Height = width,
-                        StrokeThickness = (int)gruixMarcBox.Value,
-                        RadiusX = 100,
-                        RadiusY = 100,
-                    };
-
-                    Canvas.SetLeft(ellipse, i * width);
-                    Canvas.SetTop(ellipse, height);
-
-                    rectangles[i] = ellipse;
-                    sortingCanvas.Children.Add(ellipse);
-                }
-
+                    Stroke = new SolidColorBrush(Colors.Black),
+                    Width = width,
+                    StrokeThickness = (int)columnWidth.Value,
+                };
+                
+                rectangles[i] = rect;
+                sortingCanvas.Children.Add(rect);
                 ColumnsRepaint(i);
             }
         }
@@ -133,6 +100,53 @@ namespace SortAnimations;
         } 
         #endregion
 
+        #region Drawing
+        private void ChangeElements(int pos1, int pos2)
+        {
+            (toOrderArray[pos1], toOrderArray[pos2]) = (toOrderArray[pos2], toOrderArray[pos1]);
+
+            Rectangle rect1 = rectangles[pos1];
+            Rectangle rect2 = rectangles[pos2];
+
+            rect1.Fill = changingColor;
+            rect2.Fill = changingColor;
+
+                
+            WaitForMiliseconds(Convert.ToInt32(string.IsNullOrEmpty(waitTimeUpDown.Text) ? "0" : waitTimeUpDown.Text));
+
+            ColumnsRepaint(pos1);
+            ColumnsRepaint(pos2);
+        }
+
+        void SetHeight(int pos)
+        {
+            Rectangle rect = rectangles[pos];
+            if (IsElipseCheckBox.IsChecked == false)
+            {
+                var height = sortingCanvas.ActualHeight / toOrderArray.Length * toOrderArray[pos];
+                rect.Height = height;
+                Canvas.SetTop(rect, sortingCanvas.ActualHeight - rect.Height);
+                rect.RadiusX = columnRadius.Value ?? 0;
+                rect.RadiusY = columnRadius.Value ?? 0;
+            }
+            else
+            {
+                rect.Height = rect.Width;
+                Canvas.SetTop(rect, sortingCanvas.ActualHeight - sortingCanvas.ActualHeight * toOrderArray[pos] / nElements);
+                rect.RadiusX = 100;
+                rect.RadiusY = 100;
+            }
+            Canvas.SetLeft(rect, pos * sortingCanvas.ActualWidth/nElements);
+        }
+        private void ColumnsRepaint(int pos)
+        {
+            rectangles[pos].Fill = toOrderArray[pos] == pos+1 ? correctColor : incorrectColor;
+            rectangles[pos].StrokeThickness = columnWidth.Value ?? 0;
+            SetHeight(pos);
+        }
+
+        #endregion
+        
         #region Sort Methods
 
         #region Bubble
@@ -143,7 +157,7 @@ namespace SortAnimations;
             {
                 for (int j = 0; j < toOrderArray.Length - i - 1; j++)
                 {
-                    if (toOrderArray[j] > toOrderArray[j + 1])
+                    if (toOrderArray[j] > toOrderArray[j + 1] && !isCanceled)
                     {
                         ChangeElements(j, j + 1);
                     }
@@ -154,146 +168,73 @@ namespace SortAnimations;
 
         #region QuickSort
 
-        public void QuickSort()
+        void QuickSort()
         {
-            Particio(toOrderArray, 0, toOrderArray.Length - 1, 0);
-        }
-        public int Particio(int[] numeros, int esq, int drt, int nComp)
+            Partition(0, toOrderArray.Length - 1, 0);
+        } 
+        int Partition(int lft, int rght, int nComp)
         {
             int i, j, x;
-            i = esq;
-            j = drt;
-            int temp;
-            x = numeros[(esq + drt) / 2];
+            i = lft;
+            j = rght;
+            x = toOrderArray[(lft + rght) / 2];
             do
             {
-                while (numeros[i] < x)
+                while (toOrderArray[i] < x)
                 {
                     nComp++;
                     i++;
                 }
-                while (x < numeros[j])
+                while (x < toOrderArray[j])
                 {
                     nComp++;
                     j--;
                 }
-                if (i <= j)
+                if (i <= j && !isCanceled)
                 {
                     ChangeElements(i, j);
 
                     i++;
                     j--;
                 }
-            } while (i <= j);
-            if (esq < j)
-                nComp = Particio(numeros, esq, j, nComp);
-            if (i < drt)
-                nComp = Particio(numeros, i, drt, nComp);
+            } while (i <= j && !isCanceled);
+
+            if (!isCanceled)
+            {
+                if (lft < j)
+                    nComp = Partition(lft, j, nComp);
+                if (i < rght)
+                    nComp = Partition(i, rght, nComp);
+                
+            }
             return nComp;
         }
 
         #endregion
 
-        #region Pancake
-        public int findMax(int[] arr, int n)
+        #region SelectionSort
+        void SelectionSort()
         {
-            int mi, i;
-            for (mi = 0, i = 0; i < n; ++i)
-                if (arr[i] > arr[mi])
-                    mi = i;
-
-            return mi;
-        }
-        public int PancakeSort(int[] arr = null, int n = 0)
-        {
-            if (arr == null) arr = toOrderArray;
-            if(n == 0) n = nElements;
-            int i = 0;
-            int temp, start = 0;
-
-            for (int curr_size = n; curr_size > 1; --curr_size)
+            int n = toOrderArray.Length;
+            for (int i = 0; i < n - 1; i++)
             {
-                int mi = findMax(arr, curr_size);
-                if (mi != curr_size - 1)
+                int minIndex = i;
+                for (int j = i + 1; j < n; j++)
                 {
-                    i = mi;
-                    while (start < i)
+                    if (toOrderArray[j] < toOrderArray[minIndex])
                     {
-                        ChangeElements(i, start);
-                        start++;
-                        i--;
+                        minIndex = j;
                     }
-                    i = 0;
-                    start = 0;
-                    i = curr_size - 1;
-                    while (start < i)
-                    {
-                        ChangeElements(i, start);
-                        start++;
-                        i--;
-                    }
-                    i = 0;
-                    start = 0;
-
                 }
+                if(!isCanceled)
+                    ChangeElements(minIndex, i);
             }
-            return 0;
         }
 
         #endregion
 
         #endregion
 
-        #region Pintar & Animar
-        private void ChangeElements(int pos1, int pos2)
-        {
-            
-            (toOrderArray[pos1], toOrderArray[pos2]) = (toOrderArray[pos2], toOrderArray[pos1]);
-            if (pos2 >= nElements) pos2 = nElements - 1;
-            if (pos1 >= nElements) pos1 = nElements - 1;
-
-            Rectangle rect1 = rectangles[pos1];
-            Rectangle rect2 = rectangles[pos2];
-
-            if (pos1 >= 0 && pos1 < toOrderArray.Length && pos2 >= 0 && pos2 < toOrderArray.Length)
-            {
-                rect1.Fill = changingColor;
-                rect2.Fill = changingColor;
-
-                
-                WaitForMiliseconds(Convert.ToInt32(string.IsNullOrEmpty(waitTimeUpDown.Text) ? "0" : waitTimeUpDown.Text));
-
-                SetHeight(pos1);
-                SetHeight(pos2);
-            }
-            ColumnsRepaint(pos1);
-            ColumnsRepaint(pos2);
-        }
-
-        void SetHeight(int pos)
-        {
-            Rectangle rect = rectangles[pos];
-            if (!isElipse)
-            {
-                var height = sortingCanvas.ActualHeight / toOrderArray.Length * toOrderArray[pos];
-                rect.Height = height;
-                Canvas.SetTop(rect, sortingCanvas.ActualHeight - rect.Height);
-            }
-            else
-            {
-                var height = sortingCanvas.ActualHeight -
-                             sortingCanvas.ActualHeight * toOrderArray[pos] / nElements;
-                Canvas.SetTop(rect, height);
-            }
-        }
-        private void ColumnsRepaint(int pos)
-        {
-            int nElem = toOrderArray.Length;
-            rectangles[pos].Fill = toOrderArray[pos] == pos+1 ? correctColor : incorrectColor;
-
-        }
-
-        #endregion
 
         #region Auxiliar Methods
 
@@ -349,7 +290,7 @@ namespace SortAnimations;
             }
             else
             {
-                thread.Interrupt();
+                thread?.Interrupt();
             }
         }
 
@@ -416,4 +357,21 @@ namespace SortAnimations;
         #endregion
 
 
+        private void ColumnValue_OnChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            var nChild = sortingCanvas?.Children.OfType<Rectangle>().Count() ?? 0;
+            for (int i = 0; i < nChild; i++)
+            {
+                ColumnsRepaint(i);
+            }
+        }
+
+        private void IsElipse_OnValueChange(object sender, RoutedEventArgs e)
+        {
+            var nChild = sortingCanvas?.Children.OfType<Rectangle>().Count() ?? 0;
+            for (int i = 0; i < nChild; i++)
+            {
+                ColumnsRepaint(i);
+            }
+        }
     }
