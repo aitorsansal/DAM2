@@ -8,14 +8,14 @@ import java.io.Serializable;
 @Entity
 public class Player implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
 
     @Id
     @Column(name = "team_abv")
-    String team_abv;
+    String teamAbv;
     @Id
     @Column(name = "player_id")
-    Integer player_id;
+    Integer playerId;
     @Column(name = "name")
     String name;
     @Column(name = "height")
@@ -23,17 +23,17 @@ public class Player implements Serializable {
     @Column(name = "position")
     String position;
 
-    public Player(String team_abv, Integer player_id, String name, Integer height, String position) {
-        this.team_abv = team_abv;
-        this.player_id = player_id;
+    public Player(String teamAbv, Integer playerId, String name, Integer height, String position) {
+        this.teamAbv = teamAbv;
+        this.playerId = playerId;
         this.name = name;
         this.height = height;
         this.position = position;
     }
 
-    public Player(String team_abv, Integer player_id, String name, String position) {
-        this.team_abv = team_abv;
-        this.player_id = player_id;
+    public Player(String teamAbv, Integer playerId, String name, String position) {
+        this.teamAbv = teamAbv;
+        this.playerId = playerId;
         this.name = name;
         this.position = position;
     }
@@ -41,20 +41,20 @@ public class Player implements Serializable {
     public Player() {}
 
 
-    public String getTeam_abv() {
-        return team_abv;
+    public String getTeamAbv() {
+        return teamAbv;
     }
 
-    public void setTeam_abv(String team_abv) {
-        this.team_abv = team_abv;
+    public void setTeamAbv(String teamAbv) {
+        this.teamAbv = teamAbv;
     }
 
-    public Integer getPlayer_id() {
-        return player_id;
+    public Integer getPlayerId() {
+        return playerId;
     }
 
-    public void setPlayer_id(Integer player_id) {
-        this.player_id = player_id;
+    public void setPlayerId(Integer playerId) {
+        this.playerId = playerId;
     }
 
     public String getName() {
@@ -79,5 +79,10 @@ public class Player implements Serializable {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    @Override
+    public String toString() {
+        return name + ", " + teamAbv + ", " + playerId + ", " + height + ", " + position;
     }
 }

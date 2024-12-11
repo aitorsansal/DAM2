@@ -7,8 +7,8 @@ public class PlayerTeamId implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String playerId;
-    private String team_abv;
+    private int playerId;
+    private String teamAbv;
 
     public PlayerTeamId() {}
 
@@ -17,11 +17,11 @@ public class PlayerTeamId implements Serializable {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         PlayerTeamId that = (PlayerTeamId) o;
-        return Objects.equals(playerId, that.playerId) && Objects.equals(team_abv, that.team_abv);
+        return Objects.equals(playerId, that.playerId) && Objects.equals(teamAbv, that.teamAbv);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(playerId, team_abv);
+        return Objects.hash(playerId, teamAbv);
     }
 }

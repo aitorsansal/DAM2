@@ -44,7 +44,7 @@ public class Team implements Serializable {
 	}
 	
 	@OneToMany(targetEntity = Player.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "abv")
+	@JoinColumn(name = "team_abv")
 	private Set<Player> players;
 
     public Set<Player> getPlayers() {

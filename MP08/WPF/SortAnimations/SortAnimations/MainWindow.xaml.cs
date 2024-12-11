@@ -22,6 +22,20 @@ namespace SortAnimations;
         readonly SolidColorBrush correctColor = new(Colors.Green);
         readonly SolidColorBrush changingColor = new(Colors.Orange);
         readonly SolidColorBrush bgColor = new(Colors.Plum);
+        public enum easingTypes
+        {
+            BackEase,
+            BounceEase,
+            CircleEase,
+            CubicEase,
+            ElasticEase,
+            ExponentialEase,
+            PowerEase,
+            QuadraticEase,
+            QuarticEase,
+            QuinticEase,
+            SineEase
+        }
         #endregion
 
         #region Constructor
@@ -38,6 +52,9 @@ namespace SortAnimations;
             changingColor = new SolidColorBrush((Color)ChangingColorPicker.SelectedColor);
             bgColor = new SolidColorBrush((Color)BackgroundColorPicker.SelectedColor);
             Background = bgColor;
+            easingTypeCB.ItemsSource = Enum.GetValues(typeof(easingTypes));
+            easingModeCB.ItemsSource = Enum.GetValues(typeof(EasingMode));
+            
 
         } 
         #endregion
@@ -86,8 +103,11 @@ namespace SortAnimations;
                 {
                     Stroke = new SolidColorBrush(Colors.Black),
                     Width = width,
-                    StrokeThickness = (int)columnWidth.Value,
+                    StrokeThickness = (int)columnWidth.Value
                 };
+                Canvas.SetZIndex(rect, 1);
+                Canvas.SetBottom(rect, 0);
+                Canvas.SetLeft(rect, i * sortingCanvas.ActualWidth/nElements);
                 
                 rectangles[i] = rect;
                 sortingCanvas.Children.Add(rect);
@@ -110,12 +130,19 @@ namespace SortAnimations;
 
             rect1.Fill = changingColor;
             rect2.Fill = changingColor;
-
-                
-            WaitForMiliseconds(Convert.ToInt32(string.IsNullOrEmpty(waitTimeUpDown.Text) ? "0" : waitTimeUpDown.Text));
-
+            Panel.SetZIndex(rect1, 50);
+            Panel.SetZIndex(rect2, 50);
+            ChangingAnimation(rect1, rect2);
+            long waitTime = Convert.ToInt32(
+                string.IsNullOrEmpty(waitTimeUpDown.Text) ? "0" : waitTimeUpDown.Text);
+            waitTime -= 5;
+            waitTime = waitTime < 0 ? 0 : waitTime;
+            WaitForMiliseconds(waitTime);
             ColumnsRepaint(pos1);
             ColumnsRepaint(pos2);
+
+            Panel.SetZIndex(rect1, 1);
+            Panel.SetZIndex(rect2, 1);
         }
 
         void SetHeight(int pos)
@@ -125,7 +152,6 @@ namespace SortAnimations;
             {
                 var height = sortingCanvas.ActualHeight / toOrderArray.Length * toOrderArray[pos];
                 rect.Height = height;
-                Canvas.SetTop(rect, sortingCanvas.ActualHeight - rect.Height);
                 rect.RadiusX = columnRadius.Value ?? 0;
                 rect.RadiusY = columnRadius.Value ?? 0;
             }
@@ -136,7 +162,6 @@ namespace SortAnimations;
                 rect.RadiusX = 100;
                 rect.RadiusY = 100;
             }
-            Canvas.SetLeft(rect, pos * sortingCanvas.ActualWidth/nElements);
         }
         private void ColumnsRepaint(int pos)
         {
@@ -146,6 +171,83 @@ namespace SortAnimations;
         }
 
         #endregion
+
+        #region Animations
+
+        private void ChangingAnimation(Rectangle rect1, Rectangle rect2)
+        {
+            Storyboard board = new Storyboard();
+            var waitingTime = waitTimeUpDown.Value ?? 0;
+            DoubleAnimation rect1Anim = new DoubleAnimation
+            {
+                Duration = TimeSpan.FromMilliseconds(waitingTime),
+                FillBehavior = FillBehavior.Stop
+            };
+            DoubleAnimation rect2Anim = new DoubleAnimation
+            {
+                Duration = TimeSpan.FromMilliseconds(waitingTime),
+                FillBehavior = FillBehavior.Stop
+            };
+            var easingFunction = GetEasingType();
+            if (easingFunction != null)
+            {
+                EasingMode? easeMode = (EasingMode?)easingModeCB.SelectedItem;
+                if(easeMode is not null)
+                    easingFunction.EasingMode = (EasingMode)easeMode;
+                rect1Anim.EasingFunction = easingFunction;
+                rect2Anim.EasingFunction = easingFunction;
+            }
+            
+
+            
+
+            if (IsHeightAnimationCheckBox.IsChecked ==true)
+            {
+                if (IsElipseCheckBox.IsChecked == true)
+                {
+                    rect1Anim.From = Canvas.GetTop(rect1);
+                    rect1Anim.To = Canvas.GetTop(rect2);
+                    
+                    rect2Anim.From = Canvas.GetTop(rect2);
+                    rect2Anim.To = Canvas.GetTop(rect1);
+                    
+                    Storyboard.SetTargetProperty(rect1Anim, new PropertyPath("(Canvas.Top)"));
+                    Storyboard.SetTargetProperty(rect2Anim, new PropertyPath("(Canvas.Top)"));
+                }
+                else
+                {
+                    rect1Anim.From = rect1.Height;
+                    rect1Anim.To = rect2.Height;
+                    
+                    rect2Anim.From = rect2.Height;
+                    rect2Anim.To = rect1.Height;
+
+                    Storyboard.SetTargetProperty(rect1Anim, new PropertyPath("Height"));
+                    Storyboard.SetTargetProperty(rect2Anim, new PropertyPath("Height"));
+                }
+            }
+            else
+            {
+                rect1Anim.From = Canvas.GetLeft(rect1);
+                rect1Anim.To = Canvas.GetLeft(rect2);
+
+                rect2Anim.From = Canvas.GetLeft(rect2);
+                rect2Anim.To = Canvas.GetLeft(rect1);
+
+                Storyboard.SetTargetProperty(rect1Anim, new PropertyPath("(Canvas.Left)"));
+                Storyboard.SetTargetProperty(rect2Anim, new PropertyPath("(Canvas.Left)"));
+            }
+            Storyboard.SetTarget(rect1Anim, rect1);
+            Storyboard.SetTarget(rect2Anim, rect2);
+            
+            board.Children.Add(rect1Anim);
+            board.Children.Add(rect2Anim);
+            
+            board.Begin();
+        }
+
+        #endregion
+        
         
         #region Sort Methods
 
@@ -351,12 +453,7 @@ namespace SortAnimations;
             if(BackgroundColorPicker is not null)
                 BackgroundColorPicker.SelectedColor = Colors.Plum;
         }
-
-        #endregion
-
-        #endregion
-
-
+        
         private void ColumnValue_OnChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             var nChild = sortingCanvas?.Children.OfType<Rectangle>().Count() ?? 0;
@@ -374,4 +471,33 @@ namespace SortAnimations;
                 ColumnsRepaint(i);
             }
         }
+        
+        #endregion
+
+        #region Animation Methods
+        
+        private EasingFunctionBase? GetEasingType()
+        {
+            return (easingTypes)easingTypeCB.SelectedItem  switch
+            {
+                easingTypes.BackEase => new BackEase(),
+                easingTypes.BounceEase => new BounceEase(),
+                easingTypes.CircleEase => new CircleEase(),
+                easingTypes.CubicEase => new CubicEase(),
+                easingTypes.ElasticEase => new ElasticEase(),
+                easingTypes.ExponentialEase => new ExponentialEase(),
+                easingTypes.PowerEase => new PowerEase(),
+                easingTypes.QuadraticEase => new QuadraticEase(),
+                easingTypes.QuarticEase => new QuarticEase(),
+                easingTypes.SineEase => new SineEase(),
+                easingTypes.QuinticEase => new QuinticEase(),
+                _ => null
+            };
+        }
+
+        #endregion
+
+        #endregion
+
+
     }

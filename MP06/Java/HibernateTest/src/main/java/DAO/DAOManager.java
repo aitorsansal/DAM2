@@ -13,8 +13,9 @@ public interface DAOManager extends AutoCloseable {
     public Team getTeamByAbbr(String abbr);
     public Team getTeamByName(String name);
     public ArrayList<Team> getAllTeams();
-    public boolean AddPlayer(Player onePlayer);
-    public int ImportPlayers(String playersFileName);
+    public boolean addPlayer(Player onePlayer);
+    public int importPlayers(String playersFileName);
     public List<Player> getTeamPlayers(String teamAbv);
     public boolean addTeam(Team oneTeam, List<Player> plantilla);
+    public void clearDBForTesting();
 }

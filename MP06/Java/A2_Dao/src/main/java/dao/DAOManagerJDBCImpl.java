@@ -92,8 +92,8 @@ public class DAOManagerJDBCImpl implements DAOManager {
 				ResultSet resSet = cS.getResultSet();
 				resSet.next();
 				match = new Match(matchDay, homeTeam.getAbv(), awayTeam.getAbv(),
-						resSet.getInt(1), resSet.getInt(2), resSet.getInt(3), resSet.getInt(4),
-						resSet.getString(5));
+						resSet.getInt(1), resSet.getInt(2), resSet.getInt(3),
+						resSet.getInt(4), resSet.getString(5));
 			}
 
 		}catch(Exception e){

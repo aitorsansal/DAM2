@@ -1,0 +1,530 @@
+1;Ché Adams;Southampton;13/07/1996;179 cm;FW
+2;Tayo Adaramola;Crystal Palace;14/11/2003;180 cm;DF
+3;Adrián;Liverpool;03/01/1987;190 cm;GK
+4;Kristoffer Ajer;Brentford;17/04/1998;196 cm;DF
+5;Nathan Aké;Man City;18/02/1995;180 cm;DF
+6;Marc Albrighton;Leicester;18/11/1989;175 cm;MF
+7;Aji Alese;West Ham;17/01/2001;192 cm;DF
+8;Alex Telles;Man United;15/12/1992;181 cm;DF
+9;Trent Alexander-Arnold;Liverpool;07/10/1998;180 cm;DF
+10;Alisson;Liverpool;02/10/1992;191 cm;GK
+11;Allan;Everton;08/01/1991;175 cm;MF
+12;Dele Alli;Everton;11/04/1996;188 cm;MF
+13;Miguel Almirón;Newcastle;10/02/1994;174 cm;MF
+14;Álvaro Fernández;Brentford;13/04/1998;186 cm;GK
+15;Álvaro Fernández;Man United;23/03/2003;186 cm;DF
+16;Will Alves;Leicester;04/05/2005;???;MF
+17;Steven Alzate;Brighton;08/09/1998;180 cm;MF
+18;Daniel Amartey;Leicester;21/12/1994;186 cm;DF
+19;Joachim Andersen;Crystal Palace;31/05/1996;192 cm;DF
+20;André Gomes;Everton;30/07/1993;188 cm;MF
+21;Michail Antonio;West Ham;28/03/1990;180 cm;FW
+22;Keenan Appiah-Forson;West Ham;16/10/2001;174 cm;MF
+23;Alphonse Aréola;West Ham;27/02/1993;195 cm;GK
+24;Adam Armstrong;Southampton;10/02/1997;173 cm;FW
+25;Stuart Armstrong;Southampton;30/03/1992;183 cm;MF
+26;Harrison Ashby;West Ham;14/11/2001;180 cm;DF
+27;Ryan Astley;Everton;04/10/2001;183 cm;DF
+28;Brandon Austin;Tottenham;08/01/1999;188 cm;GK
+29;Zach Awe;Arsenal;09/01/2004;192 cm;DF
+30;Jordan Ayew;Crystal Palace;11/09/1991;182 cm;FW
+31;Luke Ayling;Leeds;25/08/1991;183 cm;DF
+32;Ayoze Pérez;Leicester;29/07/1993;178 cm;FW
+33;Miguel Azeez;Arsenal;20/09/2002;181 cm;MF
+34;Azpilicueta;Chelsea;28/08/1989;178 cm;DF
+35;Leon Bailey;Aston Villa;09/08/1997;178 cm;MF
+36;Eric Bailly;Man United;12/04/1994;187 cm;DF
+37;James Balagizi;Liverpool;20/09/2003;189 cm;FW
+38;Tudor Băluţă;Brighton;27/03/1999;192 cm;MF
+39;Patrick Bamford;Leeds;05/09/1993;185 cm;FW
+40;Scott Banks;Crystal Palace;26/09/2001;183 cm;MF
+41;Jamal Baptiste;West Ham;11/11/2003;186 cm;DF
+42;Shandon Baptiste;Brentford;08/04/1998;175 cm;MF
+43;Ross Barkley;Chelsea;05/12/1993;185 cm;MF
+44;Harvey Barnes;Leicester;09/12/1997;174 cm;MF
+45;Lewis Bate;Leeds;28/10/2002;172 cm;MF
+46;Mads Bech;Brentford;07/01/1999;189 cm;DF
+47;Owen Beck;Liverpool;09/08/2002;177 cm;MF
+48;Jan Bednarek;Southampton;12/04/1996;189 cm;DF
+49;Asmir Begović;Everton;20/06/1987;199 cm;GK
+50;Saïd Benrahma;West Ham;10/08/1995;172 cm;FW
+51;Rodrigo Bentancur;Tottenham;25/06/1997;187 cm;MF
+52;Christian Benteke;Crystal Palace;03/12/1990;190 cm;FW
+53;Lucas Bergström;Chelsea;05/09/2002;205 cm;GK
+54;Steven Bergwijn;Tottenham;08/10/1997;178 cm;FW
+55;Bernardo Silva;Man City;10/08/1994;173 cm;MF
+56;Ryan Bertrand;Leicester;05/08/1989;179 cm;DF
+57;Marcus Bettinelli;Chelsea;24/05/1992;193 cm;GK
+58;Mika Biereth;Arsenal;08/02/2003;187 cm;FW
+59;Yves Bissouma;Brighton;30/08/1996;182 cm;MF
+60;Harvey Blair;Liverpool;14/09/2003;197 cm;MF
+61;Oscar Bobb;Man City;12/07/2003;169 cm;MF
+62;Lamare Bogarde;Aston Villa;05/01/2004;183 cm;DF
+63;Jamie Bowden;Tottenham;09/07/2001;175 cm;MF
+64;Jarrod Bowen;West Ham;20/12/1996;175 cm;FW
+65;Conor Bradley;Liverpool;09/07/2003;181 cm;MF
+66;Jarrad Branthwaite;Everton;27/06/2002;195 cm;DF
+67;Sammy Braybrooke;Leicester;12/03/2004;178 cm;MF
+68;Armando Broja;Southampton;10/09/2001;191 cm;FW
+69;Bruno Fernandes;Man United;08/09/1994;179 cm;MF
+70;Bruno Guimarães;Newcastle;16/11/1997;182 cm;MF
+71;Lewis Brunt;Leicester;06/11/2000;187 cm;MF
+72;Emiliano Buendia;Aston Villa;25/12/1996;172 cm;MF
+73;Dan Burn;Newcastle;09/05/1992;201 cm;DF
+74;Jack Butland;Crystal Palace;10/03/1993;196 cm;GK
+75;Willy Caballero;Southampton;28/09/1981;186 cm;GK
+76;Moisés Caicedo;Brighton;02/11/2001;178 cm;MF
+77;Dominic Calvert-Lewin;Everton;16/03/1997;189 cm;FW
+78;Scott Carson;Man City;03/09/1985;188 cm;GK
+79;Matty Cash;Aston Villa;07/08/1997;185 cm;DF
+80;Timothy Castagne;Leicester;05/12/1995;185 cm;DF
+81;Edinson Cavani;Man United;14/02/1987;184 cm;FW
+82;Cédric;Arsenal;31/08/1991;171 cm;DF
+83;Kallum Cesay;Tottenham;04/09/2002;187 cm;MF
+84;Trevoh Chalobah;Chelsea;05/07/1999;192 cm;DF
+85;Calum Chambers;Aston Villa;20/01/1995;182 cm;DF
+86;Kgaogelo Chauke;Southampton;08/01/2003;177 cm;MF
+87;Daniel Chesters;West Ham;04/04/2002;177 cm;MF
+88;Ben Chilwell;Chelsea;21/12/1996;181 cm;DF
+89;Hamza Choudhury;Leicester;01/10/1997;178 cm;MF
+90;Benjamin Chrisene;Aston Villa;12/01/2004;183 cm;DF
+91;Andreas Christensen;Chelsea;10/04/1996;187 cm;DF
+92;Carney Chukwuemeka;Aston Villa;20/10/2003;187 cm;MF
+93;Ciaran Clark;Newcastle;26/09/1989;185 cm;DF
+94;Nathaniel Clyne;Crystal Palace;05/04/1991;175 cm;DF
+95;Séamus Coleman;Everton;11/10/1988;177 cm;DF
+96;Liam Cooper;Leeds;30/08/1991;186 cm;DF
+97;Vladimír Coufal;West Ham;22/08/1992;174 cm;DF
+98;Coutinho;Aston Villa;12/06/1992;172 cm;MF
+99;Matthew Cox;Brentford;02/05/2003;182 cm;GK
+100;Matthew Craig;Tottenham;16/04/2003;184 cm;MF
+101;Aaron Cresswell;West Ham;15/12/1989;170 cm;DF
+102;Charlie Cresswell;Leeds;17/08/2002;190 cm;DF
+103;Cristiano Ronaldo;Man United;05/02/1985;187 cm;FW
+104;Cucurella;Brighton;22/07/1998;173 cm;DF
+105;Patson Daka;Leicester;09/10/1998;183 cm;FW
+106;Stuart Dallas;Leeds;19/04/1991;183 cm;DF
+107;Karl Darlow;Newcastle;08/10/1990;190 cm;GK
+108;Joshua Dasilva;Brentford;23/10/1998;184 cm;MF
+109;David Raya;Brentford;15/09/1995;183 cm;GK
+110;Ben Davies;Tottenham;24/04/1993;181 cm;DF
+111;Harvey Davies;Liverpool;03/09/2003;190 cm;GK
+112;Tom Davies;Everton;30/06/1998;180 cm;MF
+113;Craig Dawson;West Ham;06/05/1990;188 cm;DF
+114;Lucas De Bolle;Newcastle;22/10/2002;179 cm;MF
+115;Kevin De Bruyne;Man City;28/06/1991;181 cm;MF
+116;De Gea;Man United;07/11/1990;189 cm;GK
+117;Liam Delap;Man City;08/02/2003;186 cm;FW
+118;Fabian Delph;Everton;21/11/1989;174 cm;MF
+119;Alfie Devine;Tottenham;01/08/2004;167 cm;MF
+120;Kiernan Dewsbury-Hall;Leicester;06/09/1998;178 cm;MF
+121;Ibrahima Diallo;Southampton;08/03/1999;179 cm;MF
+122;Luis Díaz;Liverpool;13/01/1997;180 cm;FW
+123;Tyler Dibling;Southampton;12/03/2006;???;MF
+124;Eric Dier;Tottenham;15/01/1994;188 cm;DF
+125;Lucas Digne;Aston Villa;20/07/1993;178 cm;DF
+126;Diogo Dalot;Man United;18/03/1999;183 cm;DF
+127;Diogo Jota;Liverpool;04/12/1996;178 cm;FW
+128;Issa Diop;West Ham;09/01/1997;194 cm;DF
+129;Elijah Dixon-Bonner;Liverpool;01/01/2001;183 cm;MF
+130;Moussa Djénépo;Southampton;15/06/1998;177 cm;MF
+131;Lewis Dobbin;Everton;03/01/2003;176 cm;FW
+132;Matt Doherty;Tottenham;16/01/1992;186 cm;DF
+133;Abdoulaye Doucouré;Everton;01/01/1993;183 cm;MF
+134;Douglas Luiz;Aston Villa;09/05/1998;177 cm;MF
+135;Martin Dúbravka;Newcastle;15/01/1989;191 cm;GK
+136;Shane Duffy;Brighton;01/01/1992;193 cm;DF
+137;Paul Dummett;Newcastle;26/09/1991;183 cm;DF
+138;Lewis Dunk;Brighton;21/11/1991;192 cm;DF
+139;Ederson;Man City;17/08/1993;188 cm;GK
+140;Odsonne Édouard;Crystal Palace;16/01/1998;187 cm;FW
+141;Samuel Edozie;Man City;28/01/2003;179 cm;FW
+142;CJ Egan-Riley;Man City;02/01/2003;183 cm;DF
+143;Pierre Ekwah;West Ham;15/01/2002;189 cm;DF
+144;Anwar El Ghazi;Everton;03/05/1995;189 cm;FW
+145;Anthony Elanga;Man United;27/04/2002;178 cm;FW
+146;Harvey Elliott;Liverpool;04/04/2003;170 cm;FW
+147;Mohamed Elneny;Arsenal;11/07/1992;179 cm;MF
+148;Mohamed Elyounoussi;Southampton;04/08/1994;178 cm;FW
+149;Emerson Royal;Tottenham;14/01/1999;183 cm;DF
+150;Christian Eriksen;Brentford;14/02/1992;182 cm;MF
+151;Jonny Evans;Leicester;03/01/1988;188 cm;DF
+152;Oliver Ewing;Leicester;03/01/2003;181 cm;MF
+153;Eberechi Eze;Crystal Palace;29/06/1998;178 cm;MF
+154;Łukasz Fabiański;West Ham;18/04/1985;190 cm;GK
+155;Fabinho;Liverpool;23/10/1993;188 cm;MF
+156;Malachi Fagan-Walcott;Tottenham;11/03/2002;189 cm;DF
+157;Josh Feeney;Aston Villa;06/05/2005;193 cm;DF
+158;Evan Ferguson;Brighton;19/10/2004;183 cm;FW
+159;Nathan Ferguson;Crystal Palace;06/10/2000;184 cm;DF
+160;Federico Fernández;Newcastle;21/02/1989;190 cm;DF
+161;Fernandinho;Man City;04/05/1985;179 cm;MF
+162;Marcelo Flores;Arsenal;01/10/2003;183 cm;FW
+163;Phil Foden;Man City;28/05/2000;171 cm;MF
+164;Wesley Fofana;Leicester;17/12/2000;186 cm;DF
+165;Adam Forshaw;Leeds;08/10/1991;175 cm;MF
+166;Fraser Forster;Southampton;17/03/1988;201 cm;GK
+167;Tariqe Fosu;Brentford;05/11/1995;180 cm;MF
+168;Ryan Fraser;Newcastle;24/02/1994;163 cm;FW
+169;Melkamu Frauendorf;Liverpool;12/01/2004;180 cm;FW
+170;Fred;Man United;05/03/1993;169 cm;MF
+171;Ryan Fredericks;West Ham;10/10/1992;181 cm;DF
+172;James Furlong;Brighton;07/06/2002;178 cm;DF
+173;Gabriel;Arsenal;19/12/1997;190 cm;DF
+174;Gabriel Jesus;Man City;03/04/1997;175 cm;FW
+175;Gabriel Martinelli;Arsenal;18/06/2001;178 cm;FW
+176;Conor Gallagher;Crystal Palace;06/02/2000;182 cm;MF
+177;Alejandro Garnacho;Man United;01/07/2004;180 cm;FW
+178;Dwight Gayle;Newcastle;17/10/1989;174 cm;FW
+179;Joe Gelhardt;Leeds;04/05/2002;179 cm;FW
+180;Saman Ghoddos;Brentford;06/09/1993;176 cm;FW
+181;Mark Gillespie;Newcastle;27/03/1992;191 cm;GK
+182;Ben Godfrey;Everton;15/01/1998;184 cm;DF
+183;Pierluigi Gollini;Tottenham;18/03/1995;194 cm;GK
+184;Joe Gomez;Liverpool;23/05/1997;188 cm;DF
+185;Anthony Gordon;Everton;24/02/2001;182 cm;FW
+186;John-Kymani Gordon;Crystal Palace;13/02/2003;181 cm;FW
+187;Kaide Gordon;Liverpool;05/10/2004;173 cm;FW
+188;Lewis Gordon;Brentford;12/02/2001;172 cm;DF
+189;Lee Grant;Man United;27/01/1983;193 cm;GK
+190;Archie Gray;Leeds;12/03/2006;183 cm;MF
+191;Demarai Gray;Everton;28/06/1996;183 cm;FW
+192;Jack Grealish;Man City;10/09/1995;180 cm;MF
+193;Mason Greenwood;Man United;01/10/2001;181 cm;FW
+194;Sam Greenwood;Leeds;26/01/2002;180 cm;FW
+195;Pascal Groß;Brighton;15/06/1991;181 cm;MF
+196;Guaita;Crystal Palace;10/01/1987;190 cm;GK
+197;Marc Guéhi;Crystal Palace;13/07/2000;182 cm;DF
+198;İlkay Gündoğan;Man City;24/10/1990;180 cm;MF
+199;Lewis Hall;Chelsea;08/09/2004;179 cm;MF
+200;Reece Hannam;Crystal Palace;11/09/2000;169 cm;DF
+201;Hannibal;Man United;21/01/2003;177 cm;MF
+202;Björn Hardley;Man United;19/12/2002;189 cm;DF
+203;Jack Harrison;Leeds;20/11/1996;175 cm;MF
+204;Kortney Hause;Aston Villa;16/07/1995;191 cm;DF
+205;Kai Havertz;Chelsea;11/06/1999;193 cm;FW
+206;Isaac Hayden;Newcastle;22/03/1995;187 cm;MF
+207;Max Haygarth;Brentford;21/01/2002;175 cm;MF
+208;Tom Heaton;Man United;15/04/1986;188 cm;GK
+209;Dean Henderson;Man United;12/03/1997;188 cm;GK
+210;Jordan Henderson;Liverpool;17/06/1990;187 cm;MF
+211;Rico Henry;Brentford;08/07/1997;170 cm;DF
+212;Leo Hjelde;Leeds;26/08/2003;188 cm;DF
+213;Rob Holding;Arsenal;20/09/1995;189 cm;DF
+214;Mason Holgate;Everton;22/10/1996;187 cm;DF
+215;Pierre-Emile Højbjerg;Tottenham;05/08/1995;185 cm;MF
+216;Callum Hudson-Odoi;Chelsea;07/11/2000;177 cm;FW
+217;Will Hughes;Crystal Palace;17/04/1995;185 cm;MF
+218;Omari Hutchinson;Arsenal;29/10/2003;174 cm;MF
+219;Kelechi Iheanacho;Leicester;03/10/1996;185 cm;FW
+220;Danny Ings;Aston Villa;23/07/1992;178 cm;FW
+221;Zidane Iqbal;Man United;27/04/2003;181 cm;MF
+222;Tim Iroegbunam;Aston Villa;30/06/2003;175 cm;MF
+223;Alex Iwobi;Everton;03/05/1996;183 cm;MF
+224;Jarosław Jach;Crystal Palace;17/02/1994;192 cm;DF
+225;Eldin Jakupović;Leicester;02/10/1984;191 cm;GK
+226;Dan James;Leeds;10/11/1997;170 cm;MF
+227;Reece James;Chelsea;08/12/1999;179 cm;DF
+228;Vitaly Janelt;Brentford;10/05/1998;184 cm;MF
+229;Pontus Jansson;Brentford;13/02/1991;194 cm;DF
+230;Julian Jeanvier;Brentford;31/03/1992;185 cm;DF
+231;Jack Jenkins;Leeds;23/03/2002;190 cm;MF
+232;Mathias Jensen;Brentford;01/01/1996;180 cm;MF
+233;João Cancelo;Man City;27/05/1994;182 cm;DF
+234;Joelinton;Newcastle;14/08/1996;186 cm;MF
+235;Kyle John;Everton;13/02/2001;166 cm;DF
+236;Ben Johnson;West Ham;24/01/2000;175 cm;DF
+237;Curtis Jones;Liverpool;30/01/2001;185 cm;MF
+238;Phil Jones;Man United;21/02/1992;185 cm;DF
+239;Jorginho;Chelsea;20/12/1991;178 cm;MF
+240;Junior Firpo;Leeds;22/08/1996;184 cm;DF
+241;James Justin;Leicester;23/02/1998;183 cm;DF
+242;Harry Kane;Tottenham;28/07/1993;188 cm;FW
+243;N'Golo Kanté;Chelsea;29/03/1991;171 cm;MF
+244;Loris Karius;Liverpool;22/06/1993;191 cm;GK
+245;Kayky;Man City;11/06/2003;175 cm;FW
+246;Michael Keane;Everton;11/01/1993;188 cm;DF
+247;Naby Keïta;Liverpool;10/02/1995;172 cm;MF
+248;Caoimhín Kelleher;Liverpool;23/11/1998;188 cm;GK
+249;Martin Kelly;Crystal Palace;27/04/1990;191 cm;DF
+250;Kenedy;Chelsea;08/02/1996;182 cm;MF
+251;Nohan Kenneh;Leeds;10/01/2003;188 cm;MF
+252;Jonjoe Kenny;Everton;15/03/1997;176 cm;DF
+253;Kepa;Chelsea;03/10/1994;189 cm;GK
+254;Alex Kirk;Arsenal;27/10/2002;187 cm;DF
+255;Kristoffer Klaesson;Leeds;27/11/2000;189 cm;GK
+256;Mateusz Klich;Leeds;13/06/1990;183 cm;MF
+257;Robin Koch;Leeds;17/07/1996;191 cm;DF
+258;Ibrahima Konaté;Liverpool;25/05/1999;194 cm;DF
+259;Ezri Konsa;Aston Villa;23/10/1997;183 cm;DF
+260;Billy Koumetio;Liverpool;14/11/2002;195 cm;DF
+261;Cheikhou Kouyaté;Crystal Palace;21/12/1989;189 cm;DF
+262;Mateo Kovačić;Chelsea;06/05/1994;177 cm;MF
+263;Emil Krafth;Newcastle;02/08/1994;184 cm;DF
+264;Alex Král;West Ham;19/05/1998;187 cm;MF
+265;Dejan Kulusevski;Tottenham;25/04/2000;186 cm;FW
+266;Alexandre Lacazette;Arsenal;28/05/1991;176 cm;FW
+267;Adam Lallana;Brighton;10/05/1988;172 cm;MF
+268;Tariq Lamptey;Brighton;30/09/2000;163 cm;DF
+269;Manuel Lanzini;West Ham;15/02/1993;167 cm;MF
+270;Aymeric Laporte;Man City;27/05/1994;190 cm;DF
+271;Jamaal Lascelles;Newcastle;11/11/1993;188 cm;DF
+272;Roméo Lavia;Man City;06/01/2004;181 cm;DF
+273;Marcel Lavinier;Tottenham;16/12/2000;182 cm;DF
+274;Bernd Leno;Arsenal;04/03/1992;190 cm;GK
+275;Marc Leonard;Brighton;19/12/2001;180 cm;MF
+276;Harry Lewis;Southampton;20/12/1997;191 cm;GK
+277;Jamal Lewis;Newcastle;25/01/1998;178 cm;DF
+278;Victor Lindelöf;Man United;17/07/1994;187 cm;DF
+279;Hayden Lindley;Aston Villa;02/09/2002;182 cm;MF
+280;Jesse Lingard;Man United;15/12/1992;175 cm;MF
+281;Tino Livramento;Southampton;12/11/2002;173 cm;DF
+282;Llorente;Leeds;16/08/1993;186 cm;DF
+283;Hugo Lloris;Tottenham;26/12/1986;188 cm;GK
+284;Ruben Loftus-Cheek;Chelsea;23/01/1996;191 cm;MF
+285;Albert Lokonga;Arsenal;22/10/1999;183 cm;MF
+286;Andy Lonergan;Everton;19/10/1983;193 cm;GK
+287;Shane Long;Southampton;22/01/1987;180 cm;FW
+288;Emmanuel Longelo;West Ham;27/12/2000;188 cm;MF
+289;Sean Longstaff;Newcastle;30/10/1997;181 cm;MF
+290;Ademola Lookman;Leicester;20/10/1997;174 cm;FW
+291;Jonas Lössl;Brentford;01/02/1989;195 cm;GK
+292;Lucas Moura;Tottenham;13/08/1992;172 cm;FW
+293;Romelu Lukaku;Chelsea;13/05/1993;192 cm;FW
+294;Lyanco;Southampton;01/02/1997;187 cm;DF
+295;Brooklyn Lyons-Foster;Tottenham;01/12/2000;181 cm;DF
+296;Isaac Mabaya;Liverpool;22/09/2004;186 cm;MF
+297;Alexis Mac Allister;Brighton;24/12/1998;174 cm;MF
+298;James Maddison;Leicester;23/11/1996;175 cm;MF
+299;Paris Maghoma;Brentford;08/05/2001;181 cm;MF
+300;Harry Maguire;Man United;05/03/1993;194 cm;DF
+301;Riyad Mahrez;Man City;21/02/1991;179 cm;FW
+302;Sadio Mané;Liverpool;10/04/1992;174 cm;FW
+303;Manquillo;Newcastle;05/05/1994;178 cm;DF
+304;Wanya Marçal-Madivadua;Leicester;19/10/2002;181 cm;MF
+305;Marcelo;Liverpool;20/12/2002;191 cm;GK
+306;Solly March;Brighton;20/07/1994;180 cm;MF
+307;Marcos Alonso;Chelsea;28/12/1990;189 cm;DF
+308;David Martin;West Ham;22/01/1986;188 cm;GK
+309;Emiliano Martínez;Aston Villa;02/09/1992;195 cm;GK
+310;Arthur Masuaku;West Ham;07/11/1993;179 cm;DF
+311;Mata;Man United;28/04/1988;170 cm;MF
+312;Jean-Philippe Mateta;Crystal Palace;28/06/1997;192 cm;FW
+313;Nemanja Matić;Man United;01/08/1988;194 cm;MF
+314;Joel Matip;Liverpool;08/08/1991;195 cm;DF
+315;Remi Matthews;Crystal Palace;10/02/1994;192 cm;GK
+316;Neal Maupay;Brighton;14/08/1996;173 cm;FW
+317;Luke Mbete;Man City;18/09/2003;185 cm;DF
+318;Bryan Mbeumo;Brentford;07/08/1999;171 cm;FW
+319;Xavier Mbuyamba;Chelsea;31/12/2001;195 cm;DF
+320;James McArthur;Crystal Palace;07/10/1987;178 cm;MF
+321;James McAtee;Man City;18/10/2002;180 cm;MF
+322;Liam McCarron;Leeds;07/03/2001;175 cm;FW
+323;Alex McCarthy;Southampton;03/12/1989;193 cm;GK
+324;Thomas McGill;Brighton;25/03/2000;185 cm;GK
+325;John McGinn;Aston Villa;18/10/1994;178 cm;MF
+326;Stuart McKinstry;Leeds;18/09/2002;179 cm;FW
+327;Scott McTominay;Man United;08/12/1996;191 cm;MF
+328;Benjamin Mendy;Man City;17/07/1994;185 cm;DF
+329;Edouard Mendy;Chelsea;01/03/1992;194 cm;GK
+330;Nampalys Mendy;Leicester;23/06/1992;167 cm;MF
+331;Illan Meslier;Leeds;02/03/2000;197 cm;GK
+332;Luka Milivojević;Crystal Palace;07/04/1991;186 cm;MF
+333;James Milner;Liverpool;04/01/1986;175 cm;MF
+334;Yerry Mina;Everton;23/09/1994;195 cm;DF
+335;Takumi Minamino;Liverpool;16/01/1995;174 cm;MF
+336;Tyrone Mings;Aston Villa;13/03/1993;196 cm;DF
+337;Tyrick Mitchell;Crystal Palace;01/09/1999;175 cm;DF
+338;Jakub Moder;Brighton;07/04/1999;191 cm;MF
+339;Kris Moore;Leeds;13/11/2003;189 cm;DF
+340;Andrew Moran;Brighton;15/10/2003;168 cm;MF
+341;Tyler Morton;Liverpool;31/10/2002;185 cm;MF
+342;Mason Mount;Chelsea;10/01/1999;181 cm;MF
+343;Romaine Mundle;Tottenham;24/04/2003;177 cm;MF
+344;Jacob Murphy;Newcastle;24/02/1995;173 cm;MF
+345;Enock Mwepu;Brighton;01/01/1998;184 cm;MF
+346;Vitaliy Mykolenko;Everton;29/05/1999;180 cm;DF
+347;Marvelous Nakamba;Aston Villa;19/01/1994;177 cm;MF
+348;Wilfred Ndidi;Leicester;16/12/1996;183 cm;MF
+349;Ben Nelson;Leicester;18/03/2004;193 cm;DF
+350;Eddie Nketiah;Arsenal;30/05/1999;180 cm;FW
+351;Mark Noble;West Ham;08/05/1987;180 cm;MF
+352;James Norris;Liverpool;04/04/2003;173 cm;MF
+353;Christian Nørgaard;Brentford;10/03/1994;187 cm;MF
+354;Nuno Tavares;Arsenal;26/01/2000;184 cm;DF
+355;Tommi O'Reilly;Aston Villa;15/12/2003;179 cm;MF
+356;Chituru Odunze;Leicester;14/10/2002;204 cm;GK
+357;Odeluga Offiah;Brighton;26/10/2002;181 cm;DF
+358;Angelo Ogbonna;West Ham;23/05/1988;191 cm;DF
+359;Mazeed Ogungbo;Arsenal;20/10/2002;188 cm;DF
+360;Armstrong Oko-Flex;West Ham;02/03/2002;189 cm;FW
+361;Arthur Okonkwo;Arsenal;09/09/2001;198 cm;GK
+362;Kazeem Olaigbe;Southampton;02/01/2003;178 cm;FW
+363;Michael Olise;Crystal Palace;12/12/2001;184 cm;MF
+364;Robin Olsen;Aston Villa;08/01/1990;196 cm;GK
+365;Tobi Omole;Tottenham;17/12/1999;189 cm;DF
+366;Tyler Onyango;Everton;04/03/2003;196 cm;MF
+367;Frank Onyeka;Brentford;01/01/1998;183 cm;MF
+368;Divock Origi;Liverpool;18/04/1995;189 cm;FW
+369;Oriol Romeu;Southampton;24/09/1991;183 cm;MF
+370;Salah Oulad M'hand;Arsenal;20/08/2003;177 cm;MF
+371;Alex Oxlade-Chamberlain;Liverpool;15/08/1993;175 cm;MF
+372;Daniel Oyegoke;Brentford;03/01/2003;178 cm;DF
+373;Martin Ødegaard;Arsenal;17/12/1998;178 cm;MF
+374;Pablo Fornals;West Ham;22/02/1996;178 cm;MF
+375;Cole Palmer;Man City;06/05/2002;182 cm;MF
+376;Thomas Partey;Arsenal;13/06/1993;185 cm;MF
+377;Maksim Paskotši;Tottenham;19/01/2003;170 cm;DF
+378;Charlie Patino;Arsenal;17/10/2003;182 cm;MF
+379;Nathan Patterson;Everton;16/10/2001;189 cm;DF
+380;Myles Peart-Harris;Brentford;18/09/2002;187 cm;MF
+381;Nicolas Pépé;Arsenal;29/05/1995;183 cm;FW
+382;Sonny Perkins;West Ham;10/02/2004;178 cm;MF
+383;Romain Perraud;Southampton;22/09/1997;173 cm;DF
+384;Kalvin Phillips;Leeds;02/12/1995;179 cm;MF
+385;Jordan Pickford;Everton;07/03/1994;185 cm;GK
+386;Ethan Pinnock;Brentford;29/05/1993;187 cm;DF
+387;Paul Pogba;Man United;15/03/1993;191 cm;MF
+388;Freddie Potts;West Ham;12/09/2003;183 cm;MF
+389;Isaac Price;Everton;26/09/2003;197 cm;MF
+390;Christian Pulišić;Chelsea;18/09/1998;178 cm;FW
+391;Jarell Quansah;Liverpool;29/01/2003;190 cm;DF
+392;Jesurun Rak-Sakyi;Crystal Palace;05/10/2002;178 cm;MF
+393;Aaron Ramsdale;Arsenal;14/05/1998;190 cm;GK
+394;Jacob Ramsey;Aston Villa;28/05/2001;180 cm;MF
+395;Darren Randolph;West Ham;12/05/1987;188 cm;GK
+396;Raphinha;Leeds;14/12/1996;176 cm;MF
+397;Marcus Rashford;Man United;31/10/1997;185 cm;FW
+398;Nathan Redmond;Southampton;06/03/1994;173 cm;FW
+399;Reguilón;Tottenham;16/12/1996;178 cm;DF
+400;Ricardo Pereira;Leicester;06/10/1993;175 cm;DF
+401;Declan Rice;West Ham;14/01/1999;185 cm;MF
+402;Richarlison;Everton;10/05/1997;184 cm;FW
+403;Jaïro Riedewald;Crystal Palace;09/09/1996;182 cm;MF
+404;Matt Ritchie;Newcastle;10/09/1989;173 cm;DF
+405;Robert Sánchez;Brighton;18/11/1997;197 cm;GK
+406;Roberto Firmino;Liverpool;02/10/1991;181 cm;FW
+407;Haydon Roberts;Brighton;10/05/2002;182 cm;DF
+408;Tyler Roberts;Leeds;12/01/1999;180 cm;MF
+409;Andy Robertson;Liverpool;11/03/1994;178 cm;DF
+410;Joe Rodon;Tottenham;22/10/1997;193 cm;DF
+411;Rodri;Man City;22/06/1996;191 cm;MF
+412;Rodrigo;Leeds;06/03/1991;182 cm;FW
+413;Mads Roerslev;Brentford;24/06/1999;184 cm;DF
+414;Cristian Romero;Tottenham;27/04/1998;185 cm;DF
+415;Salomón Rondón;Everton;16/09/1989;186 cm;FW
+416;Rúben Dias;Man City;14/05/1997;187 cm;DF
+417;Antonio Rüdiger;Chelsea;03/03/1993;190 cm;DF
+418;Allan Saint-Maximin;Newcastle;12/03/1997;173 cm;FW
+419;Bukayo Saka;Arsenal;05/09/2001;178 cm;MF
+420;Mo Salah;Liverpool;15/06/1992;175 cm;FW
+421;Mohammed Salisu;Southampton;17/04/1999;191 cm;DF
+422;Davinson Sánchez;Tottenham;12/06/1996;187 cm;DF
+423;Jadon Sancho;Man United;25/03/2000;180 cm;FW
+424;Morgan Sanson;Aston Villa;18/08/1994;180 cm;MF
+425;Jeremy Sarmiento;Brighton;16/06/2002;183 cm;MF
+426;Malang Sarr;Chelsea;23/01/1999;182 cm;DF
+427;Saúl;Chelsea;21/11/1994;184 cm;MF
+428;Charlie Savage;Man United;02/05/2003;182 cm;MF
+429;Dane Scarlett;Tottenham;24/03/2004;182 cm;FW
+430;Fabian Schär;Newcastle;20/12/1991;186 cm;DF
+431;Jeffrey Schlupp;Crystal Palace;23/12/1992;178 cm;MF
+432;Kasper Schmeichel;Leicester;05/11/1986;189 cm;GK
+433;Sergi Canós;Brentford;02/02/1997;177 cm;FW
+434;Ryan Sessegnon;Tottenham;18/05/2000;178 cm;MF
+435;Jamie Shackleton;Leeds;08/10/1999;168 cm;MF
+436;Teddy Sharman-Lowe;Chelsea;19/01/2003;189 cm;GK
+437;Luke Shaw;Man United;12/07/1995;178 cm;DF
+438;Jonjo Shelvey;Newcastle;27/02/1992;184 cm;MF
+439;Shola Shoretire;Man United;02/02/2004;171 cm;FW
+440;Gylfi Sigurðsson;Everton;08/09/1989;186 cm;MF
+441;Kamarai Simon-Swyer;West Ham;04/12/2002;183 cm;MF
+442;Xavier Simons;Chelsea;20/02/2003;185 cm;MF
+443;Viljami Sinisalo;Aston Villa;11/10/2001;190 cm;GK
+444;Oliver Skipp;Tottenham;16/09/2000;175 cm;MF
+445;Cieran Slicker;Man City;15/09/2002;190 cm;GK
+446;Thierry Small;Southampton;01/08/2004;177 cm;DF
+447;Will Smallbone;Southampton;21/02/2000;173 cm;MF
+448;Emile Smith Rowe;Arsenal;28/07/2000;182 cm;MF
+449;Heung-min Son;Tottenham;08/07/1992;184 cm;FW
+450;Jude Soonsup-Bell;Chelsea;10/01/2004;185 cm;FW
+451;Tomáš Souček;West Ham;27/02/1995;192 cm;MF
+452;Boubakary Soumaré;Leicester;27/02/1999;188 cm;MF
+453;Çağlar Söyüncü;Leicester;23/05/1996;185 cm;DF
+454;Jack Spong;Brighton;04/02/2002;173 cm;MF
+455;Jason Steele;Brighton;18/08/1990;188 cm;GK
+456;Zack Steffen;Man City;02/04/1995;191 cm;GK
+457;Jack Stephens;Southampton;27/01/1994;185 cm;DF
+458;Raheem Sterling;Man City;08/12/1994;172 cm;FW
+459;Finley Stevens;Brentford;10/04/2003;179 cm;DF
+460;John Stones;Man City;28/05/1994;188 cm;DF
+461;Pascal Struijk;Leeds;11/08/1999;190 cm;DF
+462;Thanawat Suengchitthawon;Leicester;08/01/2000;170 cm;MF
+463;Crysencio Summerville;Leeds;30/10/2001;174 cm;MF
+464;Zak Swanson;Arsenal;28/09/2000;189 cm;DF
+465;Sil Swinkels;Aston Villa;06/01/2004;191 cm;DF
+466;Japhet Tanganga;Tottenham;31/03/1999;184 cm;DF
+467;Matt Targett;Newcastle;18/09/1995;183 cm;DF
+468;Nathan Tella;Southampton;05/07/1999;173 cm;FW
+469;Thiago;Liverpool;11/04/1991;174 cm;MF
+470;Thiago Silva;Chelsea;22/09/1984;181 cm;DF
+471;Luke Thomas;Leicester;10/06/2001;181 cm;DF
+472;Youri Tielemans;Leicester;07/05/1997;176 cm;MF
+473;Kieran Tierney;Arsenal;05/06/1997;180 cm;DF
+474;Takehiro Tomiyasu;Arsenal;05/11/1998;188 cm;DF
+475;James Tomkins;Crystal Palace;29/03/1989;192 cm;DF
+476;Ivan Toney;Brentford;16/03/1996;179 cm;FW
+477;Cenk Tosun;Everton;07/06/1991;183 cm;FW
+478;Andros Townsend;Everton;16/07/1991;181 cm;FW
+479;Bertrand Traoré;Aston Villa;06/09/1995;181 cm;FW
+480;Kieran Trippier;Newcastle;19/09/1990;173 cm;DF
+481;Leandro Trossard;Brighton;04/12/1994;172 cm;FW
+482;Kostas Tsimikas;Liverpool;12/05/1996;179 cm;DF
+483;Antef Tsoungui;Brighton;30/12/2002;185 cm;MF
+484;Ed Turns;Brighton;18/10/2002;182 cm;DF
+485;Harry Tyrer;Everton;06/12/2001;194 cm;GK
+486;Harvey Vale;Chelsea;11/09/2003;180 cm;MF
+487;Yan Valery;Southampton;22/02/1999;180 cm;DF
+488;Donny van de Beek;Everton;18/04/1997;184 cm;MF
+489;Virgil van Dijk;Liverpool;08/07/1991;193 cm;DF
+490;Raphaël Varane;Man United;25/04/1993;191 cm;DF
+491;Jamie Vardy;Leicester;11/01/1987;179 cm;FW
+492;Joël Veltman;Brighton;15/01/1992;184 cm;DF
+493;Jannik Vestergaard;Leicester;03/08/1992;199 cm;DF
+494;Nikola Vlašić;West Ham;04/10/1997;178 cm;MF
+495;Theo Walcott;Southampton;16/03/1989;175 cm;FW
+496;Kyle Walker;Man City;28/05/1990;183 cm;DF
+497;Kyle Walker-Peters;Southampton;13/04/1997;173 cm;DF
+498;Aaron Wan-Bissaka;Man United;26/11/1997;183 cm;DF
+499;Danny Ward;Leicester;22/06/1993;191 cm;GK
+500;Joel Ward;Crystal Palace;29/10/1989;186 cm;DF
+501;James Ward-Prowse;Southampton;01/11/1994;177 cm;MF
+502;Ollie Watkins;Aston Villa;30/12/1995;180 cm;FW
+503;Adam Webster;Brighton;04/01/1995;191 cm;DF
+504;Charlie Webster;Chelsea;31/01/2004;177 cm;MF
+505;Danny Welbeck;Brighton;26/11/1990;185 cm;FW
+506;Reece Welch;Everton;19/09/2003;197 cm;DF
+507;Charlie Wellens;Man United;05/12/2002;175 cm;DF
+508;Jack Wells-Morrison;Crystal Palace;18/02/2004;180 cm;MF
+509;Timo Werner;Chelsea;06/03/1996;180 cm;FW
+510;Charlie Whitaker;Everton;16/09/2003;185 cm;MF
+511;Ben White;Arsenal;08/10/1997;186 cm;DF
+512;Harvey White;Tottenham;19/09/2001;168 cm;MF
+513;Dylan Williams;Chelsea;13/09/2003;177 cm;DF
+514;Rhys Williams;Liverpool;03/02/2001;195 cm;DF
+515;Joe Willock;Newcastle;20/08/1999;186 cm;MF
+516;Callum Wilson;Newcastle;27/02/1992;180 cm;FW
+517;Josh Wilson-Esbrand;Man City;26/12/2002;176 cm;DF
+518;Harry Winks;Tottenham;02/02/1996;178 cm;MF
+519;Yoane Wissa;Brentford;03/09/1996;176 cm;FW
+520;Max Woltman;Liverpool;20/08/2003;181 cm;MF
+521;Chris Wood;Newcastle;07/12/1991;191 cm;FW
+522;Granit Xhaka;Arsenal;27/09/1992;186 cm;MF
+523;Andrey Yarmolenko;West Ham;23/10/1989;190 cm;FW
+524;Ashley Young;Aston Villa;09/07/1985;175 cm;DF
+525;Nathan Young-Coombes;Brentford;15/01/2003;175 cm;FW
+526;Wilfried Zaha;Crystal Palace;10/11/1992;180 cm;MF
+527;Zanka;Brentford;23/04/1990;191 cm;DF
+528;Oleksandr Zinchenko;Man City;15/12/1996;175 cm;DF
+529;Hakim Ziyech;Chelsea;19/03/1993;180 cm;FW
+530;Kurt Zouma;West Ham;27/10/1994;190 cm;DF

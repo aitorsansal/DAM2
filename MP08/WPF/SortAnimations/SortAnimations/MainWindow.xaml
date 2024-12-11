@@ -70,7 +70,25 @@
                     </StackPanel>
                     
                 </Expander>
-
+                <Expander Header="Animation Settings" Style="{StaticResource SettingsExpanderStyle}" MouseDown="Expander_OnMouseDown" IsExpanded="True">
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Displacement" Style="{StaticResource ConfigTextBlockStyle}" HorizontalAlignment="Center"/>
+                            <CheckBox Grid.Column="1" Style="{StaticResource SwitchStyle}" Name="IsHeightAnimationCheckBox" Checked="IsElipse_OnValueChange" Unchecked="IsElipse_OnValueChange"/>
+                            <TextBlock Grid.Column="2" Text="Height" Style="{StaticResource ConfigTextBlockStyle}" HorizontalAlignment="Center"/>
+                        </Grid>
+                        <TextBlock Text="Ease Type" Style="{StaticResource ConfigTextBlockStyle}"/>
+                        <ComboBox Name="easingTypeCB"/>
+                        <TextBlock Text="Ease Mode" Style="{StaticResource ConfigTextBlockStyle}"/>
+                        <ComboBox Name="easingModeCB"/>
+                    </StackPanel>
+                    
+                </Expander>
                 <Expander Header="Colors" Style="{StaticResource SettingsExpanderStyle}" MouseDown="Expander_OnMouseDown">
                     <Grid>
                         <Grid.ColumnDefinitions>

@@ -8,7 +8,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import java.io.File;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -117,7 +116,7 @@ public class DAOManagerHibernateImplementation implements DAOManager {
     }
 
     @Override
-    public boolean AddPlayer(Player onePlayer) {
+    public boolean addPlayer(Player onePlayer) {
         EntityTransaction t = entityManager.getTransaction();
         try{
             t.begin();
@@ -132,7 +131,7 @@ public class DAOManagerHibernateImplementation implements DAOManager {
     }
 
     @Override
-    public int ImportPlayers(String playersFileName) {
+    public int importPlayers(String playersFileName) {
         int quantOfPlayers = 0;
         try{
             File myFile = new File(playersFileName);
@@ -142,7 +141,7 @@ public class DAOManagerHibernateImplementation implements DAOManager {
                 String[] spData = data.split(";");
                 Integer id = Integer.parseInt(spData[0]);
                 String name = spData[1];
-                String teamAbv = getTeamByAbbr(spData[2]).getAbv();
+                String teamAbv = getTeamByName(spData[2]).getAbv();
                 Integer height = null;
                 if(!spData[4].equals("???"))
                     height = Integer.parseInt(spData[4].split(" ")[0]);
@@ -154,7 +153,7 @@ public class DAOManagerHibernateImplementation implements DAOManager {
                 else
                     player = new Player(teamAbv, id, name, height, position);
 
-                if(AddPlayer(player))
+                if(addPlayer(player))
                     quantOfPlayers++;
             }
             reader.close();
@@ -171,8 +170,29 @@ public class DAOManagerHibernateImplementation implements DAOManager {
 
     @Override
     public boolean addTeam(Team oneTeam, List<Player> plantilla) {
+        boolean worked = addTeam(oneTeam);
+        entityManager.getTransaction().begin();
         oneTeam.setPlayers(new HashSet<>(plantilla));
-        return addTeam(oneTeam);
+        entityManager.persist(oneTeam);
+        entityManager.getTransaction().commit();
+        return worked;
+    }
+
+    @Override
+    public void clearDBForTesting() {
+        try{
+            EntityTransaction t = entityManager.getTransaction();
+            t.begin();
+            ArrayList<Player> players = (ArrayList<Player>) entityManager.createQuery("SELECT p FROM Player p").getResultList();
+            players.forEach(
+                    entityManager::remove
+            );
+            Team team = getTeamByAbbr("XXX");
+            entityManager.remove(team);
+            t.commit();
+        } catch (Exception e){
+
+        }
     }
 
     @Override
